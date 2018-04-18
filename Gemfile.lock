@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/vinsol-spree-contrib/spree_events_tracker.git
+  revision: fe1e57437f6bd03965bb6cc0530d9ccdaabcc805
+  branch: 3-1-stable
+  specs:
+    spree_events_tracker (3.1.0)
+      spree_core (~> 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -362,6 +370,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree (~> 3.1.0)
   spree_auth_devise (~> 3.1.0)
+  spree_events_tracker!
   spree_gateway (~> 3.1.0)
   spring
   turbolinks
