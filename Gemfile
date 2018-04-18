@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'letter_opener_web', '~> 1.0'
+gem 'spree_reffiliate', github: 'vinsol-spree-contrib/spree_reffiliate', branch: '3-1-stable'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

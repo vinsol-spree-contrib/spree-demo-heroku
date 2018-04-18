@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418115368) do
+ActiveRecord::Schema.define(version: 20180418124772) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,40 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_adjustments", ["order_id"], name: "index_spree_adjustments_on_order_id", using: :btree
   add_index "spree_adjustments", ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type", using: :btree
 
+  create_table "spree_affiliate_commission_rules", force: :cascade do |t|
+    t.integer "commission_rule_id"
+    t.integer "affiliate_id"
+    t.decimal "rate"
+    t.decimal "fixed_commission"
+    t.boolean "active",             default: false, null: false
+  end
+
+  add_index "spree_affiliate_commission_rules", ["active"], name: "index_spree_affiliate_commission_rules_on_active", using: :btree
+  add_index "spree_affiliate_commission_rules", ["affiliate_id"], name: "index_spree_affiliate_commission_rules_on_affiliate_id", using: :btree
+  add_index "spree_affiliate_commission_rules", ["commission_rule_id"], name: "index_spree_affiliate_commission_rules_on_commission_rule_id", using: :btree
+
+  create_table "spree_affiliates", force: :cascade do |t|
+    t.string   "name"
+    t.string   "path"
+    t.string   "partial"
+    t.string   "layout"
+    t.string   "email"
+    t.boolean  "active",           default: false
+    t.string   "activation_token"
+    t.datetime "activated_at"
+  end
+
+  add_index "spree_affiliates", ["active"], name: "index_spree_affiliates_on_active", using: :btree
+  add_index "spree_affiliates", ["email"], name: "index_spree_affiliates_on_email", using: :btree
+
+  create_table "spree_affiliates_promotion_rules", force: :cascade do |t|
+    t.integer "affiliate_id"
+    t.integer "promotion_rule_id"
+  end
+
+  add_index "spree_affiliates_promotion_rules", ["affiliate_id"], name: "index_spree_affiliates_promotion_rules_on_affiliate_id", using: :btree
+  add_index "spree_affiliates_promotion_rules", ["promotion_rule_id"], name: "index_spree_affiliates_promotion_rules_on_promotion_rule_id", using: :btree
+
   create_table "spree_assets", force: :cascade do |t|
     t.integer  "viewable_id"
     t.string   "viewable_type"
@@ -107,6 +141,43 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type", using: :btree
   add_index "spree_calculators", ["deleted_at"], name: "index_spree_calculators_on_deleted_at", using: :btree
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
+
+  create_table "spree_commission_rules", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "fixed_commission", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "spree_commission_transactions", force: :cascade do |t|
+    t.integer  "affiliate_id"
+    t.integer  "commission_id"
+    t.decimal  "amount"
+    t.boolean  "locked",              default: false, null: false
+    t.integer  "commissionable_id"
+    t.string   "commissionable_type"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "spree_commission_transactions", ["affiliate_id"], name: "index_spree_commission_transactions_on_affiliate_id", using: :btree
+  add_index "spree_commission_transactions", ["commission_id"], name: "index_spree_commission_transactions_on_commission_id", using: :btree
+
+  create_table "spree_commissions", force: :cascade do |t|
+    t.integer  "affiliate_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "paid",               default: false, null: false
+    t.decimal  "total"
+    t.integer  "transactions_count"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "spree_commissions", ["affiliate_id"], name: "index_spree_commissions_on_affiliate_id", using: :btree
+  add_index "spree_commissions", ["end_date"], name: "index_spree_commissions_on_end_date", using: :btree
+  add_index "spree_commissions", ["start_date"], name: "index_spree_commissions_on_start_date", using: :btree
 
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name"
@@ -295,8 +366,10 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.integer  "state_lock_version",                                               default: 0,       null: false
     t.decimal  "taxable_adjustment_total",                precision: 10, scale: 2, default: 0.0,     null: false
     t.decimal  "non_taxable_adjustment_total",            precision: 10, scale: 2, default: 0.0,     null: false
+    t.integer  "affiliate_id"
   end
 
+  add_index "spree_orders", ["affiliate_id"], name: "index_spree_orders_on_affiliate_id", using: :btree
   add_index "spree_orders", ["approver_id"], name: "index_spree_orders_on_approver_id", using: :btree
   add_index "spree_orders", ["bill_address_id"], name: "index_spree_orders_on_bill_address_id", using: :btree
   add_index "spree_orders", ["canceler_id"], name: "index_spree_orders_on_canceler_id", using: :btree
@@ -554,6 +627,25 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "spree_referrals", force: :cascade do |t|
+    t.string  "code"
+    t.integer "user_id"
+  end
+
+  add_index "spree_referrals", ["user_id"], name: "index_spree_referrals_on_user_id", using: :btree
+
+  create_table "spree_referred_records", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "referral_id"
+    t.integer  "affiliate_id"
+    t.integer  "store_credit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_referred_records", ["store_credit_id"], name: "index_spree_referred_records_on_store_credit_id", using: :btree
+  add_index "spree_referred_records", ["user_id", "referral_id", "affiliate_id"], name: "index_spree_referred_record_on_u_r_a", using: :btree
 
   create_table "spree_refund_reasons", force: :cascade do |t|
     t.string   "name"
@@ -990,15 +1082,15 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_trackers", ["active"], name: "index_spree_trackers_on_active", using: :btree
 
   create_table "spree_users", force: :cascade do |t|
-    t.string   "encrypted_password",     limit: 128
-    t.string   "password_salt",          limit: 128
+    t.string   "encrypted_password",       limit: 128
+    t.string   "password_salt",            limit: 128
     t.string   "email"
     t.string   "remember_token"
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                      default: 0, null: false
-    t.integer  "failed_attempts",                    default: 0, null: false
+    t.integer  "sign_in_count",                        default: 0,    null: false
+    t.integer  "failed_attempts",                      default: 0,    null: false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -1011,14 +1103,16 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "reset_password_sent_at"
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "spree_api_key",          limit: 48
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.string   "spree_api_key",            limit: 48
     t.datetime "remember_created_at"
     t.datetime "deleted_at"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.decimal  "referral_credits"
+    t.boolean  "referrer_benefit_enabled",             default: true
   end
 
   add_index "spree_users", ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree
