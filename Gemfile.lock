@@ -75,6 +75,15 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_favorite_products.git
+  revision: 358af0fd482848731a4af50c7e8c9a39d7635d2f
+  branch: master
+  specs:
+    spree_favorite_products (3.3.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      spree_extension (~> 0.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -391,6 +400,7 @@ DEPENDENCIES
   selenium-webdriver
   spree!
   spree_auth_devise!
+  spree_favorite_products!
   spree_gateway!
   spring
   spring-watcher-listen (~> 2.0.0)
