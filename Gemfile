@@ -51,3 +51,4 @@ end
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
+gem 'spree_video_support', github: 'vinsol-spree-contrib/spree-video-support', branch: '3-1-stable'
