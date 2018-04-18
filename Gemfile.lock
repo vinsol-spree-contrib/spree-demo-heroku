@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/vinsol-spree-contrib/spree-delivery-slots.git
+  revision: 172be0a4ef15ba2afdadbbbce1af3a6dbfee925b
+  branch: 3-1-stable
+  specs:
+    spree_delivery_slots (3.1.1)
+      spree_core (~> 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -362,6 +370,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree (~> 3.1.0)
   spree_auth_devise (~> 3.1.0)
+  spree_delivery_slots!
   spree_gateway (~> 3.1.0)
   spring
   turbolinks
