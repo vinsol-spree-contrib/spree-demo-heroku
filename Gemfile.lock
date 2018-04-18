@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/himanshumishra31/spree_gift_card.git
-  revision: 21870ddd337021b646642e786c9b03fee44ceb6f
+  revision: 1a84dc8580ce0e9efa3b1b0ca52ecff3509aad93
   branch: appraisals_new
   specs:
     spree_gift_card (3.2.0)
