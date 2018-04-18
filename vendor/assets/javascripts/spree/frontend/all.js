@@ -11,3 +11,5 @@
 
 //= require_tree .
 //= require spree/frontend/spree_auth
+
+//= require spree/frontend/spree_admin_roles_and_access

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_admin_roles_and_access.git
+  revision: b7a746c319766942398e85dfb9e1fe3fdce076db
+  specs:
+    spree_admin_roles_and_access (3.pre.0.pre.stable)
+      spree_auth_devise
+      spree_core (>= 3.2.0, < 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -372,6 +380,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   spree (~> 3.4.0)
+  spree_admin_roles_and_access!
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
   spring
