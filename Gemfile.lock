@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree-video-support.git
+  revision: b6213eae0c7e13cbf118a44fe840754d39725ed8
+  specs:
+    spree_video_support (3.1.0)
+      spree_core (>= 3.1.0, < 4.0.0)
+      spree_extension (~> 0.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -374,6 +382,7 @@ DEPENDENCIES
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_video_support!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
