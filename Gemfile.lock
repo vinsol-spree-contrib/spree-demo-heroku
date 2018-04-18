@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/vinsol-spree-contrib/spree_favorite_products.git
+  revision: 4bcdcf3c9db72d58968a6625fc80bde5cd8ad63f
+  branch: 3-1-stable
+  specs:
+    spree_favorite_products (3.1.1)
+      spree_core (~> 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -362,6 +370,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree (~> 3.1.0)
   spree_auth_devise (~> 3.1.0)
+  spree_favorite_products!
   spree_gateway (~> 3.1.0)
   spring
   turbolinks
