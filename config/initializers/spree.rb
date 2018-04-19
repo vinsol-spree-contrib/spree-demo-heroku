@@ -13,6 +13,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
+  config.always_include_confirm_step = true
 end
 
 Spree.user_class = "Spree::User"
