@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'spree_gift_card',           github: 'vinsol/spree_gift_card',   branch: '3-1-stabilise'
 
+gem 'rails_12factor'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
