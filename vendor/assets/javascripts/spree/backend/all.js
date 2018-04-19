@@ -10,3 +10,4 @@
 
 //= require_tree .
 //= require spree/backend/spree_events_tracker
+//= require spree/backend/spree_admin_insights
