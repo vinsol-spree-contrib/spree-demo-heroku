@@ -69,6 +69,17 @@ Rails.application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :user_name => nil,
+    :password => nil,
+    :address => 'localhost',
+    :domain => 'localhost.localdomain',
+    :port => 25,
+    :authentication => nil,
+    :enable_starttls_auto => true
+  }
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
