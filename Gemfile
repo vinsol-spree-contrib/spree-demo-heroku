@@ -29,6 +29,8 @@ gem 'letter_opener_web', '~> 1.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'spree_digital_assets', github: 'vinsol-spree-contrib/spree_digital_assets', branch: '3-1-stable'
+
+gem 'rails_12factor'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
