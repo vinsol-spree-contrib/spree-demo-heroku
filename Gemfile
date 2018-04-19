@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'spree_gift_card',           github: 'vinsol/spree_gift_card',   branch: '3-1-stabilise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
