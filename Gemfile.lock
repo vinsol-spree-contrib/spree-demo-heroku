@@ -1,7 +1,7 @@
 GIT
-  remote: git://github.com/vinsol/spree_gift_card.git
-  revision: 05a4222c8363d05aec803577856fdf60e3779231
-  branch: 3-1-stabilise
+  remote: git://github.com/himanshumishra31/spree_gift_card.git
+  revision: 14c6d0f060ba09b4591ad04140ba63baa91501ba
+  branch: scope-3-1-authorize
   specs:
     spree_gift_card (3.1.1)
       spree_api (~> 3.1.0)
