@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/shivamvinsol/spree-account-recurring.git
+  revision: 77d03f8c26b57ccbc0fe171b0570d8fec53407d3
+  branch: f-3-1-stable
+  specs:
+    spree_account_recurring (2.1.0)
+      spree_core (~> 3.1.0)
+      stripe (= 3.3.2)
+      stripe_tester
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +106,8 @@ GEM
       devise (>= 2.1.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    faraday (0.15.0)
+      multipart-post (>= 1.2, < 3)
     ffaker (2.9.0)
     ffi (1.9.23)
     font-awesome-rails (4.7.0.4)
@@ -155,6 +167,7 @@ GEM
     money (6.11.0)
       i18n (>= 0.6.4, < 1.1)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
@@ -318,6 +331,9 @@ GEM
       activerecord (>= 4.1, < 6.0)
       state_machines-activemodel (>= 0.5.0)
     stringex (2.8.4)
+    stripe (3.3.2)
+      faraday (~> 0.9)
+    stripe_tester (0.5.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -361,6 +377,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree (~> 3.1.0)
+  spree_account_recurring!
   spree_auth_devise (~> 3.1.0)
   spree_gateway (~> 3.1.0)
   spring
