@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418133100) do
+ActiveRecord::Schema.define(version: 20180420134020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,37 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
   end
 
+  create_table "spree_affiliate_commission_rules", id: :serial, force: :cascade do |t|
+    t.integer "commission_rule_id"
+    t.integer "affiliate_id"
+    t.decimal "rate"
+    t.decimal "fixed_commission"
+    t.boolean "active", default: false, null: false
+    t.index ["active"], name: "index_spree_affiliate_commission_rules_on_active"
+    t.index ["affiliate_id"], name: "index_spree_affiliate_commission_rules_on_affiliate_id"
+    t.index ["commission_rule_id"], name: "index_spree_affiliate_commission_rules_on_commission_rule_id"
+  end
+
+  create_table "spree_affiliates", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "path"
+    t.string "partial"
+    t.string "layout"
+    t.string "email"
+    t.boolean "active", default: false
+    t.string "activation_token"
+    t.datetime "activated_at"
+    t.index ["active"], name: "index_spree_affiliates_on_active"
+    t.index ["email"], name: "index_spree_affiliates_on_email"
+  end
+
+  create_table "spree_affiliates_promotion_rules", id: :serial, force: :cascade do |t|
+    t.integer "affiliate_id"
+    t.integer "promotion_rule_id"
+    t.index ["affiliate_id"], name: "index_spree_affiliates_promotion_rules_on_affiliate_id"
+    t.index ["promotion_rule_id"], name: "index_spree_affiliates_promotion_rules_on_promotion_rule_id"
+  end
+
   create_table "spree_assets", id: :serial, force: :cascade do |t|
     t.string "viewable_type"
     t.integer "viewable_id"
@@ -84,6 +115,8 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.text "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "digital_asset_id"
+    t.index ["digital_asset_id"], name: "index_spree_assets_on_digital_asset_id"
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
@@ -100,6 +133,41 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
     t.index ["deleted_at"], name: "index_spree_calculators_on_deleted_at"
     t.index ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+  end
+
+  create_table "spree_commission_rules", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "fixed_commission", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_commission_transactions", id: :serial, force: :cascade do |t|
+    t.integer "affiliate_id"
+    t.integer "commission_id"
+    t.decimal "amount"
+    t.boolean "locked", default: false, null: false
+    t.string "commissionable_type"
+    t.integer "commissionable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["affiliate_id"], name: "index_spree_commission_transactions_on_affiliate_id"
+    t.index ["commission_id"], name: "index_spree_commission_transactions_on_commission_id"
+  end
+
+  create_table "spree_commissions", id: :serial, force: :cascade do |t|
+    t.integer "affiliate_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "paid", default: false, null: false
+    t.decimal "total"
+    t.integer "transactions_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["affiliate_id"], name: "index_spree_commissions_on_affiliate_id"
+    t.index ["end_date"], name: "index_spree_commissions_on_end_date"
+    t.index ["start_date"], name: "index_spree_commissions_on_start_date"
   end
 
   create_table "spree_countries", id: :serial, force: :cascade do |t|
@@ -143,6 +211,30 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["stock_location_id"], name: "index_spree_customer_returns_on_stock_location_id"
   end
 
+  create_table "spree_digital_assets", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "attachment_file_name"
+    t.string "attachment_content_type"
+    t.integer "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer "folder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "approved", default: true, null: false
+  end
+
+  create_table "spree_folders", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lft"], name: "index_spree_folders_on_lft"
+    t.index ["parent_id"], name: "index_spree_folders_on_parent_id"
+    t.index ["rgt"], name: "index_spree_folders_on_rgt"
+  end
+
   create_table "spree_gateways", id: :serial, force: :cascade do |t|
     t.string "type"
     t.string "name"
@@ -156,6 +248,32 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.text "preferences"
     t.index ["active"], name: "index_spree_gateways_on_active"
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
+  end
+
+  create_table "spree_gift_card_transactions", id: :serial, force: :cascade do |t|
+    t.decimal "amount", precision: 6, scale: 2
+    t.integer "gift_card_id"
+    t.integer "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "action"
+    t.string "authorization_code"
+  end
+
+  create_table "spree_gift_cards", id: :serial, force: :cascade do |t|
+    t.integer "variant_id", null: false
+    t.integer "line_item_id"
+    t.string "email", null: false
+    t.string "name"
+    t.text "note"
+    t.string "code", null: false
+    t.datetime "sent_at"
+    t.decimal "current_value", precision: 8, scale: 2, null: false
+    t.decimal "original_value", precision: 8, scale: 2, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal "authorized_amount", precision: 8, scale: 2, default: "0.0", null: false
+    t.boolean "enabled", default: false
   end
 
   create_table "spree_inventory_units", id: :serial, force: :cascade do |t|
@@ -290,6 +408,8 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.integer "state_lock_version", default: 0, null: false
     t.decimal "taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
+    t.integer "affiliate_id"
+    t.index ["affiliate_id"], name: "index_spree_orders_on_affiliate_id"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -410,6 +530,7 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.boolean "is_gift_card", default: false, null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -531,6 +652,23 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_referrals", id: :serial, force: :cascade do |t|
+    t.string "code"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_spree_referrals_on_user_id"
+  end
+
+  create_table "spree_referred_records", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "referral_id"
+    t.integer "affiliate_id"
+    t.integer "store_credit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["store_credit_id"], name: "index_spree_referred_records_on_store_credit_id"
+    t.index ["user_id", "referral_id", "affiliate_id"], name: "index_spree_referred_record_on_u_r_a"
   end
 
   create_table "spree_refund_reasons", id: :serial, force: :cascade do |t|
@@ -1002,6 +1140,8 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.decimal "referral_credits"
+    t.boolean "referrer_benefit_enabled", default: true
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true

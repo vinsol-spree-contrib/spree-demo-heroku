@@ -75,6 +75,14 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_reffiliate.git
+  revision: 20b30c04f431ddfcd5353fb346b846a4bb808e80
+  branch: master
+  specs:
+    spree_reffiliate (3.2.0.alpha)
+      spree_core (>= 3.2.0, < 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -398,6 +406,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_reffiliate!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
