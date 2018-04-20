@@ -59,5 +59,5 @@ version = 'master'
 gem 'spree',                                      github: 'spree/spree',                                          branch: version
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
-gem 'spree_digital_assets', github: 'vinsol-spree-contrib/spree_digital_assets', branch: 'deploy-button'
+gem 'spree_digital_assets', github: 'vinsol-spree-contrib/spree_digital_assets', branch: 'master'
 

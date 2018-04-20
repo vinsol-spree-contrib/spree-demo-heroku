@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_digital_assets.git
-  revision: 4d195befc0860d9d9a6b74138004fa1ceb168d03
-  branch: deploy-button
+  revision: 7450f0cbb2daa97f778642b95cd08977429c2849
+  branch: master
   specs:
     spree_digital_assets (3.3.0)
       jquery-fileupload-rails (~> 0.4.6)
