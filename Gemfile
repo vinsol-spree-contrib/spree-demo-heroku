@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spree_gift_card',           github: 'himanshumishra31/spree_gift_card',   branch: 'scope-3-1-authorize'
 
 gem 'rails_12factor'
+gem 'letter_opener'
+gem 'letter_opener_web'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
