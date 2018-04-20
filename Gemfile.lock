@@ -145,10 +145,13 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.4.1)
       launchy (~> 2.2)
+<<<<<<< HEAD
     letter_opener_web (1.3.4)
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
+=======
+>>>>>>> 3ed004419be73f2c3e1ecfdadce22403145ab1d5
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -366,7 +369,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener
+<<<<<<< HEAD
   letter_opener_web
+=======
+>>>>>>> 3ed004419be73f2c3e1ecfdadce22403145ab1d5
   pg (~> 0.15)
   rails (= 4.2.7.1)
   rails_12factor
