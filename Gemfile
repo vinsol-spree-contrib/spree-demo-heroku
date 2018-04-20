@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'spree_digital_assets' , github: 'vinsol-spree-contrib/spree_digital_assets', branch: 'master'
+gem 'spree_digital_assets' , github: 'vinsol-spree-contrib/spree_digital_assets', branch: 'deploy-button'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
