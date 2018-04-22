@@ -75,6 +75,15 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree-delivery-slots.git
+  revision: 2c8b32d40ee5d76fd7bcc6642aa634a23165ba5b
+  branch: master
+  specs:
+    spree_delivery_slots (3.3.0)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension (~> 0.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -397,6 +406,7 @@ DEPENDENCIES
   selenium-webdriver
   spree!
   spree_auth_devise!
+  spree_delivery_slots!
   spree_gateway!
   spring
   spring-watcher-listen (~> 2.0.0)
