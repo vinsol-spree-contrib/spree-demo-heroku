@@ -51,3 +51,5 @@ end
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
+
+gem 'spree_social_products', github: 'shivamvinsol/spree_social_products', branch: '3-1-stable'
