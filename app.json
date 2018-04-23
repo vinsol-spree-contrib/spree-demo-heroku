@@ -16,6 +16,7 @@
     "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load"
   },
   "env": {
+    "RAILS_ENV": "staging",
     "ADMIN_EMAIL": {
       "description": "We will create an admin user with this email.",
       "value": "spree@example.com"
