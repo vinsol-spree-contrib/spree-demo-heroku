@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418115368) do
+ActiveRecord::Schema.define(version: 20180423125836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,42 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_calculators", ["deleted_at"], name: "index_spree_calculators_on_deleted_at", using: :btree
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
 
+  create_table "spree_cart_events", force: :cascade do |t|
+    t.integer  "actor_id"
+    t.string   "actor_type"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.string   "activity"
+    t.text     "referrer"
+    t.integer  "quantity"
+    t.decimal  "total",       precision: 16, scale: 4
+    t.string   "session_id"
+    t.integer  "variant_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "spree_cart_events", ["actor_type", "actor_id"], name: "index_spree_cart_events_on_actor_type_and_actor_id", using: :btree
+  add_index "spree_cart_events", ["target_type", "target_id"], name: "index_spree_cart_events_on_target_type_and_target_id", using: :btree
+  add_index "spree_cart_events", ["variant_id"], name: "index_spree_cart_events_on_variant_id", using: :btree
+
+  create_table "spree_checkout_events", force: :cascade do |t|
+    t.integer  "actor_id"
+    t.string   "actor_type"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.string   "activity"
+    t.text     "referrer"
+    t.string   "previous_state"
+    t.string   "next_state"
+    t.string   "session_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "spree_checkout_events", ["actor_type", "actor_id"], name: "index_spree_checkout_events_on_actor_type_and_actor_id", using: :btree
+  add_index "spree_checkout_events", ["target_type", "target_id"], name: "index_spree_checkout_events_on_target_type_and_target_id", using: :btree
+
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name"
     t.string   "iso"
@@ -144,6 +180,26 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  create_table "spree_facebook_pages", force: :cascade do |t|
+    t.integer  "account_id"
+    t.string   "name"
+    t.string   "page_id"
+    t.string   "page_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "page_name"
+  end
+
+  create_table "spree_favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "spree_favorites", ["user_id", "product_id"], name: "index_spree_favorites_on_user_id_and_product_id", unique: true, using: :btree
+  add_index "spree_favorites", ["user_id"], name: "index_spree_favorites_on_user_id", using: :btree
 
   create_table "spree_gateways", force: :cascade do |t|
     t.string   "type"
@@ -310,6 +366,23 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_orders", ["store_id"], name: "index_spree_orders_on_store_id", using: :btree
   add_index "spree_orders", ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
 
+  create_table "spree_page_events", force: :cascade do |t|
+    t.integer  "actor_id"
+    t.string   "actor_type"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.string   "activity"
+    t.text     "referrer"
+    t.string   "search_keywords"
+    t.string   "session_id"
+    t.text     "query_string"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "spree_page_events", ["actor_type", "actor_id"], name: "index_spree_page_events_on_actor_type_and_actor_id", using: :btree
+  add_index "spree_page_events", ["target_type", "target_id"], name: "index_spree_page_events_on_target_type_and_target_id", using: :btree
+
   create_table "spree_payment_capture_events", force: :cascade do |t|
     t.decimal  "amount",     precision: 10, scale: 2, default: 0.0
     t.integer  "payment_id"
@@ -355,6 +428,33 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id", using: :btree
   add_index "spree_payments", ["payment_method_id"], name: "index_spree_payments_on_payment_method_id", using: :btree
   add_index "spree_payments", ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type", using: :btree
+
+  create_table "spree_permission_sets", force: :cascade do |t|
+    t.string   "name",                               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description",        default: ""
+    t.boolean  "display_permission", default: false
+  end
+
+  create_table "spree_permissions", force: :cascade do |t|
+    t.string   "title",                      null: false
+    t.integer  "priority",    default: 0
+    t.boolean  "visible",     default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "description", default: ""
+  end
+
+  add_index "spree_permissions", ["visible"], name: "index_spree_permissions_on_visible", using: :btree
+
+  create_table "spree_permissions_permission_sets", force: :cascade do |t|
+    t.integer "permission_id"
+    t.integer "permission_set_id"
+  end
+
+  add_index "spree_permissions_permission_sets", ["permission_id"], name: "index_spree_permissions_permission_sets_on_permission_id", using: :btree
+  add_index "spree_permissions_permission_sets", ["permission_set_id"], name: "index_spree_permissions_permission_sets_on_permission_set_id", using: :btree
 
   create_table "spree_preferences", force: :cascade do |t|
     t.text     "value"
@@ -424,11 +524,14 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
     t.datetime "discontinue_on"
+    t.integer  "favorite_users_count", default: 0
+    t.datetime "marketed_at"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree
   add_index "spree_products", ["deleted_at"], name: "index_spree_products_on_deleted_at", using: :btree
   add_index "spree_products", ["discontinue_on"], name: "index_spree_products_on_discontinue_on", using: :btree
+  add_index "spree_products", ["favorite_users_count"], name: "index_spree_products_on_favorite_users_count", using: :btree
   add_index "spree_products", ["name"], name: "index_spree_products_on_name", using: :btree
   add_index "spree_products", ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id", using: :btree
   add_index "spree_products", ["slug"], name: "index_spree_products_on_slug", unique: true, using: :btree
@@ -516,6 +619,7 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "promotion_category_id"
+    t.datetime "marketed_at"
   end
 
   add_index "spree_promotions", ["advertise"], name: "index_spree_promotions_on_advertise", using: :btree
@@ -659,10 +763,31 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_role_users", ["user_id"], name: "index_spree_role_users_on_user_id", using: :btree
 
   create_table "spree_roles", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
+    t.boolean "editable",         default: true
+    t.boolean "is_default",       default: false
+    t.boolean "admin_accessible", default: false
   end
 
+  add_index "spree_roles", ["editable"], name: "index_spree_roles_on_editable", using: :btree
+  add_index "spree_roles", ["is_default"], name: "index_spree_roles_on_is_default", using: :btree
   add_index "spree_roles", ["name"], name: "index_spree_roles_on_name", using: :btree
+
+  create_table "spree_roles_permission_sets", force: :cascade do |t|
+    t.integer "role_id"
+    t.integer "permission_set_id"
+  end
+
+  add_index "spree_roles_permission_sets", ["permission_set_id"], name: "index_spree_roles_permission_sets_on_permission_set_id", using: :btree
+  add_index "spree_roles_permission_sets", ["role_id"], name: "index_spree_roles_permission_sets_on_role_id", using: :btree
+
+  create_table "spree_roles_permissions", id: false, force: :cascade do |t|
+    t.integer "role_id",       null: false
+    t.integer "permission_id", null: false
+  end
+
+  add_index "spree_roles_permissions", ["permission_id"], name: "index_spree_roles_permissions_on_permission_id", using: :btree
+  add_index "spree_roles_permissions", ["role_id"], name: "index_spree_roles_permissions_on_role_id", using: :btree
 
   create_table "spree_shipments", force: :cascade do |t|
     t.string   "tracking"
@@ -751,6 +876,53 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_social_media_accounts", force: :cascade do |t|
+    t.integer  "store_id"
+    t.string   "type"
+    t.string   "name"
+    t.string   "auth_token"
+    t.string   "auth_secret"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_social_media_events_accounts", force: :cascade do |t|
+    t.integer  "social_media_marketing_event_id"
+    t.integer  "social_media_marketing_account_id"
+    t.string   "social_media_marketing_account_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_social_media_marketing_events", force: :cascade do |t|
+    t.string  "name"
+    t.boolean "active",          default: false
+    t.text    "fb_message"
+    t.string  "class_to_run"
+    t.string  "run_time"
+    t.integer "threshold"
+    t.text    "twitter_message"
+  end
+
+  create_table "spree_social_media_post_images", force: :cascade do |t|
+    t.integer "social_media_post_id"
+    t.integer "post_image_id"
+  end
+
+  create_table "spree_social_media_posts", force: :cascade do |t|
+    t.integer  "social_media_publishable_id"
+    t.string   "social_media_publishable_type"
+    t.string   "post_id"
+    t.text     "post_message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "error_message"
+    t.integer  "user_id"
+  end
+
+  add_index "spree_social_media_posts", ["user_id"], name: "index_spree_social_media_posts_on_user_id", using: :btree
 
   create_table "spree_state_changes", force: :cascade do |t|
     t.string   "name"
@@ -910,6 +1082,29 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_stores", ["code"], name: "index_spree_stores_on_code", using: :btree
   add_index "spree_stores", ["default"], name: "index_spree_stores_on_default", using: :btree
   add_index "spree_stores", ["url"], name: "index_spree_stores_on_url", using: :btree
+
+  create_table "spree_support_tickets", force: :cascade do |t|
+    t.integer  "support_agent_id"
+    t.integer  "user_id"
+    t.string   "customer_email"
+    t.string   "customer_first_name"
+    t.string   "customer_last_name"
+    t.text     "purpose"
+    t.text     "closing_remarks"
+    t.integer  "closed_by_id"
+    t.string   "closed_by_email"
+    t.boolean  "active",              default: true
+    t.string   "type"
+    t.string   "unique_id"
+    t.datetime "support_started_at"
+    t.datetime "support_ended_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_support_tickets", ["closed_by_id"], name: "index_spree_support_tickets_on_closed_by_id", using: :btree
+  add_index "spree_support_tickets", ["support_agent_id"], name: "index_spree_support_tickets_on_support_agent_id", using: :btree
+  add_index "spree_support_tickets", ["user_id"], name: "index_spree_support_tickets_on_user_id", using: :btree
 
   create_table "spree_tax_categories", force: :cascade do |t|
     t.string   "name"
@@ -1079,4 +1274,8 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax", using: :btree
   add_index "spree_zones", ["kind"], name: "index_spree_zones_on_kind", using: :btree
 
+  add_foreign_key "spree_permissions_permission_sets", "spree_permission_sets", column: "permission_set_id"
+  add_foreign_key "spree_permissions_permission_sets", "spree_permissions", column: "permission_id"
+  add_foreign_key "spree_roles_permission_sets", "spree_permission_sets", column: "permission_set_id"
+  add_foreign_key "spree_roles_permission_sets", "spree_roles", column: "role_id"
 end

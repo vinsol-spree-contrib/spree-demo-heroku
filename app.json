@@ -1,7 +1,7 @@
 {
   "name": "Spree Sandbox",
   "description":"demo store built with Spree",
-  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/demo-3-1",
+  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/spree-social-media-marketing-3-1",
   "logo": "http://guides.spreecommerce.org/images/logo.png",
   "keywords": [
     "spree"
@@ -23,6 +23,22 @@
     "ADMIN_PASSWORD": {
       "description": "We will create an admin user with this password.",
       "value": "spree123"
+    },
+    "TWITTER_CONSUMER_KEY": {
+      "description": "Enter Social Accounts API key credentials",
+      "required": true
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "Enter Social Accounts API key credentials",
+      "required": true
+    },
+    "FACEBOOK_SECRET_KEY": {
+      "description": "Enter Social Accounts API key credentials",
+      "required": true
+    },
+    "FACEBOOK_APP_KEY": {
+      "description": "Enter Social Accounts API key credentials",
+      "required": true
     }
   }
 }
