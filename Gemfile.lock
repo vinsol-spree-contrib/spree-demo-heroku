@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/himanshumishra31/spree_taxjar.git
-  revision: 1e1f2357836d48995c8b1bc69f4f0f11065cf2a7
+  revision: f00d95cf9c3367de030b9dea790d00d1c03c7971
   branch: appraise
   specs:
     spree_taxjar (3.2.0)
