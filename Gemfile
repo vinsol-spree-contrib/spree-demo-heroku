@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-gem 'spree_gift_card',           github: 'himanshumishra31/spree_gift_card',   branch: 'scope-3-1-authorize'
+gem 'spree_gift_card',           github: 'vinsol-spree-contrib/spree_gift_card',   branch: '3-1-stabilise'
 
 gem 'rails_12factor'
 gem 'letter_opener_web'
