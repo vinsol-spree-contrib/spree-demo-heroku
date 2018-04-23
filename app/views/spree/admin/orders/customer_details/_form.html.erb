@@ -13,7 +13,7 @@
         <div class="col-xs-12 col-md-8">
           <div class="form-group">
             <%= f.label :email, Spree.t(:email) %>
-            <% if can? :edit, @order.user %>
+            <% if can? :edit, @order.user || Spree.user_class %>
               <%= f.email_field :email, class: 'form-control' %>
             <% else %>
               <p><%= @order.user.try(:email) || @order.email %></p>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="panel-body">
-          <% if can? :edit, @order.user %>
+          <% if can? :edit, @order.user || Spree.user_class %>
             <%= f.fields_for :bill_address do |ba_form| %>
               <%= render 'spree/admin/shared/address_form', f: ba_form, type: "billing" %>
             <% end %>
@@ -79,7 +79,7 @@
           <h1 class="panel-title"><%= Spree.t(:shipping_address) %></h1>
         </div>
         <div class="panel-body">
-          <% if can? :edit, @order.user %>
+          <% if can? :edit, @order.user || Spree.user_class %>
             <%= f.fields_for :ship_address do |sa_form| %>
               <div class="form-group">
                 <span data-hook="use_billing">
@@ -98,7 +98,7 @@
     </div>
   </div>
 
-  <% if can? :edit, @order.user %>
+  <% if can? :edit, @order.user || Spree.user_class %>
     <div class="form-actions" data-hook="buttons">
       <%= button Spree.t('actions.update'), 'save' %>
     </div>

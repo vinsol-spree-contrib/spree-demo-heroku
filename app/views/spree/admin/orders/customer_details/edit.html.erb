@@ -4,7 +4,7 @@
   / <%= Spree.t(:customer_details) %>
 <% end %>
 
-<% if can? :edit, @order.user %>
+<% if can? :edit, @order.user || Spree.user_class %>
   <div id="select-customer" class="panel panel-default" data-hook>
     <div class="panel-heading">
       <h1 class="panel-title">
