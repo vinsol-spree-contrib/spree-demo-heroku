@@ -58,5 +58,5 @@ version = 'master'
 gem 'spree',                                      github: 'spree/spree',                                          branch: version
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
-gem 'spree_gift_card', github: 'himanshumishra31/spree_gift_card', branch: 'appraisals_new'
+gem 'spree_gift_card',                            github: 'vinsol-spree-contrib/spree_gift_card',                 branch: version
 
