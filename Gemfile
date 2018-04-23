@@ -60,3 +60,4 @@ gem 'spree',                                      github: 'spree/spree',        
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
 
+gem 'spree_social_products', github: 'shivamvinsol/spree_social_products', branch: '3-4-stable'
