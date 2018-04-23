@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/shivamvinsol/spree-account-recurring.git
-  revision: fbd94b577075fad2b77e370c41b340ab556443b3
+  revision: c5bae5128f54cbbecb6f6e1ccbc6600c2c7f334d
   branch: 3-4-stable
   specs:
     spree_account_recurring (2.1.0)
