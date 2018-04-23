@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418133100) do
+ActiveRecord::Schema.define(version: 20180420151069) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -347,6 +347,25 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
   end
 
+  create_table "spree_plans", id: :serial, force: :cascade do |t|
+    t.string "api_plan_id"
+    t.decimal "amount", precision: 8, scale: 2
+    t.string "interval"
+    t.integer "interval_count", default: 1
+    t.string "name"
+    t.string "currency"
+    t.integer "recurring_id"
+    t.integer "trial_period_days", default: 0
+    t.boolean "active", default: false
+    t.datetime "deleted_at"
+    t.boolean "default", default: false
+    t.index ["default"], name: "index_spree_plans_on_default"
+    t.index ["deleted_at", "active"], name: "index_spree_plans_on_deleted_at_and_active"
+    t.index ["deleted_at", "recurring_id", "active"], name: "index_spree_plans_on_deleted_at_and_recurring_id_and_active"
+    t.index ["deleted_at", "recurring_id"], name: "index_spree_plans_on_deleted_at_and_recurring_id"
+    t.index ["deleted_at"], name: "index_spree_plans_on_deleted_at"
+  end
+
   create_table "spree_preferences", id: :serial, force: :cascade do |t|
     t.text "value"
     t.string "key"
@@ -531,6 +550,16 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_recurrings", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.text "description"
+    t.boolean "active"
+    t.datetime "deleted_at"
+    t.text "preferences"
+    t.index ["deleted_at"], name: "index_spree_recurrings_on_deleted_at"
   end
 
   create_table "spree_refund_reasons", id: :serial, force: :cascade do |t|
@@ -878,6 +907,29 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["url"], name: "index_spree_stores_on_url"
   end
 
+  create_table "spree_subscription_events", id: :serial, force: :cascade do |t|
+    t.string "event_id"
+    t.integer "subscription_plan_id"
+    t.string "request_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "response"
+    t.index ["event_id"], name: "index_spree_subscription_events_on_event_id"
+    t.index ["subscription_plan_id"], name: "index_spree_subscription_events_on_subscription_plan_id"
+  end
+
+  create_table "spree_subscription_plans", id: :serial, force: :cascade do |t|
+    t.integer "plan_id"
+    t.string "email"
+    t.integer "user_id"
+    t.datetime "subscribed_at"
+    t.datetime "unsubscribed_at"
+    t.string "stripe_subscription_id"
+    t.index ["plan_id"], name: "index_spree_subscription_plans_on_plan_id"
+    t.index ["subscribed_at"], name: "index_spree_subscription_plans_on_subscribed_at"
+    t.index ["unsubscribed_at"], name: "index_spree_subscription_plans_on_unsubscribed_at"
+  end
+
   create_table "spree_taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -1002,6 +1054,7 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "stripe_customer_id"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
