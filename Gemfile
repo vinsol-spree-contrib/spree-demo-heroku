@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'spree_gift_card' , github: 'himanshumishra31/spree_gift_card', branch: 'appraisals_new'
+gem 'spree_gift_card' , github: 'vinsol-spree-contrib/spree_gift_card', branch: 'master'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
