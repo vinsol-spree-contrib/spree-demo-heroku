@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-admin-insights.git
-  revision: ce7d4f1f7fdfcbe52e2dbb39435d79238a425311
-  branch: f-3-1-5-backport
+  revision: 15eb17805fd660ce53a562a34d03b8a5eca28872
+  branch: 3-1-5-backport
   specs:
     spree_admin_insights (3.2.0.alpha)
       spree_core (>= 3.1.0, < 4.0.0)
