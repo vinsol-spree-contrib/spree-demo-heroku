@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/himanshumishra31/spree_taxjar.git
-  revision: f00d95cf9c3367de030b9dea790d00d1c03c7971
-  branch: appraise
-  specs:
-    spree_taxjar (3.2.0)
-      spree_core (>= 3.2.0, < 4.0.0)
-      taxjar-ruby (~> 1.5)
-
-GIT
   remote: https://github.com/spree/spree.git
   revision: 187ee0c54e6bd042ace71e1fa3d33d66353f5ba0
   branch: master
@@ -83,6 +74,15 @@ GIT
     spree_gateway (3.3.3)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
+
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_taxjar.git
+  revision: 75d4730ab1030eb7cf5902f467be1e4c73d75373
+  branch: master
+  specs:
+    spree_taxjar (3.2.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      taxjar-ruby (~> 1.5)
 
 GEM
   remote: https://rubygems.org/

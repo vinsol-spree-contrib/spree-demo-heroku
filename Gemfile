@@ -59,4 +59,4 @@ version = 'master'
 gem 'spree',                                      github: 'spree/spree',                                          branch: version
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
-gem 'spree_taxjar',                               github: 'himanshumishra31/spree_taxjar',                        branch: 'appraise'
+gem 'spree_taxjar',                               github: 'vinsol-spree-contrib/spree_taxjar',                    branch: version
