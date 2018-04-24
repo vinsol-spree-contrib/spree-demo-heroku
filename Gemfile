@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'spree_taxjar', github: 'himanshumishra31/spree_taxjar', branch: 'appraise'
+gem 'spree_taxjar', github: 'vinsol-spree-contrib/spree_taxjar', branch: 'master'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
