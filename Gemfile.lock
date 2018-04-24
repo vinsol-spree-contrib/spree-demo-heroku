@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/shivamvinsol/spree_social_products.git
-  revision: 5dd6e35d27e33bf6ce10dd9333af79856ac8ed93
+  revision: f19434735b74ff3bf42d81f3071e2cac7f64d91a
   branch: 3-4-stable
   specs:
     spree_social_products (2.0.0)
