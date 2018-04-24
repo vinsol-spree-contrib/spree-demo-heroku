@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/vinsol-spree-contrib/spree_admin_roles_and_access.git
-  revision: 373bd2951dc414ff213ce911d95276bc25784ee9
+  revision: c914d04f6f5fd13eca1e9ffc5c07302186e1fea0
   branch: 3-1-stable-updated
   specs:
     spree_admin_roles_and_access (3.pre.1.pre.stable)
