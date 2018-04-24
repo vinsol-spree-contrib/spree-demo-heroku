@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/vinsol-spree-contrib/spree-social-media-marketing.git
-  revision: 24340771030899703540875101e4b94ca984fea6
+  revision: 4b989431d7b6f91a4a124d816708bd05cb52298b
   branch: f-3-1-stable
   specs:
     spree_social_media_marketing (3.1.0)
