@@ -1,7 +1,7 @@
 GIT
-  remote: git://github.com/himanshumishra31/spree_taxjar.git
-  revision: c14eb5a8aeecf229c8f0165a6eeb793640c22881
-  branch: 3-1-updated
+  remote: git://github.com/vinsol-spree-contrib/spree_taxjar.git
+  revision: fc03a050e933d10c937ec474af373d45dffcfcbb
+  branch: 3-1-stable
   specs:
     spree_taxjar (3.1.0)
       spree_core (~> 3.1.0)

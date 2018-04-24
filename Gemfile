@@ -51,4 +51,4 @@ end
 gem 'spree', '~> 3.1.0'
 gem 'spree_auth_devise', '~> 3.1.0'
 gem 'spree_gateway', '~> 3.1.0'
-gem 'spree_taxjar', github: 'himanshumishra31/spree_taxjar', branch: '3-1-updated'
+gem 'spree_taxjar', github: 'vinsol-spree-contrib/spree_taxjar', branch: '3-1-stable'
