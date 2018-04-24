@@ -25,7 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'letter_opener_web', '~> 1.0'
 
-gem 'rails_12factor'
+gem 'rails_12factor', '~> 0.0.3'
+
+gem 'delayed_job_active_record', '~> 4.1.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

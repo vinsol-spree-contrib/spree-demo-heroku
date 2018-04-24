@@ -13,7 +13,7 @@
     "heroku-postgresql:hobby-dev"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load"
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rails g spree_social_media_marketing:seed"
   },
   "env": {
     "ADMIN_EMAIL": {
@@ -25,19 +25,19 @@
       "value": "spree123"
     },
     "TWITTER_CONSUMER_KEY": {
-      "description": "Enter Social Accounts API key credentials",
+      "description": "Enter Twitter Consumer Key",
       "required": true
     },
     "TWITTER_CONSUMER_SECRET": {
-      "description": "Enter Social Accounts API key credentials",
+      "description": "Enter Twitter Consumer Secret",
       "required": true
     },
     "FACEBOOK_SECRET_KEY": {
-      "description": "Enter Social Accounts API key credentials",
+      "description": "Enter Facebook Secret Key",
       "required": true
     },
     "FACEBOOK_APP_KEY": {
-      "description": "Enter Social Accounts API key credentials",
+      "description": "Enter Facebook App Key",
       "required": true
     }
   }
