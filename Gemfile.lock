@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/shivamvinsol/spree-account-recurring.git
-  revision: f1076fa6171c772d6a71e1e7c062159373dfffa2
-  branch: 3-4-stable
-  specs:
-    spree_account_recurring (2.2.0)
-      spree_core (>= 3.2.0, < 4.0.0)
-      stripe (= 3.3.2)
-      stripe_tester
-
-GIT
   remote: https://github.com/spree/spree.git
   revision: 187ee0c54e6bd042ace71e1fa3d33d66353f5ba0
   branch: master
@@ -84,6 +74,16 @@ GIT
     spree_gateway (3.3.3)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
+
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree-account-recurring.git
+  revision: b59019127ea505ddc2aacbba5f25429a7c6ca9e0
+  branch: master
+  specs:
+    spree_account_recurring (2.2.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      stripe (= 3.3.2)
+      stripe_tester
 
 GEM
   remote: https://rubygems.org/
