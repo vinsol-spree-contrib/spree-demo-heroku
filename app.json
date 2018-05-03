@@ -23,6 +23,14 @@
     "ADMIN_PASSWORD": {
       "description": "We will create an admin user with this password.",
       "value": "spree123"
+    },
+    "GOOGLE_MAP_KEY": {
+      "description": "Enter Google Map API Key",
+      "required": true
+    },
+    "GOOGLE_GEOCODE_API_KEY": {
+      "description": "Enter Google Geocode API Key",
+      "required": true
     }
   }
 }
