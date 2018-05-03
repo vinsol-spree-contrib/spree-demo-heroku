@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_address_auto_complete
+  revision: b7d4c92f3ec75f012558dcd5ae546285cff39d9c
+  branch: f-master
+  specs:
+    spree_address_auto_complete (3.3.0)
+      spree (>= 3.2.0, < 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -378,6 +386,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   spree (~> 3.4.0)
+  spree_address_auto_complete!
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
   spring

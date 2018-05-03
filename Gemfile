@@ -60,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spree', '~> 3.4.0'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
+gem 'spree_address_auto_complete', git: 'https://github.com/vinsol-spree-contrib/spree_address_auto_complete', branch: 'f-master'
