@@ -62,3 +62,4 @@ gem 'spree',                                      github: 'spree/spree',        
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
 
+gem 'spree_quotes_management', github: 'vinsol-spree-contrib/spree-quotes-management'

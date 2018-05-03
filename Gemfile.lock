@@ -75,6 +75,15 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree-quotes-management.git
+  revision: ce85589a458acf8c4f7ed28b75015bfbf1f5bde7
+  specs:
+    spree_quotes_management (3.3.0)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension
+      state_machines-activerecord (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -398,6 +407,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_quotes_management!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
