@@ -1,5 +1,7 @@
-PATH
-  remote: ../extensions/spree_pickup
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_pickup.git
+  revision: 7108f453dbd96458f010679986e659bf2a98f8ed
+  branch: deface
   specs:
     spree_pickup (3.1.0)
       geocoder
@@ -115,7 +117,6 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
-    diffy (3.2.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffaker (2.9.0)
@@ -377,7 +378,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  diffy
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)

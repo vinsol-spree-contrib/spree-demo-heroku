@@ -58,7 +58,4 @@ gem 'spree', '~> 3.4.0'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 
-gem 'spree_pickup', path: '../extensions/spree_pickup'
-gem 'diffy'
-
-# gem 'spree_pickup', github: 'vinsol-spree-contrib/spree_pickup', branch: 'upgrade'
+gem 'spree_pickup', github: 'vinsol-spree-contrib/spree_pickup', branch: 'deface'
