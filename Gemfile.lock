@@ -1,3 +1,14 @@
+PATH
+  remote: ../extensions/spree_pickup
+  specs:
+    spree_pickup (3.1.0)
+      geocoder
+      spree_api (>= 3.2.0, < 4.0.0)
+      spree_backend (>= 3.2.0, < 4.0.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      spree_extension (~> 0.0.5)
+      spree_frontend (>= 3.2.0, < 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,12 +115,14 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
+    diffy (3.2.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffaker (2.9.0)
     ffi (1.9.23)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     highline (1.6.21)
@@ -364,6 +377,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  diffy
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
@@ -374,6 +388,7 @@ DEPENDENCIES
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_pickup!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
