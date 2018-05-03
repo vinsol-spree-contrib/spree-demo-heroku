@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_pickup.git
-  revision: 7108f453dbd96458f010679986e659bf2a98f8ed
+  revision: b16a90ca88b4f6d62d8858aa1dfe33ac7e5220e6
   branch: deface
   specs:
     spree_pickup (3.1.0)
