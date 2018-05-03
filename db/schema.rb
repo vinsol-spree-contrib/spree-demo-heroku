@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417131026) do
+ActiveRecord::Schema.define(version: 20180503095248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,7 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.integer "state_lock_version", default: 0, null: false
     t.decimal "taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
+    t.integer "pickup_location_id"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -299,6 +300,7 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id"
     t.index ["guest_token"], name: "index_spree_orders_on_guest_token"
     t.index ["number"], name: "index_spree_orders_on_number", unique: true
+    t.index ["pickup_location_id"], name: "index_spree_orders_on_pickup_location_id"
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id"
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
@@ -345,6 +347,19 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.index ["order_id"], name: "index_spree_payments_on_order_id"
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
     t.index ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"
+  end
+
+  create_table "spree_pickup_locations", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.integer "address_id"
+    t.string "phone"
+    t.float "latitude"
+    t.float "longitude"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["address_id"], name: "index_spree_pickup_locations_on_address_id"
   end
 
   create_table "spree_preferences", id: :serial, force: :cascade do |t|
@@ -533,6 +548,17 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spree_quotes", id: :serial, force: :cascade do |t|
+    t.text "description"
+    t.integer "rank"
+    t.string "state"
+    t.integer "user_id"
+    t.string "author_name"
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "spree_refund_reasons", id: :serial, force: :cascade do |t|
     t.string "name"
     t.boolean "active", default: true
@@ -708,6 +734,7 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.string "admin_name"
     t.integer "tax_category_id"
     t.string "code"
+    t.boolean "pickupable", default: false
     t.index ["deleted_at"], name: "index_spree_shipping_methods_on_deleted_at"
     t.index ["tax_category_id"], name: "index_spree_shipping_methods_on_tax_category_id"
   end
@@ -965,6 +992,12 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.index ["position"], name: "index_spree_taxons_on_position"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
+  end
+
+  create_table "spree_timings", id: :serial, force: :cascade do |t|
+    t.integer "day_id"
+    t.integer "pickup_location_id"
+    t.index ["pickup_location_id"], name: "index_spree_timings_on_pickup_location_id"
   end
 
   create_table "spree_trackers", id: :serial, force: :cascade do |t|
