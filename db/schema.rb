@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418115368) do
+ActiveRecord::Schema.define(version: 20180503072849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -295,6 +295,7 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.integer  "state_lock_version",                                               default: 0,       null: false
     t.decimal  "taxable_adjustment_total",                precision: 10, scale: 2, default: 0.0,     null: false
     t.decimal  "non_taxable_adjustment_total",            precision: 10, scale: 2, default: 0.0,     null: false
+    t.integer  "pickup_location_id"
   end
 
   add_index "spree_orders", ["approver_id"], name: "index_spree_orders_on_approver_id", using: :btree
@@ -306,6 +307,7 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_orders", ["created_by_id"], name: "index_spree_orders_on_created_by_id", using: :btree
   add_index "spree_orders", ["guest_token"], name: "index_spree_orders_on_guest_token", using: :btree
   add_index "spree_orders", ["number"], name: "index_spree_orders_on_number", using: :btree
+  add_index "spree_orders", ["pickup_location_id"], name: "index_spree_orders_on_pickup_location_id", using: :btree
   add_index "spree_orders", ["ship_address_id"], name: "index_spree_orders_on_ship_address_id", using: :btree
   add_index "spree_orders", ["store_id"], name: "index_spree_orders_on_store_id", using: :btree
   add_index "spree_orders", ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
@@ -355,6 +357,40 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id", using: :btree
   add_index "spree_payments", ["payment_method_id"], name: "index_spree_payments_on_payment_method_id", using: :btree
   add_index "spree_payments", ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type", using: :btree
+
+  create_table "spree_pickup_locations", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "address_id"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_pickup_locations", ["address_id"], name: "index_spree_pickup_locations_on_address_id", using: :btree
+
+  create_table "spree_plans", force: :cascade do |t|
+    t.string   "api_plan_id"
+    t.decimal  "amount",            precision: 8, scale: 2
+    t.string   "interval"
+    t.integer  "interval_count",                            default: 1
+    t.string   "name"
+    t.string   "currency"
+    t.integer  "recurring_id"
+    t.integer  "trial_period_days",                         default: 0
+    t.boolean  "active",                                    default: false
+    t.datetime "deleted_at"
+    t.boolean  "default",                                   default: false
+  end
+
+  add_index "spree_plans", ["default"], name: "index_spree_plans_on_default", using: :btree
+  add_index "spree_plans", ["deleted_at", "active"], name: "index_spree_plans_on_deleted_at_and_active", using: :btree
+  add_index "spree_plans", ["deleted_at", "recurring_id", "active"], name: "index_spree_plans_on_deleted_at_and_recurring_id_and_active", using: :btree
+  add_index "spree_plans", ["deleted_at", "recurring_id"], name: "index_spree_plans_on_deleted_at_and_recurring_id", using: :btree
+  add_index "spree_plans", ["deleted_at"], name: "index_spree_plans_on_deleted_at", using: :btree
 
   create_table "spree_preferences", force: :cascade do |t|
     t.text     "value"
@@ -555,6 +591,17 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spree_recurrings", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.text     "description"
+    t.boolean  "active"
+    t.datetime "deleted_at"
+    t.text     "preferences"
+  end
+
+  add_index "spree_recurrings", ["deleted_at"], name: "index_spree_recurrings_on_deleted_at", using: :btree
+
   create_table "spree_refund_reasons", force: :cascade do |t|
     t.string   "name"
     t.boolean  "active",     default: true
@@ -716,12 +763,13 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.string   "name"
     t.string   "display_on"
     t.datetime "deleted_at"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "tracking_url"
     t.string   "admin_name"
     t.integer  "tax_category_id"
     t.string   "code"
+    t.boolean  "pickupable",      default: false
   end
 
   add_index "spree_shipping_methods", ["deleted_at"], name: "index_spree_shipping_methods_on_deleted_at", using: :btree
@@ -911,6 +959,31 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_stores", ["default"], name: "index_spree_stores_on_default", using: :btree
   add_index "spree_stores", ["url"], name: "index_spree_stores_on_url", using: :btree
 
+  create_table "spree_subscription_events", force: :cascade do |t|
+    t.string   "event_id"
+    t.integer  "subscription_plan_id"
+    t.string   "request_type"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.text     "response"
+  end
+
+  add_index "spree_subscription_events", ["event_id"], name: "index_spree_subscription_events_on_event_id", using: :btree
+  add_index "spree_subscription_events", ["subscription_plan_id"], name: "index_spree_subscription_events_on_subscription_plan_id", using: :btree
+
+  create_table "spree_subscription_plans", force: :cascade do |t|
+    t.integer  "plan_id"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "subscribed_at"
+    t.datetime "unsubscribed_at"
+    t.string   "stripe_subscription_id"
+  end
+
+  add_index "spree_subscription_plans", ["plan_id"], name: "index_spree_subscription_plans_on_plan_id", using: :btree
+  add_index "spree_subscription_plans", ["subscribed_at"], name: "index_spree_subscription_plans_on_subscribed_at", using: :btree
+  add_index "spree_subscription_plans", ["unsubscribed_at"], name: "index_spree_subscription_plans_on_unsubscribed_at", using: :btree
+
   create_table "spree_tax_categories", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -980,6 +1053,13 @@ ActiveRecord::Schema.define(version: 20180418115368) do
   add_index "spree_taxons", ["rgt"], name: "index_spree_taxons_on_rgt", using: :btree
   add_index "spree_taxons", ["taxonomy_id"], name: "index_taxons_on_taxonomy_id", using: :btree
 
+  create_table "spree_timings", force: :cascade do |t|
+    t.integer "day_id"
+    t.integer "pickup_location_id"
+  end
+
+  add_index "spree_timings", ["pickup_location_id"], name: "index_spree_timings_on_pickup_location_id", using: :btree
+
   create_table "spree_trackers", force: :cascade do |t|
     t.string   "analytics_id"
     t.boolean  "active",       default: true
@@ -1019,6 +1099,7 @@ ActiveRecord::Schema.define(version: 20180418115368) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "stripe_customer_id"
   end
 
   add_index "spree_users", ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree
