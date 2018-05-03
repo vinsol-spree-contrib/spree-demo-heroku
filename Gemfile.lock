@@ -75,6 +75,19 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol/spree_pickup.git
+  revision: 48d23c20883037b756ada45d21dc49404d9c8146
+  branch: deface
+  specs:
+    spree_pickup (3.1.0)
+      geocoder
+      spree_api (>= 3.2.0, < 4.0.0)
+      spree_backend (>= 3.2.0, < 4.0.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      spree_extension (~> 0.0.5)
+      spree_frontend (>= 3.2.0, < 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,6 +200,7 @@ GEM
     ffi (1.9.23)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     highline (1.6.21)
@@ -398,6 +412,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_pickup!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
