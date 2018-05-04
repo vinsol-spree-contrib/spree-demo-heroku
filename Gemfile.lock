@@ -77,7 +77,7 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_address_auto_complete.git
-  revision: b7d4c92f3ec75f012558dcd5ae546285cff39d9c
+  revision: e8ded50f7e2a5e5d8a22f345d79026b6d758ae8c
   branch: f-master
   specs:
     spree_address_auto_complete (3.3.0)
