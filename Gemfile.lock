@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol/spree_pickup.git
-  revision: b16a90ca88b4f6d62d8858aa1dfe33ac7e5220e6
-  branch: deface
+  revision: 2113a89749019fd325db8a2da8062d241cb7fc7d
+  branch: master
   specs:
     spree_pickup (3.1.0)
       geocoder
