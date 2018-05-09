@@ -1,7 +1,7 @@
 {
   "name": "Spree Sandbox",
   "description":"demo store built with Spree",
-  "repository": "https://github.com/harsh-ag/spree-favorite-products-demo",
+  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku",
   "logo": "http://guides.spreecommerce.org/images/logo.png",
   "keywords": [
     "spree"
