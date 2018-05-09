@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_themes.git
-  revision: 6440603ef0fd9a52d5cfd7ab372ac1596461852d
+  revision: 960723e0332a400ef156c30751e288ef4f3a6957
   branch: appraise
   specs:
     vinsol_spree_themes (0.0.1)
@@ -404,4 +404,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
