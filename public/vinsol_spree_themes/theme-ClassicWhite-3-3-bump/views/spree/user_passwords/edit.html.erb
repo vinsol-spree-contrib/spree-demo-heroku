@@ -1,0 +1,20 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @spree_user } %>
+<div class="col-sm-6 col-sm-offset-3 login-section no-border">
+  <h3 class="section-heading"><%= Spree.t(:change_your_password) %></h3>
+  <div class="login-form-section">
+    <%= form_for @spree_user, :as => :spree_user, :url => spree.update_password_path, :method => :put do |f| %>
+      <div class="login-form-row">
+        <%= f.label :password, Spree.t(:password) %>
+        <%= f.password_field :password, :class => "global-input" %>
+      </div>
+      <div class="login-form-row">
+        <%= f.label :password_confirmation, Spree.t(:confirm_password) %>
+        <%= f.password_field :password_confirmation, :class => "global-input" %>
+      </div>
+      <div class="login-form-row">
+        <%= f.hidden_field :reset_password_token %>
+        <%= f.submit Spree.t(:update), :class => 'button-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

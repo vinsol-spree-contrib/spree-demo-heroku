@@ -1,0 +1,137 @@
+@import '../common/fonts.scss';
+@import '../common/variables.scss';
+@import '../common/mixins.scss';
+
+.cart-section {
+  .cart-table {
+    margin-top: 30px;
+  }
+
+  .cart-table-header {
+    border-bottom: none;
+    font-family: $secondary-font;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    background: transparent !important;
+  }
+
+  .line-item {
+    td {
+      padding: 20px 8px;
+    }
+  }
+
+  .cart-item-image {
+    img {
+      max-height: 80px;
+    }
+  }
+
+  .cart-item-description {
+    font-weight: 300;
+
+    h4 {
+      margin-bottom: 8px;
+      font-family: $secondary-font;
+      font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+
+  .cart-item-price {
+    color: $color-black;
+    font-size: 16px;
+  }
+
+  .cart-item-quantity {
+    input {
+      max-width: 100px;
+      border: solid 1px $border-grey;
+      font-size: 13px;
+      @include border-radius(0);
+    }
+  }
+
+  .cart-item-total {
+    color: $color-black;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .cart-total-row {
+    background: $light-grey-bg;
+
+    td {
+      padding: 20px 0;
+    }
+  }
+
+  .cart-coupon-block {
+    padding-left: 20px !important;
+
+    input {
+      width: 200px;
+      height: 44px;
+      border: solid 1px $color-black;
+      display: inline-block;
+      font-size: 13px;
+      @include border-radius(0);      
+    }
+  }
+
+  .cart-total-text {
+    padding-right: 10px !important;
+    font-size: 16px;
+  }
+
+  .cart-total-block {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .cart-back-button-block {
+    float: left;
+  }
+
+  .cart-update-button-block {
+    padding-right: 0;
+    float: right;
+    text-align: right;
+  }
+
+  .cart-button-or-text {
+    padding: 10px 10px 0;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .cart-section {
+    .cart-table {
+      margin-top: 0;
+    }
+
+    .cart-update-button-block {
+      width: $full;
+      padding-left: 0;
+      display: table;
+      float: none;
+      text-align: left;
+    }
+
+    .cart-back-button-block {
+      margin-top: 10px;
+      border-top: solid 1px $border-grey;
+      padding-top: 15px;
+      text-align: center;
+
+      .button-primary {
+        &.button-small {
+          width: $full;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+@import '../common/fonts.scss';
+@import '../common/variables.scss';
+@import '../common/mixins.scss';
+
+.global-header {
+  &#spree-header {
+    margin-bottom: 0;
+    border-bottom: solid 1px $border-grey;
+    background: $light-grey-bg;
+
+    #header {
+      padding-top: 12px;
+      padding-bottom: 0;
+      background: $color-white;
+    }
+  }
+
+  .header-mobile-menu-block {
+    display: none;
+  }
+
+  .header-logo {
+    font-family: $primary-font;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    b {
+      color: $link-maroon;
+    }
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  .header-top-navbar {
+    padding-top: 6px;
+    text-align: right;
+  }
+
+  .header-top-nav {
+    margin-left: 15px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .header-top-nav-link,
+  .cart-info {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    .amount {
+      display: none;
+    }
+  }
+
+  .header-cart-link {
+    position: relative;
+
+    .header-cart-count {
+      height: 12px;
+      padding: 0 3px;
+      display: inline-block;
+      color: $color-white;
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: 0;
+      vertical-align: super;
+      background: $link-maroon;
+      @include border-radius($full);
+    }
+  }
+}
+
+.header-mobile-cart-block {
+  display: none;
+}
+
+.header-primary-nav-row {
+  padding: 10px 0;
+}
+
+.header-primary-nav {
+  .header-primary-nav-block {
+    padding-top: 7px;
+  }
+
+  .header-primary-nav-holder {
+    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .header-primary-nav-link {
+    font-family: $secondary-font;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.header-search {
+  text-align: right;
+
+  .custom-select-holder {
+    width: 120px;
+  }
+
+  .header-search-input {
+    width: 250px;
+    height: 36px;
+    margin-left: -5px;
+    padding: 0 10px;
+    border: solid 1px $color-black;
+    display: inline-block;
+    font-size: 12px;
+    background: $color-white;
+  }
+
+  .header-search-button {
+    height: 36px;
+    margin-left: -3px;
+    border: none;
+    padding: 0 12px;
+    color: $color-white;
+    line-height: 36px;
+    background: $color-black;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-mobile-search-block {
+    width: $full;
+  }
+}
+
+@media (max-width: 767px) {
+  .global-header {
+    .header-logo {
+      font-size: 16px;
+    }
+
+    .header-mobile-menu-block {
+      display: inline-block;
+    }
+
+    .header-mobile-menu {
+      font-size: 16px;
+    }
+  }
+
+  .header-primary-nav,
+  .header-top-navbar {
+    display: none;
+  }
+
+  .header-search {
+    text-align: left;
+    .custom-select-holder {
+      display: none;
+    }
+
+    .header-search-input {
+      width: 84%;
+    }
+
+    .header-search-button {
+      margin-left: -4px;
+    }
+  }
+
+  .header-mobile-cart-block {
+    padding-top: 5px;
+    display: block;
+    text-align: right;
+
+    .glyphicon {
+      display: none;
+    }
+  }
+}
+
+.header-mobile-nav-dropdown {
+  width: $full;
+  height: $full;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, .7);
+  @include transition(all, .3s, ease-in-out);
+
+  &.visible {
+    right: 0;
+  }
+
+  .header-mobile-dropdown-close {
+    position: absolute;
+    top: 12px;
+    right: 11px;
+    color: $color-white;
+    font-size: 24px;
+  }
+
+  .header-mobile-nav-holder {
+    width: 86%;
+    height: $full;
+    padding: 20px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $link-maroon;
+  }
+
+  .header-top-nav {
+    width: $full;
+    border-bottom: solid 1px $light-grey-bg;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .header-top-nav-link {
+    padding: 8px 0;
+    display: block;
+    color: $color-white;
+    font-size: 13px;
+
+    .glyphicon {
+      display: none;
+    }
+  }
+}

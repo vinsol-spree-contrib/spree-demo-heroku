@@ -1,0 +1,252 @@
+@import '../common/fonts.scss';
+@import '../common/variables.scss';
+@import '../common/mixins.scss';
+
+.checkout-section {
+  .checkout-progress-block {
+    margin-top: 20px;
+    border: solid 1px $border-grey;
+    padding: 15px;
+    background: $light-grey-bg;
+
+    .progress-steps {
+      width: $full;
+      margin-top: 0;
+      display: table;
+    }
+
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+
+      &.active {
+        background: $color-black;
+
+        a {
+          font-family: $secondary-font;
+          font-size: 13px;
+          font-weight: 300;
+          text-transform: uppercase;
+          background: transparent;
+        }
+      }
+    }
+
+    .nav-pills {
+      & > li {
+        &+ li {
+          margin-left: 0;
+        }
+
+        a {
+          display: inline-block;
+          font-family: $secondary-font;
+          font-size: 13px;
+          font-weight: 300;
+          text-transform: uppercase;
+          @include border-radius(0);
+
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-content-section {
+    margin-top: 30px;
+  }
+
+  #checkout-summary {
+    width: $full;
+    float: right;
+  }
+
+  .checkout-left-section {
+    width: $full;
+    float: left;
+  }
+
+  .checkout-address-save-block {
+    padding-top: 10px;
+  }
+
+  .checkout-address-button-row {
+    margin-top: 30px;
+    border-top: solid 1px $border-grey;
+    padding-top: 20px;
+  }
+}
+
+.checkout-address-form {
+  margin-top: 30px;
+
+  .checkout-billing-address-block {
+    margin-top: 20px;
+  }
+
+  .checkout-address-form-row {
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      abbr {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .checkout-form-hint-link {
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: none;
+  }
+}
+
+.checkout-shipping-address-form {
+  margin-top: 50px;
+}
+
+.checkout-summary-block {
+  border: solid 1px $border-grey;
+  padding: 15px;
+  background: $light-grey-bg;
+
+  .checkout-order-summery-total {
+    color: $color-black;
+    font-size: 18px;
+  }
+}
+
+.checkout-delivery-section {
+  .checkout-delivery-block {
+    margin-top: 20px;
+  }
+
+  .checkout-devivery-block-title {
+    font-family: $secondary-font;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .checkout-delivery-table {
+    margin-top: 20px;
+
+    th {
+      border-bottom: solid 1px $border-grey !important;
+      font-family: $secondary-font;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: transparent !important;
+    }
+  }
+
+  .checkout-delivery-shipping-row {
+    border-top: solid 1px $light-grey-bg;
+    padding: 10px 0;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    label {
+      margin-bottom: 0;
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+}
+
+.checkout-payment-section {
+  checkout-payment-block {
+    margin-top: 20px;
+  }
+}
+
+.checkout-order-section {
+  .checkout-order-block {
+    margin-top: 20px;
+  }
+
+  .checkout-order-details-block {
+    padding: 10px;
+    background: $light-grey-bg;
+  }
+
+  .checkout-order-itmes-table {
+    margin-top: 30px;
+  }
+}
+
+.checkout-user-section {
+  margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+  .checkout-section {
+    .checkout-progress-block {
+      padding: 10px;
+
+      li {
+        width: $full;
+      }
+
+      .nav-pills {
+        > li {
+          a {
+            margin-bottom: 0;
+            padding: 6px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-left-section {
+    margin-top: 30px;
+  }
+
+  .checkout-address-form {
+    .checkout-address-form-row {
+      margin-top: 0;
+    }
+
+    .checkout-address-form-block {
+      margin-top: 15px;
+    }
+  }
+
+  .checkout-address-form {
+    .checkout-address-form-row {
+      margin-top: 20px;
+    }
+  }
+
+  .checkout-order-section {
+    .checkout-order-details-block {
+      margin-top: 20px;
+    }
+
+    .checkout-order-buttons-row {
+      .button-primary {
+        &.button-small {
+          width: $full;
+          margin-top: 10px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

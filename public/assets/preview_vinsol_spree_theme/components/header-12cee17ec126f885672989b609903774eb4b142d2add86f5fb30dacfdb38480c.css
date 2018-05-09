@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Gudea:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i");
+.global-header#spree-header {
+  margin-bottom: 0;
+  border-bottom: solid 1px #c7c7c7;
+  background: #f7f7f9; }
+  .global-header#spree-header #header {
+    padding-top: 12px;
+    padding-bottom: 0;
+    background: #fff; }
+.global-header .header-mobile-menu-block {
+  display: none; }
+.global-header .header-logo {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  .global-header .header-logo b {
+    color: #C14463; }
+  .global-header .header-logo:hover {
+    color: #000; }
+.global-header .header-top-navbar {
+  padding-top: 6px;
+  text-align: right; }
+.global-header .header-top-nav {
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: top; }
+.global-header .header-top-nav-link,
+.global-header .cart-info {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  .global-header .header-top-nav-link .amount,
+  .global-header .cart-info .amount {
+    display: none; }
+.global-header .header-cart-link {
+  position: relative; }
+  .global-header .header-cart-link .header-cart-count {
+    height: 12px;
+    padding: 0 3px;
+    display: inline-block;
+    color: #fff;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 0;
+    vertical-align: super;
+    background: #C14463;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%; }
+
+.header-mobile-cart-block {
+  display: none; }
+
+.header-primary-nav-row {
+  padding: 10px 0; }
+
+.header-primary-nav .header-primary-nav-block {
+  padding-top: 7px; }
+.header-primary-nav .header-primary-nav-holder {
+  margin-left: 20px;
+  display: inline-block;
+  position: relative; }
+  .header-primary-nav .header-primary-nav-holder:first-child {
+    margin-left: 0; }
+.header-primary-nav .header-primary-nav-link {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  font-weight: 400; }
+
+.header-search {
+  text-align: right; }
+  .header-search .custom-select-holder {
+    width: 120px; }
+  .header-search .header-search-input {
+    width: 250px;
+    height: 36px;
+    margin-left: -5px;
+    padding: 0 10px;
+    border: solid 1px #000;
+    display: inline-block;
+    font-size: 12px;
+    background: #fff; }
+  .header-search .header-search-button {
+    height: 36px;
+    margin-left: -3px;
+    border: none;
+    padding: 0 12px;
+    color: #fff;
+    line-height: 36px;
+    background: #000; }
+
+@media (min-width: 768px) {
+  .header-mobile-search-block {
+    width: 100%; } }
+@media (max-width: 767px) {
+  .global-header .header-logo {
+    font-size: 16px; }
+  .global-header .header-mobile-menu-block {
+    display: inline-block; }
+  .global-header .header-mobile-menu {
+    font-size: 16px; }
+
+  .header-primary-nav,
+  .header-top-navbar {
+    display: none; }
+
+  .header-search {
+    text-align: left; }
+    .header-search .custom-select-holder {
+      display: none; }
+    .header-search .header-search-input {
+      width: 84%; }
+    .header-search .header-search-button {
+      margin-left: -4px; }
+
+  .header-mobile-cart-block {
+    padding-top: 5px;
+    display: block;
+    text-align: right; }
+    .header-mobile-cart-block .glyphicon {
+      display: none; } }
+.header-mobile-nav-dropdown {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.7);
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .header-mobile-nav-dropdown.visible {
+    right: 0; }
+  .header-mobile-nav-dropdown .header-mobile-dropdown-close {
+    position: absolute;
+    top: 12px;
+    right: 11px;
+    color: #fff;
+    font-size: 24px; }
+  .header-mobile-nav-dropdown .header-mobile-nav-holder {
+    width: 86%;
+    height: 100%;
+    padding: 20px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #C14463; }
+  .header-mobile-nav-dropdown .header-top-nav {
+    width: 100%;
+    border-bottom: solid 1px #f7f7f9;
+    margin-left: 0;
+    text-align: left; }
+  .header-mobile-nav-dropdown .header-top-nav-link {
+    padding: 8px 0;
+    display: block;
+    color: #fff;
+    font-size: 13px; }
+    .header-mobile-nav-dropdown .header-top-nav-link .glyphicon {
+      display: none; }

@@ -1,0 +1,20 @@
+<% @body_id = 'login' %>
+<div class="col-sm-6 login-section <%= request.path == spree.login_path ? "" : "" %>">
+  <h3 class="section-heading"><%= Spree.t(:login_as_existing) %></h3>
+  <div id="existing-customer" class="login-form-section" data-hook="login">
+      <% if flash[:alert] %>
+        <div class="alert alert-danger"><%= flash[:alert] %></div>
+      <% end %>
+      <%= render :partial => 'spree/shared/login' %>
+      <div class="login-form-row">
+        <%= link_to Spree.t(:forgot_password), spree.recover_password_path %>
+      </div>
+      <div data-hook="login_extras"></div>
+  </div>
+</div>
+<div class="col-sm-6 login-other-section">
+  <div class="login-other-block text-center">
+    <div class="login-or-text"><%= Spree.t(:or) %></div>
+    <div class="login-button-block login-form-row"><%= link_to Spree.t(:create_a_new_account), spree.signup_path, class: 'button-primary button-small button-white' %></div>
+  </div>
+</div>

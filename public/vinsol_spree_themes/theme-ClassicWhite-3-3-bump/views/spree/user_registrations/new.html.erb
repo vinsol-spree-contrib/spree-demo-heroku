@@ -1,0 +1,20 @@
+<% @body_id = 'signup' %>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<div class="col-sm-6 login-section">
+  <h3 class="section-heading"><%= Spree.t(:new_customer) %></h3>
+  <div id="new-customer" class="login-form-section" data-hook="login">
+    <%= form_for resource, :as => :spree_user, :url => spree.registration_path do |f| %>
+      <div data-hook="signup_inside_form">
+        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+        <div class="login-form-row"><%= f.submit Spree.t(:create), :class => 'button-primary' %></div>
+      </div>
+    <% end %>
+    <div data-hook="login_extras"></div>
+  </div>
+</div>
+<div class="col-sm-6 login-other-section">
+  <div class="login-other-block text-center">
+    <div class="login-or-text"><%= Spree.t(:or) %></div>
+    <div class="login-button-block login-form-row"><%= link_to Spree.t(:login_as_existing), spree.login_path, class: 'button-primary button-small button-white' %></div>
+  </div>
+</div>
