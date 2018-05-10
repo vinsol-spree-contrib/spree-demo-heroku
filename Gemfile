@@ -61,4 +61,4 @@ version = 'master'
 gem 'spree',                                      github: 'spree/spree',                                          branch: version
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
-gem 'spree_address_auto_complete',                github: 'vinsol-spree-contrib/spree_address_auto_complete',     branch: 'f-master'
+gem 'spree_address_auto_complete',                github: 'vinsol-spree-contrib/spree_address_auto_complete',     branch: version
