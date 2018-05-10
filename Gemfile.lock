@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_promo_users_codes.git
-  revision: 607b50c5df81c5fd62e34e8e5d02b01301e3b9b3
-  branch: f-master
+  revision: 1054181325f97322bba6188591bc0c7edcad8cec
+  branch: master
   specs:
     spree_promo_users_codes (3.3.0)
       spree_core (>= 3.2.0, < 4.0.0)
