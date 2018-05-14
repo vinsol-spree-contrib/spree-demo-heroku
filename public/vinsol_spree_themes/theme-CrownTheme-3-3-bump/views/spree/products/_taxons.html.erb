@@ -1,0 +1,30 @@
+<% if @product.taxons.present? %>
+<script type="text/javascript" src="http://www.landmarkmlp.com/js-plugin/owl.carousel/owl-carousel/owl.carousel.js"></script>
+<div class="row">
+  <h3 class="page-title"><%= Spree.t(:Look_for_similar_items) %></h3>
+  <div class="list-group related-product-list fsh-demo" id="similar_items_by_taxon" data-hook data-slider="tab-slider">
+    <% @product.taxons.each do |taxon| %>
+    <div class="item">
+      <div class=" col-md-12 col-sm-12 col-xs-12 ">
+        <div class="panel panel-default">
+          <div class="panel-body text-center product-body">
+            <% product = taxon.products.last %>
+            <% if product.images.present? %>
+              <span class="image-box"><%= image_tag(product.images.last.attachment.url(:large), class:'img-responsive home-pd-img') %></span>
+            <% end %>
+            <%= link_to taxon.name, seo_url(taxon), class: 'link-overlay' %>
+          </div>
+          <div class="product-hover">
+              <div class="product-inner text-center">
+                  <span class="hover-icon">
+                      <a href="#"><i class="fa fa-eye fa-fw"></i> View </a>
+                  </span>         
+              </div>        
+            </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>

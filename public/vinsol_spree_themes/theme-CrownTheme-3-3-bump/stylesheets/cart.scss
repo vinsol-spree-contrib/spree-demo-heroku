@@ -1,0 +1,98 @@
+@import "variables";
+@import "mixins";
+
+.bold-text{
+  font-weight: bold;
+}
+.input-group-helper{
+  width:100%;
+}
+.add-to-cart{
+  margin-top:10px;
+}
+
+.cart-item-description h4 a{
+  color:$primary-color;
+  text-decoration: none;
+  &:hover{
+    color:$secondary-color  ;
+  }
+}
+.cart-item-price, .cart-item-total{
+  color:$primary-color;
+  width:12%;
+}
+.delete{color:$primary-color;}
+.cart-total{
+  background-color: $primary-color; 
+  color:$wh-color;
+  h4{
+    color:$wh-color;
+    margin-top:5px;
+  }
+}
+.cart-item-delete{width:6%;}
+.cart-item-quantity{width:10%;}
+a.continue{
+  color:$primary-color;
+  &:hover{
+    color:$secondary-color;
+  + .fa{
+      color: $secondary-color;
+    }
+  }
+  
+}
+
+input:disabled.btn{
+  &:hover, &:active,&:focus{
+    background-color:$wh-color;
+    color:$secondary-color;
+    border-color:$secondary-color;
+  }
+}
+.links{margin-top:-10px;margin-right:-15px;}
+#order_coupon_code{
+  @include border-radius(0px);
+}
+
+#empty-cart{
+  margin-top:25px;
+}
+.lead.price{
+  padding:0px;
+  display: table-cell;
+}
+.cart-btn-group{
+  background-color: transparent;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+@media screen and (min-width:768px) and (max-width:991px){
+  #order_coupon_code{
+    width:53%;
+  }
+  .table-responsive+.navbar-form{margin-top:0px;}
+  #checkout-summary{
+  position: relative !important;
+  padding-top:15px;
+  padding-bottom:10px;
+ }
+}
+@media screen and (max-width:767px){  
+  #order_coupon_code{
+    width:70%;
+    display: inline-block;
+  }
+  #order_coupon_code + .btn-default{
+    width:75px;
+    display: inline-block;
+    vertical-align: top;
+  }
+ #checkout-summary{
+  position: relative !important;
+  padding-top:15px;
+  padding-bottom:10px;
+ }
+ 
+}

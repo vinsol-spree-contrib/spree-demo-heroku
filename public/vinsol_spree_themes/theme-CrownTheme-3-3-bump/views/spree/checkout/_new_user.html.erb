@@ -1,0 +1,20 @@
+<div class="col-md-6 login-page">
+  <div class="panel panel-default text-center">
+    <div class="panel-heading form-heading">
+      <h3 class="page-title text-center"><%= Spree.t(:create_a_new_account) %></h3>
+    </div>
+    <div id="new-customer" class="panel-body" data-hook="login">
+      <%= form_for @user, :as => :spree_user, :url => spree.registration_path(@user) do |f| %>
+        <div data-hook="signup_inside_form">
+          <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+          <p><%= f.submit Spree.t(:create), :class => 'btn btn-info' %></p>
+        </div>
+      <% end %>
+      <div class="text-center log-links extras-link">
+        <span class="or-text"><%= Spree.t(:or) %></span>
+          <%= link_to Spree.t(:login_as_existing), spree.login_path %>
+      </div>
+      <div data-hook="login_extras"></div>
+    </div>
+  </div>
+</div>

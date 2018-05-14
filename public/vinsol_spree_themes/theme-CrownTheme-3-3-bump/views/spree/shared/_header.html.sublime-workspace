@@ -1,0 +1,414 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"borde",
+				"border-color"
+			],
+			[
+				"img",
+				"home-pd-img"
+			],
+			[
+				"DROP",
+				"mega-dropdown"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"paddng",
+				"padding-left"
+			],
+			[
+				"bl",
+				"black-color"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"cler",
+				"clear"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"padding-",
+				"padding-bottom"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"background-",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Install Package Control"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/products/_thumbnails.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/layouts/spree_application.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/stylesheets/product.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/products/show.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/home/index.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_products.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/products/_cart_form.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/javascripts/default.manifest.js",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/products/_taxons.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/javascripts/custom.js",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/stylesheets/header.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/address/_form.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/checkout/_summary.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/checkout/_address.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/orders/edit.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_login_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_main_nav_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_nav_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_header.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/shared/_order_details.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/checkout/_payment.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/stylesheets/footer.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/product.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/stylesheets/cart.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/products/_properties.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_nav_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current/views/spree/taxons/_taxon.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/products/_cart_form.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_products.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_search.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/header.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_header.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/orders/show.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_main_nav_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/checkout/_payment.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/initializers/assets.rb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/checkout/edit.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/checkout/_address.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/checkout/_delivery.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/default.manifest.css",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/orders/edit.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/products/_taxons.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_link_to_cart.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_footer.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/footer.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/variables.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/store/cart_link.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_login_bar.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/orders/_form.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/orders/_line_item.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/base.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/products/show.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/javascripts/default.manifest.js",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/javascripts/custom.js",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_taxonomies.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_filters.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/mixins.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/layouts/spree_application.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/views/spree/shared/_head.html.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/_variables.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/variable.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/font-awesome.min.css",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/font-awesome.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/font-awesome.scss.erb",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/abc.css",
+		"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/default/stylesheets/_header.scss",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/database.yml.example",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/database.yml",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/environments/development.rb",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/secrets.yml.example",
+		"/Users/vinsol/Desktop/projects/spree-themes/Gemfile",
+		"/Users/vinsol/Desktop/projects/spree-themes/config/secrets.yml",
+		"/Users/vinsol/Desktop/projects/spree_store_r5_s3/Gemfile",
+		"/Users/vinsol/Desktop/projects/spree_store_r5_s3/config/database.yml",
+		"/Users/vinsol/Desktop/projects/project1/index.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/vinsol/Desktop/projects/spree-themes/public/vinsol_spree_themes/current",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			">",
+			"search-bar",
+			"link-to-cart",
+			"navbar-right",
+			"Spree.fetch_account",
+			"nav_bar",
+			"nav-bar",
+			"order_coupon_code",
+			"%;",
+			"my-account-text",
+			"similar_items_by_taxon",
+			";\n",
+			"top-nav-bar",
+			"price",
+			"lead",
+			"checkout-step-address",
+			";\n",
+			"h4",
+			"\";\n",
+			";\n",
+			"breadcrumbs",
+			"{\n",
+			"black",
+			";\n",
+			"top-nav-bar",
+			"search-bar",
+			"_login_bar",
+			"f107",
+			"ruby"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "_header.html.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"thumbnails",
+				"public/vinsol_spree_themes/current/views/spree/products/_thumbnails.html.erb"
+			],
+			[
+				"spree/shared/nav_bar",
+				"public/vinsol_spree_themes/current/views/spree/shared/_nav_bar.html.erb"
+			],
+			[
+				"spree/shared/login_bar",
+				"public/vinsol_spree_themes/current/views/spree/shared/_login_bar.html.erb"
+			],
+			[
+				"cart_form",
+				"public/vinsol_spree_themes/current/views/spree/products/_cart_form.html.erb"
+			],
+			[
+				"_produ",
+				"public/vinsol_spree_themes/current/views/spree/shared/_products.html.erb"
+			],
+			[
+				"index",
+				"public/vinsol_spree_themes/current/views/spree/home/index.html.erb"
+			],
+			[
+				"_taxons",
+				"public/vinsol_spree_themes/current/views/spree/products/_taxons.html.erb"
+			],
+			[
+				"_taxon",
+				"public/vinsol_spree_themes/current/views/spree/taxons/_taxon.html.erb"
+			],
+			[
+				"_search",
+				"public/vinsol_spree_themes/default/views/spree/shared/_search.html.erb"
+			],
+			[
+				"_nav_bar",
+				"public/vinsol_spree_themes/default/views/spree/shared/_nav_bar.html.erb"
+			],
+			[
+				"assets",
+				"config/initializers/assets.rb"
+			],
+			[
+				"cart_for",
+				"public/vinsol_spree_themes/default/views/spree/products/_cart_form.html.erb"
+			],
+			[
+				"spree/shared/_head.html.erb",
+				"public/vinsol_spree_themes/default/views/spree/shared/_head.html.erb"
+			],
+			[
+				"spree/shared/search",
+				"public/vinsol_spree_themes/default/views/spree/shared/_search.html.erb"
+			],
+			[
+				"devel",
+				"config/environments/development.rb"
+			],
+			[
+				"secre",
+				"config/secrets.yml.example"
+			],
+			[
+				"data",
+				"config/database.yml.example"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 275.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

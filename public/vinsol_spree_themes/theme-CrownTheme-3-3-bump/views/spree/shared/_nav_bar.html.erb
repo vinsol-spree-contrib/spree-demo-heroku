@@ -1,0 +1,56 @@
+<nav class="navbar col-md-4 col-sm-6 col-xs-12" id="top-nav-bar">
+  <ul id="nav-bar" class="nav navbar-nav navbar-right navbar-right-list text-right" data-hook>
+  <li id="search-bar" class="" data-hook>
+      <%= render partial: 'spree/shared/search' %>
+    </li>
+    <li class="dropdown dropdown-account">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><span class="caret"></span></a>
+      <ul class="dropdown-menu ">
+        <% if spree_current_user %>
+          <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+          <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+        <% else %>
+          <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+        <% end %>
+      </ul>
+    </li>
+    
+    <li id="link-to-cart" data-hook>
+      <noscript>
+        <%= link_to_cart %>
+      </noscript>
+      &nbsp;
+    </li>
+      <script>Spree.fetch_cart()</script>
+    <li>
+      <input type="checkbox" id="navigation" class="menu" />
+      <label for="navigation" class="menu-label"><i class="fa fa-times"></i><i class="fa fa-bars"></i></label>
+      <div id="slide-nav-wrap">
+        <ul>
+        <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+        <% Spree::Taxonomy.all.each do |taxonomy| %>
+          <li>
+            <a href=""><%= taxonomy.name %></a>
+            <ul class="">
+              <% taxonomy.root.children.each do |taxon| %>
+                <li class="col-sm-12">
+                  <ul class="list-unstyled">
+                    <li class=""><a href=""><%= taxon.name %></a></li>
+                    <% taxon.children.limit(5).each do |t| %>
+                      <li><a href="#"><%= t.name %></a></li>
+                    <% end %>
+                    <% if taxon.children.count > 5 %>
+                      <li><%= link_to 'View all', '#' %></li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
+  

@@ -1,0 +1,328 @@
+@import 'variables';
+@import 'mixins';
+
+.product-body{
+  height:auto;
+}
+#products{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+}
+.product-list-item{
+  .panel-default{
+    border-color:transparent;
+    position: relative;
+    overflow: hidden;
+    @include box-shadow(0,0,0,transparent);
+    .link-overlay{
+      display: block;
+      position: absolute;
+      left:0;
+      right: 0;
+      top:0;
+      bottom:0;
+      z-index: 1;
+    } 
+  }
+  &:hover{
+    .panel-default{
+      @include box-shadow(0px, 0px,6px,rgba($primary-color, 0.2));
+    }
+  }
+  a{
+    .home-pd-img{
+      margin-left:auto;
+      margin-right:auto;
+      float:none;
+      
+    }
+    .info{
+      color:$primary-color;
+      text-decoration: none;
+    }
+  }
+  .panel-footer{
+    background-color:transparent;
+    border:0px;
+  }
+  .product-hover{
+    opacity: 0;
+    @include transition(all 0.0s);
+    position: absolute;
+    left:15px;
+    top:-45px;
+    right: 15px;
+    bottom:0;
+    .hover-icon{
+      display: inline-block;
+      a{
+        display: inline-block;
+        background-color: $primary-color;
+        padding: 10px 15px;
+        color:$wh-color;
+
+      }
+    }
+  }
+  &:hover{
+    a{
+      text-decoration: none;
+      .info{
+        color:$secondary-color;
+        text-decoration: none;
+      }
+    }
+    .home-pd-img{
+        opacity:0.3;
+    }
+    .product-hover{
+      opacity: 1;
+      top:50%;
+      margin-top:-20px;
+      @include transition(all 0.7s, ease-in-out);
+    }
+  }
+}
+.image-box{
+  max-height:300px;
+  min-height: 250px;
+  display: block;
+  position: relative;
+  .home-pd-img{
+    position: absolute;
+    left:50%;
+    top:50%;
+    @include transform(translate(-50%, -50%));
+    max-height: 100%;
+    max-width: auto;
+  }
+  @media screen and (max-width:767px){
+    min-height:170px;
+    max-height:none;
+  }
+}
+.related-product-list{
+  .panel-default{
+    border-color:transparent;
+    position: relative;
+    overflow: hidden;
+    @include box-shadow(0,0,0,transparent);
+    .link-overlay{
+      display: block;
+      position: absolute;
+      left:0;
+      right: 0;
+      top:0;
+      bottom:0;
+      z-index: 1;
+      color:$primary-color;
+      text-decoration:none;
+      padding-top:10px;
+      font-size: 20px;  
+    } 
+    .home-pd-img{
+      margin-top:20px;
+      margin-bottom: 20px;
+    }
+    &:hover{
+      @include box-shadow(0px, 0px,6px,rgba($primary-color, 0.2));
+      .product-hover{
+        opacity: 1;
+        top:50%;
+        margin-top:-20px;
+        @include transition(all 0.7s, ease-in-out);
+      }
+      .home-pd-img{
+        opacity:0.3;
+      }
+    }
+    .product-hover{
+      opacity: 0;
+      @include transition(all 0.0s);
+      position: absolute;
+      left:15px;
+      top:-45px;
+      right: 15px;
+      bottom:0;
+      .hover-icon{
+        display: inline-block;
+        a{
+          display: inline-block;
+          background-color: $primary-color;
+          padding: 10px 15px;
+          color:$wh-color;
+
+        }
+      }
+    }
+  }
+}
+.sidebar-item{
+  .taxonomy-root{
+    color:$primary-color;
+    position: relative;
+    padding-bottom: 15px;
+    margin-top:15px;
+    &:after{
+      content:'';
+      position: absolute;
+      left:0;
+      bottom:0px;
+      height: 2px;
+      width: 50px;
+      background-color: $secondary-color;
+    }  
+  }
+  .list-group{
+    border-radius: 0px;
+    background-color: $light-gray-color;
+    padding: 15px;
+    a{
+      background-color: transparent;
+      border-radius: 0px;
+      border:0px;
+      border-bottom:1px solid rgba($primary-color,0.1) ;  
+      position: relative;
+      padding-left:20px;
+      color: $primary-color;
+      &:last-child{
+        border-bottom:0px;
+      }
+      &:before{
+        content:'\f105';
+        position: absolute;
+        font-family: FontAwesome;
+        left:5px;
+      }
+      &:hover, &:active, &:focus{
+        background-color: $primary-color;
+        @include transition(all, 0.3s);
+        color:$secondary-color;
+        padding-left: 30px;
+        &:before{
+          @include transform(translateX(10px));
+          @include transition(all, 0.3s);
+        }
+      }
+    }
+  }
+}
+.taxon-title{
+  color:$primary-color;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top:15px;
+  &:after{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom:0px;
+    height: 2px;
+    width: 50px;
+    background-color: $secondary-color;
+  }  
+}
+.subtaxon-title{
+  color:$primary-color;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top:15px;
+  a{
+    color: $primary-color;
+    text-decoration: none;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    left:0;
+    bottom:0px;
+    height: 2px;
+    width: 50px;
+    background-color: $secondary-color;
+  } 
+  &:hover,&:focus{
+    &:after{
+      width:100px;
+      @include transition(all, 0.5s);
+    }
+    a{
+      color:$secondary-color;
+    }
+  }
+}
+
+.product-detail-container{
+  padding-top:30px;
+  .product-title, .properties-heading{
+    color:$primary-color;
+    position: relative;
+    padding-bottom: 15px;
+    margin-top:0px;
+    &:after{
+      content:'';
+      position: absolute;
+      left:0;
+      bottom:0px;
+      height: 2px;
+      width: 50px;
+      background-color: $secondary-color;
+    }  
+  }
+  .product-info-box{
+    background-color: transparent;
+    border-radius:0px;
+    border:0px;
+    box-shadow: none;
+    padding:0px;
+  }
+  #cart-form{
+    margin-bottom:20px;
+  }
+  #main-image{
+    & img{
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+  @media screen and (min-width:768px) and (max-width: 991px){
+    margin:0px;
+  } 
+}
+#taxon-crumbs{
+  border-top:1px solid $light-gray-color;
+  .list-group-item{
+    border:0px;
+    display: inline-block;
+    background-color: $light-gray-color;
+    @include border-radius(0px);
+    a{
+      text-decoration: none;
+      color:$primary-color;
+    }
+    &:hover{
+      background-color: $gray-color;
+      a{
+        color:$light-gray-color;
+      }
+    }
+  }
+}
+.table-properties{
+  border:1px solid #ddd;
+  .td-head{
+    background-color: $light-gray-color;
+    width:50%;
+  }
+}
+
+.variant-list{
+  li{
+    display: inline-block;
+    width:32.5%;
+    @media screen and (max-width:767px){
+      width:100%;
+    }
+  }
+}
