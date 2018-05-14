@@ -1,0 +1,32 @@
+<% if @product.taxons.present? %>
+<div class="row">
+  <h3 class="product-section-title"><%= Spree.t(:Related_products) %></h3>
+  <div class="list-group related-product-list row" id="similar_items_by_taxon" data-hook>
+    <% @product.taxons.each do |taxon| %>
+      <div class=" col-md-4 col-sm-6 col-xs-12">
+        <div class="product-col">
+          <% product = taxon.products.last %>
+          <% if product.images.present? %>
+            <%= image_tag(product.images.last.attachment.url(:large), class:'img-responsive home-pd-img') %>
+          <% end %>
+          <%= link_to taxon.name, seo_url(taxon), class: 'link-overlay' %>
+          <div class="hover-content">
+            <div class="hover-content_inner">
+              <div class="hover-content_inner1">
+                <!--  <span class="hover-icon">
+                  <a href="#"><i class="fa fa-shopping-cart fa-fw"></i></a>
+                </span>-->
+                <span class="hover-icon">
+                    <a href="#"><i class="fa fa-eye fa-fw"></i></a>
+                </span>
+              </div>          
+            </div>        
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
+

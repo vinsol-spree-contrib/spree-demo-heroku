@@ -1,0 +1,7 @@
+<% if spree_current_user %>
+  <li><i class="fa fa-user"></i> <%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li><i class="fa fa-power-off"></i><%= link_to Spree.t(:logout), spree.logout_path %></li>
+<% else %>
+  <li id="link-to-login" class="heading-nav-holder"><i class="fa fa-sign-in"></i> <%= link_to Spree.t(:login), spree.login_path %></li>
+<% end %>
+

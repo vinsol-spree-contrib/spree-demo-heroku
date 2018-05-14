@@ -1,0 +1,115 @@
+.cart-item-description h4 a {
+  color: #b6a08e; }
+
+.cart-item-price, .cart-item-total {
+  color: #b6a08e;
+  width: 12%; }
+
+.delete {
+  color: #333; }
+
+.cart-total {
+  background-color: #333;
+  color: #fff; }
+  .cart-total h4 {
+    color: #fff;
+    margin-top: 5px; }
+
+.cart-item-delete {
+  width: 6%; }
+
+.cart-item-quantity {
+  width: 10%; }
+
+a.continue {
+  color: #b6a08e; }
+
+.btn-primary {
+  background-color: #333;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -mx-border-radius: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px; }
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #fff;
+    color: #333;
+    border-color: #333; }
+
+.btn-success {
+  background-color: #b6a08e;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -mx-border-radius: 0px;
+  border-color: #ddd;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px; }
+  .btn-success:hover, .btn-success:focus, .btn-success:active {
+    background-color: transparent;
+    color: #b6a08e;
+    border-color: #b6a08e; }
+
+input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
+  background-color: #fff;
+  color: #b6a08e;
+  border-color: #b6a08e; }
+
+.links {
+  margin-top: -10px;
+  margin-right: -15px; }
+
+#order_coupon_code {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -mx-border-radius: 0px; }
+
+.btn-default {
+  background-color: #f5f5f5;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -mx-border-radius: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333; }
+  .btn-default:hover, .btn-default:focus {
+    background-color: transparent;
+    border-color: #333; }
+
+#empty-cart {
+  margin-top: 25px; }
+
+.lead.price {
+  padding: 0px;
+  display: table-cell; }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  #order_coupon_code {
+    width: 53%; }
+
+  .table-responsive + .navbar-form {
+    margin-top: 0px; }
+
+  #checkout-summary {
+    position: relative !important;
+    padding-top: 15px;
+    padding-bottom: 10px; } }
+@media screen and (max-width: 767px) {
+  #order_coupon_code {
+    width: 70%;
+    display: inline-block; }
+
+  #order_coupon_code + .btn-default {
+    width: 75px;
+    display: inline-block;
+    vertical-align: top; }
+
+  #checkout-summary {
+    position: relative !important;
+    padding-top: 15px;
+    padding-bottom: 10px; } }

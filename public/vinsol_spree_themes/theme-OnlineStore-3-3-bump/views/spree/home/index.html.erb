@@ -1,0 +1,20 @@
+
+<% @body_id = 'home-page' %>
+
+<div class="col-md-12 col-sm-12 hotspot-wrapper">
+  <!-- <img src="vinsol_spree_themes/current/images/bag-1050608_1920.jpg" alt="..." class="img-responsive"> -->
+  <%= image_tag 'bag-1050608_1920.jpg', alt: '', class: 'img-responsive' %>
+  <div class="hotspot-text">
+      <h1>Handbag</h1>
+      <p>Get through the rigors of school and travel in style</p>
+      <%= link_to 'Shop Now', nested_taxons_path(Spree::Taxon.where(name: 'Bags').first.permalink), class: 'btn' %>
+  </div>
+</div>
+
+
+<div data-hook="homepage_products"  >
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <% end %>
+</div>
+

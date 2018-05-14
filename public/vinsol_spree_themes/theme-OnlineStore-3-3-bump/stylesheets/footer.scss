@@ -1,0 +1,129 @@
+@import "variables";
+@import "mixins";
+
+#spree-footer{background-color:$primary-bg-color;}
+#newsletter-footer{
+  width: 400px;
+  max-width:100%;
+  margin:0 auto;
+  padding-top: 25px;
+}
+#newsletter-footer .input-wrapper{
+  display:inline-block;
+  line-height: 48px;
+  vertical-align: middle;
+}
+#newsletter-footer input[name="email"] {
+  border: medium none;
+  @include border-radius(35px 0 0 35px);
+  box-shadow: none;
+  background: $wh-color;
+  font-size: 14px;
+  padding-left: 20px;
+  border:1px $link-color solid;
+  color:$black-color;
+  padding-top:0px;
+  padding-bottom: 0px;
+}
+.block_newsletter form input[name="submitNewsletter"] {
+  border: medium none;
+  @include border-radius(0 35px 35px 0);
+  box-shadow: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: $black-color;
+  border:1px $black-color solid;
+  line-height: 47px;
+  padding-top:0px;
+  padding-bottom: 0px;    
+  margin-left:-4px;
+  &:disabled{
+    &:hover{
+      color:$black-color !important;
+    }
+  }
+  &:hover{
+    color:$wh-color;
+  }
+}
+.block_newsletter {
+  margin: 0;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background-color: $link-color;
+}
+.block_newsletter h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-top: 0px;
+  color:$wh-color;
+}
+.block_newsletter p {
+  color: $wh-color;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.block_newsletter p span{
+  font-weight: bold;
+}
+
+.dor-bottom-footer .social-link {
+  display: table;
+  margin: 0 auto;
+}
+.dor-bottom-footer .social-link li {
+  float: left;
+  margin: 0 7.5px;
+}
+.dor-bottom-footer .social-link a {
+  border: 1px solid #ededed;
+  border-radius: 50%;
+  color: $black-color;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 33px;
+  padding-left: 1px;
+  text-align: center;
+  width: 34px;
+  &:hover{
+    color:$wh-color;
+    background-color:$link-color;
+    text-decoration: none;
+  }
+}
+.dor-bottom-footer .footer-menu {
+  padding-bottom: 8px;
+  padding-top: 27px;
+  text-align: center;
+}
+.dor-bottom-footer .footer-menu li {
+  display: inline-block;
+  margin: 0 13px 10px;
+}
+.dor-bottom-footer .footer-menu li a {
+  color:$black-color;
+  &:hover{
+    color:$link-color;
+  }
+}
+.dor-bottom-footer address {
+    text-align: center;
+}
+.footer-container {
+  border-top: 1px dashed $border-color;
+  padding-bottom: 55px;
+  padding-top: 80px;
+  text-align: center;
+}
+.copy{
+  color:$black-color;
+}
+@media screen and (max-width:767px){
+  .dor-bottom-footer .footer-menu li{
+    display: block; 
+  }
+  #newsletter-footer .input-wrapper{
+    width:60%;
+  }
+}
