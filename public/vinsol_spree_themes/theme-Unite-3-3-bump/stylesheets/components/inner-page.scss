@@ -1,0 +1,281 @@
+@import "custom-checkbox";
+@import "owl_carousel";
+@import url('https://fonts.googleapis.com/css?family=Niconne');
+
+.theme-container {
+  &.main-container{
+    padding-top:85px;
+   
+  }
+  .list-group-item{
+    &.active{
+      background-color:#df9300;
+      border-color:#df9300;
+    }
+  }
+  .breadcrumb{
+    li{
+      a{
+        color:#000;
+      }
+      &.active{
+        a{
+          color:#df9300;
+        }
+      }
+    }
+  }
+  .subtaxon-title{
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+    font-size: 30px;
+    color: #000;
+    position: relative;
+    &:before{
+      content:'';
+      width:30px;
+      height: 4px;
+      background-color: #df9300;
+      position: absolute;
+      bottom: 0;
+    }
+    a{
+      color:#000;
+      text-decoration: none;
+      &:hover, &:focus{
+        text-decoration:none;
+      }
+    }
+  }
+}
+.bg-orange{
+  background-color:#df9300;
+  border-color:#df9300;
+  &:hover, &:focus{
+    background-color:#000;
+    border-color:#000;
+  }
+  &:active{
+    &:hover, &:focus{
+      background-color:#000;
+      border-color:#000;
+    }
+  }
+}
+.bg-gray{
+  background-color:#333;
+  border-color:#333;
+  &:hover{
+    background-color:#000;
+    border-color:#000;
+  }
+}
+.color-orange{
+  color:#df9300;
+}
+.order-number{
+  a{
+    color:#df9300;
+  }
+}
+#similar_items_by_taxon{
+  a{
+    color:#df9300;
+  }
+}
+.pagination{
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  li{
+    display:inline-block;
+    margin-left:-4px;
+    a{
+      color:#000;
+    }
+    &.active{
+      a{
+        background-color:#df9300;
+        color:#fff;
+        border-color: #df9300;
+      }
+    }
+    &.active{
+      a:hover{
+        background-color:#df9300;
+        color:#fff;
+        border-color: #df9300;
+      }
+    }
+  }
+}
+.cart-item-description{
+  a{
+    color:#000;
+  }
+}
+.cart-item-delete{
+  a{
+  color:#df9300;
+  }
+}
+
+#sidebar{
+  
+  padding: 0 15px 0 15px;
+  h4{
+    padding-left:0px;
+    margin:0px;
+    border-bottom: 4px solid #df9300;
+    color:#000;
+    line-height: 50px;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .list-group{
+    margin-bottom:0px;
+    border:0px !important;
+    .list-group-item{
+      border-bottom:0;
+      border-right:0;
+      border-left:0;
+      border-radius:0px;
+      &:first-child{
+        border-top:0;
+      }
+    }
+  }
+}
+.root-category.category-page{
+  h1.taxon-title{
+    height:250px;
+    width:100%;
+    background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);
+    background-color: #000;
+    background-size:100%;
+    background-position: center;
+    color: #000; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 70px;
+    font-family: 'Niconne', cursive;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  &.Men, &.Clothing{
+    h1.taxon-title{
+    background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);
+    font-size: 0;
+    }
+  }
+  &.New.Arrivals{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg);
+      font-size: 0;
+    }
+  }
+  &.Women{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
+      font-size: 0;
+    }
+  }
+  &.Bags{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/bags/bag-1853847_1920.jpg);
+      font-size: 0;
+    }
+  }
+}
+.leaf-category.category-page{
+  h1.taxon-title{
+    height:250px;
+    width:100%;
+    background-color: #000;
+    background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);    
+    background-size:100%;
+    background-position: center;
+    color: #000; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 70px;
+    font-family: 'Niconne', cursive;
+    text-shadow: 1px 1px 1px #fff;
+  }
+  &.Men, &.Shirts, &.T-Shirts{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/men/banner-men.jpg);    
+      font-size: 0;
+    }
+  }
+  &.New.Arrivals{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg);
+      font-size: 0;
+    }
+  }
+  &.Women{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
+      font-size: 0;
+    }
+  }
+  &.Bags{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/bags/bag-1853847_1920.jpg);
+      font-size: 0;
+    }
+  }
+  &.Home-Decor{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/home-decor/home-decor-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Watches{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/watches/watch-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Shoes{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/shoes/legs-3302442_1920.jpg);
+      font-size: 0;
+    }
+  }
+  &.Kids{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/kids/kids-banner.jpg);
+      font-size: 0;
+    }
+  }
+  &.Mugs{
+    h1.taxon-title{
+      background-image:url(/vinsol_spree_themes/current/images/category/mugs/morning-819362_1920.jpg);
+      font-size: 0;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px){
+  .coupen-code-form{
+    label{
+      width:100%;
+      vertical-align: top;
+      input{
+        display:inline-block;
+        width:calc(100% - 75px);
+      }
+    }
+    button{
+      display: inline-block;
+      margin-top:-5px;
+    }
+  }
+}

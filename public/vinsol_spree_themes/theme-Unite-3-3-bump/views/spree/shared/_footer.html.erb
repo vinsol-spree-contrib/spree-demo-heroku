@@ -1,0 +1,32 @@
+<footer class="theme-footer col-md-12">
+  <div class="row user-view-choice">
+    <%= link_to 'Shop By Category', :products,  class:'col-sm-6 col-xs-12 footer-heading' %>
+    <%= link_to 'Shop By Brands', :products,  class:'col-sm-6 col-xs-12 footer-heading' %>
+  </div>
+
+  <div class="row footer-btm-row text-center">
+    <% taxonomy = Spree::Taxonomy.first %>
+    <p class="footer-menu-link">
+      <% taxonomy.root.children.each_with_index do |taxon, i| %>
+        <% if ( @body_id == 'home-page' ) %>
+          <%= link_to taxon.name, 't/' + taxon.permalink  %>
+        <% else %>
+          <%= link_to taxon.name %>
+        <% end %>
+      <% end %>
+    </p>
+
+    <p class="general-info-links">
+      <a href="javaScript:void(0)">TERMS OF USE</a>
+      <a href="javaScript:void(0)">CONTACT US</a>
+      <a href="javaScript:void(0)">FAQ's</a>
+    </p>
+
+    <p class="footer-social-links">
+      <a href="javaScript:void(0)"><i class="fa fa-facebook-square"></i>Facebook</a>
+      <a href="javaScript:void(0)"><i class="fa fa-twitter-square"></i>Twitter</a>
+      <a href="javaScript:void(0)"><i class="fa fa-instagram"></i>Instagram</a>
+    </p>
+    <p>&copy; 2017 - Theme all right reserved</p>
+  </div>
+</footer>

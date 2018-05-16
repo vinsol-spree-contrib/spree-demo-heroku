@@ -1,0 +1,35 @@
+<% if @product.taxons.present? %>
+  <div class="col-md-12 col-sm-12">
+    <h3 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h3>
+  </div>
+  <div class="col-md-12 col-sm-12">
+    <div class="list-group similar-box-item related-product-list  " id="similar_items_by_taxon" data-hook data-slider="tab-slider">
+      <% @product.taxons.each do |taxon| %>
+        <div class="item col-md-12 col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <% product = taxon.products.last %>
+                <% if product.images.present? %>
+                  <figure class="text-center figure">
+                    <span class="img-overlay"></span>
+                    <%= image_tag(product.images.last.attachment.url(:large), class:'product-img') %> 
+                </figure> 
+                <% end %>
+                <div class="product-ino-bar text-center">
+                  <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="item-price">
+                    <strong class="price selling" itemprop="price"><%= display_price(product) %></strong>
+                  </p>
+                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %><br>
+                  
+                </div>
+                <%= link_to taxon.name, seo_url(taxon), class:"link-overlay" %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
+
+            

@@ -1,0 +1,27 @@
+<% @body_id = 'signup' %>
+<div class="row no-margin text-center">
+  <div id="login-logo" class="text-center" data-hook>
+    <%= logo %>
+  </div>
+</div>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= Spree.t(:new_customer) %></h3>
+    </div>
+      <div id="new-customer" class="panel-body text-center" data-hook="login">
+          <%= form_for resource, :as => :spree_user, :url => spree.registration_path do |f| %>
+            <div data-hook="signup_inside_form" class="text-center">
+              <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+              <p class="text-center"><%= f.submit Spree.t(:create), :class => 'btn btn-md btn-success bg-orange' %></p>
+            </div>
+          <% end %>
+          <div class="text-center"><hr>
+            <%= Spree.t(:or) %> <br>
+              <%= link_to Spree.t(:login_as_existing), spree.login_path, class:"btn btn-default" %>
+          </div>
+          <div data-hook="login_extras"></div>
+      </div>
+  </div>
+</div>

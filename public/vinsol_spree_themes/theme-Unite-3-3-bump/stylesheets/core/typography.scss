@@ -1,0 +1,47 @@
+.big-theme-heading {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin: 0 0 50px;
+  text-align: center;
+  font-weight: 600;
+
+  small {
+    font-size: 20px;
+    display: block;
+    text-transform: none;
+    font-weight: 400;
+    color: inherit;
+  }
+}
+@media(max-width: 767px){
+  .big-theme-heading {
+    font-size: 30px;
+    small {
+      font-size: 14px;
+      padding-top:10px;
+    }
+  }
+}
+#login, #signup, #forgot-password{
+  .panel-heading{
+    color: #333333;
+    background-color: transparent;
+    border-color: transparent;
+    line-height: 36px;
+    padding: 33px 10px;
+    position: relative;
+    &:before{
+      content:"";
+      position: absolute;
+      bottom: 15px;
+      width:30%;
+      height: 5px;
+      background-color: #df9300;
+      left:50%;
+      margin-left: -15%;
+    }
+    h3{
+      font-size: 24px;
+    }
+  }
+}

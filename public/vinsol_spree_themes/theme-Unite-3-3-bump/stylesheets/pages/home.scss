@@ -1,0 +1,50 @@
+#home-page {
+  #fixed-header-helper {
+    display: none;
+  }
+  #header {
+    background: rgba(0,0,0,0.7);
+  }
+}
+
+.home-page-slider {
+  margin: 0 0 80px;
+  .carousel-inner {
+    min-height: 300px;
+    height:70vh;
+    background: #000;
+
+    .item {
+      height: 100%;
+      background-size:cover;
+      background-position: center center;
+    }
+    .slider-img {
+      width: 100%;
+    }
+  }
+  .carousel-indicators{
+    z-index:10;
+  }
+  h3 {
+    font-size: 60px;
+    font-weight: 300;
+  }
+  .taxon-info-text {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .carousel-caption {
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width:768px) {
+  .home-page-slider {
+    .carousel-inner {
+      height: 100vh;
+      max-height: 100vh;
+      background: #000;
+    }
+  }
+}
