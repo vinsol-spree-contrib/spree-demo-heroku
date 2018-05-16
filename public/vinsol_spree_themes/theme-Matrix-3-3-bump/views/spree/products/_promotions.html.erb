@@ -1,0 +1,18 @@
+<% promotions = @product.possible_promotions %>
+
+<% if promotions.any? %>
+  <div id="promotions">
+    <h3 class="product-section-title"><%= Spree.t(:promotions) %></h3>
+    <% promotions.each do |promotion| %>
+    <div >
+      <h4><%= promotion.name %></h4>
+      <p><%= promotion.description %></p>
+      <% if promotion.products.any? %>
+          <% promotion.products.each do |product| %>
+            <%= link_to product.name, product_path(product), class: 'btn btn-sm btn-default mb10' %>
+          <% end %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+<% end %>

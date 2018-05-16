@@ -1,0 +1,13 @@
+<% unless @product_properties.empty? %>
+  <h3 class="product-section-title"><%= Spree.t('properties')%></h3>
+  <div id="product-properties" class="row" data-hook>
+      <% @product_properties.each do |product_property| %>
+        <% css_class = cycle('even', 'odd', name: "properties") %>
+        <div class="<%= css_class %> col-sm-4 product-property">
+          <div><strong><%= product_property.property.presentation %></strong></div>
+          <div><p><%= product_property.value %></p></div>
+        </div>
+      <% end %>
+      <% reset_cycle('properties') %>
+  </div>
+<% end %>

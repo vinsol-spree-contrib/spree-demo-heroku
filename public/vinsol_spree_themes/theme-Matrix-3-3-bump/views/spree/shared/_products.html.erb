@@ -1,0 +1,48 @@
+<% content_for :head do %>
+  <% if products.respond_to?(:total_pages) %>
+    <%= rel_next_prev_link_tags products %>
+  <% end %>
+<% end %>
+
+<div data-hook="products_search_results_heading">
+  <% if products.empty? %>
+    <div data-hook="products_search_results_heading_no_results_found">
+      <%= Spree.t(:no_products_found) %>
+    </div>
+  <% elsif params.key?(:keywords) %>
+    <div data-hook="products_search_results_heading_results_found">
+      <h4 class="search-results-title"><%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h4>
+    </div>
+  <% end %>
+</div>
+
+<% if products.any? %>
+  <div id="products" class="products-grid" data-hook>
+    <% products.each do |product| %>
+      <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+      <div id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+          <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
+              <%= link_to url, itemprop: "url", class: 'products_list_item_image' do %>
+                <%= large_image(product, itemprop: "image", class: 'img-responsive') %>
+              <% end %>
+
+                <div class="product-list-item-details">
+                  <%= link_to url, itemprop: "url", class: 'product-list-item-name' do %>
+                    <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                  <% end %>
+                  <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="product-list-item-price">
+                    <span class="price selling" itemprop="price"><%= display_price(product) %></span>
+                  </div>
+                </div>
+
+
+          <% end %>
+      </div>
+    <% end %>
+    <% reset_cycle("classes") %>
+  </div>
+<% end %>
+
+<% if products.respond_to?(:total_pages) %>
+  <%= paginate products, theme: 'twitter-bootstrap-3' %>
+<% end %>

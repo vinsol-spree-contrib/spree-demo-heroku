@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+    <%= stylesheet_link_tag 'default.manifest.css' %>
+    <%= javascript_include_tag 'default.manifest.js' %>
+    <%= javascript_include_tag 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
+    <%= render partial: 'spree/shared/header' %>
+    <%= render partial: 'spree/shared/sidebar' %>
+    <div class="page-background">
+      <div class="site-wrapper page-container">
+        <div class="row" data-hook>
+          <div class="hidden-xs">
+            <%= breadcrumbs(@taxon) %>
+          </div>
+
+
+          <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12" %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+
+          <%= yield :templates %>
+        </div>
+        <%= render partial: 'spree/shared/footer' %>
+      </div>
+    </div>
+    <script>
+      var $buoop = {required:{e:16,f:52,o:47,s:10,c:57},insecure:true,unsupported:true,api:2018.05 };
+      function $buo_f(){
+       var e = document.createElement("script");
+       e.src = "//browser-update.org/update.min.js";
+       document.body.appendChild(e);
+      };
+      console.log('hello');
+      try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+      catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+  </body>
+</html>

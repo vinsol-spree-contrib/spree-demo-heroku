@@ -1,0 +1,204 @@
+@import "variables.scss";
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+  .modal.left .modal-dialog,
+  .modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 250px;
+    height: 100vh;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+  }
+
+  .modal.left .modal-content,
+  .modal.right .modal-content {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .modal.left .modal-body,
+  .modal.right .modal-body {
+    padding: 15px 15px 80px;
+  }
+
+/*Left*/
+  .modal.left.fade .modal-dialog{
+    left: -250px;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+  }
+
+  .modal.left.fade.in .modal-dialog{
+    left: 0;
+  }
+
+/*Right*/
+  .modal.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+  }
+
+  .modal.right.fade.in .modal-dialog {
+    right: 0;
+  }
+
+/* ----- MODAL STYLE ----- */
+  .modal-content {
+    border-radius: 0;
+    border: none;
+  }
+
+  .modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+  }
+
+.sidebar-close {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: $font-bold;
+  font-size: 10px;
+}
+
+#sidebar {
+  .list-group {
+    .list-group-item {
+      border: none;
+      padding: 5px 10px;
+      border-top: solid 1px $primary-grey;
+      border-bottom: solid 1px $primary-grey;
+      font-weight: $font-bold;
+      border-radius: 0 !important;
+    }
+    a.list-group-item{
+      opacity: 0.5;
+      &.active {
+        color: $primary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: $secondary-grey;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.custom_checkbox {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  + label {
+    display: inline-block;
+    margin-bottom: 0;
+    padding:2px 2px 2px 20px;
+    position: relative;
+    opacity: 0.5;
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      border: solid 1px $primary-black;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -8px;
+    }
+  }
+  &:checked {
+  + label {
+      opacity: 1;
+      &:before {
+        content: '✓';
+      }
+    }
+  }
+}
+.custom_radio_check {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  + label, + span{
+    display: inline-block;
+    margin-bottom: 0;
+    padding:2px 2px 2px 20px;
+    position: relative;
+    opacity: 0.5;
+    cursor: pointer;
+    &:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      border: solid 1px $primary-black;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -8px;
+      font-size: 10px;
+    }
+  }
+  &:checked {
+  + label, + span {
+      opacity: 1;
+      &:before {
+        content: '✓';
+      }
+    }
+  }
+  &[type="radio"] {
+    + label, + span {
+      &:before {
+        border-radius: 50%;
+      }
+    }
+    &:checked {
+    + label, + span {
+        &:before {
+          content: '';
+          border-width: 2px;
+          background-color: $primary-black;
+          box-shadow: 0 0 0 2px $primary-white inset;
+        }
+      }
+    }
+  }
+}
+.search-modal {
+  margin-top: 50px !important;
+}
+.close {
+  &.modal-close {
+    font-size: 11px;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    color: $primary-white;
+    opacity: 1;
+    text-shadow: none;
+  }
+}

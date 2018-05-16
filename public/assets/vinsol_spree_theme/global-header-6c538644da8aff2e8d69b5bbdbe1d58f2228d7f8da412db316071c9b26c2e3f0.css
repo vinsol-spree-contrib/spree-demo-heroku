@@ -1,0 +1,66 @@
+/*Font colors*/
+/*font weight*/
+/*Break Points*/
+/*Mixin*/
+#spree-header {
+  background-color: #e5e5e5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  padding: 0 15px; }
+  #spree-header #header {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    padding: 0;
+    height: 60px;
+    background-color: transparent; }
+    #spree-header #header #logo img {
+      max-width: 100px; }
+
+.header-right-links {
+  min-width: 100px;
+  font-size: 20px;
+  margin: 0;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  align-items: center;
+  -webkit-align-items: center; }
+  .header-right-links li a {
+    display: block;
+    margin-left: 15px; }
+    .header-right-links li a.cart-info {
+      display: block;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      text-indent: -9999px;
+      background: url(/vinsol_spree_themes/current/images/cart-icon.png) no-repeat left top;
+      background-size: 100% auto; }
+      .header-right-links li a.cart-info.empty {
+        background-position: left bottom; }
+
+.header-left-links {
+  min-width: 100px;
+  font-size: 24px; }
+
+/*
+#sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  z-index: 10;
+  width: 250px;
+  height: 100vh;
+  overflow: auto;
+  background: $primary-white;
+  padding: 15px;
+}*/

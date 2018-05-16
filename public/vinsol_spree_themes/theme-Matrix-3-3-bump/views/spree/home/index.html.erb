@@ -1,0 +1,59 @@
+<% @body_id = 'home-page' %>
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div data-hook="homepage_products">
+  <div class="common-page-heading">shopping destination</div>
+  <div class="common-page-subheading">
+
+    <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+
+    <% @taxonomies.each do |taxonomy| %>
+      <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+        <% if taxonomy.root.children.any? %>
+          <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products.limit(9) } %>
+  <% end %>
+</div>
+<div class="product-list-item first-banner">
+  <div class="promotion_container">
+    <div class="promotion_larg_text">
+      Discover<br>
+      &amp;<br>
+      shop the trend
+    </div>
+    <div class="promotion_small_text">
+      Praesent quis diam in orci semper
+    </div>
+    <div class="promotion_link">
+      <a href="/t/brands" class="btn btn-block btn-site-inverse text-uppercase">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="product-list-item second-banner">
+  <ul class="category-n-brand">
+    <li><a href="/products">SHOP BY CATEGORY</a> <i class="fa fa-arrow-right"></i></li>
+    <li class="separator">OR</li>
+    <li><i class="fa fa-arrow-left"></i> <a href="/t/brands">SHOP BY BRAND</a></li>
+  </ul>
+</div>
+<div class="product-list-item third-banner">
+  <p class="third-banner-text">
+    Shop by what you need. It might be a housewarming gift. Apparel for your closet. find just what you're looking for right here
+  </p>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    $( "#products" ).prepend( $( ".product-list-item"  ) );
+    $(".common-page-subheading .list-group-item").slice(0,5).addClass('d-inline');
+  });
+</script>

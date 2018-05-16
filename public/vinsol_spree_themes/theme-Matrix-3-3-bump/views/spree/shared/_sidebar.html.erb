@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal left fade" id="sidebar-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <%= image_tag asset_path('/vinsol_spree_themes/current/images/logo-icon.png'), class: 'footer-favicon center-block'%>
+        <button type="button" class="sidebar-close" class="close" data-dismiss="modal" aria-label="Close">
+          Close
+        </button>
+      </div>
+      <div class="modal-body">
+        <aside id="sidebar" class="" data-hook>
+          <%= render partial: 'spree/shared/nav_bar' %>
+          <%= render partial: 'spree/shared/main_nav_bar' %>
+          <%= yield :sidebar %>
+        </aside>
+      </div>
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->
+

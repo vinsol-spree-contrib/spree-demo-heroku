@@ -1,0 +1,18 @@
+<% if @product.taxons.present? %>
+  <h2 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h2>
+  <div class="products-grid" id="similar_items_by_taxon" data-hook data-slider="tab-slider">
+    <% @product.taxons.each do |taxon| %>
+      <div class="product-list-item">
+        <% product = taxon.products.last %>
+        <%= link_to seo_url(taxon), class: 'products_list_item_image' do %>
+          <%= image_tag(product.images.last.attachment.url(:large), class:'img-responsive') %>
+        <% end %>
+        <div class="product-list-item-details">
+          <%= link_to seo_url(taxon) do %>
+            <span class="similar_taxon"><%= taxon.name %></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

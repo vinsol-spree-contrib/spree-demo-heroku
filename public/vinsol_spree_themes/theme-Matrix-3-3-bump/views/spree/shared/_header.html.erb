@@ -1,0 +1,46 @@
+<div id="spree-header">
+  <div class="site-wrapper">
+    <header id="header" data-hook>
+      <div class="header-left-links">
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#sidebar-panel">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <figure id="logo" data-hook>
+        <%#= logo %>
+        <a href="/">
+          <%= image_tag asset_path('/vinsol_spree_themes/current/images/matrix-logo.png'), class: 'img-responsive center-block'%>
+        </a>
+      </figure>
+
+      <ul class="header-right-links" data-hook>
+        <li>
+          <a href="javascript:void(0);" data-toggle="modal" data-target="#product-search-modal">
+            <i class="fa fa-search"></i>
+          </a>
+        </li>
+        <li id="link-to-cart" data-hook>
+          <noscript>
+            <%= link_to_cart %>
+          </noscript>
+          &nbsp;
+        </li>
+        <script>Spree.fetch_cart()</script>
+      </ul>
+
+    </header>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="product-search-modal" tabindex="-1">
+  <div class="modal-dialog search-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+        <%= render partial: 'spree/shared/search' %>
+      </div>
+    </div>
+  </div>
+</div>
+
