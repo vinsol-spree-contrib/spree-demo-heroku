@@ -1,0 +1,207 @@
+/*---bootstrap button override---*/
+#search .btn-success {
+  padding: 20px 35px;
+  position: relative; }
+  #search .btn-success:hover {
+    letter-spacing: 3px; }
+    #search .btn-success:hover:before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      left: -5%;
+      top: -5%;
+      border: 1px solid #ff8a00; }
+
+.jumbotron {
+  height: 100vh;
+  padding: 0px !important;
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 0 !important;
+  margin-bottom: 0; }
+  .jumbotron video {
+    object-fit: cover;
+    height: 100vh;
+    width: 100%; }
+
+body#login .theme-container, body#signup .theme-container {
+  width: 100%; }
+body#login #content, body#signup #content {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
+  body#login #content .panel, body#signup #content .panel {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: transparent;
+    color: #fff; }
+    body#login #content .panel .panel-heading, body#signup #content .panel .panel-heading {
+      background-color: transparent;
+      text-align: center;
+      color: #fff;
+      border-color: transparent; }
+      body#login #content .panel .panel-heading .panel-title, body#signup #content .panel .panel-heading .panel-title {
+        font-size: 18px;
+        padding: 10px; }
+    body#login #content .panel .form-control, body#signup #content .panel .form-control {
+      border: 0;
+      background-color: transparent;
+      border-bottom: 2px solid #444;
+      height: 60px;
+      margin-bottom: 20px; }
+      body#login #content .panel .form-control:focus, body#signup #content .panel .form-control:focus {
+        box-shadow: none; }
+body#login .other-info, body#signup .other-info {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  body#login .other-info a, body#signup .other-info a {
+    color: #f5f5f5;
+    font-size: 12px;
+    display: inline-block; }
+  body#login .other-info .or-line, body#signup .other-info .or-line {
+    display: block;
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    flex-basis: 100%;
+    flex-grow: 3; }
+    body#login .other-info .or-line:before, body#login .other-info .or-line:after, body#signup .other-info .or-line:before, body#signup .other-info .or-line:after {
+      position: absolute;
+      content: '';
+      width: 45%;
+      left: 0;
+      height: 2px;
+      top: 20px;
+      background-color: #444; }
+    body#login .other-info .or-line:after, body#signup .other-info .or-line:after {
+      left: auto;
+      right: 0; }
+
+body#signup .other-info {
+  flex-flow: column; }
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0; }
+  .styled-checkbox + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px; }
+  .styled-checkbox + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 18px;
+    height: 18px;
+    background: white; }
+  .styled-checkbox:hover + label:before {
+    background: #ff8a00; }
+  .styled-checkbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
+  .styled-checkbox:checked + label:before {
+    background: #ff8a00; }
+  .styled-checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto; }
+  .styled-checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd; }
+  .styled-checkbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg); }
+
+.login-signup {
+  border: 1px solid #ddd; }
+  .login-signup .nav-tabs {
+    margin-top: 0px;
+    display: flex;
+    position: relative; }
+    .login-signup .nav-tabs:before {
+      content: "OR";
+      font-size: 12px;
+      position: absolute;
+      left: 50%;
+      z-index: 3;
+      background: #fff;
+      padding: 8px;
+      margin-left: -14px;
+      border-radius: 50%;
+      top: 8px;
+      color: #000;
+      border: 1px solid #ddd; }
+    .login-signup .nav-tabs li {
+      flex-grow: 1;
+      background: #f5f5f5;
+      border: 1px solid #ddd; }
+      .login-signup .nav-tabs li a {
+        font-size: 14px;
+        line-height: 200%; }
+        .login-signup .nav-tabs li a:after {
+          display: none; }
+      .login-signup .nav-tabs li.active, .login-signup .nav-tabs li:hover, .login-signup .nav-tabs li:focus, .login-signup .nav-tabs li.active:hover, .login-signup .nav-tabs li.active:focus {
+        border-bottom: 0;
+        background: #000; }
+        .login-signup .nav-tabs li.active a, .login-signup .nav-tabs li:hover a, .login-signup .nav-tabs li:focus a, .login-signup .nav-tabs li.active:hover a, .login-signup .nav-tabs li.active:focus a {
+          color: #fff !important; }
+  .login-signup .tab-content {
+    padding: 0px; }
+    .login-signup .tab-content .panel {
+      box-shadow: none; }
+    .login-signup .tab-content .form-control {
+      border: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      height: 45px;
+      line-height: 45px;
+      margin-bottom: 10px;
+      box-shadow: none; }
+      .login-signup .tab-content .form-control:focus {
+        outline: none;
+        border-color: #ff8a00; }
+  .login-signup .other-info a {
+    color: #000;
+    font-size: 12px;
+    text-decoration: underline; }
+  .login-signup .other-info .or-line {
+    display: block;
+    position: relative;
+    padding: 10px;
+    width: 100%; }
+    .login-signup .other-info .or-line:before, .login-signup .other-info .or-line:after {
+      position: absolute;
+      content: '';
+      width: 45%;
+      left: 0;
+      height: 2px;
+      top: 20px;
+      background-color: #f5f5f5; }
+    .login-signup .other-info .or-line:after {
+      left: auto;
+      right: 0; }
+
+body#login .alert {
+  position: absolute;
+  width: 31%;
+  left: 55%;
+  top: 0; }
+
+@media screen and (max-width: 991px) {
+  body#login #content {
+    display: block; }
+  body#login .alert {
+    position: relative;
+    left: 0;
+    width: 100%; } }

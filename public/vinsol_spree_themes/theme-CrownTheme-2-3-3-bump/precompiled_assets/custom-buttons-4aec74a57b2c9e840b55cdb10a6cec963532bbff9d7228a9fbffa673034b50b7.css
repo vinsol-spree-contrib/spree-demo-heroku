@@ -1,0 +1,13 @@
+#search .btn-success {
+  padding: 20px 35px;
+  position: relative; }
+  #search .btn-success:hover {
+    letter-spacing: 3px; }
+    #search .btn-success:hover:before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      left: -5%;
+      top: -5%;
+      border: 1px solid #ff8a00; }

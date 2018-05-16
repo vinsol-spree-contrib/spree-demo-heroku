@@ -1,0 +1,50 @@
+<div id="spree-header" class="col-md-5">
+  <header id="header" data-hook class="row">
+    <div class="col-md-12">
+      <div class="row header-helper">
+        <figure id="logo" class="col-md-12 col-sm-12" data-hook>
+          <%= logo %>
+        </figure>
+        <div class="navbar-header">
+          <a class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span></span>
+              <span></span>
+              <span></span>
+          </a>
+        </div>
+        <%= render partial: 'spree/shared/nav_bar' %>  
+      </div>
+    </div>
+  </header>
+</div>
+<script>
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 300) {
+       $('#spree-header').addClass('sticky');
+    }
+    else {
+       $('#spree-header').removeClass('sticky');
+    }
+    // if ($(window).scrollTop() >= 100) {
+    //    $('.product-heading').addClass('sticky-heading');
+    // }
+    // else {
+    //    $('.product-heading').removeClass('sticky-heading');
+    // }
+});
+$(document).ready(function(){
+  $( ".navbar-toggle" ).click(function() {
+    $(this).toggleClass('open');
+    $( ".navbar" ).slideToggle();
+  });
+
+  $( ".dropdown-icon" ).click(function() {
+    $( "#taxonomies .list-group" ).slideToggle();
+  });
+  $( ".dropdown-price" ).click(function() {
+    $( ".navigation .list-group" ).slideToggle();
+  });
+});
+</script>
+
+

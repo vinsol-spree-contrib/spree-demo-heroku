@@ -1,0 +1,32 @@
+<nav class="navbar col-md-12 col-sm-12" id="top-nav-bar">
+
+  <ul id="nav-bar" class="nav navbar-nav" data-hook>
+    <!--<li class="head-nav">
+      <%# render partial: 'spree/shared/taxonomies' %>
+    </li>-->
+    <li><%= render partial: 'spree/shared/main_nav_bar' %></li>
+    <li id="search-bar" data-hook>
+      <a href="#search-helper">Search</a>
+    </li>
+  </ul>
+</nav>
+<div id="search">
+    <button type="button" class="close">×</button>
+    <%= render partial: 'spree/shared/search' %>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    $('a[href="#search-helper"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+});
+</script>

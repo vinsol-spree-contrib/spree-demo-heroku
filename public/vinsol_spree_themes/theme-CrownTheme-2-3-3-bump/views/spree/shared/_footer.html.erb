@@ -1,0 +1,26 @@
+<footer class="theme-footer col-md-12">
+  <div class="row footer-btm-row text-center">
+    <% taxonomy = Spree::Taxonomy.first %>
+    <p class="footer-menu-link">
+      <% taxonomy.root.children.each_with_index do |taxon, i| %>
+        <%= link_to taxon.name, nested_taxons_path(taxon.permalink) %>
+      <% end %>
+    </p>
+
+    <div class="copyright">
+      <div class="container">
+        <div class="col-md-6">
+          <p class="general-info-links">
+            <a href="javaScript:void(0)">TERMS OF USE</a>
+            <a href="javaScript:void(0)">CONTACT US</a>
+            <a href="javaScript:void(0)">FAQ's</a>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>© 2018 - All Rights Reserved</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>

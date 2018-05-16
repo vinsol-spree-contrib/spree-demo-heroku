@@ -1,0 +1,44 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<h1 class="text-center"><%= Spree.t(:registration) %></h1>
+<div id="registration" class="row" data-hook>
+  <div class="col-md-6 col-md-offset-3 login-signup">
+      <div class="row">
+        <div class="col-md-12 nav-tab-holder">
+        <ul class="nav nav-tabs row" role="tablist">
+          <li role="presentation" class="active"><a href="#new_account_tab" aria-controls="new_account_tab" role="tab" data-toggle="tab"><%= Spree.t(:create_a_new_account) %></a></li>
+          <li role="presentation" class=""><a href="#guest_account_tab" aria-controls="guest_account_tab" role="tab" data-toggle="tab"><%= Spree.t(:guest_user_account) %></a></li>
+        </ul>
+      </div>
+
+      </div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="new_account_tab">
+          <div class="row">
+            <div class="col-md-12 mobile-pull">
+              <div id="account">
+                <%= render :partial => 'new_user' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="guest_account_tab">
+          <div class="row">
+            <div class="col-md-12 mobile-pull">
+              <% if Spree::Config[:allow_guest_checkout] %>
+                <div class="panel">
+                  <div id="guest_checkout" class="panel-body" data-hook>
+                    <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
+                      <p>
+                        <%= f.email_field :email, :class => 'form-control title', :placeholder => Spree.t(:email) %>
+                      </p>
+                      <p class="text-center"><%= f.submit Spree.t(:continue), :class => 'btn btn-success' %></p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>  
+          </div>
+        </div>
+      </div>
+  </div>  
+</div>

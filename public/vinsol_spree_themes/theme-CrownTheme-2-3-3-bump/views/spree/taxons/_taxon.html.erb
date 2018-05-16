@@ -1,0 +1,6 @@
+<div class="taxon" data-hook="taxon">
+  <div class="row text-center">
+    <h3 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs' %></h3>
+  </div>
+  <%= render partial: 'spree/shared/products', locals: { products: taxon_preview(taxon), taxon: taxon } %>
+</div>
