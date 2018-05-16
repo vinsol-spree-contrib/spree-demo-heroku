@@ -14,7 +14,7 @@
         <% end %>
       </ul>
     </li>
-    
+
     <li id="link-to-cart" data-hook>
       <noscript>
         <%= link_to_cart %>
@@ -35,9 +35,9 @@
               <% taxonomy.root.children.each do |taxon| %>
                 <li class="col-sm-12">
                   <ul class="list-unstyled">
-                    <li class=""><a href=""><%= taxon.name %></a></li>
+                    <li class=""><a href="<%= nested_taxons_path(taxon.permalink) %>"><%= taxon.name %></a></li>
                     <% taxon.children.limit(5).each do |t| %>
-                      <li><a href="#"><%= t.name %></a></li>
+                      <li><a href="<%= nested_taxons_path(t.permalink) %>"><%= t.name %></a></li>
                     <% end %>
                     <% if taxon.children.count > 5 %>
                       <li><%= link_to 'View all', '#' %></li>
@@ -53,4 +53,4 @@
     </li>
   </ul>
 </nav>
-  
+
