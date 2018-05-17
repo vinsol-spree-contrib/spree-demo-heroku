@@ -10,8 +10,7 @@
     {"url": "https://github.com/spark-solutions/heroku-buildpack-spree.git"}
   ],
   "addons": [
-    "heroku-postgresql:hobby-dev",
-    "scheduler:standard"
+    "heroku-postgresql:hobby-dev"
   ],
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rails g spree_product_subscriptions:seed"
