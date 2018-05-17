@@ -63,3 +63,4 @@ gem 'spree_auth_devise',                          github: 'spree/spree_auth_devi
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
 
 gem 'spree_product_subscriptions', github: 'vinsol-spree-contrib/spree_product_subscriptions', branch: 'appraise'
+gem 'whenever', '0.10.0', require: false
