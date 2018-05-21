@@ -13,7 +13,7 @@
     "heroku-postgresql:hobby-dev"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rake db:remove_brand_taxonomy"
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rake db:remove_brand_taxonomy && bundle exec rake db:create_theme['theme-CrownTheme-2-3-3-bump']"
   },
   "env": {
     "ADMIN_EMAIL": {
