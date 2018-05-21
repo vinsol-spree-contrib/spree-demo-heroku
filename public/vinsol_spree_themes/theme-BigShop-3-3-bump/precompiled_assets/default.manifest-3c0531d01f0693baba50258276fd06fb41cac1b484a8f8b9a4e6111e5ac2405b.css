@@ -50,6 +50,12 @@ h4, .h4 {
   margin-bottom: 40px;
   /*box-shadow: 0 0 0 1px #dfdfdf inset;*/ }
 
+abbr,
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none !important;
+  border-bottom: none; }
+
 .form-control {
   border-color: #e1e1e1; }
 
