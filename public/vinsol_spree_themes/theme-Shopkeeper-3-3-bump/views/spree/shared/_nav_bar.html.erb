@@ -1,0 +1,54 @@
+<div id="top-nav-bar">
+  <div class="top-nav-bar">
+    <div class="top-nav-left-container">
+      <div class="common-header-link">
+        <% if content_for? :sidebar %>
+          <a href="javascript:void(0);" class="main_menu_toggle">
+            <span class="fa fa-bars"></span>
+          </a>
+        <% end %>
+      </div>
+    </div>
+    <div class="top-nav-center-container">
+
+      <% taxonomy = Spree::Taxonomy.first %>
+      <ul class="header_taxonomy text-uppercase">
+        <% taxonomy.root.children.limit(4).each_with_index do |taxon, i| %>
+          <li>
+            <%= link_to taxon.name, '/t/' + taxon.permalink %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+    <div class="top-nav-right-container">
+
+      <div class="common-header-link">
+        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+          <span class="fa fa-user"></span>
+        </a>
+        <ul id="nav-bar" data-hook>
+          <li id="search-bar" data-hook></li>
+        </ul>
+      </div>
+
+      <div class="common-header-link">
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#modal_search">
+          <span class="fa fa-search"></span>
+        </a>
+      </div>
+
+      <div id="link-to-cart" data-hook>
+        <noscript>
+          <%= link_to_cart %>
+        </noscript>
+      </div>
+      <script>Spree.fetch_cart()</script>
+
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'spree/shared/search' %>
+
+

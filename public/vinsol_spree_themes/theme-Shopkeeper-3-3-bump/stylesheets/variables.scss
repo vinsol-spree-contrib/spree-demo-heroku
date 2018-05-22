@@ -1,0 +1,45 @@
+/*Mixins*/
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+@mixin translate($translate-x, $translate-y) {
+  -ms-transform: translate($translate-x, $translate-y); /* IE 9 */
+  -webkit-transform: translate($translate-x, $translate-y); /* Safari */
+  transform: translate($translate-x, $translate-y);
+}
+
+
+
+
+
+
+
+
+/*Font colors*/
+$primary-black        : #444444;
+$primary-white        : #fff;
+$site-gold            : #e5dcbc;
+$site-blue1           : #a3bac7;
+$site-blue2           : #d9e1e6;
+$site-blue3           : rgba(0, 0, 0, 0.4);
+
+$site-gray1           : #f4f4f5;
+$site-gray2           : #eee;
+$site-gray3           : #ccc;
+$site-gray4           : #aaa;
+$site-red           : #d9534f;
+
+/*font weight*/
+$font-regular         : 400;
+$font-bold            : 600;
+$font-black           : 800;
+
+/*Break Points*/
+$desktop              : 1199px;
+$tablet               : 991px;
+$mobile               : 767px;

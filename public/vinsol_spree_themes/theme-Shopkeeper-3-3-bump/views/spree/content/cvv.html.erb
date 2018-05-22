@@ -1,0 +1,41 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+  * {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+  h2, h4 {
+    font-weight: 700;
+  }
+  .cvv {
+    padding: 15px;
+  }
+  .cid-caption {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: #eee;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+</style>
+<div class="cvv" data-hook>
+  <h2><%= Spree.t(:what_is_a_cvv) %></h2>
+  <p>For Visa, MasterCard, and Discover cards, the card code is the last 3 digit number located on the back of your card on or above your signature line. For an American Express card, it is the 4 digits on the FRONT above the end of your card number.</p>
+  <p>To help reduce fraud in the card-not-present environment, credit card companies have introduced a card code program. Visa calls this code Card Verification Value (CVV); MasterCard calls it Card Validation Code (CVC); Discover calls it Card ID (CID). The card code is a three- or four- digit security code that is printed on the back of cards. The number typically appears at the end of the signature panel.</p>
+  <h4 class="cid-caption">Visa</h4>
+  <%= image_tag 'credit_cards/visa_cid.gif' %>
+  <h4 class="cid-caption">Master Card</h4>
+  <%= image_tag 'credit_cards/master_cid.jpg' %>
+  <h4 class="cid-caption">American Express</h4>
+  <%= image_tag 'credit_cards/amex_cid.gif' %>
+  <h4 class="cid-caption">Discover</h4>
+  <%= image_tag 'credit_cards/discover_cid.gif' %>
+</div>

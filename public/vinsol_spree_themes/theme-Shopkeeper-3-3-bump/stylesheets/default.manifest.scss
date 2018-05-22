@@ -1,0 +1,16 @@
+/*
+* all stylesheet files should be required in this manifest.
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import "variables";
+@import "global";
+@import "global-header";
+@import "global-footer";
+
+/*Home page css*/
+/*@import "slick-theme";*/
+/*@import "slick";*/
+@import "home";

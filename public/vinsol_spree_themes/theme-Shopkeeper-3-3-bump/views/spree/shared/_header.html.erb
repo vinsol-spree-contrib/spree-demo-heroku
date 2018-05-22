@@ -1,0 +1,23 @@
+<div class="header-title">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+<div id="spree-header">
+  <header id="header" data-hook>
+    <div class="container">
+      <div class="row">
+        <figure id="logo"  data-hook>
+          <%#= logo %>
+          <a href="/"><%= image_tag 'logo.png' %></a>
+        </figure>
+
+
+      </div>
+    </div>
+  </header>
+  <div class="main-nav-bar">
+    <div class="container pos-rel">
+      <%= render partial: 'spree/shared/main_nav_bar' %>
+      <%= render partial: 'spree/shared/nav_bar' %>
+    </div>
+  </div>
+</div>

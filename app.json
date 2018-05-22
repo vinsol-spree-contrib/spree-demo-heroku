@@ -1,7 +1,7 @@
 {
   "name": "Spree Sandbox",
   "description":"demo store built with Spree",
-  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku",
+  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/spree-theme-shopkeeper",
   "logo": "http://guides.spreecommerce.org/images/logo.png",
   "keywords": [
     "spree"
@@ -13,7 +13,7 @@
     "heroku-postgresql:hobby-dev"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load"
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rake db:remove_brand_taxonomy && bundle exec rake db:create_theme['theme-Shopkeeper-3-3-bump']"
   },
   "env": {
     "ADMIN_EMAIL": {

@@ -1,0 +1,50 @@
+<%= javascript_include_tag '/vinsol_spree_themes/current/javascripts/masonry.pkgd.min.js', '/vinsol_spree_themes/current/javascripts/slick.min.js', '/vinsol_spree_themes/current/javascripts/homepage-js-initializer.js' %>
+<%= stylesheet_link_tag 'slick.manifest.css' %>
+
+
+<% @body_id = 'home-page' %>
+
+<div class="row">
+  <div class="col-md-12 home-banner">
+    <%= link_to (image_tag 'home-banner.png', class: 'center-block img-responsive'), nested_taxons_path(Spree::Taxonomy.find_by(name: 'Brands').taxons.first.permalink) %>
+  </div>
+</div>
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div class="home-page-container row">
+  <div class="container">
+    <div class="banner-container">
+
+        <div class="item">
+          <%= link_to (image_tag 'home-banner/banner1.jpg', class: 'center-block img-responsive'), nested_taxons_path(Spree::Taxonomy.find_by(name: 'Brands').taxons.first.permalink) %>
+        </div>
+
+        <div class="item">
+          <%= link_to (image_tag 'home-banner/banner2.jpg', class: 'center-block img-responsive'), nested_taxons_path(Spree::Taxonomy.find_by(name: 'Brands').taxons.first.permalink) %>
+        </div>
+
+        <div class="item">
+          <%= link_to (image_tag 'home-banner/banner3.jpg', class: 'center-block img-responsive'), nested_taxons_path(Spree::Taxonomy.find_by(name: 'Brands').taxons.first.permalink) %>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div data-hook="homepage_products" class="container">
+  <div class="home-heading">
+    Featured Products
+  </div>
+  <div data-hook="homepage_products">
+    <% cache(cache_key_for_products) do %>
+      <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+    <% end %>
+  </div>
+</div>
+

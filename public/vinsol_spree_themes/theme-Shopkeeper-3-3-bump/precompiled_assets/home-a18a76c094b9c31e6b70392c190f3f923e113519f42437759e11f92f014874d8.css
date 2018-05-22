@@ -1,0 +1,52 @@
+/*Mixins*/
+/*Font colors*/
+/*font weight*/
+/*Break Points*/
+.home-page-container {
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: solid 2px #f4f4f5; }
+
+.home-heading {
+  display: block;
+  padding-bottom: 60px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -20px; }
+  .home-heading:before, .home-heading:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    margin: 0 10px;
+    border-top: solid 2px #eee;
+    margin-top: -4px; }
+
+.banner-container {
+  /*max-height: 500px;*/
+  margin: 0 -15px;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap; }
+  .banner-container .item {
+    width: calc(50% - 20px);
+    margin: 12px 10px; }
+    .banner-container .item a {
+      display: block; }
+
+* {
+  backface-visibility: hidden; }
+
+@media (max-width: 767px) {
+  .home-heading:before, .home-heading:after {
+    content: "";
+    width: 10px;
+    margin: 0 5px;
+    border-top: solid 2px #eee; }
+
+  .banner-container .item {
+    width: calc(100% - 20px); } }
