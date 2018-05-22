@@ -1,0 +1,37 @@
+<div id="spree-header">
+  <header id="header" data-hook>
+    <ul class="main-navigation">
+      <li>
+        <a href="#">
+          <i class="fa fa-bars"></i>
+        </a>
+        <%= render partial: 'spree/shared/main_nav_bar' %>
+      </li>
+      <li id="link-to-cart" data-hook>
+        <noscript>
+          <%= link_to Spree.t(:cart), '/cart' %>
+        </noscript>
+         <script>Spree.fetch_cart()</script>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-user"></i>
+        </a>
+    <%= render partial: 'spree/shared/nav_bar' %>
+
+      </li>
+    </ul>
+    <figure id="logo" data-hook>
+      <%#= logo %>
+      <a href="/">
+        <%= image_tag asset_path('/vinsol_spree_themes/current/images/logo.png'), class: 'img-responsive center-block'%>
+      </a>
+    </figure>
+    <div id="search-bar" data-hook>
+      <%= render partial: 'spree/shared/search' %>
+    </div>
+
+  </header>
+  <div>
+  </div>
+</div>

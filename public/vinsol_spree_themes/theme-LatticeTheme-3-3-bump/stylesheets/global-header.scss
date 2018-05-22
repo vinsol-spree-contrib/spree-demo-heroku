@@ -1,0 +1,123 @@
+@import "variables.scss";
+
+#spree-header {
+  background: none;
+
+  #header {
+    background: none;
+    padding: 0;
+  }
+}
+
+.main-navigation {
+  @include display-flex(flex);
+  margin: 0 -30px 20px -30px;
+  padding: 0;
+  list-style: none;
+  border-bottom: solid 1px $primary-grey-border;
+  position: relative;
+  z-index: 10;
+  > li {
+    width: 33.33%;
+    font-size: 16px;
+    > a {
+      display: block;
+      padding: 5px 0;
+      color: $primary-grey;
+      transition: all 0.2s ease-in;
+      text-align: center;
+    }
+    &:hover {
+      > a {
+        color: $primary-black;
+        background-color: $primary-white;
+        text-decoration: none;
+      }
+    }
+    > a + * {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      background-color: $primary-white;
+      display: none;
+      font-size: 12px;
+    }
+    &:hover {
+      > a + * {
+        display: block;
+      }
+    }
+    ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        a {
+          display: block;
+          padding: 10px 20px;
+          font-weight: bold;
+          color: $primary-black;
+          border-bottom: solid 1px $primary-grey-border;
+          transition: all 0.2s ease-in;
+          &:hover {
+            background-color: $primary-grey-border;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  > li + li {
+    border-left: solid 1px $primary-grey-border;
+  }
+  .cart-info {
+    font-size: 0px;
+    .glyphicon {
+      font-size: 16px;
+      padding: 3px 0;
+      display: inline-block;
+      position: relative;
+
+    }
+    &.full {
+      .glyphicon {
+        &:after {
+          content: '';
+          display: block;
+          height: 5px;
+          width: 5px;
+          background: red;
+          border-radius: 50%;
+          position: absolute;
+          right: -1px;
+          top: -1px;
+        }
+      }
+    }
+  }
+}
+#search-bar {
+  margin:20px -30px;
+  border: solid $primary-grey-border;
+  border-width: 3px 0;
+  position: relative;
+  .form-control {
+    border: none;
+    padding-right: 40px;
+  }
+  .search-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    text-align: center;
+  }
+}

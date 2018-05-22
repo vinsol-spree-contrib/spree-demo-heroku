@@ -1,0 +1,58 @@
+/*Mixin*/
+/*Font colors*/
+/*font weight*/
+/*Break Points*/
+.global-footer {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  background-color: #000000;
+  color: #ffffff; }
+  .global-footer .copyright {
+    width: calc(100% - 50px);
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px; }
+  .global-footer .toggle-button {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #999999; }
+  .global-footer .toggle-button[aria-expanded="true"] {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  .global-footer .toggle-area {
+    width: 100%;
+    border-bottom: solid 1px #333; }
+  .global-footer .social {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .global-footer .social li {
+      display: inline-block;
+      font-size: 18px;
+      padding: 0 15px 0 0; }
+  .global-footer .footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .global-footer .footer-nav li {
+      padding-top: 3px;
+      font-style: italic; }
+  .global-footer a {
+    color: #999999;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .global-footer a:hover {
+      color: #ffffff;
+      text-decoration: none; }
+  .global-footer .container {
+    margin-top: 30px;
+    margin-bottom: 30px; }

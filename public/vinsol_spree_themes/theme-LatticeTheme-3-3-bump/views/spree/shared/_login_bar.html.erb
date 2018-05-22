@@ -1,0 +1,11 @@
+<% if spree_current_user %>
+  <li class="header-top-nav"><%= link_to Spree.t(:my_account), spree.account_path, class: 'header-top-nav-link' %></li>
+  <li class="header-top-nav"><%= link_to Spree.t(:logout), spree.logout_path, class: 'header-top-nav-link' %></li>
+<% else %>
+  <li id="link-to-login" class="header-top-nav">
+    <%= link_to(spree.login_path, class: 'header-top-nav-link') do %>
+      <!-- <span class="glyphicon glyphicon-user"></span> -->
+      <%= Spree.t(:login) %>
+    <% end %>
+  </li>
+<% end %>

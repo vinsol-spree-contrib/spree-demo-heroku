@@ -1,0 +1,85 @@
+/*Mixin*/
+@mixin display-flex($display) {
+  display: -webkit-+$display;
+  display: $display;
+}
+@mixin flex-wrap($wrapNowrap) {
+  flex-wrap: $wrapNowrap;
+  -webkit-flex-wrap: $wrapNowrap;
+}
+
+
+@mixin justify-content($space) {
+  justify-content: $space;
+  -webkit-justify-content: $space;
+}
+
+@mixin align-items($align) {
+  align-items: $align;
+  -webkit-align-items: $align;
+}
+
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+}
+
+@mixin order($order) {
+  order: $order;
+  -webkit-order: $order;
+}
+
+@mixin align-self($align-self) {
+  align-self: $align-self;
+  -webkit-align-self: $align-self;
+}
+
+
+
+@mixin box-shadow($value...) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  transition: $value;
+}
+
+@mixin transform($value...) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  transform: $value;
+}
+
+
+
+/*Font colors*/
+$primary-black   : #000000;
+$secondary-black : #333;
+
+$primary-grey   : #999999;
+$secondary-grey : #f1f3f6;
+$primary-grey-border : #dfe2e7;
+
+$primary-white   : #ffffff;
+$primary-green   : #b9d547;
+
+
+/*font weight*/
+$font-regular    : 400;
+$font-light      : 300;
+$font-bold       : 700;
+
+
+/*Break Points*/
+$desktop-wide: 1200px;
+$desktop: 1199px;
+$tablet: 991px;
+$mobile: 767px;
+$mobileSmall: 575px;
+
+
+

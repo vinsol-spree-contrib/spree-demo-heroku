@@ -1,0 +1,67 @@
+<div id="carousel-example-generic" class="carousel slide home-slider" data-ride="carousel">
+  <!-- Indicators -->
+<!--   <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+ -->
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag asset_path('/vinsol_spree_themes/current/images/1x1.gif'), class: 'img-responsive slide-bg', style: 'background-image: url("/vinsol_spree_themes/current/images/banner1.jpg")' %>
+      <div class="carousel-caption">
+        <div class="slide-title text-uppercase">Discover and shop the trend</div>
+        <div class="slide-subtitle">Extra 75% off on winter sale</div>
+        <div class="slide-button-area">
+          <a href="<%= products_path %>" class="btn btn-slide text-uppercase">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag asset_path('/vinsol_spree_themes/current/images/1x1.gif'), class: 'img-responsive slide-bg', style: 'background-image: url("/vinsol_spree_themes/current/images/banner2.jpg")' %>
+      <div class="carousel-caption">
+        <div class="slide-title text-uppercase">Discover and shop the trend</div>
+        <div class="slide-subtitle">Extra 75% off on winter sale</div>
+        <div class="slide-button-area">
+          <a href="<%= products_path %>" class="btn btn-slide text-uppercase">Shop Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag asset_path('/vinsol_spree_themes/current/images/1x1.gif'), class: 'img-responsive slide-bg', style: 'background-image: url("/vinsol_spree_themes/current/images/banner3.jpg")' %>
+      <div class="carousel-caption">
+        <div class="slide-title text-uppercase">Discover and shop the trend</div>
+        <div class="slide-subtitle">Extra 75% off on winter sale</div>
+        <div class="slide-button-area">
+          <a href="<%= products_path %>" class="btn btn-slide text-uppercase">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<% @body_id = 'home-page' %>
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div data-hook="homepage_products">
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <% end %>
+</div>
+

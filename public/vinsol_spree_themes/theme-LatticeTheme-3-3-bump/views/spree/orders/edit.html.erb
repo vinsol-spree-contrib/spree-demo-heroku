@@ -1,0 +1,72 @@
+<% @body_id = 'cart' %>
+<div data-hook="cart_container">
+  <h1><%= Spree.t(:shopping_cart) %></h1>
+  <hr>
+  <% if @order.line_items.empty? %>
+    <div data-hook="empty_cart">
+      <!-- <div class="alert alert-info"><%#= Spree.t(:your_cart_is_empty) %></div> -->
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= image_tag asset_path('/vinsol_spree_themes/current/images/empty_cart.png'), class: 'img-responsive center-block'%>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <h1><small><%= Spree.t(:your_cart_is_empty) %></small></h1>
+          <%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-site-green btn-lg' %>
+        </div>
+      </div>
+    </div>
+
+  <% else %>
+    <div>
+      <div data-hook="outside_cart_form" >
+        <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+          <div data-hook="inside_cart_form" class="row">
+
+            <div class="col-md-12">
+              <div data-hook="cart_items" class="table-responsive">
+                <%= render partial: 'form', locals: { order_form: order_form } %>
+              </div>
+            </div>
+
+            <div class='col-sm-6 col-md-4 form-group coupon_code' data-hook='coupon_code'>
+                <%= order_form.text_field :coupon_code, class: 'form-control', placeholder: 'Coupon Code' %>
+                <%= button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default' %>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-md-offset-4" data-hook="cart_buttons">
+              <div class="form-group text-right">
+                <%= button_tag class: 'btn btn-default', id: 'update-button' do %>
+                  <%= Spree.t(:update) %>
+                <% end %>
+                <%= button_tag class: 'btn btn-site-green btn-lg', id: 'checkout-link', name: 'checkout' do %>
+                  <%= Spree.t(:checkout) %>
+                <% end %>
+              </div>
+            </div>
+
+
+          </div>
+        <% end %>
+      </div>
+
+      <div id="empty-cart" data-hook class="text-center">
+        <%= form_tag empty_cart_path, method: :put do %>
+          <div id="clear_cart_link" data-hook class="clear_cart_link">
+            <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-danger' %>
+            &nbsp;&nbsp;<%= Spree.t(:or) %>&nbsp;&nbsp;
+            <%= link_to Spree.t(:continue_shopping), products_path, class: 'continue btn btn-default' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+</script>

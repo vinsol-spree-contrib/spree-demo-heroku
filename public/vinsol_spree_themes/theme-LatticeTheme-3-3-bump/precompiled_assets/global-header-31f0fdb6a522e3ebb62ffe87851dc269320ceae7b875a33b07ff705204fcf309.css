@@ -1,0 +1,97 @@
+/*Mixin*/
+/*Font colors*/
+/*font weight*/
+/*Break Points*/
+#spree-header {
+  background: none; }
+  #spree-header #header {
+    background: none;
+    padding: 0; }
+
+.main-navigation {
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 -30px 20px -30px;
+  padding: 0;
+  list-style: none;
+  border-bottom: solid 1px #dfe2e7;
+  position: relative;
+  z-index: 10; }
+  .main-navigation > li {
+    width: 33.33%;
+    font-size: 16px; }
+    .main-navigation > li > a {
+      display: block;
+      padding: 5px 0;
+      color: #999999;
+      transition: all 0.2s ease-in;
+      text-align: center; }
+    .main-navigation > li:hover > a {
+      color: #000000;
+      background-color: #ffffff;
+      text-decoration: none; }
+    .main-navigation > li > a + * {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      background-color: #ffffff;
+      display: none;
+      font-size: 12px; }
+    .main-navigation > li:hover > a + * {
+      display: block; }
+    .main-navigation > li ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .main-navigation > li ul li a {
+        display: block;
+        padding: 10px 20px;
+        font-weight: bold;
+        color: #000000;
+        border-bottom: solid 1px #dfe2e7;
+        transition: all 0.2s ease-in; }
+        .main-navigation > li ul li a:hover {
+          background-color: #dfe2e7;
+          text-decoration: none; }
+  .main-navigation > li + li {
+    border-left: solid 1px #dfe2e7; }
+  .main-navigation .cart-info {
+    font-size: 0px; }
+    .main-navigation .cart-info .glyphicon {
+      font-size: 16px;
+      padding: 3px 0;
+      display: inline-block;
+      position: relative; }
+    .main-navigation .cart-info.full .glyphicon:after {
+      content: '';
+      display: block;
+      height: 5px;
+      width: 5px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      right: -1px;
+      top: -1px; }
+
+#search-bar {
+  margin: 20px -30px;
+  border: solid #dfe2e7;
+  border-width: 3px 0;
+  position: relative; }
+  #search-bar .form-control {
+    border: none;
+    padding-right: 40px; }
+  #search-bar .search-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    text-align: center; }

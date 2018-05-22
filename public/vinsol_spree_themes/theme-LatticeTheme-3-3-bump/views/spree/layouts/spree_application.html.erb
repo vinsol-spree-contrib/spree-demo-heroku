@@ -1,0 +1,32 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+    <%= stylesheet_link_tag 'default.manifest.css' %>
+    <%= javascript_include_tag 'default.manifest.js' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+    <div class="main-flex-container">
+      <div class="main-left-bar">
+      <%= render partial: 'spree/shared/header' %>
+      <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+      </div>
+      <div class="main-right-container">
+          <%= breadcrumbs(@taxon) %>
+          <div id="content" class="<%= !content_for?(:sidebar) ? "" : "" %>" data-hook>
+            <%= flash_messages %>
+            <%= yield %>
+          </div>
+
+          <%= yield :templates %>
+      </div>
+    </div>
+    <%= render partial: 'spree/shared/footer' %>
+  </body>
+</html>
