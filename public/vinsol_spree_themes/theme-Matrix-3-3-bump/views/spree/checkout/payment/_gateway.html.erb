@@ -4,14 +4,14 @@
     <%= image_tag 'credit_cards/credit_card.gif', id: 'credit-card-image', class: 'pull-right', width: '170', height: '28' %>
     <% param_prefix = "payment_source[#{payment_method.id}]" %>
 
-    <p class="field">
+    <div class="field form-group">
       <%= label_tag "name_on_card_#{payment_method.id}" do %>
         <%= Spree.t(:name_on_card) %><abbr class="required" title="required">*</abbr>
       <% end %>
       <%= text_field_tag "#{param_prefix}[name]", "#{@order.bill_address_firstname} #{@order.bill_address_lastname}", { id: "name_on_card_#{payment_method.id}", class: 'form-control required'} %>
-    </p>
+    </div>
 
-    <p class="field" data-hook="card_number">
+    <div class="field form-group" data-hook="card_number">
       <%= label_tag "card_number" do %>
         <%= Spree.t(:card_number) %><abbr class="required" title="required">*</abbr>
       <% end %>
@@ -23,15 +23,15 @@
           <span id="unrecognized"><%= Spree.t(:unrecognized_card_type) %></span>
         )
       </span>
-    </p>
+    </div>
     <div class="row">
-      <div class="col-md-8 field mb10" data-hook="card_expiration">
+      <div class="col-md-8 field form-group" data-hook="card_expiration">
         <%= label_tag "card_expiry" do %>
           <%= Spree.t(:expiration) %><abbr class="required" title="required">*</abbr>
         <% end %>
         <%= text_field_tag "#{param_prefix}[expiry]", '', id: 'card_expiry', class: "form-control required cardExpiry", placeholder: "MM / YY" %>
       </div>
-      <div class="col-md-4 field mb10" data-hook="card_code">
+      <div class="col-md-4 field form-group" data-hook="card_code">
         <%= label_tag "card_code" do %>
           <%= Spree.t(:card_code) %><abbr class="required" title="required">*</abbr>
         <% end %>

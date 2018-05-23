@@ -19,13 +19,16 @@
           <h3 class="panel-title"><%= Spree.t(:shipping_address) %></h3>
         </div>
         <div class="panel-body pos-rel">
-          <p class="field checkbox use_billing" data-hook="use_billing">
+
+          <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
+
+          <p class="field checkbox " data-hook="use_billing">
             <%= label_tag :order_use_billing, id: 'use_billing' do %>
               <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address?, class: 'custom_radio_check' %>
               <span><%= Spree.t(:use_billing_address) %></span>
             <% end %>
           </p>
-          <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
+
         </div>
       <% end %>
     </div>
@@ -36,10 +39,10 @@
   <div class="row">
     <div class="col-md-8 col-sm-6 pos-rel">
       <% if try_spree_current_user %>
-        <p data-hook="save_user_address">
+        <h5 data-hook="save_user_address">
           <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address), class: 'custom_radio_check' %>
           <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
-        </p>
+        </h5>
       <% end %>
     </div>
     <div class="col-md-4 col-sm-6">

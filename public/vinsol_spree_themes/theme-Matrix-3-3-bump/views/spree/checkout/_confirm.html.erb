@@ -8,9 +8,19 @@
 </div>
 
 <div class="well text-right form-buttons" data-hook="buttons">
-  <% if @order.using_store_credit? %>
-    <%= button_tag Spree.t('store_credit.remove'), name: 'remove_store_credit', class: 'continue btn' %>
-  <% end %>
-  <%= submit_tag Spree.t(:place_order), class: 'btn btn-site-bordered' %>
-  <script>Spree.disableSaveOnClick();</script>
+  <div class="row">
+    <div class="col-sm-6">
+      <% if @order.using_store_credit? %>
+      <%= button_tag Spree.t('store_credit.remove'), name: 'remove_store_credit', class: 'continue btn' %>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-6">
+          <%= submit_tag Spree.t(:place_order), class: 'btn btn-block btn-site-bordered' %>
+          <script>Spree.disableSaveOnClick();</script>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

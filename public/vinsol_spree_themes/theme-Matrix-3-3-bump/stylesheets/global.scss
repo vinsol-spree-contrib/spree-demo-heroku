@@ -36,7 +36,20 @@ a {
   @include transition(all 0.3s ease);
 }
 label {
-  font-weight: normal;
+  font-weight: $font-regular;
+}
+strong {
+  font-weight: $font-bold;
+}
+b {
+  font-weight: $font-semibold;
+}
+
+abbr,
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none;
+  border: none;
 }
 .btn {
   border-radius: 0;
@@ -103,6 +116,9 @@ label {
 .text-primary-site {
   color: $primary;
 }
+.vmid {
+  vertical-align: middle !important;
+}
 
 .font-regular {
   font-weight: $font-regular;
@@ -113,6 +129,9 @@ label {
 
 .mt10 {
   margin-top: 10px;
+}
+.mb0 {
+  margin-bottom: 0;
 }
 .mb10 {
   margin-bottom: 10px;
@@ -510,11 +529,17 @@ label {
    border-top: solid 1px $primary-grey !important;
 }
 
-
+.radio, .checkbox {
+  label {
+    padding-left: 0;
+  }
+}
 
 .line-item-description {
-  display: block;
+  display: inline-block;
   min-width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .cart-total {
@@ -577,12 +602,20 @@ label {
   }
 }
 
-.use_billing {
-  position: absolute;
-  right: 0;
-  top: -40px;
+.form-group {
+  label {
+    text-transform: uppercase;
+    font-weight: $font-semibold;
+  }
 }
 
+#coupon_status {
+  padding: 5px 10px;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+
+}
 .subtaxon-title {
   border-top: solid 1px $primary-grey;
   padding: 20px 0;
@@ -652,7 +685,15 @@ label {
       bottom: 0;
     }
   }
-
+  .line-item-description {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  body {
+    &.modal-open {
+      position: fixed;
+    }
+  }
 }
 
 @media (max-width: $mobile) {
@@ -677,12 +718,7 @@ label {
       padding-top: 30px;
     }
   }
-  .use_billing {
-    position: static;
-    #use_billing {
-      padding-left: 0;
-    }
-  }
+
   .custom-pagination {
     @include justify-content(center);
     .pagination {
@@ -694,6 +730,13 @@ label {
           display: none;
         }
       }
+    }
+  }
+  #clear_cart_link {
+    .btn {
+      display: block;
+      margin: 5px;
+      width: 100%;
     }
   }
 }

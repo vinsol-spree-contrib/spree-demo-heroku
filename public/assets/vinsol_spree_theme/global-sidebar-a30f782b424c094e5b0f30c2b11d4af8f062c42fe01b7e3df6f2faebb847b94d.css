@@ -151,6 +151,9 @@
     background-color: #333333;
     box-shadow: 0 0 0 2px #ffffff inset; }
 
+.custom_radio_check[disabled] + label, .custom_radio_check[disabled] + span, .custom_radio_check:checked[disabled] + label, .custom_radio_check:checked[disabled] + span {
+  opacity: 0.4; }
+
 .search-modal {
   margin-top: 50px !important; }
 

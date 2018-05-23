@@ -186,6 +186,17 @@
     }
   }
 }
+.custom_radio_check, .custom_radio_check:checked {
+  &[disabled] {
+    + label, + span {
+      opacity: 0.4;
+      &:before {
+
+      }
+    }
+  }
+}
+
 .search-modal {
   margin-top: 50px !important;
 }

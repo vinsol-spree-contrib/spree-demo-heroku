@@ -8,7 +8,7 @@
 
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <%= image_tag asset_path('/vinsol_spree_themes/current/images/empty_cart.png'), class: 'img-responsive center-block'%>
+          <%= image_tag asset_path('empty_cart.png'), class: 'img-responsive center-block'%>
         </div>
       </div>
 
@@ -67,9 +67,9 @@
     <div id="empty-cart" class="well text-center" data-hook>
       <%= form_tag empty_cart_path, method: :put do %>
         <div id="clear_cart_link" data-hook>
-          <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-site-bordered' %>
-          &nbsp; &nbsp; &nbsp;<%= Spree.t(:or) %>
-          <%= link_to Spree.t(:continue_shopping), products_path, class: 'continue btn btn-link' %>
+          <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-site-bordered btn-sm' %>
+          &nbsp;<%= Spree.t(:or) %>&nbsp;
+          <%= link_to Spree.t(:continue_shopping), products_path, class: 'continue btn btn-site btn-sm' %>
         </div>
       <% end %>
     </div>
