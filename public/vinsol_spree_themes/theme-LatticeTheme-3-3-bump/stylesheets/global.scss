@@ -37,6 +37,7 @@ a.il, .il a {
 .mb0 {
   margin-bottom: 0;
 }
+
 .pos-rel{
   position: relative;
 }
@@ -265,13 +266,24 @@ a.il, .il a {
   position: absolute;
   left: 0;
   top: 0;
+  &:disabled:checked + *,
+  &:disabled + * {
+    cursor: default !important;
+    &:before {
+      border-color: black  !important;
+      background-color: white !important;
+      opacity: 0.2 !important;
+    }
+  }
 }
+
 .radio_check + * {
   display: inline-block;
   margin: 0;
   padding-left: 25px;
   font-weight: 300;
   position: relative;
+  cursor: pointer;
   &:before {
     content: '';
     display: block;
@@ -638,6 +650,12 @@ ul.promotions {
 }
 .stock-shipping-method-title {
   padding: 20px 0 10px 0;
+}
+abbr,
+abbr[title],
+abbr[data-original-title] {
+  border: none;
+  text-decoration: none;
 }
 
 .color-animate {

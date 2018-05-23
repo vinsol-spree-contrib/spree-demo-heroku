@@ -4,34 +4,43 @@
   </div>
   <div class="panel-body" data-hook="checkout_payment_step">
     <% if @payment_sources.present? %>
-      <div class="card_options">
-        <%= radio_button_tag 'use_existing_card', 'yes', true %>
-        <label for="use_existing_card_yes">
-          <%= Spree.t(:use_existing_cc) %>
-        </label>
-        <%= radio_button_tag 'use_existing_card', 'no' %>
-        <label for="use_existing_card_no">
-          <%= Spree.t(:use_new_cc_or_payment_method) %>
-        </label>
+      <div class="card_options row">
+        <div class="col-md-6">
+          <p>
+            <%= radio_button_tag 'use_existing_card', 'yes', true, class: 'radio_check' %>
+            <label for="use_existing_card_yes">
+              <%= Spree.t(:use_existing_cc) %>
+            </label>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            <%= radio_button_tag 'use_existing_card', 'no', true, class: 'radio_check' %>
+            <label for="use_existing_card_no">
+              <%= Spree.t(:use_new_cc_or_payment_method) %>
+            </label>
+          </p>
+        </div>
       </div>
-
       <div id="existing_cards">
-        <p class="form-group" data-hook="existing_cards">
-          <table class="existing-credit-card-list">
+        <div class="table-responsive" data-hook="existing_cards">
+          <table class="existing-credit-card-list table table-bordered">
             <tbody>
               <% @payment_sources.each do |card| %>
                 <tr id="<%= dom_id(card,'spree')%>" class="<%= cycle('even', 'odd') %>">
-                  <td><%= card.name %></td>
+                  <td>
+                    <label class="mb0">
+                      <%= radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio radio_check" }  %>
+                      <span><%= card.name %></span>
+                    </label>
+                  </td>
                   <td><%= card.display_number %></td>
                   <td><%= card.month %> / <%= card.year %></td>
-                  <td>
-                    <%= radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio" }  %>
-                  </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
-        </p>
+        </div>
       </div>
     <% end %>
 
