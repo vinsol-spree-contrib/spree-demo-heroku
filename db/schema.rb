@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417131026) do
+ActiveRecord::Schema.define(version: 20180523105150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -974,6 +974,20 @@ ActiveRecord::Schema.define(version: 20180417131026) do
     t.datetime "updated_at", null: false
     t.integer "engine", default: 0, null: false
     t.index ["active"], name: "index_spree_trackers_on_active"
+  end
+
+  create_table "spree_trackings", force: :cascade do |t|
+    t.text "entity_errors"
+    t.text "flash"
+    t.text "request_parameters"
+    t.text "updated_parameters"
+    t.string "ip_address"
+    t.string "entity_type"
+    t.integer "response_code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_spree_trackings_on_user_id"
   end
 
   create_table "spree_users", id: :serial, force: :cascade do |t|
