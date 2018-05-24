@@ -473,7 +473,7 @@ abbr[data-original-title] {
   padding-left: 0; }
 
 .line-item-description {
-  display: inline-block;
+  display: block;
   min-width: 200px;
   white-space: normal;
   word-wrap: break-word; }
