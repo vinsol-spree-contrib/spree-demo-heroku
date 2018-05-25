@@ -1,6 +1,11 @@
 @import 'variables';
 @import 'mixins';
-
+body#product-details{
+  .main-row{
+    margin-left:0;
+    margin-right:0;
+  }
+}
 .product-body{
   height:auto;
 }

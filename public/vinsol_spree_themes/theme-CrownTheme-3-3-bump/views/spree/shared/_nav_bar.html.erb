@@ -1,4 +1,4 @@
-<nav class="navbar col-md-4 col-sm-6 col-xs-12" id="top-nav-bar">
+<nav class="navbar col-md-6 col-sm-6 col-xs-12" id="top-nav-bar">
   <ul id="nav-bar" class="nav navbar-nav navbar-right navbar-right-list text-right" data-hook>
   <li id="search-bar" class="" data-hook>
       <%= render partial: 'spree/shared/search' %>
@@ -25,7 +25,7 @@
     <li>
       <input type="checkbox" id="navigation" class="menu" />
       <label for="navigation" class="menu-label"><i class="fa fa-times"></i><i class="fa fa-bars"></i></label>
-      <div id="slide-nav-wrap">
+      <div id="slide-nav-wrap" area-hidden="true">
         <ul>
         <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
         <% Spree::Taxonomy.all.each do |taxonomy| %>

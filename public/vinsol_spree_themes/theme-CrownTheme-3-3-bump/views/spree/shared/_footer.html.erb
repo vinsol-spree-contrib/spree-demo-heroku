@@ -2,25 +2,30 @@
 <footer id="spree-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-12 footerleft ">
+      <div class="col-md-5 col-sm-12 footerleft ">
       <h3 class="heading7">Contact Info</h3>
         <p><i class="fa fa-map-marker"></i> 210, New Delhi - 110085, INDIA</p>
         <p><i class="fa fa-phone"></i> Phone (India) : +91 0000000000</p>
         <p><i class="fa fa-envelope"></i> E-mail : info@mail.com</p>
         
       </div>
-      <div class="col-md-9 col-sm-12">
+      <div class="col-md-7 col-sm-12">
         <div class="row">
-          <% Spree::Taxonomy.all.each do |taxonomy| %>
-            <div class="col-md-6 col-sm-6">
-              <h3><%= taxonomy.name %></h3>
+          <div class="col-md-12">
+            <% taxonomy = Spree::Taxonomy.first %>
+            <h3><%= taxonomy.name %></h3>
               <ul class="footer-ul">
-                <% taxonomy.root.children.each do |t| %>
-                  <li><%= link_to t.name, "t/" + t.permalink %></li>
+                <% taxonomy.root.children.each_with_index do |taxon, i| %>
+                  <li>
+                    <% if ( @body_id == 'home-page' ) %>
+                      <%= link_to taxon.name, 't/' + taxon.permalink  %>
+                    <% else %>
+                      <%= link_to taxon.name %>
+                    <% end %>
+                  </li>
                 <% end %>
               </ul>
-            </div>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>

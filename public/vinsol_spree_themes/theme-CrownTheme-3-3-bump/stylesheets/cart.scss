@@ -68,6 +68,28 @@ input:disabled.btn{
   padding-top: 0px;
   padding-bottom: 0px;
 }
+body#cart{
+  #content{
+    min-height:calc(100vh - 200px);
+  }
+}
+
+abbr[title]{
+  border:0px !important;
+  text-decoration:none;
+}
+p#clear_cart_link{
+  input, a{
+    font-weight: bold;
+  }
+}
+.line_item_quantity{
+  padding:6px 6px;
+  min-width:100px;
+}
+td.lead{
+  line-height: 30px !important;
+}
 @media screen and (min-width:768px) and (max-width:991px){
   #order_coupon_code{
     width:53%;

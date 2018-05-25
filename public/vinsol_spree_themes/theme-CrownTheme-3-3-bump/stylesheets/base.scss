@@ -34,8 +34,8 @@
   [type="checkbox"]:checked + label:after {
     content: '✔';
     position: absolute;
-    top: .1em; left: .3em;
-    font-size: 1.3em;
+    top: .1em; left: .2em;
+    font-size: 1.1em;
     line-height: 0.8;
     color: $primary-color;
     transition: all .2s;
@@ -48,8 +48,8 @@
     opacity: 1;
     transform: scale(1);
   }
-  [type="checkbox"]:checked:focus + label:before,
-  [type="checkbox"]:not(:checked):focus + label:before {
+  [type="checkbox"]:checked:focus + label:before
+  {
     border: 2px solid $primary-color;
   }
   label:hover:before {
@@ -333,13 +333,10 @@
   .footer-ul{
     list-style: none;
     padding:0px;
-    margin:0px;
+    margin:0px 0 15px 0;
     li{
       display: inline-block;
-      width:49%;
-      @media screen and (max-width: 767px){
-        width:100%  ;
-      }
+      
       a{
         color:$wh-color;
         display:block;
@@ -351,12 +348,10 @@
       }
     }
   }
-  .newsletter-box{
-    background-color: $gray-color;
-    border-color:$gray-color;
-    margin-top:20px;
-    h3{
-        margin-top:0px;
+  .footerleft{
+    p{
+      display: inline-block;
+      margin-right: 15px;
     }
   }
 }

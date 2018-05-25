@@ -12,8 +12,6 @@
     <%= javascript_include_tag 'default.manifest.js'%>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <%= render partial: 'spree/shared/google_analytics.js' %>
-    <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
     <%= render partial: 'spree/shared/header' %>
 
     <div class=" <%= (@body_id == 'home-page') ? 'container-fluid' : 'container container-helper'  %>">
@@ -31,5 +29,6 @@
       </div>
     </div>
     <%= render partial: 'spree/shared/footer' %>
+    <div class="nav-overlay"></div>
   </body>
 </html>
