@@ -1,4 +1,6 @@
 // all javascript files related to themes should be require in this manifest.
+//= require owl.carousel
+
 jQuery(document).on('click', '.mega-dropdown', function(e) {
   e.stopPropagation()
 })
@@ -6,7 +8,7 @@ jQuery(document).on('click', '.mega-dropdown', function(e) {
 $( document ).ready(function() {
   $(".table").wrap("<div class='table-responsive'></div>");
 
-  $(".fsh-demo").owlCarousel({ 
+  $(".fsh-demo").owlCarousel({
     autoPlay: 3000, //Set AutoPlay to 3 seconds
     pagination:false,
     navigation:true,
@@ -20,13 +22,13 @@ $( document ).ready(function() {
     $("body").addClass( "nav-active");
     $(".nav-overlay").addClass('active');
   })
-  
+
   $(".navbar-nav  .fa-times").click(function(){
     $("body").removeClass( "nav-active");
     $(".nav-overlay").removeClass('active');
   })
-  
-  
+
+
 });
 
 
@@ -47,8 +49,8 @@ $(document).ready(function(){
 function autoHeight() {
    $('.container-helper ').css('min-height', 0);
    $('.container-helper ').css('min-height', (
-     $(document).height() 
-     - $('#spree-header').height() 
+     $(document).height()
+     - $('#spree-header').height()
      - $('#spree-footer').height()
    ));
  }
@@ -64,4 +66,4 @@ function autoHeight() {
  });
 
 
- 
+

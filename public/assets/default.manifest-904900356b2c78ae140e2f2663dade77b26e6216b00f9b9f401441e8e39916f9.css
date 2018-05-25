@@ -1,0 +1,2751 @@
+@charset "UTF-8";
+/*
+* all stylesheet files should be required in this manifest.
+*/
+/*---bootstrap button override---*/
+/*---bootstrap button override---*/
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+/* line 3, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+body {
+  font-family: "Dosis", sans-serif;
+  background-color: #fff !important;
+}
+
+/* line 7, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header {
+  background-color: #fff;
+  color: #fff;
+  padding: 0px 0px 0;
+  margin-bottom: 0px;
+  border: 1px solid #f5f5f5;
+}
+/* line 13, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header #logo {
+  margin-bottom: 0px;
+}
+/* line 16, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header #header {
+  background-color: transparent;
+  padding: 0px;
+}
+/* line 19, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header #header .top-header {
+  background-color: #000;
+  padding: 10px 0px 0;
+}
+/* line 24, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .desktop-menu {
+  float: right;
+}
+
+/* line 28, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.social-link {
+  display: inline-block;
+}
+/* line 30, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.social-link a {
+  color: #fff;
+}
+/* line 32, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.social-link a:hover, .social-link a:focus {
+  color: #ff8a00;
+}
+
+/* line 38, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default {
+  background-color: transparent;
+}
+/* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav {
+  margin: 0px auto;
+  display: inline-block;
+  float: none;
+}
+/* line 44, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav a {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+}
+/* line 49, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 2px;
+  right: 0;
+  top: 100%;
+  opacity: 0;
+  background-color: #ff8a00;
+  -webkit-transition: opacity 0.35s, transform 0.35s;
+  -moz-transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+/* line 62, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav a .fa {
+  vertical-align: middle;
+  padding-top: 3px;
+}
+/* line 66, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav a:hover, #spree-header .navbar-default .navbar-nav a:focus {
+  background-color: transparent;
+}
+/* line 68, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav a:hover:after, #spree-header .navbar-default .navbar-nav a:focus:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 74, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav .mega-dropdown {
+  position: static !important;
+}
+/* line 76, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav .mega-dropdown .dropdown-menu {
+  padding: 15px 0px 5px 0;
+  left: auto;
+  -webkit-box-shadow: 0 0 0 0 ;
+  -moz-box-shadow: 0 0 0 0 ;
+  box-shadow: 0 0 0 0 ;
+}
+/* line 80, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav .mega-dropdown .dropdown-menu .dropdown-header {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 86, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav .mega-dropdown .dropdown-menu a {
+  display: block;
+  padding: 5px 20px;
+  white-space: normal;
+  position: relative;
+}
+/* line 91, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .navbar-default .navbar-nav .mega-dropdown .dropdown-menu a:hover, #spree-header .navbar-default .navbar-nav .mega-dropdown .dropdown-menu a:focus {
+  text-decoration: none;
+  color: #ff8a00;
+  background-color: transparent;
+}
+
+/* line 103, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#link-to-login {
+  display: none;
+}
+
+/* line 107, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login {
+  display: block;
+}
+
+/* line 113, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.search-form .fa {
+  color: #000;
+}
+/* line 115, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.search-form .fa:hover, .search-form .fa:focus {
+  color: #ff8a00;
+}
+
+/* line 122, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list .nav-helper {
+  display: none;
+}
+/* line 125, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list a {
+  color: #000;
+  padding: 15px 10px;
+  display: block;
+  text-align: left;
+  position: relative;
+}
+/* line 131, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list a.cart-info {
+  padding-top: 17px;
+  padding-bottom: 9px;
+  line-height: 18px;
+}
+/* line 136, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 2px;
+  width: 100%;
+  top: 100%;
+  opacity: 0;
+  background-color: #ff8a00;
+  -webkit-transition: opacity 0.35s, transform 0.35s;
+  -moz-transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+/* line 149, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list a:hover, #spree-header .nav.navbar-right-list a:focus {
+  background-color: transparent;
+  color: #ff8a00;
+}
+/* line 152, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#spree-header .nav.navbar-right-list a:hover:after, #spree-header .nav.navbar-right-list a:focus:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 161, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account {
+  display: inline-block;
+}
+/* line 163, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account .dropdown-toggle {
+  color: #fff;
+}
+/* line 165, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account .dropdown-toggle:hover, .dropdown-account .dropdown-toggle:focus {
+  text-decoration: none;
+  color: #ff8a00;
+}
+/* line 171, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account .dropdown-menu {
+  background-color: #000;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+/* line 174, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account .dropdown-menu a {
+  color: #fff !important;
+  padding: 5px 10px !important;
+}
+/* line 177, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.dropdown-account .dropdown-menu a:hover, .dropdown-account .dropdown-menu a:focus {
+  color: #fff;
+  background-color: #ff8a00;
+}
+
+/* line 185, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#link-to-cart .cart-info {
+  font-size: 0px;
+}
+/* line 187, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#link-to-cart .cart-info.full {
+  font-size: 14px;
+}
+/* line 190, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#link-to-cart .cart-info .glyphicon-shopping-cart {
+  font-size: 14px;
+}
+
+/* line 195, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#search-bar {
+  display: inline-block !important;
+}
+/* line 197, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#search-bar .navbar-form {
+  background-color: #000;
+  padding: 15px;
+  min-width: 350px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+@media screen and (max-width: 767px) {
+  /* line 197, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  #search-bar .navbar-form {
+    min-width: 300px;
+    right: 0;
+    left: -150px;
+  }
+}
+/* line 208, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#search-bar .inline-input {
+  display: inline-block;
+  padding-right: 0px;
+  width: calc(100% - 80px);
+}
+/* line 212, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#search-bar .inline-input .form-control {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  width: 100%;
+}
+/* line 217, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#search-bar .inline-input + .btn-search {
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  color: #fff;
+  background-color: #ff8a00;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  width: 80px;
+}
+
+/* line 229, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.sticky {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+}
+
+/* line 232, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2) ;
+  -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2) ;
+}
+/* line 241, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.fixed + .sticky-helper {
+  display: block;
+}
+
+/* line 245, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#logo {
+  margin-bottom: 0px;
+}
+
+/* line 249, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.hide-label {
+  display: none;
+}
+
+/* line 254, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#slide-nav-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  margin: 0 0 0 -250px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 9;
+  right: -100%;
+}
+/* line 264, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#slide-nav-wrap ul {
+  list-style: none;
+  background: #000;
+  overflow-y: scroll;
+  height: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+/* line 273, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#slide-nav-wrap li a {
+  color: #fff !important;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+}
+/* line 277, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#slide-nav-wrap li a:hover {
+  background-color: #ff8a00 !important;
+  text-decoration: none;
+}
+
+/* line 285, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label {
+  display: block;
+  position: relative;
+  color: #000;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 500;
+  right: 0;
+  padding: 15px 10px 14px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* line 295, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label:after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  display: inline-block;
+  height: 3px;
+  top: 100%;
+  opacity: 0;
+  background-color: #ff8a00;
+  -webkit-transition: opacity 0.35s, transform 0.35s;
+  -moz-transition: opacity 0.35s, transform 0.35s;
+  -ms-transition: opacity 0.35s, transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+/* line 308, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label:hover, label.menu-label:focus {
+  background-color: transparent;
+  color: #ff8a00;
+}
+/* line 311, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label:hover:after, label.menu-label:focus:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 316, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label .fa-times {
+  display: none;
+}
+/* line 319, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+label.menu-label .fa-bars {
+  display: block;
+}
+
+/* line 324, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+input[type="checkbox"].menu {
+  display: none;
+}
+/* line 327, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+input[type="checkbox"].menu:checked ~ #slide-nav-wrap {
+  margin: 0;
+  right: 0;
+}
+/* line 331, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+input[type="checkbox"].menu:checked ~ label {
+  right: 250px;
+}
+/* line 333, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+input[type="checkbox"].menu:checked ~ label .fa-times {
+  display: block;
+}
+/* line 336, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+input[type="checkbox"].menu:checked ~ label .fa-bars {
+  display: none;
+}
+
+/* line 342, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.sticky-helper {
+  display: none;
+  height: 55px;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 349, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  #spree-header {
+    padding-top: 0px;
+  }
+
+  /* line 352, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .nav {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  /* line 355, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .nav > li {
+    display: inline-block;
+  }
+  /* line 357, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .nav > li#link-to-login {
+    display: none;
+  }
+  /* line 362, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .nav > li.dropdown.open .dropdown-menu, .nav > li .dropdown.open .dropdown-menu {
+    position: absolute;
+    background-color: #000;
+  }
+  /* line 367, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .nav > li.dropdown #link-to-login, .nav > li .dropdown #link-to-login {
+    display: block;
+  }
+
+  /* line 373, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  input.menu[type="checkbox"]:checked ~ label {
+    right: 250px;
+  }
+}
+/* line 379, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#logo a {
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+/* line 385, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+#logo a.logo-custom img {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  /* line 378, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  #logo {
+    float: right;
+  }
+  /* line 392, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  #logo a {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* line 399, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.alert.alert-preview {
+  margin-top: 0px;
+}
+
+/* line 402, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+body.nav-active {
+  overflow: hidden;
+}
+
+/* line 405, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.nav-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+/* line 415, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.nav-overlay.active {
+  display: block;
+}
+
+@media screen and (min-width: 769px) {
+  /* line 420, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+  .dropdown:hover .dropdown-menu {
+    display: block !important;
+    margin-top: -2px;
+  }
+}
+/* line 426, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/header.scss */
+.carousel-indicators {
+  z-index: 1;
+}
+
+/*---bootstrap button override---*/
+/* line 4, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+body#product-details .main-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* line 9, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-body {
+  height: auto;
+}
+
+/* line 12, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+/* line 19, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .panel-default {
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0 transparent ;
+  -moz-box-shadow: 0 0 0 transparent ;
+  box-shadow: 0 0 0 transparent ;
+}
+/* line 24, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .panel-default .link-overlay {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+/* line 35, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item:hover .panel-default {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+}
+/* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item a .home-pd-img {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+/* line 46, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item a .info {
+  color: #000;
+  text-decoration: none;
+}
+/* line 51, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .panel-footer {
+  background-color: transparent;
+  border: 0px;
+}
+/* line 55, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .product-hover {
+  opacity: 0;
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+  position: absolute;
+  left: 15px;
+  top: -45px;
+  right: 15px;
+  bottom: 0;
+}
+/* line 63, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .product-hover .hover-icon {
+  display: inline-block;
+}
+/* line 65, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item .product-hover .hover-icon a {
+  display: inline-block;
+  background-color: #000;
+  padding: 10px 15px;
+  color: #fff;
+}
+/* line 75, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item:hover a {
+  text-decoration: none;
+}
+/* line 77, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item:hover a .info {
+  color: #ff8a00;
+  text-decoration: none;
+}
+/* line 82, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item:hover .home-pd-img {
+  opacity: 0.3;
+}
+/* line 85, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-list-item:hover .product-hover {
+  opacity: 1;
+  top: 50%;
+  margin-top: -20px;
+  -webkit-transition: all 0.7s, ease-in-out;
+  -moz-transition: all 0.7s, ease-in-out;
+  -ms-transition: all 0.7s, ease-in-out;
+  -o-transition: all 0.7s, ease-in-out;
+  transition: all 0.7s, ease-in-out;
+}
+
+/* line 93, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.image-box {
+  max-height: 300px;
+  min-height: 250px;
+  display: block;
+  position: relative;
+}
+/* line 98, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.image-box .home-pd-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: auto;
+}
+@media screen and (max-width: 767px) {
+  /* line 93, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+  .image-box {
+    min-height: 170px;
+    max-height: none;
+  }
+}
+
+/* line 112, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default {
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0 transparent ;
+  -moz-box-shadow: 0 0 0 transparent ;
+  box-shadow: 0 0 0 transparent ;
+}
+/* line 117, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default .link-overlay {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #000;
+  text-decoration: none;
+  padding-top: 10px;
+  font-size: 20px;
+}
+/* line 130, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default .home-pd-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 134, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default:hover {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2) ;
+}
+/* line 136, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default:hover .product-hover {
+  opacity: 1;
+  top: 50%;
+  margin-top: -20px;
+  -webkit-transition: all 0.7s, ease-in-out;
+  -moz-transition: all 0.7s, ease-in-out;
+  -ms-transition: all 0.7s, ease-in-out;
+  -o-transition: all 0.7s, ease-in-out;
+  transition: all 0.7s, ease-in-out;
+}
+/* line 142, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default:hover .home-pd-img {
+  opacity: 0.3;
+}
+/* line 146, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default .product-hover {
+  opacity: 0;
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+  position: absolute;
+  left: 15px;
+  top: -45px;
+  right: 15px;
+  bottom: 0;
+}
+/* line 154, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default .product-hover .hover-icon {
+  display: inline-block;
+}
+/* line 156, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.related-product-list .panel-default .product-hover .hover-icon a {
+  display: inline-block;
+  background-color: #000;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+/* line 168, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .taxonomy-root {
+  color: #000;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+/* line 173, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .taxonomy-root:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 2px;
+  width: 50px;
+  background-color: #ff8a00;
+}
+/* line 183, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group {
+  border-radius: 0px;
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+/* line 187, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group a {
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-left: 20px;
+  color: #000;
+}
+/* line 195, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group a:last-child {
+  border-bottom: 0px;
+}
+/* line 198, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group a:before {
+  content: '\f105';
+  position: absolute;
+  font-family: FontAwesome;
+  left: 5px;
+}
+/* line 204, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group a:hover, .sidebar-item .list-group a:active, .sidebar-item .list-group a:focus {
+  background-color: #000;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -ms-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+  color: #ff8a00;
+  padding-left: 30px;
+}
+/* line 209, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.sidebar-item .list-group a:hover:before, .sidebar-item .list-group a:active:before, .sidebar-item .list-group a:focus:before {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -ms-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+/* line 217, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.taxon-title {
+  color: #000;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+/* line 222, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.taxon-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 2px;
+  width: 50px;
+  background-color: #ff8a00;
+}
+
+/* line 232, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.subtaxon-title {
+  color: #000;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+/* line 237, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.subtaxon-title a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 241, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.subtaxon-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 2px;
+  width: 50px;
+  background-color: #ff8a00;
+}
+/* line 251, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.subtaxon-title:hover:after, .subtaxon-title:focus:after {
+  width: 100px;
+  -webkit-transition: all, 0.5s;
+  -moz-transition: all, 0.5s;
+  -ms-transition: all, 0.5s;
+  -o-transition: all, 0.5s;
+  transition: all, 0.5s;
+}
+/* line 255, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.subtaxon-title:hover a, .subtaxon-title:focus a {
+  color: #ff8a00;
+}
+
+/* line 261, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container {
+  padding-top: 30px;
+}
+/* line 263, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container .product-title, .product-detail-container .properties-heading {
+  color: #000;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top: 0px;
+}
+/* line 268, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container .product-title:after, .product-detail-container .properties-heading:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 2px;
+  width: 50px;
+  background-color: #ff8a00;
+}
+/* line 278, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container .product-info-box {
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0px;
+  box-shadow: none;
+  padding: 0px;
+}
+/* line 285, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container #cart-form {
+  margin-bottom: 20px;
+}
+/* line 289, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.product-detail-container #main-image img {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 261, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+  .product-detail-container {
+    margin: 0px;
+  }
+}
+
+/* line 298, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#taxon-crumbs {
+  border-top: 1px solid #f5f5f5;
+}
+/* line 300, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#taxon-crumbs .list-group-item {
+  border: 0px;
+  display: inline-block;
+  background-color: #f5f5f5;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+/* line 305, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#taxon-crumbs .list-group-item a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 309, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#taxon-crumbs .list-group-item:hover {
+  background-color: #333;
+}
+/* line 311, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+#taxon-crumbs .list-group-item:hover a {
+  color: #f5f5f5;
+}
+
+/* line 317, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.table-properties {
+  border: 1px solid #ddd;
+}
+/* line 319, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.table-properties .td-head {
+  background-color: #f5f5f5;
+  width: 50%;
+}
+
+/* line 326, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+.variant-list li {
+  display: inline-block;
+  width: 32.5%;
+}
+@media screen and (max-width: 767px) {
+  /* line 326, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/product.scss */
+  .variant-list li {
+    width: 100%;
+  }
+}
+
+/*---bootstrap button override---*/
+/* line 4, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.bold-text {
+  font-weight: bold;
+}
+
+/* line 7, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.input-group-helper {
+  width: 100%;
+}
+
+/* line 10, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.add-to-cart {
+  margin-top: 10px;
+}
+
+/* line 14, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-item-description h4 a {
+  color: #000;
+  text-decoration: none;
+}
+/* line 17, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-item-description h4 a:hover {
+  color: #ff8a00;
+}
+
+/* line 21, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-item-price, .cart-item-total {
+  color: #000;
+  width: 12%;
+}
+
+/* line 25, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.delete {
+  color: #000;
+}
+
+/* line 26, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-total {
+  background-color: #000;
+  color: #fff;
+}
+/* line 29, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-total h4 {
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* line 34, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-item-delete {
+  width: 6%;
+}
+
+/* line 35, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-item-quantity {
+  width: 10%;
+}
+
+/* line 36, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+a.continue {
+  color: #000;
+}
+/* line 38, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+a.continue:hover {
+  color: #ff8a00;
+}
+/* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+a.continue:hover + .fa {
+  color: #ff8a00;
+}
+
+/* line 48, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
+  background-color: #fff;
+  color: #ff8a00;
+  border-color: #ff8a00;
+}
+
+/* line 54, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.links {
+  margin-top: -10px;
+  margin-right: -15px;
+}
+
+/* line 55, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+#order_coupon_code {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+/* line 59, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+#empty-cart {
+  margin-top: 25px;
+}
+
+/* line 62, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.lead.price {
+  padding: 0px;
+  display: table-cell;
+}
+
+/* line 66, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.cart-btn-group {
+  background-color: transparent;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* line 72, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+body#cart #content {
+  min-height: calc(100vh - 200px);
+}
+
+/* line 77, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+abbr[title] {
+  border: 0px !important;
+  text-decoration: none;
+}
+
+/* line 82, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+p#clear_cart_link input, p#clear_cart_link a {
+  font-weight: bold;
+}
+
+/* line 86, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+.line_item_quantity {
+  padding: 6px 6px;
+  min-width: 100px;
+}
+
+/* line 90, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+td.lead {
+  line-height: 30px !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 94, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  #order_coupon_code {
+    width: 53%;
+  }
+
+  /* line 97, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  .table-responsive + .navbar-form {
+    margin-top: 0px;
+  }
+
+  /* line 98, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  #checkout-summary {
+    position: relative !important;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 105, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  #order_coupon_code {
+    width: 70%;
+    display: inline-block;
+  }
+
+  /* line 109, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  #order_coupon_code + .btn-default {
+    width: 75px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /* line 114, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/cart.scss */
+  #checkout-summary {
+    position: relative !important;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+}
+/*---bootstrap button override---*/
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.23
+ */
+/* clearfix */
+/* line 7, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* display none until init */
+/* line 16, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+
+/* line 22, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+/* line 27, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* line 32, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+
+/* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-item {
+  float: left;
+}
+
+/* line 43, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer;
+}
+
+/* line 47, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+/* line 57, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.grabbing {
+  cursor: url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+/* line 62, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+/* CSS3 Transitions */
+/* line 71, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-origin {
+  -webkit-perspective: 1200px;
+  -webkit-perspective-origin-x: 50%;
+  -webkit-perspective-origin-y: 50%;
+  -moz-perspective: 1200px;
+  -moz-perspective-origin-x: 50%;
+  -moz-perspective-origin-y: 50%;
+  perspective: 1200px;
+}
+
+/* fade */
+/* line 81, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-fade-out {
+  z-index: 10;
+  -webkit-animation: fadeOut .7s both ease;
+  -moz-animation: fadeOut .7s both ease;
+  animation: fadeOut .7s both ease;
+}
+
+/* line 87, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-fade-in {
+  -webkit-animation: empty 1ms both ease;
+  -moz-animation: empty 1ms both ease;
+  animation: empty 1ms both ease;
+}
+
+/* backSlide */
+/* line 93, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-backSlide-out {
+  -webkit-animation: backSlideOut 1s both ease;
+  -moz-animation: backSlideOut 1s both ease;
+  animation: backSlideOut 1s both ease;
+}
+
+/* line 98, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-backSlide-in {
+  -webkit-animation: backSlideIn 1s both ease;
+  -moz-animation: backSlideIn 1s both ease;
+  animation: backSlideIn 1s both ease;
+}
+
+/* goDown */
+/* line 105, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-goDown-out {
+  -webkit-animation: scaleToFade .7s ease both;
+  -moz-animation: scaleToFade .7s ease both;
+  animation: scaleToFade .7s ease both;
+}
+
+/* line 110, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-goDown-in {
+  -webkit-animation: goDown .6s ease both;
+  -moz-animation: goDown .6s ease both;
+  animation: goDown .6s ease both;
+}
+
+/* scaleUp */
+/* line 116, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-fadeUp-in {
+  -webkit-animation: scaleUpFrom .5s ease both;
+  -moz-animation: scaleUpFrom .5s ease both;
+  animation: scaleUpFrom .5s ease both;
+}
+
+/* line 122, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/owl.carousel.scss */
+.owl-fadeUp-out {
+  -webkit-animation: scaleUpTo .5s ease both;
+  -moz-animation: scaleUpTo .5s ease both;
+  animation: scaleUpTo .5s ease both;
+}
+
+/* Keyframes */
+/*empty*/
+@-webkit-keyframes empty {
+  0% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes empty {
+  0% {
+    opacity: 1;
+  }
+}
+@keyframes empty {
+  0% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes backSlideOut {
+  25% {
+    opacity: .5;
+    -webkit-transform: translateZ(-500px);
+  }
+  75% {
+    opacity: .5;
+    -webkit-transform: translateZ(-500px) translateX(-200%);
+  }
+  100% {
+    opacity: .5;
+    -webkit-transform: translateZ(-500px) translateX(-200%);
+  }
+}
+@-moz-keyframes backSlideOut {
+  25% {
+    opacity: .5;
+    -moz-transform: translateZ(-500px);
+  }
+  75% {
+    opacity: .5;
+    -moz-transform: translateZ(-500px) translateX(-200%);
+  }
+  100% {
+    opacity: .5;
+    -moz-transform: translateZ(-500px) translateX(-200%);
+  }
+}
+@keyframes backSlideOut {
+  25% {
+    opacity: .5;
+    transform: translateZ(-500px);
+  }
+  75% {
+    opacity: .5;
+    transform: translateZ(-500px) translateX(-200%);
+  }
+  100% {
+    opacity: .5;
+    transform: translateZ(-500px) translateX(-200%);
+  }
+}
+@-webkit-keyframes backSlideIn {
+  0%, 25% {
+    opacity: .5;
+    -webkit-transform: translateZ(-500px) translateX(200%);
+  }
+  75% {
+    opacity: .5;
+    -webkit-transform: translateZ(-500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0) translateX(0);
+  }
+}
+@-moz-keyframes backSlideIn {
+  0%, 25% {
+    opacity: .5;
+    -moz-transform: translateZ(-500px) translateX(200%);
+  }
+  75% {
+    opacity: .5;
+    -moz-transform: translateZ(-500px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateZ(0) translateX(0);
+  }
+}
+@keyframes backSlideIn {
+  0%, 25% {
+    opacity: .5;
+    transform: translateZ(-500px) translateX(200%);
+  }
+  75% {
+    opacity: .5;
+    transform: translateZ(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) translateX(0);
+  }
+}
+@-webkit-keyframes scaleToFade {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+  }
+}
+@-moz-keyframes scaleToFade {
+  to {
+    opacity: 0;
+    -moz-transform: scale(0.8);
+  }
+}
+@keyframes scaleToFade {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+@-webkit-keyframes goDown {
+  from {
+    -webkit-transform: translateY(-100%);
+  }
+}
+@-moz-keyframes goDown {
+  from {
+    -moz-transform: translateY(-100%);
+  }
+}
+@keyframes goDown {
+  from {
+    transform: translateY(-100%);
+  }
+}
+@-webkit-keyframes scaleUpFrom {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+  }
+}
+@-moz-keyframes scaleUpFrom {
+  from {
+    opacity: 0;
+    -moz-transform: scale(1.5);
+  }
+}
+@keyframes scaleUpFrom {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes scaleUpTo {
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+  }
+}
+@-moz-keyframes scaleUpTo {
+  to {
+    opacity: 0;
+    -moz-transform: scale(1.5);
+  }
+}
+@keyframes scaleUpTo {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+/* line 5, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.slider-wrap {
+  margin: 0px -15px 30px;
+}
+
+/* line 8, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel {
+  position: relative;
+  height: calc(100vh - 65px);
+}
+/* line 11, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel .item {
+  height: calc(100vh - 65px);
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 8, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel {
+    height: auto;
+  }
+  /* line 16, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel .item {
+    height: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 21, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel #sg-carousel {
+    height: auto;
+  }
+  /* line 23, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel #sg-carousel .item {
+    height: auto;
+  }
+}
+/* line 28, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel .carousel-control {
+  bottom: 0;
+  color: #fff;
+  font-size: 80px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0;
+  top: 0;
+  width: auto;
+  -webkit-transition: all 0.8s ease 0s;
+  -moz-transition: all 0.8s ease 0s;
+  -ms-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+/* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel .carousel-control.left, #sg-carousel .carousel-control.right {
+  background-image: none;
+  background-repeat: no-repeat;
+  top: 48%;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel .carousel-control.left, #sg-carousel .carousel-control.right {
+    top: 35%;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 40, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  #sg-carousel .carousel-control.left, #sg-carousel .carousel-control.right {
+    top: 25%;
+  }
+}
+/* line 51, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel .carousel-control.left {
+  left: 0;
+}
+/* line 54, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel .carousel-control.right {
+  right: 0;
+  left: auto;
+}
+/* line 60, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel:hover .left, #sg-carousel:hover .right {
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  opacity: 1;
+}
+/* line 64, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel:hover .left {
+  left: 38px;
+}
+/* line 67, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+#sg-carousel:hover .right {
+  right: 38px;
+}
+
+/* line 73, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-caption {
+  top: 20%;
+  left: 15%;
+  padding-bottom: 5%;
+  right: 0;
+  text-align: left;
+}
+@media screen and (max-width: 767px) {
+  /* line 73, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  .carousel-caption {
+    left: 20%;
+    right: 20%;
+    top: 10%;
+  }
+}
+/* line 84, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-caption .banner-title {
+  font-size: 70px;
+  line-height: 100%;
+  margin: 30px 0;
+}
+@media screen and (max-width: 767px) {
+  /* line 84, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  .carousel-caption .banner-title {
+    font-size: 30px;
+  }
+}
+/* line 92, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-caption h3 {
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+/* line 98, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-caption h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 102, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-caption h3:after {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+/* line 116, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-inner .item img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  margin: 0px auto;
+}
+/* line 124, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-inner .item.active img {
+  -webkit-transition: transform 5000ms, linear 0s;
+  -moz-transition: transform 5000ms, linear 0s;
+  -ms-transition: transform 5000ms, linear 0s;
+  -o-transition: transform 5000ms, linear 0s;
+  transition: transform 5000ms, linear 0s;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+@media screen and (max-width: 767px) {
+  /* line 130, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+  .carousel-inner .item img {
+    max-width: none;
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* line 139, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+/* line 142, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-indicators li {
+  background-color: #b3b5b9;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+  margin: 1px;
+  text-indent: -999px;
+  width: 12px;
+  border: 0;
+}
+/* line 152, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+.carousel-indicators li.active {
+  background-color: #041132;
+  height: 12px;
+  margin: 0;
+  width: 12px;
+  border: 0;
+}
+
+/* line 161, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-item {
+  width: 33%;
+}
+/* line 164, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .item {
+  margin: 3px;
+}
+/* line 166, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .item img {
+  display: block;
+  height: auto;
+}
+/* line 171, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-controls {
+  left: 0;
+  right: 0;
+}
+/* line 175, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-controls .owl-buttons .owl-prev, [data-slider="tab-slider"] .owl-controls .owl-buttons .owl-next {
+  display: inline-block;
+  font-size: 0px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  right: 0;
+}
+/* line 184, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-controls .owl-buttons .owl-prev:after, [data-slider="tab-slider"] .owl-controls .owl-buttons .owl-next:after {
+  content: '\f105';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 30px;
+  font-family: Fontawesome;
+}
+/* line 195, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-controls .owl-buttons .owl-prev {
+  left: 0;
+}
+/* line 197, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/home.scss */
+[data-slider="tab-slider"] .owl-controls .owl-buttons .owl-prev:after {
+  content: '\f104';
+}
+
+/* line 10, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:not(:checked),
+#checkout [type="checkbox"]:checked, .list-group [type="checkbox"]:not(:checked),
+.list-group [type="checkbox"]:checked, .login-page [type="checkbox"]:not(:checked),
+.login-page [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+/* line 15, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:not(:checked) + label,
+#checkout [type="checkbox"]:checked + label, .list-group [type="checkbox"]:not(:checked) + label,
+.list-group [type="checkbox"]:checked + label, .login-page [type="checkbox"]:not(:checked) + label,
+.login-page [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+/* line 23, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:not(:checked) + label:before,
+#checkout [type="checkbox"]:checked + label:before, .list-group [type="checkbox"]:not(:checked) + label:before,
+.list-group [type="checkbox"]:checked + label:before, .login-page [type="checkbox"]:not(:checked) + label:before,
+.login-page [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid #ddd;
+  background: #fff;
+  border-radius: 0px;
+}
+/* line 33, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:not(:checked) + label:after,
+#checkout [type="checkbox"]:checked + label:after, .list-group [type="checkbox"]:not(:checked) + label:after,
+.list-group [type="checkbox"]:checked + label:after, .login-page [type="checkbox"]:not(:checked) + label:after,
+.login-page [type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: .1em;
+  left: .2em;
+  font-size: 1.1em;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+/* line 43, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:not(:checked) + label:after, .list-group [type="checkbox"]:not(:checked) + label:after, .login-page [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+/* line 47, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:checked + label:after, .list-group [type="checkbox"]:checked + label:after, .login-page [type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* line 51, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout [type="checkbox"]:checked:focus + label:before, .list-group [type="checkbox"]:checked:focus + label:before, .login-page [type="checkbox"]:checked:focus + label:before {
+  border: 2px solid #000;
+}
+/* line 55, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout label:hover:before, .list-group label:hover:before, .login-page label:hover:before {
+  border: 2px solid #000 !important;
+}
+/* line 58, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout label, .list-group label, .login-page label {
+  font-weight: normal;
+  border-bottom: 0px !important;
+}
+
+/* line 65, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 69, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio .radio-label-2 {
+  padding-left: 0px;
+}
+
+/* line 72, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"] + .radio-label,
+.radio .radio-btn {
+  padding-left: 0px;
+}
+
+/* line 76, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"] + .radio-label:before,
+.radio input[type="radio"] + .radio-btn:before {
+  content: '';
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #f5f5f5;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+/* line 94, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"]:checked + .radio-label:before,
+.radio input[type="radio"]:checked + .radio-btn:before {
+  background-color: #000;
+  box-shadow: inset 0 0 0 2px #f4f4f4;
+  border-color: #000;
+}
+
+/* line 100, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"]:focus + .radio-label:before,
+.radio input[type="radio"]:focus + .radio-btn:before {
+  outline: none;
+  border-color: #000;
+}
+
+/* line 106, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"]:disabled + .radio-label:before,
+.radio input[type="radio"]:disabled + .radio-btn:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+
+/* line 112, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.radio input[type="radio"] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+/* line 115, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.account-summary.well {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+/* line 117, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.account-summary.well a {
+  color: #ff8a00;
+}
+
+/* line 121, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.form-control {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+/* line 124, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout-summary {
+  background-color: #f5f5f5;
+}
+
+/* line 128, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* line 135, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li.active > a,
+.progress-steps li.active > a:focus,
+.progress-steps > li.active > a:hover {
+  border: 1px solid #ddd;
+}
+
+/* line 140, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li > a {
+  border: 1px solid #ddd;
+  border-left: 0px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+/* line 147, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li.completed > a {
+  border-bottom: 0;
+  color: #333 !important;
+  background: #f5f5f5;
+  border-radius: 0px;
+}
+
+/* line 153, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li.active > a,
+.progress-steps > li > a:hover,
+.progress-steps > li.active:hover > a,
+.progress-steps > li.completed:hover > a {
+  border-bottom: 0;
+  color: #ff8a00 !important;
+  background: #f5f5f5;
+}
+
+/* line 162, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li > a::after {
+  content: "";
+  background: #ff8a00;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: -1px;
+  transition: all 250ms ease 0s;
+  transform: scale(0);
+}
+
+/* line 173, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.progress-steps > li.active > a::after,
+.progress-steps > li:hover > a::after {
+  transform: scale(1);
+}
+
+/* line 177, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout_form_address label {
+  font-weight: bold;
+}
+
+/* line 180, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.panel {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+/* line 183, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#checkout .panel-heading {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 188, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.rate-cost {
+  margin-left: 10px;
+}
+
+/* line 191, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pay-method-li .list-group-item.radio {
+  border: 0px;
+  margin-right: 20px;
+}
+
+/* line 196, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order .lead {
+  font-size: 14px;
+  color: #000;
+}
+/* line 200, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order .price {
+  color: #000;
+}
+/* line 203, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order .table > thead > tr > th {
+  border-bottom-width: 0px;
+}
+
+/* line 209, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order-total .warning td {
+  background-color: #f5f5f5;
+}
+/* line 212, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order-total .warning td .total .lead {
+  font-weight: bold;
+}
+
+/* line 219, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#order_summary h4 {
+  font-weight: bold;
+}
+
+/* line 222, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.button-groups .button {
+  padding: 0px 10px;
+  border-right: 1px solid #ddd;
+  margin-right: 10px;
+  color: #000;
+}
+/* line 227, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.button-groups .button:hover {
+  color: #ff8a00;
+}
+/* line 231, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.button-groups .button span:hover .fa {
+  color: #ff8a00;
+}
+
+/* line 238, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.order-summary a {
+  color: #000;
+}
+
+/* line 240, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-height: 400px;
+  padding: 0px;
+  height: 400px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) ;
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) ;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) ;
+}
+@media screen and (max-width: 767px) {
+  /* line 240, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+  .hotspot-wrapper {
+    height: 300px;
+  }
+}
+/* line 251, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper .hotspot-text {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+}
+/* line 259, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper .hotspot-text h1 {
+  color: #fff;
+  margin-top: 0px;
+  text-align: left;
+  text-transform: uppercase;
+  padding-left: 15px;
+  margin: 0px 0 10px 0;
+}
+/* line 267, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper .hotspot-text p {
+  color: #fff;
+  font-size: 20px;
+  padding-left: 15PX;
+}
+/* line 272, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper .hotspot-text a {
+  margin-left: 15PX;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 0px;
+  padding: 5px 15px;
+}
+/* line 282, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper:hover .hotspot-text {
+  bottom: 0;
+  right: 0;
+}
+/* line 287, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper img {
+  max-width: 100% !important;
+  clear: both;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  margin: 0px;
+  max-width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+@media screen and (max-width: 767px) {
+  /* line 287, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+  .hotspot-wrapper img {
+    height: 100%;
+    max-width: none !important;
+  }
+}
+/* line 301, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.hotspot-wrapper:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 308, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.form-buttons {
+  padding: 15px 0px;
+}
+
+/* line 313, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.page-title {
+  color: #000;
+  position: relative;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+/* line 318, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.page-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 2px;
+  width: 50px;
+  background-color: #ff8a00;
+}
+
+/* line 329, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer {
+  background-color: #000 !important;
+  margin: 30px 0 0;
+  padding: 0px 15px;
+}
+/* line 333, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer .footer-ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0 15px 0;
+}
+/* line 337, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer .footer-ul li {
+  display: inline-block;
+}
+/* line 340, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer .footer-ul li a {
+  color: #fff;
+  display: block;
+  padding: 4px 6px;
+  text-decoration: none;
+}
+/* line 345, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer .footer-ul li a:hover, #spree-footer .footer-ul li a:focus {
+  color: #ff8a00;
+}
+/* line 352, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#spree-footer .footerleft p {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* line 358, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+body#home-page #spree-footer {
+  margin-top: -2px;
+}
+
+/* line 361, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+a.btn {
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 45px;
+  width: auto;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+/* line 373, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+a.btn:hover {
+  text-decoration: none;
+}
+
+/* line 379, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-hover {
+  letter-spacing: 2px;
+}
+/* line 381, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-hover:after, .btn-hover:before {
+  backface-visibility: hidden;
+  border: 1px solid white;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 350ms ease-in-out;
+  -moz-transition: all 350ms ease-in-out;
+  -ms-transition: all 350ms ease-in-out;
+  -o-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  width: 100%;
+}
+/* line 392, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-hover:hover, .btn-hover:focus {
+  letter-spacing: 5px;
+  color: #fff;
+}
+/* line 395, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-hover:hover:after, .btn-hover:hover:before, .btn-hover:focus:after, .btn-hover:focus:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  -webkit-transition: all 2000ms ease-in-out;
+  -moz-transition: all 2000ms ease-in-out;
+  -ms-transition: all 2000ms ease-in-out;
+  -o-transition: all 2000ms ease-in-out;
+  transition: all 2000ms ease-in-out;
+  width: 0;
+  opacity: 0;
+}
+/* line 402, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-hover:hover:before, .btn-hover:focus:before {
+  bottom: auto;
+  top: 0;
+  width: 0;
+}
+
+/* line 410, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-subscribe {
+  background-color: #ff8a00;
+  margin-top: 10px;
+  width: 100%;
+}
+/* line 414, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-subscribe:hover {
+  color: #000;
+}
+
+/* line 418, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.about-sec {
+  background-color: #333;
+  padding: 50px 0;
+  color: #fff;
+}
+/* line 422, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.about-sec h2 {
+  margin-bottom: 20px;
+}
+/* line 425, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.about-sec .social-media {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: block;
+}
+/* line 429, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.about-sec .social-media a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #ff8a00;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* line 438, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.about-sec .social-media a:hover {
+  background: #ff8a00;
+  color: #fff;
+  border-color: #ff8a00;
+}
+
+/* line 447, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line {
+  text-align: center;
+  padding: 10px 0;
+}
+/* line 450, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs {
+  border: 0;
+  margin: 0px auto;
+  float: none;
+  display: inline-block;
+  text-align: center;
+}
+/* line 456, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li {
+  margin-right: 2px;
+}
+/* line 458, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li a {
+  border: 0;
+  margin-right: 0;
+  color: #000;
+}
+/* line 463, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li.open, .tabbable-line .nav-tabs li:hover {
+  border-bottom: 2px solid #ff8a00;
+}
+/* line 465, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li.open a, .tabbable-line .nav-tabs li:hover a {
+  border: 0;
+  background: none !important;
+  color: #000;
+}
+/* line 471, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li.active {
+  border: 0;
+  border-bottom: 2px solid #ff8a00;
+  position: relative;
+}
+/* line 475, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .nav-tabs li.active a {
+  border: 0;
+  color: #ff8a00;
+}
+/* line 482, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.tabbable-line .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  padding: 15px 0;
+}
+
+/* line 489, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.bg-white {
+  background-color: #fff;
+}
+
+/* line 492, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#breadcrumbs {
+  background-color: transparent;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+  margin-top: 10px;
+}
+/* line 498, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#breadcrumbs .breadcrumb {
+  margin-bottom: 0px;
+  text-align: center;
+  padding: 12px 15px;
+  background-color: transparent;
+}
+/* line 503, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#breadcrumbs .breadcrumb a {
+  color: #000;
+}
+
+/* line 508, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination {
+  float: right;
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+/* line 513, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination li {
+  display: inline-block;
+}
+/* line 515, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination li a, .pagination li span {
+  border-color: #ddd;
+  color: #000;
+}
+/* line 521, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination .active a, .pagination .active span {
+  background-color: #333;
+  border-color: #333;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+/* line 525, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination .active a:hover, .pagination .active a:focus, .pagination .active span:hover, .pagination .active span:focus {
+  background-color: #000;
+  border-color: #000;
+  border-radius: 0px;
+}
+/* line 533, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.pagination li:first-child a, .pagination li:first-child span, .pagination li:last-child a, .pagination li:last-child span {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+/* line 538, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.clear {
+  clear: both;
+}
+
+/* line 542, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+label.error {
+  color: red;
+}
+
+/* line 546, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  display: block;
+  margin: 15px 0 0 0;
+  cursor: pointer;
+  background-color: #000;
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 560, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart.btn-cart-hover {
+  overflow: hidden;
+}
+/* line 562, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart.btn-cart-hover span {
+  color: #fff;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 567, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart.btn-cart-hover .icon {
+  position: absolute;
+  left: -60px;
+  top: 0;
+  color: #fff;
+  padding: 14px;
+  background-color: #ff8a00;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 577, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart.btn-cart-hover:hover .icon {
+  left: 0px;
+}
+/* line 580, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-cart.btn-cart-hover:hover span {
+  color: #ff8a00;
+  margin-left: 50px;
+}
+
+/* line 588, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn {
+  border-radius: 0px;
+  box-shadow: none;
+  outline: none;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 601, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn span {
+  display: inline-block;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 605, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn .icon {
+  position: absolute;
+  top: 0;
+  padding: 10px 12px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 610, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn .icon.icon-right {
+  right: -60px;
+}
+/* line 613, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn .icon.icon-left {
+  left: -60px;
+}
+/* line 618, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+/* line 622, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary span {
+  color: #fff;
+}
+/* line 625, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary .icon {
+  color: #fff;
+  background-color: #ff8a00;
+}
+/* line 631, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary:hover .icon.icon-right {
+  right: 0px;
+}
+/* line 634, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary:hover .icon.icon-left {
+  left: 0px;
+}
+/* line 638, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary:hover span {
+  color: #ff8a00;
+}
+/* line 641, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary:hover .icon-left + span {
+  margin-left: 40px;
+}
+/* line 644, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-primary:hover .icon-right + span {
+  margin-right: 40px;
+}
+/* line 649, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success {
+  color: #fff;
+  background-color: #ff8a00;
+  border-color: #ff8a00;
+}
+/* line 653, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success span {
+  color: #fff;
+}
+/* line 656, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success .icon {
+  color: #fff;
+  background-color: #000;
+}
+/* line 662, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success:hover .icon.icon-right {
+  right: 0px;
+  left: auto;
+}
+/* line 666, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success:hover .icon.icon-left {
+  left: 0px;
+}
+/* line 670, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success:hover span {
+  color: #fff;
+}
+/* line 673, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success:hover .icon-left + span {
+  margin-left: 40px;
+}
+/* line 676, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-success:hover .icon-right + span {
+  margin-right: 40px;
+}
+/* line 681, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-default {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+/* line 685, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-default:hover {
+  color: #fff;
+  border-color: #ff8a00;
+  background-color: #ff8a00;
+}
+/* line 691, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-info {
+  background-color: #ff8a00;
+  color: #fff;
+  border-color: #ff8a00;
+}
+/* line 695, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn.btn-info:hover {
+  color: #fff;
+  border-color: #000;
+  background-color: #000;
+}
+
+/* line 702, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#add-to-cart-button {
+  margin-top: 15px;
+}
+
+/* line 705, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.btn-link {
+  color: #333;
+}
+
+/* line 709, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page {
+  background-color: #f5f5f5;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/* line 713, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .panel-default {
+  background-color: #fff;
+  border: 0px;
+  border-radius: 0px;
+  margin: 15px auto;
+  padding: 10px 30px;
+}
+/* line 721, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .panel-heading {
+  background-color: transparent;
+  padding: 0px;
+  border-bottom: 0px;
+}
+/* line 725, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .panel-heading h1, .login-page .panel-heading h3 {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 730, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .panel-heading h1.page-title:after, .login-page .panel-heading h3.page-title:after {
+  width: 100%;
+}
+/* line 737, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .extras-link a {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  padding: 5px;
+}
+/* line 742, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .extras-link a:hover {
+  color: #ff8a00;
+}
+/* line 746, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .extras-link .or-text {
+  position: relative;
+  display: block;
+  padding: 15px 0px;
+}
+/* line 750, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .extras-link .or-text:after, .login-page .extras-link .or-text:before {
+  position: absolute;
+  content: '';
+  width: 43%;
+  height: 1px;
+  background-color: #ddd;
+  top: 28px;
+  right: 0;
+}
+/* line 759, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .extras-link .or-text:before {
+  right: auto;
+  left: 0;
+}
+/* line 765, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.login-page .btn-block {
+  display: block;
+}
+
+/* line 769, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.alert {
+  margin-top: 20px;
+}
+
+/* line 772, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+.alert-error + .login-page {
+  margin-top: 30px;
+}
+
+/* line 776, /Users/vins/Documents/spree-demo-heroku/public/vinsol_spree_themes/current/stylesheets/base.scss */
+#registration .login-page {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
