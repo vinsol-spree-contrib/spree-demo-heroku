@@ -1,0 +1,48 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<% @body_id ='register' %>
+<div class="container">
+  <h1 class="text-center"><%= Spree.t(:registration) %></h1>
+  <div id="registration" class="row text-center" data-hook>
+    <div class="col-md-6 col-sm-6 text-center col-md-offset-3 col-sm-offset-3">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#account" data-toggle="tab">Create a new account</a></li>
+        <li><a href="#guest-account" data-toggle="tab"><%= Spree.t(:guest_user_account) %></a></li>
+      </ul>
+    
+      <div class="tab-content col-md"  >
+        <div id="account" class="tab-pane fade in active">
+          <%= render :partial => 'new_user' %>
+        </div>
+        <div class="tab-pane fade" id="guest-account">
+          <% if Spree::Config[:allow_guest_checkout] %>
+            <div class="text-center col-sm-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= Spree.t(:guest_user_account) %></h3>
+                </div>
+                <div id="guest_checkout" class="panel-body text-center" data-hook>
+                  <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
+                    <p>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class=" fa fa-user"></i></span>
+                        <%= f.email_field :email, :class => 'form-control title', :placeholder => Spree.t(:email) %>
+                      </div>
+                    </p>
+                    <p>
+                      <%#= f.submit Spree.t(:continue), :class => 'btn btn-md btn-success bg-orange' %>
+                      <span class="hover-effect-1">
+                        <%= button_tag(type: 'continue') do %>
+                          <span data-hover="Continue"> continue</span>
+                        <% end %>
+                      </span>   
+                    </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

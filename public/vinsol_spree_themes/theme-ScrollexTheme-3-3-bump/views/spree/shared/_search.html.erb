@@ -1,0 +1,22 @@
+<% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+
+
+<%= form_tag spree.products_path, method: :get, class: "header-search form-inline" do %>
+  <div class="serach-form-section">
+   
+    <div class="form-group keyword-form-group">
+      <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: "form-control" %>
+    </div>
+  </div>
+  <label class="btn btn-unite btn-search">
+    <i class="fa fa-search"></i>
+    <%= submit_tag Spree.t(:search), name: nil, class: "hide" %>
+  </label>
+  <label class="btn btn-unite btn-helper" for="keywords">
+    <i class="fa fa-search"></i>
+  </label>
+  <label class="btn btn-unite btn-close" for="keywords">
+    <i class="fa fa-close"></i>
+  </label>
+<% end %>
+

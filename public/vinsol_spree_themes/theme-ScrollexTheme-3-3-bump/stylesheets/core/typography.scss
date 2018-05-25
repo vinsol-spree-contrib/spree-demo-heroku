@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import '../core/colors.scss';
+@import '../core/mixins.scss';
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+
+@media(max-width: 767px){
+  h1{
+    font-size:30px;
+  }
+
+}
+#login, #signup, #forgot-password, #edit-user{
+  .panel-heading{
+    color: $white;
+    text-shadow: 0px 1px 0 rgba(0,0,0,0.2);
+    background-color: transparent;
+    border-color: transparent;
+    line-height: 36px;
+    padding: 33px 10px;
+    position: relative;
+    &:before{
+      content:"";
+      position: absolute;
+      bottom: 15px;
+      width:10%;
+      height: 2px;
+      background-color: $bg-yellow;
+      box-shadow: 0px 1px rgba(0,0,0,0.2);
+
+      left:50%;
+      margin-left: -5%;
+    }
+    h3{
+      font-size: 24px;
+    }
+  }
+}
+

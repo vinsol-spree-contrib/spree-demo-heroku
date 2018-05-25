@@ -1,0 +1,117 @@
+@import "../components/custom-checkbox";
+@import "../components/taxon-title.scss";
+@import "../core/mixins.scss";
+@import '../core/hover.scss';
+@import '../core/colors.scss';
+
+.alert-notice{
+  margin-top:20px;
+}
+
+.progress-steps.nav-pills{
+  margin-bottom: 20px;
+  margin-top:0px;
+  li{
+    a{
+      display: block;
+      padding: 10px 20px;
+      margin: 0 5px 1px 0;
+      background: transparent;
+      font-size: 14px;
+      text-align: center;
+      border: none;
+      border-radius: 0;
+      z-index: 2;
+      position: relative;
+      color:$text-gray;
+      transition:all 0.3s ease 0s;
+      opacity: 0.4;
+      &:hover{
+        color: $text-black;
+        border: none;
+        background-color: transparent;
+      }
+      &:before{
+        content: "\f105";
+        font-family: fontawesome;
+        font-size: 25px;
+        font-weight: 700;
+        color: $text-gray;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 3px;
+        right: 0;
+        opacity: 0.4;
+      }
+    }
+    &.active{
+      a{
+        color: $text-black;
+        border: none;
+        font-weight: bold;
+        opacity: 1;
+        &:focus{
+          color: $text-black;
+          border: none;
+          background-color: #df9300;
+        }
+        &:before{
+          opacity: 1;
+        }
+
+      }
+    }
+    &:last-child{
+      a{
+        &:before{
+          content:none;
+        }
+      }
+    }
+
+  }
+}
+
+.progress-steps .tab-content{
+    padding: 30px 20px 20px;
+    margin-top: 0;
+    background: #fff;
+    font-size: 15px;
+    color: #7a9181;
+    line-height: 30px;
+    border-radius: 0 0 5px 5px;
+}
+.progress-steps .tab-content h3{
+    font-size: 24px;
+    margin-top: 0;
+}
+
+
+.checkout-content-tab{
+  form{
+    border:1px solid #ddd;
+    .panel-default{
+      border-color:transparent !important;
+      border-radius: 0 !important;
+      > .panel-heading{
+        background-color: transparent !important;
+      }
+    }
+    .save-custom-check{
+      display: inline-block;
+      padding-right: 15px;
+    }
+    .hover-effect-1{
+      margin-bottom: 15px;
+      display: inline-block;
+      button{
+        span{
+          min-height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
+
+

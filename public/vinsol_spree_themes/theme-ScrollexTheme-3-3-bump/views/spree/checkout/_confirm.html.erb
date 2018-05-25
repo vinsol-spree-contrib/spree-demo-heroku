@@ -1,0 +1,20 @@
+<div class="panel panel-default" id="order_details" data-hook>
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= Spree.t(:confirm) %></h3>
+  </div>
+  <div class="panel-body">
+    <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
+  </div>
+</div>
+
+<div class="text-right form-buttons" data-hook="buttons">
+  <% if @order.using_store_credit? %>
+    <%= button_tag Spree.t('store_credit.remove'), name: 'remove_store_credit', class: 'continue btn' %>
+  <% end %>
+  <span class="hover-effect-1">
+    <%= button_tag(type: 'place_order') do %>
+      <span data-hover="Place Order"> Place Order</span>
+    <% end %>
+  </span>
+  <script>Spree.disableSaveOnClick();</script>
+</div>

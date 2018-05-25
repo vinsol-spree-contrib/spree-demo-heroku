@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
+    <%= render partial: 'spree/shared/header' unless @body_id == 'login' || @body_id == 'signup' || @body_id == 'forgot-password'%>
+    <div class="main-container container-fluid <%= (@body_id == 'home-page') ? 'home-page-container': 'theme-container' %>">
+      <div class="row" data-hook>
+        <% if ( @body_id == 'home-page' ) %>
+          <%= render partial: 'spree/shared/slider' %>
+        <% end %>
+        <div class="col-md-6  col-sm-6 breadcrumbs-row">
+          <%= breadcrumbs(@taxon) %>
+        </div>
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12 col-md-12 col-xs-12" %>" data-hook>
+          <%= flash_messages %>
+          <div class="theme-container">
+            <%= yield %>
+          </div>
+        </div>
+        <%= yield :templates %>
+      </div>
+    </div>
+    <%= render partial: 'spree/shared/footer' unless @body_id == 'login' || @body_id == 'signup' || @body_id == 'forgot-password' || @body_id == 'register' %>
+    <div class="scrollex-overlay"></div>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+  </body>
+</html>

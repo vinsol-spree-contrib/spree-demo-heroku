@@ -1,0 +1,35 @@
+<div id="spree-header">
+  <header id="header" data-hook>
+    <div class="container-fluid theme-container relative">
+      <div class="row no-margin">
+        <figure id="logo" class="pull-left" data-hook>
+          <%= logo %>
+        </figure>
+        <%= render partial: 'spree/shared/nav_bar' %>
+        <div id="scrollex-menu-wrapper">
+          <div class="navbar navbar-inverse navbar-fixed-top" id="scrollex-menu" role="navigation" >
+            <% taxonomy = Spree::Taxonomy.first %>
+            <ul class="nav scrollex-nav">
+              <% taxonomy.root.children.each_with_index do |taxon, i| %>
+                <li>
+                    <% if ( @body_class == 'root-category' || 'leaf-category' ) %>
+                      <%= link_to taxon.name, 't/' + taxon.permalink  %>
+                    <% else %>
+                      <%= link_to taxon.name  %>
+                    <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+              <span class="hamb-top"></span>
+              <span class="hamb-middle"></span>
+              <span class="hamb-bottom"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

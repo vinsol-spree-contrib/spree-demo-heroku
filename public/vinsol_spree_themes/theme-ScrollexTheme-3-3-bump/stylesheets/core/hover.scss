@@ -1,0 +1,215 @@
+@import 'colors.scss';
+@import 'mixins.scss';
+a:hover, a:focus{
+  outline:none;
+}
+.hover-effect, .hover-effect-1 a {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 1.5em;
+  text-align: center;
+
+}
+
+.hover-effect a::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none;
+  &:hover, &:focus{
+    color: #ba7700;
+    &:before{
+      color:$white;
+      text-shadow: 10px 0 #fff, -10px 0 #fff;
+    }
+
+  }
+}
+
+/* Effect 19: 3D side */
+.hover-effect-1{
+  a, button, div{
+    line-height: 2em;
+    margin: 0px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+    width: 200px;
+    span {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 0 14px;
+      background: $btn-warning;
+      -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+      -moz-transition: -moz-transform 0.4s, background 0.4s;
+      transition: transform 0.4s, background 0.4s;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform-origin: 50% 50% -100px;
+      -moz-transform-origin: 50% 50% -100px;
+      transform-origin: 50% 50% -100px;
+      &.black{
+        background: $bg-black;
+        color:$white;
+      }
+    }
+    &:hover, &:focus{
+      span {
+        background:  $btn-warning-hover;
+        -webkit-transform: rotateY(-90deg);
+        -moz-transform: rotateY(-90deg);
+        transform: rotateY(-90deg);
+        &.black{
+          background: $bg-gray;
+          color:$white;
+        }
+      }
+    }
+  }
+  div{
+    margin:0px auto;
+    z-index: 1;
+  }
+}
+
+.csstransforms3d .hover-effect-1 a, .csstransforms3d .hover-effect-1 button, .csstransforms3d .hover-effect-1 div{
+  span::before {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: $btn-warning-hover;
+    content: attr(data-hover);
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    transition: background 0.4s;
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    pointer-events: none;
+  }
+  &:hover, &:focus{
+    span{
+      &::before {
+        background:  $btn-warning-hover;
+      }
+      &.black{
+        &:before{
+          background: $bg-gray;
+          color:$white;
+        }
+      }
+    }
+  }
+}
+
+.hover-effect-1{
+  button{
+    background-color:transparent;
+    border:0;
+    box-shadow: none;
+    padding: 0 15px;
+    span{
+      min-height: 50px;
+      line-height: 50px;
+    }
+  }
+}
+
+
+.hover-effect-2{
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: $text-gray;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1em;
+  &:before, &:after{
+    display: inline-block;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+  &:before{
+    margin-right: 20px;
+    content: '[';
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  &:after{
+    margin-left: 20px;
+    content: ']';
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  &:hover, &:focus{
+    text-decoration: none;
+    outline: none;
+    &:before, &:after{
+      opacity: 0;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+  }
+  input[type="submit"]{
+    box-shadow:none;
+    background:transparent;
+    border:0;
+  }
+}
+
+body#cart{
+  .hover-effect-1{
+    a, button{
+      width:150px;
+      span{
+        -webkit-transform-origin: 50% 50% -75px;
+        -moz-transform-origin: 50% 50% -75px;
+        transform-origin: 50% 50% -75px;
+        min-height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px){
+  body#homepage .hover-effect-1 {
+    a, button, div{
+      width:150px;
+    }
+  }
+}

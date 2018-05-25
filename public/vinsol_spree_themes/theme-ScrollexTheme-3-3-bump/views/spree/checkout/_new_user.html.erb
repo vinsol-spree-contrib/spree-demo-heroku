@@ -1,0 +1,25 @@
+<div class="text-center  col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= Spree.t(:create_a_new_account) %></h3>
+    </div>
+    <div id="new-customer" class="panel-body" data-hook="login">
+      <%= form_for @user, :as => :spree_user, :url => spree.registration_path(@user) do |f| %>
+        <div data-hook="signup_inside_form">
+          <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+          <div class="hover-effect-1">
+            <%#= f.submit Spree.t(:create), :class => '' %>
+            <%= button_tag(type: 'submit') do %>
+              <span data-hover="Create"> Create</span>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="text-center">
+        <br><%= Spree.t(:or) %><br>
+          <%= link_to Spree.t(:login_as_existing), spree.login_path, class:"hover-effect-2" %>
+      </div>
+      <div data-hook="login_extras"></div>
+    </div>
+  </div>
+</div>

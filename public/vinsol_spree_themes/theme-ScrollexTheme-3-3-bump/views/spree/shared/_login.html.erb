@@ -1,0 +1,34 @@
+<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
+  <div id="password-credentials ">
+    <p class="text-left">
+      <div class="input-group">
+        <span class="input-group-addon"><i class=" fa fa-user"></i></span>
+        <%= f.email_field :email, :class => 'form-control', :tabindex => 1, autofocus: true, :placeholder=>"Email" %>
+      </div>
+    </p>
+    <p class="text-left">
+      <div class="input-group">
+        <span class="input-group-addon"><i class=" fa fa-key"></i></span>
+        <%= f.password_field :password, :class => 'form-control', :tabindex => 2,:placeholder=>"Password" %>
+      </div>
+    </p>
+  </div>
+  <p> 
+    <%= f.label :remember_me, Spree.t(:remember_me), class:"custom-checkbox pull-left" do %>
+      <%= f.check_box :remember_me, :tabindex => 3 %>
+      Remember Me
+      <span class="checkmark"></span>
+    <% end %>           
+  </p>
+<br>
+  <div class="hover-effect-1 ">
+    <%#= f.submit Spree.t(:login),  :tabindex => 4 %>
+    <%= button_tag(type: 'submit') do %>
+      <span data-hover="Login"> Login</span>
+    <% end %>
+  </div>
+  <p class="forgot-pass">
+    <%= link_to Spree.t(:forgot_password), spree.recover_password_path, class:"hover-effect-2" %>
+  </p>
+<% end %>
+

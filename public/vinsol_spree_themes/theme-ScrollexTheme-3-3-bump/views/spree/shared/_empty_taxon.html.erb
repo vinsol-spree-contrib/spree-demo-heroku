@@ -1,0 +1,20 @@
+<article class="empty-page-taxon" >
+  <% taxonomy = Spree::Taxonomy.first %>
+  <div class="empty-wrap">
+    <% taxonomy.root.children.limit(3).each_with_index do |taxon, i| %>
+      <div class="col-md-4 col-sm-4 col-xs-12 empty-product-col <%= 'active' if i == 0 %>" style="background-image: url(<%= asset_path("home-slider/slide#{ i }.jpg") %>) ">
+        <figure>
+          <h3 ><%= taxon.name %></h3>
+          <% if taxon.description %>
+            <p class="taxon-info-text"><%= taxon.description %></p>
+          <% end %>
+          <figcaption class="hover-effect-1">
+            <%= link_to  't/' + taxon.permalink do %>
+              <span data-hover="Explore">Explore</span>
+            <% end %>
+          </figcaption>
+        </figure>
+      </div>
+    <% end %>
+  </div>
+</article>

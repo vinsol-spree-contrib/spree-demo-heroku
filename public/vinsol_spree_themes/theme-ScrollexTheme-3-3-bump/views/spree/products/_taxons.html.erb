@@ -1,0 +1,28 @@
+<% if @product.taxons.present? %>
+  <div class="list-group similar-box-item text-center" id="similar_items_by_taxon" data-hook">
+    <% @product.taxons.each do |taxon| %>
+      <div class="item col-md-4 col-sm-6">
+        <div class="panel panel-default">
+          <% product = taxon.products.last %>
+          <figure class="text-center figure">
+            <% if product.images.present? %>
+              <%= image_tag(product.images.last.attachment.url(:large), class:'product-img') %>
+            <% else %>
+              <%= image_tag 'no-image.png' %>
+            <% end %>
+            <figcaption>
+              <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="item-price">
+                <strong class="price selling" itemprop="price"><%= display_price(product) %></strong>
+              </p>
+              <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %><br>
+              <%= link_to spree.product_path(product), itemprop: "url" do %><% end %>
+            </figcaption>
+          </figure>
+        <%#= link_to taxon.name, seo_url(taxon), class:"link-overlay" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+

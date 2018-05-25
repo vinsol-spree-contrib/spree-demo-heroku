@@ -1,0 +1,151 @@
+@import '../core/mixins.scss';
+@import '../core/hover.scss';
+@import '../core/colors.scss';
+
+@include placeholder {
+    font-weight:100;
+    color:rgba(255,255,255,1) !important;
+}
+body#cart{
+  @include placeholder {
+    font-weight:100;
+    color:rgba(0,0,0,1) !important;
+  }
+
+}
+.serach-form-section{
+  @include placeholder {
+    font-weight:100;
+    color:rgba(255,255,255,1) !important;
+  }
+}
+body#login, body#signup, body#forgot-password, body#edit-user, body#register {
+  width: 100wh;
+  height: 90vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  .panel-default{
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 0;
+    box-shadow: none;
+    border:0;
+    padding:5% 10%;
+    form{
+      position: relative;
+    }
+    .input-group{
+      border-bottom:2px solid $white;
+      box-shadow: 0px 1px rgba(0,0,0,0.2);
+      font-size: 16px;
+      min-height: 40px;
+      margin-bottom: 30px;
+    }
+    .input-group-addon{
+      background-color: transparent;
+      border:0;
+      color:$white;
+      font-size: 20px;
+    }
+    input.form-control{
+      border:0;
+      background-color: transparent;
+      box-shadow: none;
+      color: $white;
+    }
+    .hover-effect-1{
+      button{
+        font-size: 1.2em;
+        margin:15px auto ;
+        span{
+          min-height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+    .hover-effect-2{
+      color:$white;
+    }
+  }
+}
+
+
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+#registration{
+  .nav-tabs{
+    border-bottom:0;
+    padding: 0 15px;
+    li {
+      width:50%;
+      a{
+        background-color: transparent;
+        border-radius: 0;
+        border:0;
+        color: $white;
+      }
+      &.active{
+        a{
+          background-color: rgba(255,255,255,0.3);
+          color: $white;
+        }
+      }
+    }
+  }
+  .panel-heading{
+    background-color: transparent;
+    color: $white;
+    border-color: transparent;
+    h3{
+      font-size: 1.4em;
+    }
+  }
+
+}
+
+@media screen and (max-width:767px){
+  body#login, body#signup, body#forgot-password, body#edit-user, body#register {
+    .panel-default{
+      padding:5% 5%;
+    }
+  }
+}
+

@@ -1,0 +1,18 @@
+
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<div class="dropdown">
+  <%= link_to "Shop By Brands", '',  {'data-toggle'=>'dropdown', :class=>'dropdown-toggle'} %>
+  <ul id="taxonomies" class="sidebar-item dropdown-menu" data-hook>
+    <% @taxonomies.each do |taxonomy| %>
+      <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+      <li>
+        <% if taxonomy.root.children.any? %>
+          <!--<h4 class='taxonomy-root'><%#= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></h4>-->
+          <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+        <% end %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+

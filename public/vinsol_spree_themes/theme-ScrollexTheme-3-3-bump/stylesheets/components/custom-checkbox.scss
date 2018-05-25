@@ -1,0 +1,102 @@
+@import '../core/colors.scss';
+@import '../core/mixins.scss';
+.custom-checkbox, .custom-radio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.custom-radio + .custom-radio{
+  margin-top:10px;
+}
+.custom-radio-inline{
+  display:inline-block;
+  margin-right:15px;
+}
+.custom-checkbox label, .custom-radio label{
+  font-size:14px;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input, .custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark, .bullet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+.bullet{
+  border-radius:50%;
+}
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .checkmark,  .custom-radio:hover input ~ .bullet{
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark , .custom-radio input:checked ~ .bullet{
+  background-color: $bg-yellow;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after, .bullet:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after,
+ .custom-radio input:checked ~ .bullet:after{
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.custom-radio .bullet:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#login{
+  .checkmark{
+    border-radius:0px;
+    margin-left:15px;
+  }
+  .custom-checkbox{
+    padding-left:55px;
+  }
+}

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans");
+/*Mixin*/
+body {
+  font-family: 'Work Sans', sans-serif; }
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 30px; } }
+#login .panel-heading, #signup .panel-heading, #forgot-password .panel-heading, #edit-user .panel-heading {
+  color: #fff;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border-color: transparent;
+  line-height: 36px;
+  padding: 33px 10px;
+  position: relative; }
+  #login .panel-heading:before, #signup .panel-heading:before, #forgot-password .panel-heading:before, #edit-user .panel-heading:before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    width: 10%;
+    height: 2px;
+    background-color: #fec622;
+    box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    margin-left: -5%; }
+  #login .panel-heading h3, #signup .panel-heading h3, #forgot-password .panel-heading h3, #edit-user .panel-heading h3 {
+    font-size: 24px; }

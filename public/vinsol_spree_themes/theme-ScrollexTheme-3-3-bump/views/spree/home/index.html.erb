@@ -1,0 +1,9 @@
+<% @body_id = 'home-page' %>
+<div data-hook="homepage_products">
+  <h1 class="big-theme-heading">OUR COLLECTIONS
+  <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+  </h1>
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <% end %>
+</div>

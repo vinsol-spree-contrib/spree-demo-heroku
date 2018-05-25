@@ -1,0 +1,247 @@
+@import '../core/mixins.scss';
+@import '../core/hover.scss';
+@import '../core/colors.scss';
+@import 'global-navigation.scss';
+a:focus, button:focus{
+  outline:none;
+}
+
+#spree-header {
+  background: transparent;
+  margin-bottom: 0;
+  position: fixed;
+  width:100%;
+  top: 0;
+  z-index: 99;
+  -webkit-transition: top 0.6s;
+  -moz-transition: top 0.6s;
+  transition: top 0.6s;
+  #header {
+    padding: 10px 0;
+    border-bottom: 0;
+    position: relative;
+    background-color: transparent;
+  }
+  &.off-canvas{
+    top:-89px;
+    #top-nav-bar{
+      right:-50px;
+    }
+  }
+  &.fixed {
+    top: 0;
+    #top-nav-bar{
+      right:0px;
+    }
+  }
+
+}
+#logo {
+  margin-left:15px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1;
+  background: url(/vinsol_spree_themes/current/images/logo/logo-black.png) center no-repeat;
+  background-size:contain;
+  width:180px;
+  height: 50px;
+  a {
+    width:100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    img {
+      display: none;
+    }
+  }
+}
+body#home-page {
+  #logo{
+    background: url(/vinsol_spree_themes/current/images/logo/logo.png) center no-repeat;
+    background-size:contain;
+  }
+}
+body#login, body#signup, body#forgot-password{
+  #logo{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 30px;
+    margin-top:30px;
+    background: url(/vinsol_spree_themes/current/images/logo/logo.png) center no-repeat;
+    background-size:contain;
+  }
+}
+body#checkout-page, body#order-summary{
+  #spree-header{
+    #logo{
+      a{
+        display:none;
+      }
+    }
+    #top-nav-bar, #scrollex-menu-wrapper{
+      display:none;
+    }
+  }
+  .main-container.theme-container{
+    padding-top:30px;
+  }
+}
+#top-nav-bar {
+  padding: 0 0;
+  position: fixed;
+  right: 0;
+  top:100px;
+  -webkit-transition: right 0.6s;
+  -moz-transition: right 0.6s;
+  transition: right 0.6s;
+  ul {
+    margin-bottom: 0;
+    @include flexbox;
+    @include justify-content(space-around);
+    @include align-content(flex-start);
+    @include align-items (flex-end);
+    @include flex-direction(column);
+    height: 100px;
+    li {
+      margin-bottom: 1px;
+      a {
+        color: $text-yellow;
+        padding-top: 12px;
+        background-color: $bg-black;
+        width:45px;
+        height: 45px;
+        display: block;
+        text-align:center;
+        &:hover {
+          background: $bg-yellow;
+          color: $text-black;
+        }
+      }
+    }
+  }
+}
+
+.header-search {
+  position: relative;
+  right: 0;
+  top: 0px;
+  color: $text-yellow;
+  background-color: $bg-black;
+  width:45px;
+  height: 45px;
+  display: block;
+  text-align:center;
+  &:hover {
+    background: $bg-yellow;
+    color: $text-black;
+    .fa{
+      color: $text-black;
+    }
+  }
+  .form-inline {
+    display: inline-block;
+  }
+  .serach-form-section {
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 80px;
+    left: 0;
+    transition: opacity 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    .form-group {
+      display: inline-block;
+      .form-control{
+        background-color: transparent;
+        border:0;
+        box-shadow: none;
+        min-height: 45px;
+        border-radius:0;
+      }
+    }
+  }
+  .btn-search, .btn-close {
+    visibility: hidden;
+    position: absolute;
+    right: 40px;
+    z-index: -1;
+    min-height:45px;
+    line-height:33px;
+  }
+  .serach-form-section,
+  .btn-search,
+  .btn-close {
+    top: 0px;
+    color:$text-yellow;
+  }
+  .btn-close{
+    right:5px;
+    border-left:1px solid rgba(255,255,255,0.2);
+    border-radius:0;
+  }
+  .btn-helper {
+    position: relative;
+    top:5px;
+  }
+  select {
+    width: 120px;
+  }
+  .keyword-form-group {
+    width: 100%;
+    .form-control {
+      width: 100%;
+      transition: none;
+    }
+  }
+  &.active {
+    width: 300px;
+    z-index: 99;
+    background: rgba(0,0,0,0.8);
+
+    .btn-search, .btn-close{
+      visibility: visible;
+      z-index: 1;
+      .fa{
+        color:$text-yellow;
+        font-size: 16px;
+      }
+    }
+    .serach-form-section {
+      width: 100%;
+      padding-left:0px;
+      opacity: 1;
+      visibility: visible;
+    }
+    .btn-helper {
+      visibility: hidden;
+    }
+  }
+}
+
+
+.scrollex-overlay.search-active-overlay{
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  background-color:rgba(0,0,0,0.4);
+  z-index:9;
+}
+@media(max-width: 767px){
+  #spree-header {
+    #logo {
+      width:130px;
+      height:40px;
+    }
+  }
+}
+body#login, body#signup{
+  .theme-container{
+    padding-top:15px;
+  }
+}
+
+

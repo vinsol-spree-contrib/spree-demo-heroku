@@ -1,0 +1,68 @@
+<% @body_id = 'product-details' %>
+<% cache cache_key_for_product do %>
+  <div data-hook="product_show" class="row" itemscope itemtype="https://schema.org/Product">
+    <div class="col-md-12 tab-content product-detail-tabs-content">
+      <article role="tabpanel" class="tab-pane active product-article-part" id="home">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-md-7  col-sm-6 col-xs-12" data-hook="product_left_part">
+                <div data-hook="product_left_part_wrap">
+                  <div id="product-images" data-hook="product_images">
+                    <div id="thumbnails" data-hook>
+                      <%= render partial: 'thumbnails' %>
+                    </div>
+                    <div id="main-image" class="" data-hook>
+                      <%= large_image(@product,  itemprop: "image", class: 'img-responsive') %>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-6 col-xs-12 pull-right product-right-part" data-hook="product_right_part">
+                <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+                <div itemprop="description" data-hook="description">
+                  <p><%= product_description(@product) %></p>
+                </div>
+                <div  data-hook="product_right_part_wrap">
+                  <div id="product-description" data-hook="product_description">
+                    <div id="cart-form" data-hook="cart_form">
+                      <%= render partial: 'cart_form' %>
+                    </div>
+                  </div>
+                  <div class="product-info-properties">
+                    <div data-hook="product_properties">
+                      <%= render partial: 'properties' %>
+                    </div>
+                    <div data-hook="promotions">
+                      <%= render partial: 'promotions' %>
+                    </div>
+                  </div> 
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <%= link_to '', :class => "similar-link", "data-toggle" => "modal", "data-target"=>"#flipFlop" do %>
+        Similar Items
+      <% end %>
+      <div class="modal fade modal-lg similar-modal" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="product-section-title text-center"><%= Spree.t(:look_for_similar_items) %></h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="taxon-crumbs" data-hook="product_taxons">
+              <%= render partial: 'taxons' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- product detail ends -->
+    </div>  
+  </div>
+<% end %>
+

@@ -1,0 +1,29 @@
+<% if @taxon.leaf? %>
+  <% @body_class = "category-page leaf-category #{ @taxon.name.gsub(/\s&\s/, '-') }" %>
+  
+<% elsif %>
+  <% @body_class = "category-brand root-category #{ @taxon.name.gsub(/\s&\s/, '-') }" %>
+<% else %>
+  <% @body_class = "category-page root-category #{ @taxon.name.gsub(/\s&\s/, '-') }" %>
+<% end %>
+
+
+<% content_for :sidebar do %>
+  <div data-hook="taxon_sidebar_navigation" class="sidebar-navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>    
+    <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
+  </div>
+<% end %>
+
+<div class="taxon-product-col" data-hook="taxon_products">
+    <h1 class="taxon-title"><%= @taxon.name %></h1>
+    <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+</div>
+
+<% unless params[:keywords].present? %>
+  <div class="taxon-children" data-hook="taxon_children">
+      <% cache [I18n.locale, @taxon] do %>
+        <%= render partial: 'taxon', collection: @taxon.children %>
+      <% end %>
+  </div>
+<% end %>
