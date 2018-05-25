@@ -49,8 +49,8 @@
     text-align: center;
   }
   a{
-  color:$black-color;
-  text-decoration:none;
+    color:$black-color;
+    text-decoration:none;
     &::hover{
       color:$link-color;
     }
@@ -134,41 +134,62 @@
     padding:0px 10px;
   }
 }
-#nav-bar #link-to-login{display:none;}
+#nav-bar #link-to-login{
+  display:none;
+}
 #nav-bar {
   li {
     display: none;
-
     &.header-nav-holder {
       display: inline-block;
     }
   }
 }
 @media screen and (max-width:767px){
-  #search-bar .all-cat-search{
-    border:0px;
-  }
-  .search-text-block{
-    display:block;
-    border-top:1px solid $border-color;
-    position: relative;
-    .form-group{
+  #search-bar{
+    margin-top:40px;
+    min-height: 40px;
+    .navbar-form{
+      height: 40px;
+    }
+    .form-group.all-cat-search{
+      border:0px;
       margin-bottom:0px;
+      display: inline-block;
+      vertical-align: middle;
+      width:125px;
+      &:before{
+        top:7px;
+      }
+    }
+    .form-control{
+      height: 39px;
     }
     .btn-search{
+      height: 40px;
       position: absolute;
       right:0;
       top:0;
     }
+    .search-text-block{
+      border-left: 1px solid $border-color;
+      position: relative;
+      width:calc(100% - 128px);
+      height: 40px;
+      margin-top: -1px;
+      .form-group{
+        margin-bottom:0px;
+      }
+    }
   }
+  
   #link-to-cart {
     position: absolute;
-    bottom: -45px;
-    right: 0;
-    z-index:1;
-    color:$wh-color;
+    top:-56px;
+    left:50%;
+    transform: translateX(-50%);
     a{
-      color:$wh-color !important;
+      color: $black-color !important;
     }
   }
   .navbar-toggle{
@@ -177,12 +198,11 @@
   #nav-bar {
     li {
       display: none;
-
       &.header-nav-holder {
         display:block;
       }
     }
-}
+  }
 }
 #logo{
   height:55px;
@@ -247,6 +267,44 @@ li.dropdown:hover > .dropdown-menu {
   }
 }
 
-
+@media screen and (max-width:767px){
+  #spree-header{  
+    #logo{
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      height: 45px;
+      margin-bottom: 0;
+      margin-left: -70px;
+      padding: 0;
+      z-index: 3;
+      img{
+        max-height: 43px;
+      }
+    }
+    .navbar-inverse{
+      top: 0;
+      position: absolute;
+      background-color: transparent;
+      .navbar{
+        min-height: 40px;
+        .navbar-toggle{
+          margin:5px 0 2px 0;
+          border-radius:0;
+          padding:7px 8px;
+          .icon-bar{
+            background-color: $black-color;
+          }
+          &:focus, &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+      .navbar-collapse{
+        background-color:$black-color;
+      }
+    }
+  }
+}
 
 

@@ -33,8 +33,8 @@ a.continue {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px; }
-  .btn-primary:hover, .btn-primary:focus {
-    background-color: #fff;
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:active:focus, .btn-primary:active:hover {
+    background-color: #fff !important;
     color: #333;
     border-color: #333; }
 
@@ -48,7 +48,7 @@ a.continue {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px; }
-  .btn-success:hover, .btn-success:focus, .btn-success:active {
+  .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success:active:focus, .btn-success:active:hover {
     background-color: transparent;
     color: #b6a08e;
     border-color: #b6a08e; }
@@ -77,7 +77,7 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
   padding-left: 15px;
   padding-right: 15px;
   color: #333; }
-  .btn-default:hover, .btn-default:focus {
+  .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default:active:focus, .btn-default:active:hover {
     background-color: transparent;
     border-color: #333; }
 
@@ -87,6 +87,16 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
 .lead.price {
   padding: 0px;
   display: table-cell; }
+
+p.field.checkbox {
+  padding-left: 15px;
+  margin-top: 0; }
+
+td.cart-item-quantity input {
+  min-width: 80px; }
+
+td.lead {
+  line-height: 30px !important; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #order_coupon_code {
@@ -112,4 +122,7 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
   #checkout-summary {
     position: relative !important;
     padding-top: 15px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+
+  .well.form-buttons {
+    padding: 10px; } }

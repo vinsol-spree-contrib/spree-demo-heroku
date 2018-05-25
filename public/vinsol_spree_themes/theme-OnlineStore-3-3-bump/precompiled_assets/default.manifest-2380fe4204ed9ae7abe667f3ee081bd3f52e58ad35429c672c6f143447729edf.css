@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*
+* all stylesheet files should be required in this manifest.
+*/
 #spree-header {
   background-color: #fff; }
   #spree-header #header {
@@ -134,28 +137,42 @@
     display: inline-block; }
 
 @media screen and (max-width: 767px) {
-  #search-bar .all-cat-search {
-    border: 0px; }
-
-  .search-text-block {
-    display: block;
-    border-top: 1px solid #ddd;
-    position: relative; }
-    .search-text-block .form-group {
-      margin-bottom: 0px; }
-    .search-text-block .btn-search {
+  #search-bar {
+    margin-top: 40px;
+    min-height: 40px; }
+    #search-bar .navbar-form {
+      height: 40px; }
+    #search-bar .form-group.all-cat-search {
+      border: 0px;
+      margin-bottom: 0px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 125px; }
+      #search-bar .form-group.all-cat-search:before {
+        top: 7px; }
+    #search-bar .form-control {
+      height: 39px; }
+    #search-bar .btn-search {
+      height: 40px;
       position: absolute;
       right: 0;
       top: 0; }
+    #search-bar .search-text-block {
+      border-left: 1px solid #ddd;
+      position: relative;
+      width: calc(100% - 128px);
+      height: 40px;
+      margin-top: -1px; }
+      #search-bar .search-text-block .form-group {
+        margin-bottom: 0px; }
 
   #link-to-cart {
     position: absolute;
-    bottom: -45px;
-    right: 0;
-    z-index: 1;
-    color: #fff; }
+    top: -56px;
+    left: 50%;
+    transform: translateX(-50%); }
     #link-to-cart a {
-      color: #fff !important; }
+      color: #333 !important; }
 
   .navbar-toggle {
     float: left; }
@@ -202,6 +219,34 @@ li.dropdown:hover > .dropdown-menu {
     .menu-brand-helper .sidebar-item .list-group a:first-child {
       border-top: 0px; }
 
+@media screen and (max-width: 767px) {
+  #spree-header #logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    height: 45px;
+    margin-bottom: 0;
+    margin-left: -70px;
+    padding: 0;
+    z-index: 3; }
+    #spree-header #logo img {
+      max-height: 43px; }
+  #spree-header .navbar-inverse {
+    top: 0;
+    position: absolute;
+    background-color: transparent; }
+    #spree-header .navbar-inverse .navbar {
+      min-height: 40px; }
+      #spree-header .navbar-inverse .navbar .navbar-toggle {
+        margin: 5px 0 2px 0;
+        border-radius: 0;
+        padding: 7px 8px; }
+        #spree-header .navbar-inverse .navbar .navbar-toggle .icon-bar {
+          background-color: #333; }
+        #spree-header .navbar-inverse .navbar .navbar-toggle:focus, #spree-header .navbar-inverse .navbar .navbar-toggle:hover {
+          background-color: transparent; }
+    #spree-header .navbar-inverse .navbar-collapse {
+      background-color: #333; } }
 #spree-footer {
   background-color: #fff; }
 
@@ -326,7 +371,9 @@ li.dropdown:hover > .dropdown-menu {
     display: block; }
 
   #newsletter-footer .input-wrapper {
-    width: 60%; } }
+    width: 60%; }
+    #newsletter-footer .input-wrapper input {
+      width: 100%; } }
 .panel-footer {
   background-color: transparent;
   border-radius: 0px;
@@ -554,8 +601,8 @@ a.continue {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px; }
-  .btn-primary:hover, .btn-primary:focus {
-    background-color: #fff;
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:active:focus, .btn-primary:active:hover {
+    background-color: #fff !important;
     color: #333;
     border-color: #333; }
 
@@ -569,7 +616,7 @@ a.continue {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px; }
-  .btn-success:hover, .btn-success:focus, .btn-success:active {
+  .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success:active:focus, .btn-success:active:hover {
     background-color: transparent;
     color: #b6a08e;
     border-color: #b6a08e; }
@@ -598,7 +645,7 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
   padding-left: 15px;
   padding-right: 15px;
   color: #333; }
-  .btn-default:hover, .btn-default:focus {
+  .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default:active:focus, .btn-default:active:hover {
     background-color: transparent;
     border-color: #333; }
 
@@ -608,6 +655,16 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
 .lead.price {
   padding: 0px;
   display: table-cell; }
+
+p.field.checkbox {
+  padding-left: 15px;
+  margin-top: 0; }
+
+td.cart-item-quantity input {
+  min-width: 80px; }
+
+td.lead {
+  line-height: 30px !important; }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   #order_coupon_code {
@@ -633,7 +690,10 @@ input:disabled.btn:hover, input:disabled.btn:active, input:disabled.btn:focus {
   #checkout-summary {
     position: relative !important;
     padding-top: 15px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+
+  .well.form-buttons {
+    padding: 10px; } }
 body {
   background-color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
@@ -715,9 +775,9 @@ a.list-group-item, button.list-group-item {
 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: .1em;
+  top: .2em;
   left: .3em;
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 0.8;
   color: #b6a08e;
   transition: all .2s; }
@@ -730,8 +790,7 @@ a.list-group-item, button.list-group-item {
   opacity: 1;
   transform: scale(1); }
 
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
+[type="checkbox"]:checked:focus + label:before {
   border: 2px solid #b6a08e; }
 
 label:hover:before {
@@ -752,7 +811,7 @@ label {
   -webkit-border-radius: 0px;
   -mx-border-radius: 0px;
   font-size: 20px; }
-  .btn-black:hover, .btn-black:active, .btn-black:focus {
+  .btn-black:hover, .btn-black:active, .btn-black:focus, .btn-black:active:focus, .btn-black:active:hover {
     background-color: #b6a08e;
     color: #fff; }
 
@@ -1058,3 +1117,7 @@ h1 {
 
 label.error {
   color: #f00; }
+
+abbr[title] {
+  text-decoration: none !important;
+  border-bottom: 0 !important; }

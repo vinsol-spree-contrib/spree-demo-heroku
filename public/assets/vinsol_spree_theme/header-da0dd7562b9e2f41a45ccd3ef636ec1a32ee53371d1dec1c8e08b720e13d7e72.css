@@ -133,28 +133,42 @@
     display: inline-block; }
 
 @media screen and (max-width: 767px) {
-  #search-bar .all-cat-search {
-    border: 0px; }
-
-  .search-text-block {
-    display: block;
-    border-top: 1px solid #ddd;
-    position: relative; }
-    .search-text-block .form-group {
-      margin-bottom: 0px; }
-    .search-text-block .btn-search {
+  #search-bar {
+    margin-top: 40px;
+    min-height: 40px; }
+    #search-bar .navbar-form {
+      height: 40px; }
+    #search-bar .form-group.all-cat-search {
+      border: 0px;
+      margin-bottom: 0px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 125px; }
+      #search-bar .form-group.all-cat-search:before {
+        top: 7px; }
+    #search-bar .form-control {
+      height: 39px; }
+    #search-bar .btn-search {
+      height: 40px;
       position: absolute;
       right: 0;
       top: 0; }
+    #search-bar .search-text-block {
+      border-left: 1px solid #ddd;
+      position: relative;
+      width: calc(100% - 128px);
+      height: 40px;
+      margin-top: -1px; }
+      #search-bar .search-text-block .form-group {
+        margin-bottom: 0px; }
 
   #link-to-cart {
     position: absolute;
-    bottom: -45px;
-    right: 0;
-    z-index: 1;
-    color: #fff; }
+    top: -56px;
+    left: 50%;
+    transform: translateX(-50%); }
     #link-to-cart a {
-      color: #fff !important; }
+      color: #333 !important; }
 
   .navbar-toggle {
     float: left; }
@@ -200,3 +214,32 @@ li.dropdown:hover > .dropdown-menu {
       border-top: 1px solid #333; }
     .menu-brand-helper .sidebar-item .list-group a:first-child {
       border-top: 0px; }
+
+@media screen and (max-width: 767px) {
+  #spree-header #logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    height: 45px;
+    margin-bottom: 0;
+    margin-left: -70px;
+    padding: 0;
+    z-index: 3; }
+    #spree-header #logo img {
+      max-height: 43px; }
+  #spree-header .navbar-inverse {
+    top: 0;
+    position: absolute;
+    background-color: transparent; }
+    #spree-header .navbar-inverse .navbar {
+      min-height: 40px; }
+      #spree-header .navbar-inverse .navbar .navbar-toggle {
+        margin: 5px 0 2px 0;
+        border-radius: 0;
+        padding: 7px 8px; }
+        #spree-header .navbar-inverse .navbar .navbar-toggle .icon-bar {
+          background-color: #333; }
+        #spree-header .navbar-inverse .navbar .navbar-toggle:focus, #spree-header .navbar-inverse .navbar .navbar-toggle:hover {
+          background-color: transparent; }
+    #spree-header .navbar-inverse .navbar-collapse {
+      background-color: #333; } }

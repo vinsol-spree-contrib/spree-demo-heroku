@@ -26,8 +26,8 @@ a.continue{color:$link-color;}
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px;
-  &:hover,&:focus{
-    background-color:$wh-color;
+  &:hover, &:active, &:focus,  &:active:focus, &:active:hover{
+    background-color:$wh-color !important;
     color:$black-color;
     border-color:$black-color;
   }
@@ -39,7 +39,7 @@ a.continue{color:$link-color;}
   padding-left: 15px;
   padding-right: 15px;
   font-size: 16px;
-  &:hover,&:focus,&:active{
+  &:hover,&:focus,&:active, &:active:focus, &:active:hover{
     background-color:transparent;
     color:$link-color;
     border-color:$link-color;
@@ -62,7 +62,7 @@ input:disabled.btn{
   padding-left: 15px;
   padding-right: 15px;
   color:$black-color;
-  &:hover,&:focus{
+  &:hover,&:focus, &:active, &:active:focus, &:active:hover{
     background-color:transparent;
     border-color:$black-color;
   }
@@ -73,6 +73,18 @@ input:disabled.btn{
 .lead.price{
   padding:0px;
   display: table-cell;
+}
+p.field.checkbox{
+  padding-left: 15px;
+  margin-top: 0;
+}
+td.cart-item-quantity {
+  input{
+    min-width:80px;
+  }
+}
+td.lead{
+  line-height: 30px !important;
 }
 @media screen and (min-width:768px) and (max-width:991px){
   #order_coupon_code{
@@ -99,6 +111,9 @@ input:disabled.btn{
   position: relative !important;
   padding-top:15px;
   padding-bottom:10px;
+ }
+ .well.form-buttons{
+  padding:10px;
  }
  
 }

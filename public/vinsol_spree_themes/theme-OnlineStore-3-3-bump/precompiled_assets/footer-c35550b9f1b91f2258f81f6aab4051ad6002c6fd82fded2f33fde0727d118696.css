@@ -122,4 +122,6 @@
     display: block; }
 
   #newsletter-footer .input-wrapper {
-    width: 60%; } }
+    width: 60%; }
+    #newsletter-footer .input-wrapper input {
+      width: 100%; } }
