@@ -1,5 +1,5 @@
 <% if @product.taxons.present? %>
-<%= javascript_include_tag 'owl.carousel' %>
+<%= javascript_include_tag 'owl.carousel.min' %>
 <div class="row">
   <h3 class="page-title"><%= Spree.t(:Look_for_similar_items) %></h3>
   <div class="list-group related-product-list fsh-demo" id="similar_items_by_taxon" data-hook data-slider="tab-slider">
