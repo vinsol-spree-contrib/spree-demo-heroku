@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_admin_activity_tracker.git
-  revision: a60542724cb07fc3dfbdad25f8e1227dd33a79d0
+  revision: bb733b3d333a7a614949a6b4ab8d076cfe3faf94
   branch: develop
   specs:
     spree_simple_admin_activity_tracker (0.0.1.alpha)
