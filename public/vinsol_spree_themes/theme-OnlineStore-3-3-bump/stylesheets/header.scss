@@ -182,7 +182,7 @@
       }
     }
   }
-  
+
   #link-to-cart {
     position: absolute;
     top:-56px;
@@ -268,7 +268,7 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 @media screen and (max-width:767px){
-  #spree-header{  
+  #spree-header{
     #logo{
       position: absolute;
       top: 50px;
@@ -280,6 +280,7 @@ li.dropdown:hover > .dropdown-menu {
       z-index: 3;
       img{
         max-height: 43px;
+        max-width: none;
       }
     }
     .navbar-inverse{
