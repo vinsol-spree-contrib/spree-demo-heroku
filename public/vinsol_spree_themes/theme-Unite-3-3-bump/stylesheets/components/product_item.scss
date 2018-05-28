@@ -95,7 +95,7 @@
     position: relative;
     margin-bottom: 0px;
     text-align: center;
-    .tmb-all {
+    .tmb-all, .vtmb{
       a{
         display: block;
         .thumbnail{
@@ -380,7 +380,7 @@
   }
 }
 @media only screen and (max-width: 767px){
-  .progress-steps li{
+  .progress-steps.nav-pills li{
     display: inline-block;
     &.active {
       a:before{
@@ -390,7 +390,70 @@
         right: auto;
       }
     }
+    a{
+      padding-left:5px !important;
+      padding-right:5px !important;
+      font-size: 12px;
+    }
   }
+  #spree-header{
+    #top-nav-bar{
+      a[href="/account"]{
+        font-size: 0;
+        padding: 0px;
+        width:30px;
+        height: 30px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin-right:10px;
+        border:1px solid #2a2a2a; 
+        &:before{
+          font-size:14px;
+          content: '\e008';
+          font-family: 'Glyphicons Halflings';
+          position: absolute;
+          left: 7px;
+          top: 4px;
+        }
+      }
+      a[href="/logout"]{
+        font-size: 0;
+        padding: 0px;
+        width:30px;
+        height: 30px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        border:1px solid #2a2a2a; 
+        &:before{
+          font-size:14px;
+          content: '\e163';
+          font-family: 'Glyphicons Halflings';
+          position: absolute;
+          left: 7px;
+          top: 4px;
+        }
+      }
+    }
+    .header-search.active{
+      .serach-form-section{
+        padding-left: 15px;
+      }
+      .keyword-form-group{
+        width:calc(100% - 200px);
+      }
+      .btn-search{
+        right:40px;
+      }
+      .btn-close{
+        right:8px;
+        top:8px;
+      }
+    }
+  }
+
+
 }
 @media only screen and (max-width: 479px){
   .progress-steps li{
@@ -404,5 +467,18 @@
       }
     }
   }
+}
+
+.btn-primary{
+  &.bg-gray{
+    &:active:hover, &active:focus, &:hover, &:focus, &:active{
+      background-color:rgba(0,0,0,0.3);
+      border-color:rgba(0,0,0,0.3);
+    }
+  }
+  .well.form-buttons{
+    padding:10px;
+  }
+
 }
 

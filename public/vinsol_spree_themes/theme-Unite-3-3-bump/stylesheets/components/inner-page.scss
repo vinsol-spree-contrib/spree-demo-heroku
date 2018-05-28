@@ -1,7 +1,10 @@
 @import "custom-checkbox";
 @import "owl_carousel";
 @import url('https://fonts.googleapis.com/css?family=Niconne');
-
+abbr[title]{
+  text-decoration: none;
+  border:0;
+}
 .theme-container {
   &.main-container{
     padding-top:85px;
@@ -51,15 +54,21 @@
 .bg-orange{
   background-color:#df9300;
   border-color:#df9300;
-  &:hover, &:focus{
+  &:hover, &:focus, &:active{
     background-color:#000;
     border-color:#000;
   }
   &:active{
     &:hover, &:focus{
-      background-color:#000;
-      border-color:#000;
+      background-color:#000 !important;
+      border-color:#000 !important; 
     }
+  }
+}
+.btn-success.bg-orange{
+  &:active:hover, &:active:focus, &:hover, &:focus, &:active{
+    background-color:#000 !important;
+    border-color:#000 !important;  
   }
 }
 .bg-gray{
@@ -119,7 +128,9 @@
   color:#df9300;
   }
 }
-
+.cart-item-price, .cart-item-total{
+  font-size:16px;
+}
 #sidebar{
   
   padding: 0 15px 0 15px;
@@ -155,6 +166,7 @@
     background-color: #000;
     background-size:100%;
     background-position: center;
+    background-repeat: no-repeat;
     color: #000; 
     text-align: center;
     display: flex;
@@ -197,6 +209,7 @@
     background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);    
     background-size:100%;
     background-position: center;
+    background-repeat: no-repeat;
     color: #000; 
     text-align: center;
     display: flex;
@@ -276,6 +289,32 @@
     button{
       display: inline-block;
       margin-top:-5px;
+    }
+  }
+  .cart-item-image{
+
+  }
+  .cart-item-description, .order-item-description{
+    min-width:250px;
+    white-space: normal !important;
+    span{
+      font-size: 13px;
+    }
+  }
+  .cart-item-quantity{
+    min-width: 100px;
+    .form-control{
+      padding:3px;
+    }
+  }
+  .root-category.category-page, .leaf-category.category-page {
+    h1.taxon-title{
+      height: 110px;
+    }
+  }
+  .cart-total{
+    .lead{
+      line-height: 35px;
     }
   }
 }
