@@ -27,7 +27,7 @@
     content: '';
     position: absolute;
     left: 0; top: 0;
-    width: 1.25em; height: 1.25em;
+    width: 20px; height: 20px;
     border: 2px solid $border-color;
     background: $wh-color;
     border-radius: 0px;
@@ -36,8 +36,8 @@
   [type="checkbox"]:checked + label:after {
     content: '✔';
     position: absolute;
-    top: .1em; left: .3em;
-    font-size: 1.3em;
+    top: 5px; left: 5px;
+    font-size: 14px;
     line-height: 0.8;
     color: $primary-color;
     transition: all .2s;
@@ -50,8 +50,7 @@
     opacity: 1;
     transform: scale(1);
   }
-  [type="checkbox"]:checked:focus + label:before,
-  [type="checkbox"]:not(:checked):focus + label:before {
+  [type="checkbox"]:checked:focus + label:before{
     border: 2px solid $primary-color;
   }
   label:hover:before {

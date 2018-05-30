@@ -558,6 +558,12 @@ body#product-details, body#checkout-page, body#cart, body#default{
       }
     }
   }
+  #search input[type="search"].form-control{
+    height:40px;
+    line-height:40px;
+    font-size: 20px;
+    text-transform: unset;
+  }
 }
 
 

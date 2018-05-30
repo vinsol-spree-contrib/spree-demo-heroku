@@ -5,10 +5,17 @@
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
       <% if taxonomy.root.children.any? %>
         <h4 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %> 
-        <span class="dropdown-icon visible-xs"><i class="fa fa-chevron-circle-down"></i></span>
+        <span class="dropdown-icon visible-xs" data-x='dropup'><i class="fa fa-chevron-circle-down"></i></span>
          </h4>
         <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
       <% end %>
     <% end %>
   <% end %>
 </nav>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".dropdown-icon, .dropdown-price").click(function(){
+      $(this).find("i").toggleClass("fa-chevron-circle-down fa-chevron-circle-up");
+    })
+  })
+</script>

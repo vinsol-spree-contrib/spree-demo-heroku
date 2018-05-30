@@ -5,14 +5,20 @@
   <div class="panel-body" data-hook="checkout_payment_step">
     <% if @payment_sources.present? %>
       <div class="card_options">
-        <%= radio_button_tag 'use_existing_card', 'yes', true %>
-        <label for="use_existing_card_yes">
-          <%= Spree.t(:use_existing_cc) %>
-        </label>
-        <%= radio_button_tag 'use_existing_card', 'no' %>
-        <label for="use_existing_card_no">
-          <%= Spree.t(:use_new_cc_or_payment_method) %>
-        </label>
+        <div class="row">
+          <div class="col-md-5 col-xs-12">
+            <%= radio_button_tag 'use_existing_card', 'yes', true %>
+            <label for="use_existing_card_yes">
+              <%= Spree.t(:use_existing_cc) %>
+            </label>
+          </div>
+          <div class="col-md-5 col-xs-12">
+            <%= radio_button_tag 'use_existing_card', 'no' %>
+            <label for="use_existing_card_no">
+              <%= Spree.t(:use_new_cc_or_payment_method) %>
+            </label>
+          </div>
+        </div>
       </div>
 
       <div id="existing_cards">
