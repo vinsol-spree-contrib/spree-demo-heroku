@@ -8,11 +8,7 @@
     <% taxonomy = Spree::Taxonomy.first %>
     <p class="footer-menu-link">
       <% taxonomy.root.children.each_with_index do |taxon, i| %>
-        <% if ( @body_id == 'home-page' ) %>
-          <%= link_to taxon.name, 't/' + taxon.permalink  %>
-        <% else %>
-          <%= link_to taxon.name %>
-        <% end %>
+        <%= link_to taxon.name, nested_taxons_path(taxon.permalink)  %>
       <% end %>
     </p>
 

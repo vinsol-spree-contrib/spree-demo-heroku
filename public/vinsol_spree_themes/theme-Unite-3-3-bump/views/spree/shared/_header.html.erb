@@ -12,11 +12,7 @@
           <ul class="unite-menu-list">
             <% taxonomy.root.children.each_with_index do |taxon, i| %>
               <li>
-                  <% if ( @body_class == 'root-category' || 'leaf-category' ) %>
-                    <%= link_to taxon.name  %>
-                  <% else %>
-                    <%= link_to taxon.name, 't/' + taxon.permalink  %>
-                  <% end %>
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink)  %>
               </li>
             <% end %>
           </ul>

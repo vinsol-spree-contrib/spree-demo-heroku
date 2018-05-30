@@ -382,14 +382,6 @@
 @media only screen and (max-width: 767px){
   .progress-steps.nav-pills li{
     display: inline-block;
-    &.active {
-      a:before{
-        content: "\f105";
-        bottom: 15%;
-        left: 0;
-        right: auto;
-      }
-    }
     a{
       padding-left:5px !important;
       padding-right:5px !important;
@@ -456,15 +448,10 @@
 
 }
 @media only screen and (max-width: 479px){
-  .progress-steps li{
-    display: inline-block;
-    &.active {
-      a:before{
-        content: "\f105";
-        bottom: 15%;
-        left: 0;
-        right: auto;
-      }
+  .well.form-buttons{
+    padding:10px 5px;
+    span{
+      font-size:12px;
     }
   }
 }
@@ -476,9 +463,5 @@
       border-color:rgba(0,0,0,0.3);
     }
   }
-  .well.form-buttons{
-    padding:10px;
-  }
-
 }
 
