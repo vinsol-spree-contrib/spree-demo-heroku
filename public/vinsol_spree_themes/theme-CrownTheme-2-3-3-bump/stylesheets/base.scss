@@ -124,7 +124,7 @@
 }
 #checkout-summary{
   background-color:#f5f5f5;
-  
+
 }
 ul.progress-steps {
   background-color: $light-gray-color;
@@ -197,7 +197,7 @@ ul.progress-steps li.active:after {
 ul.progress-steps li.active a,
 ul.progress-steps li.active a:active,
 ul.progress-steps li.active a:visited,
-ul.progress-steps li.active a:focus, 
+ul.progress-steps li.active a:focus,
 ul.progress-steps li.active a:hover{
   color: $wh-color;
   background: $primary-color;
@@ -320,7 +320,7 @@ ul.progress-steps .active ~ li a:focus {
   @media screen and (max-width:767px){
     height:300px;
   }
-  .hotspot-text { 
+  .hotspot-text {
     position: absolute;
     bottom: 0px;
     right:0;
@@ -349,7 +349,7 @@ ul.progress-steps .active ~ li a:focus {
       border-radius: 0px;
       padding:5px 15px;
     }
-  } 
+  }
   &:hover{
     .hotspot-text {
       bottom: 0;
@@ -395,7 +395,7 @@ ul.progress-steps .active ~ li a:focus {
     height: 2px;
     width: 50px;
     background-color: $secondary-color;
-  }  
+  }
 }
 
 
@@ -510,7 +510,7 @@ label{
   border:1px solid $primary-color;
   border-radius: 0px;
   font-size:18px;
-  text-transform: uppercase;  
+  text-transform: uppercase;
   @include transition(all 0.5s ease);
   &.btn-cart-hover {
     overflow:hidden;
@@ -547,7 +547,7 @@ label{
   display:inline-block;
   margin:0;
   cursor:pointer;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   overflow:hidden;
   border-width:1px;
   border-style:solid;
@@ -659,7 +659,7 @@ label{
 }
 
 .login-page{
-  background-color:$light-gray-color; 
+  background-color:$light-gray-color;
   margin-top: 100px;
   margin-bottom: 100px;
   .panel-default{
@@ -687,7 +687,7 @@ label{
   }
   .extras-link{
     a{
-      display: inline-block; 
+      display: inline-block;
       color: $primary-color;
       text-decoration:none;
       padding: 5px;
@@ -729,4 +729,9 @@ label{
     margin-top:0px;
     margin-bottom:0px;
   }
+}
+
+abbr[title]{
+  text-decoration:none !important;
+  border:0 !important;
 }
