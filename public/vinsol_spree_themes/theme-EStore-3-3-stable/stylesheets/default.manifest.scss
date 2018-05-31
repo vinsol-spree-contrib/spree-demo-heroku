@@ -1,0 +1,17 @@
+/*
+* all stylesheet files should be required in this manifest.
+
+*/
+@import 'lib/jquery.bxslider';
+
+@import 'common/global';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/product-block';
+
+@import 'pages/home';
+@import 'pages/product-details';
+@import 'pages/users';
+@import 'pages/cart';
+@import 'pages/checkout';

@@ -1,0 +1,14 @@
+@import 'common/variables';
+@import 'common/mixins';
+
+.global-footer {
+  width: $full;
+  height: 40px;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $color-white;
+  text-align: center;
+  background: $color-black;
+}

@@ -1,0 +1,15 @@
+<div class="col-sm-6 col-sm-offset-3 login-section no-border no-spacing">
+  <div class="user-block">
+    <h3 class="section-heading"><%= Spree.t(:editing_user) %></h3>
+    <div class="login-form-section">
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+      
+      <%= form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f| %>
+        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+        <div class="login-form-row">
+          <%= f.submit Spree.t(:update), :class => 'button-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+@import 'common/variables';
+@import 'common/mixins';
+
+.user-block {
+  border: solid 1px $border-grey;
+  border-top: solid 5px $link-blue;
+  padding: 15px;
+
+  .login-form-row {
+    margin-top: 15px;
+  }
+}
+
+.user-email-block {
+  border: solid 1px $border-grey;
+  padding: 10px;
+  background: $light-grey-bg;
+
+  dd {
+    margin-top: 5px;
+  }
+
+  .user-email-edit-link {
+    color: $link-blue;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.user-orders-block {
+  margin-top: 40px;
+}
+
+.user-orders-table {
+  border: solid 1px $border-grey-table;
+
+  th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  a {
+    color: $link-blue;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}

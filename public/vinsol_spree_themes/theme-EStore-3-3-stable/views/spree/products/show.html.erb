@@ -1,0 +1,60 @@
+<% @body_id = 'product-details' %>
+
+<% cache cache_key_for_product do %>
+  <div data-hook="product_show" itemscope itemtype="https://schema.org/Product">
+    <div class="row product-top-row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6 product-image-section" data-hook="product_left_part">
+            <div data-hook="product_left_part_wrap">
+              <div id="product-images" data-hook="product_images">
+                <div id="main-image" class="product-main-image-block" data-hook>
+                  <div class="product-image-holder">
+                    <%= product_image(@product, itemprop: "image", class: 'product-main-image') %>
+                  </div>
+                </div>
+                <div id="thumbnails" class="product-thumbnails" data-hook>
+                  <%= render partial: 'thumbnails' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 product-properties-section" data-hook="product_right_part">
+            <div data-hook="product_right_part_wrap">
+              <div id="product-description" data-hook="product_description">
+                <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+
+                <div id="cart-form" data-hook="cart_form">
+                  <%= render partial: 'cart_form' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 product-banner-block"><%= render partial: 'spree/shared/home_banners' %></div>
+    </div>
+
+    <div class="product-bottom-block">
+      <div class="product-description-block" itemprop="description" data-hook="description">
+        <h2 class="section-heading">Description</h2>
+        <div class="product-description-text">
+          <%= product_description(@product) %>
+        </div>
+      </div>
+
+      <div class="product-properties-section" data-hook="product_properties">
+        <%= render partial: 'properties' %>
+      </div>
+
+      <div data-hook="promotions">
+        <%= render partial: 'promotions' %>
+      </div>
+
+      <div id="taxon-crumbs" class="product-similar-items-block" data-hook="product_taxons">
+        <%= render partial: 'taxons' %>
+      </div>
+    </div>
+  </div>
+<% end %>

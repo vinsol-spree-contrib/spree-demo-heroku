@@ -1,0 +1,34 @@
+.user-block {
+  border: solid 1px #c7c7c7;
+  border-top: solid 5px #0083c1;
+  padding: 15px; }
+  .user-block .login-form-row {
+    margin-top: 15px; }
+
+.user-email-block {
+  border: solid 1px #c7c7c7;
+  padding: 10px;
+  background: #f7f7f9; }
+  .user-email-block dd {
+    margin-top: 5px; }
+  .user-email-block .user-email-edit-link {
+    color: #0083c1; }
+    .user-email-block .user-email-edit-link:hover {
+      color: #000; }
+
+.user-orders-block {
+  margin-top: 40px; }
+
+.user-orders-table {
+  border: solid 1px #ddd; }
+  .user-orders-table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap; }
+  .user-orders-table td {
+    font-size: 12px; }
+  .user-orders-table a {
+    color: #0083c1; }
+    .user-orders-table a:hover {
+      color: #000; }

@@ -1,0 +1,261 @@
+@import 'common/fonts';
+@import 'common/variables';
+@import 'common/mixins';
+
+#spree-header {
+  margin: 0;
+  background: transparent;
+
+  #header {
+    padding: 0;
+    background: transparent;
+  }
+}
+
+.header-top-bar {
+  border-bottom: solid 1px $border-light-grey;
+  padding: 10px 0;
+  color: $light-grey-text;
+  font-size: 13px;
+  background: $color-white;
+
+  .header-top-navbar {
+    text-align: right;
+  }
+
+  .header-top-nav {
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .header-top-nav-link {
+    color: $light-grey-text;
+    font-size: 13px;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  #link-to-cart {
+    .cart-info {
+      &.empty {
+        color: $light-grey-text;
+      }
+
+      &.full {
+        color: $link-blue;
+      }
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header-bottom-section {
+  padding: 20px 0;
+  background: $link-blue;
+
+  .header-logo {
+    color: $color-white;
+    font-family: $secondary-font;
+    font-size: 36px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px 0;
+
+    .header-logo-section {
+      margin-bottom: 0 !important;
+    }
+
+    .header-logo {
+      font-size: 24px;
+    }
+
+    .header-mobile-menu-block {
+      padding-top: 8px;
+    }
+
+    .header-mobile-menu {
+      color: $color-white;
+      font-size: 21px;
+    }
+  }
+}
+
+.header-search-block {
+  padding-top: 11px;
+  text-align: right;
+
+  .header-search-select-block {
+    width: 25%;
+    margin-left: -5px;
+    border-right: solid 1px $border-light-grey;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+  }
+
+  .header-search-input-block {
+    width: 70%;
+    margin-left: -5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .header-search-button-block {
+    width: 5%;
+    margin-left: -5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .header-search-input {
+    width: $full;
+    height: 40px;
+    border: none;
+    padding: 0 10px;
+  }
+
+  .header-search-button {
+    width: $full;
+    height: 40px;
+    margin: 0;
+    border: none;
+    padding: 0;
+    color: $color-white;
+    background: $color-black;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header-mobile-menu-dropdown {
+  width: $full;
+  height: $full;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, .6);
+  @include transition(all, .3s, ease-in-out);
+
+  &.show {
+    left: 0;
+  }
+
+  .header-mobile-menu-close-link {
+    color: $color-white;
+    font-size: 24px;
+    position: absolute;
+    right: 14px;
+    top: 15px;
+  }
+
+  #top-nav-bar {
+    width: 85%;
+    height: $full;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $color-white;
+  }
+
+  .header-top-navbar {
+    padding: 20px 10px;
+    text-align: left;
+  }
+
+  .header-top-nav {
+    border-top: solid 1px $border-grey;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .header-top-nav-link {
+    padding: 6px 0;
+    display: block;
+  }
+}
+
+.mobile-search-section {
+  border-bottom: solid 1px $border-grey;
+  padding: 10px 0;
+  position: relative;
+
+  .mobile-search-icon {
+    position: relative;
+    color: $color-black;
+    font-size: 16px;
+    @include transition(all, .3s, ease-in-out);
+
+    &:before {
+      content: "\f002";
+      font-family: FontAwesome;
+    }
+
+    &.selected {
+      &:before {
+        content: "\f00d";
+        font-family: FontAwesome;
+      }
+    }
+  }
+
+  .mobile-search-block {
+    position: static;
+  }
+
+  .mobile-header-search {
+    width: $full;
+    height: 1px;
+    padding: 0 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+    background: $color-white;
+    @include opacity(0);
+    @include transition(all, .3s, ease-in-out);
+
+    &.show {
+      height: auto;
+      @include opacity(1);
+    }
+  }
+
+  .header-search-select-block {
+    display: none;
+  }
+
+  .header-search-input {
+    width: 85%;
+    height: 40px;
+    border: solid 1px $border-grey;
+    padding: 0 10px;
+    float: left;
+  }
+
+  .header-search-button {
+    width: 15%;
+    height: 40px;
+    border: solid 1px $link-blue;
+    float: left;
+    color: $color-white;
+    text-align: center;
+    background: $link-blue;
+  }
+}

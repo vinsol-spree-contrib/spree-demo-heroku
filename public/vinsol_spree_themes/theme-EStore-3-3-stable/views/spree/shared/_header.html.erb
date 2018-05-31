@@ -1,0 +1,51 @@
+<div id="spree-header" class="header-section">
+  <header id="header" data-hook>
+    <div class="header-top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">Welcome to the SpreeTheme</div>
+          <div class="col-sm-6">
+            <%= render partial: 'spree/shared/nav_bar' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom-section">
+      <div class="container">
+        <div class="row">
+          <div id="logo" class="col-sm-4 header-logo-section" data-hook>
+            <div class="row">
+              <div class="col-xs-8">
+                <a href="/" class="header-logo">Spree<b>Theme</b></a>
+              </div>
+              <div class="col-xs-4 text-right header-mobile-menu-block visible-xs">
+                <a href="javascript:" class="header-mobile-menu fa fa-bars"></a>
+                <div class="header-mobile-menu-dropdown">
+                  <a href="javascript:" class="header-mobile-menu-close-link fa fa-times-circle"></a>
+                  <%= render partial: 'spree/shared/nav_bar' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8 header-search-block">
+            <%= render partial: 'spree/shared/main_nav_bar' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-search-section visible-xs">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 mobile-search-block">
+            <a href="javascript:" class="mobile-search-icon"></a>
+            <div class="mobile-header-search"><%= render partial: 'spree/shared/search' %></div>
+          </div>
+          <div class="col-xs-6 mobile-cart-block text-right"><%= link_to_cart %></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

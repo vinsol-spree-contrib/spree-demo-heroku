@@ -1,0 +1,54 @@
+.home-banner-section {
+  margin-top: 30px; }
+  .home-banner-section .home-banner-holder {
+    border: solid 1px #e1e1e1;
+    padding: 10px; }
+  .home-banner-section .home-banner-icon-block {
+    color: #0083c1;
+    font-size: 24px;
+    text-align: right; }
+  .home-banner-section .home-banner-content-block {
+    padding-top: 3px;
+    padding-left: 0; }
+  .home-banner-section .home-banner-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .home-banner-section .home-banner-content {
+    color: #999;
+    font-size: 12px; }
+
+.hompage-slider-section {
+  margin-top: 30px;
+  position: relative; }
+  .hompage-slider-section .homepage-slider-row {
+    width: 100%;
+    height: 450px; }
+  .hompage-slider-section .bx-wrapper .bx-viewport {
+    border: solid 1px #c7c7c7;
+    padding: 0;
+    left: 0;
+    box-shadow: 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 transparent;
+    -ms-box-shadow: 0 0 0 transparent;
+    -o-box-shadow: 0 0 0 transparent; }
+  .hompage-slider-section .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 8px;
+    height: 8px;
+    border: solid 1px #000;
+    background: transparent;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%; }
+    .hompage-slider-section .bx-wrapper .bx-pager.bx-default-pager a.active {
+      border-color: #0083c1;
+      background: #0083c1; }
+  @media (max-width: 767px) {
+    .hompage-slider-section {
+      margin-top: 0; }
+      .hompage-slider-section .homepage-slider-row {
+        height: 260px; }
+      .hompage-slider-section .bx-wrapper {
+        margin-bottom: 30px; } }

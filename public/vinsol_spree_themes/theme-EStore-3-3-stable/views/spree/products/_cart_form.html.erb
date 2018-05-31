@@ -1,0 +1,81 @@
+<%= form_for :order, url: populate_orders_path do |f| %>
+  <div class="product-price-variant-block" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <% if @product.price_in(current_currency) && !@product.price.nil? %>
+      <div data-hook="product_price" class="">
+        <div id="product-price" class="product-price-block">
+          <%= Spree.t(:price) %>
+          <span itemprop="price" content="<%= @product.price_in(current_currency).amount.to_d %>">
+            <%= display_price(@product) %>
+          </span>
+          <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+
+          <% if @product.master.can_supply? %>
+            <link itemprop="availability" href="https://schema.org/InStock" />
+          <% elsif @product.variants.empty? %>
+            <br />
+            <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div id="product-price">
+        <br />
+        <div>
+          <span class="price selling" itemprop="price">
+            <%= Spree.t('product_not_available_in_this_currency') %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+
+
+    <% if @product.variants_and_option_values(current_currency).any? %>
+      <div id="product-variants" class="product-variant-section">
+        <h3 class="section-subtitle"><%= Spree.t(:variants) %></h3>
+        <ul class="product-variant-block">
+          <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
+            <li>
+              <%= radio_button_tag "variant_id", variant.id, index == 0,
+                  'data-price' => variant.price_in(current_currency).money,
+                  'data-in-stock' => variant.can_supply?
+              %>
+              <%= label_tag "variant_id_#{ variant.id }" do %>
+                <span class="variant-description">
+                  <%= variant_options variant %>
+                </span>
+                <% if variant_price variant %>
+                  <span class="price diff"><%= variant_price variant %></span>
+                <% end %>
+                <% unless variant.can_supply? %>
+                  <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
+                <% end %>
+              <% end %>
+            </li>
+          <% end%>
+        </ul>
+      </div>
+    <% else %>
+      <%= hidden_field_tag "variant_id", @product.master.id %>
+    <% end %>
+
+    <% if @product.can_supply? %>
+      <div class="add-to-cart product-cart-block">
+        <div class="row">
+          <div class="col-sm-4 col-xs-5 product-input-block">
+            <div class="row">
+              <div class="col-sm-3 col-xs-4 product-qty-text">Qty</div>
+              <div class="col-sm-9 col-xs-8">
+                <%= number_field_tag :quantity, 1, class: 'product-qty-input', min: 1 %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-7 product-button-block">
+            <%= button_tag class: 'button-primary', id: 'add-to-cart-button', type: :submit do %>
+              <%= Spree.t(:add_to_cart) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

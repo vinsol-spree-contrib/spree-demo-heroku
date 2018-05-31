@@ -1,0 +1,8 @@
+<% if @product.taxons.present? %>
+  <h3 class="section-heading"><%= Spree.t(:look_for_similar_items) %></h3>
+  <div class="row" id="similar_items_by_taxon" data-hook>
+    <% @product.taxons.each do |taxon| %>
+      <div class="col-sm-3 col-xs-6 similar-items-block"><%= link_to taxon.name, seo_url(taxon), class: 'product-similar-item-link' %></div>
+    <% end %>
+  </div>
+<% end %>

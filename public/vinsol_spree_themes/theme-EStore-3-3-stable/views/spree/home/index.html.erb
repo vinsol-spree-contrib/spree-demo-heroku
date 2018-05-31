@@ -1,0 +1,17 @@
+<% @body_id = 'home-page' %>
+
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<section class="homepage-content-section">
+  <div class="homepage-product-section" data-hook="homepage_products">
+    <h2 class="section-heading no-border">Featured Products</h2>
+
+    <% cache(cache_key_for_products) do %>
+      <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+    <% end %>
+  </div>
+</section>
