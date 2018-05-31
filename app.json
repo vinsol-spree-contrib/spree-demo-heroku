@@ -13,7 +13,7 @@
     "heroku-postgresql:hobby-dev"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load"
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rake intercom:process_users"
   },
   "env": {
     "ADMIN_EMAIL": {
