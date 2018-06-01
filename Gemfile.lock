@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_item_returns.git
-  revision: 279a8a8834e2048a50ac6491f847e922aeadb43a
+  revision: ab71c7dffd15d88d19b4d351fa2d32a145d2334c
+  branch: appraise
   specs:
     spree_item_returns (3.3.0)
       spree_core (>= 3.2.0, < 4.0)
