@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418060736) do
+ActiveRecord::Schema.define(version: 20180605085652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,10 +145,11 @@ ActiveRecord::Schema.define(version: 20180418060736) do
 
   create_table "spree_favorites", id: :serial, force: :cascade do |t|
     t.integer "user_id"
-    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "product_id"], name: "index_spree_favorites_on_user_id_and_product_id", unique: true
+    t.string "favoritable_type"
+    t.bigint "favoritable_id"
+    t.index ["favoritable_type", "favoritable_id"], name: "index_spree_favorites_on_favoritable_type_and_favoritable_id"
     t.index ["user_id"], name: "index_spree_favorites_on_user_id"
   end
 
@@ -419,6 +420,8 @@ ActiveRecord::Schema.define(version: 20180418060736) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.boolean "returnable", default: false
+    t.integer "return_time", default: 0, null: false
     t.integer "favorite_users_count", default: 0
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
@@ -617,6 +620,7 @@ ActiveRecord::Schema.define(version: 20180418060736) do
     t.datetime "updated_at"
     t.integer "stock_location_id"
     t.integer "return_authorization_reason_id"
+    t.boolean "user_initiated", default: false
     t.index ["number"], name: "index_spree_return_authorizations_on_number", unique: true
     t.index ["order_id"], name: "index_spree_return_authorizations_on_order_id"
     t.index ["return_authorization_reason_id"], name: "index_return_authorizations_on_return_authorization_reason_id"
@@ -1017,9 +1021,11 @@ ActiveRecord::Schema.define(version: 20180418060736) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "intercom_user_id"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
+    t.index ["intercom_user_id"], name: "index_spree_users_on_intercom_user_id", unique: true
     t.index ["ship_address_id"], name: "index_spree_users_on_ship_address_id"
     t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
   end
@@ -1041,8 +1047,10 @@ ActiveRecord::Schema.define(version: 20180418060736) do
     t.datetime "updated_at", null: false
     t.datetime "discontinue_on"
     t.datetime "created_at", null: false
+    t.integer "favorite_users_count", default: 0
     t.index ["deleted_at"], name: "index_spree_variants_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_variants_on_discontinue_on"
+    t.index ["favorite_users_count"], name: "index_spree_variants_on_favorite_users_count"
     t.index ["is_master"], name: "index_spree_variants_on_is_master"
     t.index ["position"], name: "index_spree_variants_on_position"
     t.index ["product_id"], name: "index_spree_variants_on_product_id"
