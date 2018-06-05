@@ -130,6 +130,7 @@
 }
 .main-menu-active{
   overflow-y: hidden;
+  position:fixed;
   .unite-menu{
     visibility: visible;
     opacity: 1;
