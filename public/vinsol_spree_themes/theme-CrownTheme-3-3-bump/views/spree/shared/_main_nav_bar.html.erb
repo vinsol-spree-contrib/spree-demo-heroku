@@ -5,10 +5,10 @@
         <li class="dropdown mega-dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= taxonomy.name %> <i class="fa fa-angle-down pull-right"></i></a>
           <ul class="dropdown-menu">
-            
+
             <% taxonomy.root.children.each_with_index do |taxon, i| %>
               <li>
-                <%= link_to taxon.name, 't/' + taxon.permalink  %>
+                <%= link_to taxon.name, nested_taxons_path(taxon.permalink)  %>
               </li>
             <% end %>
           </ul>
