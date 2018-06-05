@@ -54,6 +54,7 @@
     &::hover{
       color:$link-color;
     }
+
   }
   .dropdown-menu{
     @include border-radius(0px);
@@ -201,6 +202,10 @@
       &.header-nav-holder {
         display:block;
       }
+      &#link-to-cart{
+        width:200px;
+        text-align: center;
+      }
     }
   }
 }
@@ -277,7 +282,7 @@ li.dropdown:hover > .dropdown-menu {
       margin-bottom: 0;
       margin-left: -70px;
       padding: 0;
-      z-index: 3;
+      z-index: 999;
       img{
         max-height: 43px;
         max-width: none;
@@ -306,6 +311,18 @@ li.dropdown:hover > .dropdown-menu {
       }
     }
   }
+  .right-top-head{
+    padding:0;
+    a{
+      &.my-account-text{
+        font-size:0;
+        .fa{
+          font-size: 14px;
+        }
+      }
+  }
+  }
+
 }
 
 

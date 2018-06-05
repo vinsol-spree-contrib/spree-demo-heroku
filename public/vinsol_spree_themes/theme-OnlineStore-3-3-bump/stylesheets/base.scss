@@ -72,7 +72,7 @@ a.list-group-item, button.list-group-item{
   content: '';
   position: absolute;
   left: 0; top: 0;
-  width: 1.25em; height: 1.25em;
+  width: 18px; height:18px;
   border: 2px solid $border-color;
   background: $wh-color;
   border-radius: 0px;
@@ -81,8 +81,8 @@ a.list-group-item, button.list-group-item{
 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: .2em; left: .3em;
-  font-size: 1em;
+  top: 3px; left: 3px;
+  font-size: 14px;
   line-height: 0.8;
   color: $link-color;
   transition: all .2s;
@@ -237,10 +237,9 @@ ol.breadcrumb{
 .progress-steps{
   margin-top:0px;
   margin-bottom:20px;
-}
-.progress-steps{ 
   border-bottom: 2px solid #DDD; 
 }
+
 .progress-steps > li.active > a, 
 .progress-steps  li.active > a:focus, 
 .progress-steps > li.active > a:hover { 
@@ -446,4 +445,46 @@ label.error{
 abbr[title]{
   text-decoration: none !important;
   border-bottom: 0 !important;
+}
+
+@media screen and (max-width:767px){
+  .progress-steps{
+    li{
+      display: inline-block !important;
+      float: left !important;
+      a{
+        font-size: 14px;
+      }
+    }
+  }
+  table#cart-detail{
+    td{
+      &.cart-item-description{
+        min-width: 200px;
+        white-space: normal;
+      }
+    }
+  }
+  table#line-items{
+    td{
+      &.order_item_description{
+        min-width: 200px !important;
+        white-space: normal !important;
+      }
+    }
+  }
+}
+label#use_billing{
+  display: block;;
+  clear: both;
+
+}
+@media screen and (max-width: 767px){
+  [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after{
+    font-size: 0.7em;
+    top:5px;
+  }
+}
+.order-number a{
+  color:$link-color;
 }
