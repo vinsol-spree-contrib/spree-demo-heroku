@@ -96,7 +96,12 @@ body {
 #link-to-login {
   display: none; }
 
-.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login {
+.nav.navbar-right-list li:nth-child(1), .nav.navbar-right-list li:nth-child(2) {
+  display: none; }
+
+.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login,
+.nav.navbar-right-list .dropdown-menu li:nth-child(n),
+#slide-nav-wrap li:nth-child(n) {
   display: block; }
 
 .search-form .fa {
@@ -186,7 +191,7 @@ body {
       #search-bar .navbar-form {
         min-width: 300px;
         right: 0;
-        left: -150px; } }
+        left: -50px; } }
   #search-bar .inline-input {
     display: inline-block;
     padding-right: 0px;
@@ -266,6 +271,8 @@ body {
     #slide-nav-wrap li a:hover {
       background-color: #ff8a00 !important;
       text-decoration: none; }
+  #slide-nav-wrap li ul {
+    overflow: hidden; }
 
 label.menu-label {
   display: block;
@@ -369,7 +376,10 @@ input[type="checkbox"].menu {
   margin-top: 0px; }
 
 body.nav-active {
-  overflow: hidden; }
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%; }
 
 .nav-overlay {
   position: fixed;
@@ -382,7 +392,8 @@ body.nav-active {
   background-color: rgba(0, 0, 0, 0.3);
   display: none; }
   .nav-overlay.active {
-    display: block; }
+    display: block;
+    z-index: 4; }
 
 @media screen and (min-width: 769px) {
   .dropdown:hover .dropdown-menu {

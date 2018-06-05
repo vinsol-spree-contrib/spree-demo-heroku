@@ -1,17 +1,17 @@
 <div class="row steps-data">
   <% if order.has_step?("address") %>
-    <div class="col-md-3 col-sm-3 col-xs-6" data-hook="order-bill-address">
+    <div class="col-md-3 col-sm-6 col-xs-12" data-hook="order-bill-address">
       <h4><%= Spree.t(:billing_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></h4>
       <%= render 'spree/shared/address', address: order.bill_address %>
     </div>
 
     <% if order.has_step?("delivery") %>
-      <div class="col-md-3 col-sm-3 col-xs-6" data-hook="order-ship-address">
+      <div class="col-md-3 col-sm-6 col-xs-12" data-hook="order-ship-address">
         <h4><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></h4>
         <%= render 'spree/shared/address', address: order.ship_address %>
       </div>
 
-      <div class="col-md-3 col-sm-3 col-xs-6" data-hook="order-shipment">
+      <div class="col-md-3 col-sm-6 col-xs-12" data-hook="order-shipment">
         <h4><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed? %></h4>
         <div class="delivery">
           <% order.shipments.each do |shipment| %>
@@ -26,7 +26,7 @@
   <% end %>
 
   <% if order.has_step?("payment") %>
-    <div class="col-md-3 col-sm-3 col-xs-6" data-hook="order-payment">
+    <div class="col-md-3 col-sm-6 col-xs-12" data-hook="order-payment">
       <h4><%= Spree.t(:payment_information) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:payment) unless order.completed? %></h4>
       <div class="payment-info">
         <%= render collection: order.payments.valid, partial: 'spree/shared/payment' %>
@@ -45,7 +45,7 @@
   <col width="5%" valign="middle" halign="center">
 
   <thead data-hook>
-    <tr class="active" data-hook="order_details_line_items_headers">
+    <tr class="active" data-hook="order_details_line_items_headers" >
       <th colspan="2"><%= Spree.t(:item) %></th>
       <th class="price"><%= Spree.t(:price) %></th>
       <th class="qty"><%= Spree.t(:qty) %></th>
@@ -55,7 +55,7 @@
 
   <tbody data-hook>
     <% order.line_items.each do |item| %>
-      <tr data-hook="order_details_line_item_row">
+      <tr data-hook="order_details_line_item_row" class="">
         <td data-hook="order_item_image">
           <% if item.variant.images.length == 0 %>
             <%= link_to small_image(item.variant.product), item.variant.product %>
@@ -63,7 +63,7 @@
             <%= link_to image_tag(item.variant.images.first.attachment.url(:small)), item.variant.product %>
           <% end %>
         </td>
-        <td data-hook="order_item_description">
+        <td data-hook="order_item_description" class="order_item_description">
           <h4><%= item.name %></h4>
           <%= truncate(item.description, length: 100) %>
           <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>

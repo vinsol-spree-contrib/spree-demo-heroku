@@ -103,8 +103,12 @@ body{
 #link-to-login{
   display: none;
 }
-
-.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login{
+.nav.navbar-right-list li:nth-child(1), .nav.navbar-right-list li:nth-child(2){
+  display:none;
+}
+.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login, 
+.nav.navbar-right-list .dropdown-menu li:nth-child(n),
+#slide-nav-wrap li:nth-child(n){
   display:block;
 }
 
@@ -202,7 +206,7 @@ body{
     @media screen and (max-width:767px){
       min-width:300px;
       right:0;
-      left:-150px;
+      left:-50px;
     }
   }
   .inline-input{
@@ -278,6 +282,9 @@ body{
         background-color:$secondary-color !important;
         text-decoration:none;
       }
+    }
+    ul{
+      overflow: hidden;
     }
   }
 }
@@ -401,6 +408,9 @@ input[type="checkbox"].menu{
 }
 body.nav-active{
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 .nav-overlay{
   position: fixed;
@@ -414,6 +424,7 @@ body.nav-active{
   display: none;
   &.active{
     display: block;
+    z-index: 4;
   }
 }
 @media screen and (min-width:769px){

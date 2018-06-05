@@ -108,4 +108,12 @@ td.lead {
   #checkout-summary {
     position: relative !important;
     padding-top: 15px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+
+  table#cart-detail td.cart-item-description {
+    min-width: 200px;
+    white-space: normal; }
+
+  table#line-items td.order_item_description {
+    min-width: 200px !important;
+    white-space: normal !important; } }

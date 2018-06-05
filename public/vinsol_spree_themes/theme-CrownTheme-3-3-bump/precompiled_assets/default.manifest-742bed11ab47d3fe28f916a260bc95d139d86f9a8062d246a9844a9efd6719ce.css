@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*
+* all stylesheet files should be required in this manifest.
+*/
 /*---bootstrap button override---*/
 /*---bootstrap button override---*/
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
@@ -99,7 +102,12 @@ body {
 #link-to-login {
   display: none; }
 
-.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login {
+.nav.navbar-right-list li:nth-child(1), .nav.navbar-right-list li:nth-child(2) {
+  display: none; }
+
+.nav.navbar-right-list li.dropdown .dropdown-menu #link-to-login,
+.nav.navbar-right-list .dropdown-menu li:nth-child(n),
+#slide-nav-wrap li:nth-child(n) {
   display: block; }
 
 .search-form .fa {
@@ -189,7 +197,7 @@ body {
       #search-bar .navbar-form {
         min-width: 300px;
         right: 0;
-        left: -150px; } }
+        left: -50px; } }
   #search-bar .inline-input {
     display: inline-block;
     padding-right: 0px;
@@ -269,6 +277,8 @@ body {
     #slide-nav-wrap li a:hover {
       background-color: #ff8a00 !important;
       text-decoration: none; }
+  #slide-nav-wrap li ul {
+    overflow: hidden; }
 
 label.menu-label {
   display: block;
@@ -372,7 +382,10 @@ input[type="checkbox"].menu {
   margin-top: 0px; }
 
 body.nav-active {
-  overflow: hidden; }
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%; }
 
 .nav-overlay {
   position: fixed;
@@ -385,7 +398,8 @@ body.nav-active {
   background-color: rgba(0, 0, 0, 0.3);
   display: none; }
   .nav-overlay.active {
-    display: block; }
+    display: block;
+    z-index: 4; }
 
 @media screen and (min-width: 769px) {
   .dropdown:hover .dropdown-menu {
@@ -814,7 +828,15 @@ td.lead {
   #checkout-summary {
     position: relative !important;
     padding-top: 15px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+
+  table#cart-detail td.cart-item-description {
+    min-width: 200px;
+    white-space: normal; }
+
+  table#line-items td.order_item_description {
+    min-width: 200px !important;
+    white-space: normal !important; } }
 /*---bootstrap button override---*/
 /* 
  * 	Core Owl Carousel CSS File
@@ -1284,8 +1306,9 @@ td.lead {
   transform: scale(1); }
 #checkout [type="checkbox"]:checked:focus + label:before, .list-group [type="checkbox"]:checked:focus + label:before, .login-page [type="checkbox"]:checked:focus + label:before {
   border: 2px solid #000; }
-#checkout label:hover:before, .list-group label:hover:before, .login-page label:hover:before {
-  border: 2px solid #000 !important; }
+@media screen and (min-width: 768px) {
+  #checkout label:hover:before, .list-group label:hover:before, .login-page label:hover:before {
+    border: 2px solid #000 !important; } }
 #checkout label, .list-group label, .login-page label {
   font-weight: normal;
   border-bottom: 0px !important; }
@@ -1915,3 +1938,25 @@ label.error {
 #registration .login-page {
   margin-top: 0px;
   margin-bottom: 0px; }
+
+.sv_checkbox {
+  padding-top: 5px; }
+
+.order-number a {
+  color: #ff8a00; }
+
+@media screen and (max-width: 767px) {
+  #checkout [type="checkbox"]:checked + label:after,
+  .list-group [type="checkbox"]:checked + label:after,
+  .login-page [type="checkbox"]:checked + label:after {
+    font-size: 0.7em;
+    top: 5px; }
+
+  .progress-steps > li {
+    float: left; }
+
+  .progress-steps > li + li {
+    margin-left: -2px; }
+
+  .progress-steps > li > a {
+    font-size: 14px; } }

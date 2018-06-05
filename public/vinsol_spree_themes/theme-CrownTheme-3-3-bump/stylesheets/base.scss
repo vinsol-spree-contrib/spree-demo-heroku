@@ -52,8 +52,10 @@
   {
     border: 2px solid $primary-color;
   }
-  label:hover:before {
-    border: 2px solid $primary-color!important;
+  @media screen and (min-width:768px){
+    label:hover:before {
+      border: 2px solid $primary-color!important;
+    }
   }
   label{
     font-weight: normal;
@@ -776,5 +778,28 @@ label{
   .login-page{
     margin-top:0px;
     margin-bottom:0px;
+  }
+}
+.sv_checkbox{
+  padding-top:5px;
+}
+.order-number a{
+  color:$secondary-color;
+}
+@media screen and (max-width:767px){
+  #checkout [type="checkbox"]:checked + label:after, 
+  .list-group [type="checkbox"]:checked + label:after, 
+  .login-page [type="checkbox"]:checked + label:after{
+    font-size: 0.7em;
+    top:5px;
+  }
+  .progress-steps > li {
+    float: left;
+  }
+  .progress-steps > li + li{
+    margin-left: -2px;
+  }
+  .progress-steps > li > a {
+    font-size: 14px;
   }
 }

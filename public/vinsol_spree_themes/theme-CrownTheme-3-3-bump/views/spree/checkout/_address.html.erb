@@ -19,13 +19,16 @@
           <h3 class="panel-title"><%= Spree.t(:shipping_address) %></h3>
         </div>
         <div class="panel-body">
-          <p class="field checkbox" data-hook="use_billing">
-          <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
-            <%= label_tag :order_use_billing, id: 'use_billing' do %> 
-              <%= Spree.t(:use_billing_address) %>
-            <% end %>
-          </p>
           <%= render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address } %>
+          <div class="col-md-12">
+            <p class="field checkbox" data-hook="use_billing">
+            <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
+              <%= label_tag :order_use_billing, id: 'use_billing' do %> 
+                <%= Spree.t(:use_billing_address) %>
+              <% end %>
+            </p>
+          </div>
+          
         </div>
       <% end %>
     </div>
@@ -33,7 +36,7 @@
 </div>
 
 <div class="form-buttons row" data-hook="buttons">
-  <div class="col-md-6">
+  <div class="col-md-6 col-xs-6 sv_checkbox" >
     <% if try_spree_current_user %>
       <span data-hook="save_user_address">
         &nbsp; &nbsp;
@@ -42,5 +45,5 @@
       </span>
     <% end %>
   </div>
-  <div class="col-md-6 text-right"> <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-default' %></div>
+  <div class="col-md-6 col-xs-6 text-right"> <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-default' %></div>
 </div>
