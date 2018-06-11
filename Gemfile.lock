@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_one_page_stock_management.git
-  revision: 32b8d60879fe2be5e4a9a83e7699b08d9d7fbf60
+  revision: 2e90548ae2312f5c650d5f022558bbcf211e9a6e
   branch: develop
   specs:
     spree_one_page_stock_management (0.0.1.alpha)

@@ -1,0 +1,8 @@
+uid,stock_location_name,count_on_hand,backorderable
+ROR-00001,default,20,false
+ROR-00012,default,205,true
+-1,default,200,
+1,sfas,23,false
+ROR-00011,default,,
+ROR-00003,default,2000,false
+ROR-32,default,23,false
