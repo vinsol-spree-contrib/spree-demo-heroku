@@ -163,17 +163,7 @@ body.leaf-category{
     }
   }
 }
-body.product-index{
-  #sidebar{
-    width:calc(100% - 30px);
-    margin-left:15px;
-    position: fixed;
-    top:10px;
-    text-align: center;
-    background-color: transparent;
-    z-index: 99;
-  }
-}
+
 
 
 .links.navbar-form{
@@ -222,6 +212,7 @@ body.product-index{
     background-color: $bg-light-gray;
   }
 }
+
 @media only screen and (max-width: 767px){
   .coupen-code-form{
     label{
@@ -244,7 +235,34 @@ body.category-brand{
     display: none;
   }
 }
-
+body.product-index{
+  #sidebar{
+    width:auto;
+    margin-left:15px;
+    position: fixed;
+    top:10px;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: transparent;
+    z-index: 9;
+    &.off-canvas{
+      top:-50px;
+    }
+    .dropdown{
+      width:100%;
+      padding:0px 0px;
+      background-color: #fff;
+      #taxonomies{
+        max-height: 280px;
+        overflow-y: scroll;
+        border-radius: 0;
+        width: 100%;
+        margin-top: -2px;
+      }
+    }
+  }
+}
 @media screen and (max-width:767px){
   #sidebar{
     width:100%;
@@ -279,6 +297,13 @@ body.category-brand{
       width:100%;
     }
   }
+
+  body.product-index{
+    #sidebar{
+      position: relative;
+      max-width: 250px;
+    }
+  }
   .theme-container {
     &.main-container{
       padding-top:60px;
@@ -291,19 +316,7 @@ body.category-brand{
 
 }
 
-body.product-index{
-  #sidebar{
-    width:calc(100% - 30px);
-    position:relative;
-    .dropdown{
-      width:100%;
-      padding:0px 30px;
-      .dropdown-toggle{
-        width:100%;
-      }
-    }
-  }
-}
+
 .back-to-top {
   cursor: pointer;
   position: fixed;
@@ -321,4 +334,26 @@ body.product-index{
     background:$bg-yellow;
     opacity: 0.7;
   }
+}
+body.search-header-active{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  &:before{
+    position:absolute;
+    content: '';
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+}
+body.nav-active{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+abbr[title]{
+  text-decoration: none;
+  border-bottom:0;
 }

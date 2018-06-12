@@ -1,0 +1,807 @@
+@charset "UTF-8";
+/*Mixin*/
+@import url("https://fonts.googleapis.com/css?family=Niconne");
+.custom-checkbox, .custom-radio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.custom-radio + .custom-radio {
+  margin-top: 10px; }
+
+.custom-radio-inline {
+  display: inline-block;
+  margin-right: 15px; }
+
+.custom-checkbox label, .custom-radio label {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 0px; }
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input, .custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+/* Create a custom checkbox */
+.checkmark, .bullet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee; }
+
+.bullet {
+  border-radius: 50%; }
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .checkmark, .custom-radio:hover input ~ .bullet {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark, .custom-radio input:checked ~ .bullet {
+  background-color: #fec622; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after, .bullet:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after,
+.custom-radio input:checked ~ .bullet:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.custom-radio .bullet:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+#login .checkmark {
+  border-radius: 0px;
+  margin-left: 15px; }
+#login .custom-checkbox {
+  padding-left: 55px; }
+
+/*Mixin*/
+/*Mixin*/
+a:hover, a:focus {
+  outline: none; }
+
+.hover-effect, .hover-effect-1 a {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.5em;
+  text-align: center; }
+
+.hover-effect a::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none; }
+  .hover-effect a::before:hover, .hover-effect a::before:focus {
+    color: #ba7700; }
+    .hover-effect a::before:hover:before, .hover-effect a::before:focus:before {
+      color: #fff;
+      text-shadow: 10px 0 #fff, -10px 0 #fff; }
+
+/* Effect 19: 3D side */
+.hover-effect-1 a, .hover-effect-1 button, .hover-effect-1 div {
+  line-height: 2em;
+  margin: 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  width: 200px; }
+  .hover-effect-1 a span, .hover-effect-1 button span, .hover-effect-1 div span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0 14px;
+    background: #fec622;
+    -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+    -moz-transition: -moz-transform 0.4s, background 0.4s;
+    transition: transform 0.4s, background 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50% -100px;
+    -moz-transform-origin: 50% 50% -100px;
+    transform-origin: 50% 50% -100px; }
+    .hover-effect-1 a span.black, .hover-effect-1 button span.black, .hover-effect-1 div span.black {
+      background: #191607;
+      color: #fff; }
+  .hover-effect-1 a:hover span, .hover-effect-1 a:focus span, .hover-effect-1 button:hover span, .hover-effect-1 button:focus span, .hover-effect-1 div:hover span, .hover-effect-1 div:focus span {
+    background: #e1b203;
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    transform: rotateY(-90deg); }
+    .hover-effect-1 a:hover span.black, .hover-effect-1 a:focus span.black, .hover-effect-1 button:hover span.black, .hover-effect-1 button:focus span.black, .hover-effect-1 div:hover span.black, .hover-effect-1 div:focus span.black {
+      background: #333;
+      color: #fff; }
+.hover-effect-1 div {
+  margin: 0px auto;
+  z-index: 1; }
+
+.csstransforms3d .hover-effect-1 a span::before, .csstransforms3d .hover-effect-1 button span::before, .csstransforms3d .hover-effect-1 div span::before {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: #e1b203;
+  content: attr(data-hover);
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  transition: background 0.4s;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  pointer-events: none; }
+.csstransforms3d .hover-effect-1 a:hover span::before, .csstransforms3d .hover-effect-1 a:focus span::before, .csstransforms3d .hover-effect-1 button:hover span::before, .csstransforms3d .hover-effect-1 button:focus span::before, .csstransforms3d .hover-effect-1 div:hover span::before, .csstransforms3d .hover-effect-1 div:focus span::before {
+  background: #e1b203; }
+.csstransforms3d .hover-effect-1 a:hover span.black:before, .csstransforms3d .hover-effect-1 a:focus span.black:before, .csstransforms3d .hover-effect-1 button:hover span.black:before, .csstransforms3d .hover-effect-1 button:focus span.black:before, .csstransforms3d .hover-effect-1 div:hover span.black:before, .csstransforms3d .hover-effect-1 div:focus span.black:before {
+  background: #333;
+  color: #fff; }
+
+.hover-effect-1 button {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0 15px; }
+  .hover-effect-1 button span {
+    min-height: 50px;
+    line-height: 50px; }
+
+.hover-effect-2 {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1em; }
+  .hover-effect-2:before, .hover-effect-2:after {
+    display: inline-block;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s; }
+  .hover-effect-2:before {
+    margin-right: 20px;
+    content: '[';
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px); }
+  .hover-effect-2:after {
+    margin-left: 20px;
+    content: ']';
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px); }
+  .hover-effect-2:hover, .hover-effect-2:focus {
+    text-decoration: none;
+    outline: none; }
+    .hover-effect-2:hover:before, .hover-effect-2:hover:after, .hover-effect-2:focus:before, .hover-effect-2:focus:after {
+      opacity: 0;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      transform: translateX(0px); }
+  .hover-effect-2 input[type="submit"] {
+    box-shadow: none;
+    background: transparent;
+    border: 0; }
+
+body#cart .hover-effect-1 a, body#cart .hover-effect-1 button {
+  width: 150px; }
+  body#cart .hover-effect-1 a span, body#cart .hover-effect-1 button span {
+    -webkit-transform-origin: 50% 50% -75px;
+    -moz-transform-origin: 50% 50% -75px;
+    transform-origin: 50% 50% -75px;
+    min-height: 40px;
+    line-height: 40px; }
+
+@media screen and (max-width: 767px) {
+  body#homepage .hover-effect-1 a, body#homepage .hover-effect-1 button, body#homepage .hover-effect-1 div {
+    width: 150px; } }
+.leaf-category.category-page h1.taxon-title {
+  height: calc(100% - 150px);
+  width: 25%;
+  background-image: url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-family: 'Niconne', cursive;
+  text-shadow: 1px 1px 1px #fff;
+  position: fixed;
+  top: 65px;
+  left: 15px; }
+  .leaf-category.category-page h1.taxon-title:before {
+    top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+  .leaf-category.category-page h1.taxon-title:after {
+    top: 30px;
+    right: 50px;
+    bottom: 30px;
+    left: 50px;
+    border-right: 3px solid #fff;
+    border-left: 3px solid #fff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0; }
+  .leaf-category.category-page h1.taxon-title:before, .leaf-category.category-page h1.taxon-title:after {
+    position: absolute;
+    content: '';
+    opacity: 1;
+    transition: opacity 0.35s, transform 0.35s; }
+.leaf-category.category-page.Men h1.taxon-title, .leaf-category.category-page.Shirts h1.taxon-title, .leaf-category.category-page.T-Shirts h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/men/1.jpg);
+  background-size: cover; }
+.leaf-category.category-page.New.Arrivals h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg); }
+.leaf-category.category-page.Women h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/women/1.jpg); }
+.leaf-category.category-page.Bags h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/bags/1.jpg); }
+.leaf-category.category-page.Home-Decor h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/home-decor/1.jpg); }
+.leaf-category.category-page.Watches h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/watches/1.jpg);
+  background-position: top right; }
+.leaf-category.category-page.Shoes h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg); }
+.leaf-category.category-page.Boys h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/kids/boys/1.jpg); }
+.leaf-category.category-page.Girls h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/kids/girls/1.jpg); }
+.leaf-category.category-page.Mugs h1.taxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/mugs/1.jpg); }
+
+.taxon {
+  position: relative;
+  min-height: calc(100vh - 200px);
+  margin-bottom: 15px; }
+
+.category-page .taxon {
+  padding-left: 25%; }
+.category-page .pd-search-result {
+  padding-left: calc(25% + 15px); }
+
+.category-brand .taxon {
+  padding-left: 25%; }
+  .category-brand .taxon .taxon {
+    padding-left: 0; }
+  .category-brand .taxon h5.subtaxon-title {
+    height: 100%;
+    width: 25%;
+    background-image: url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: left top;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 1px #191607;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    text-align: center; }
+    .category-brand .taxon h5.subtaxon-title a {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-align-content: center;
+      -moz-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      font-size: 50px;
+      color: #fff; }
+      .category-brand .taxon h5.subtaxon-title a:before {
+        top: 50px;
+        right: 30px;
+        bottom: 50px;
+        left: 30px;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0; }
+      .category-brand .taxon h5.subtaxon-title a:after {
+        top: 30px;
+        right: 50px;
+        bottom: 30px;
+        left: 50px;
+        border-right: 3px solid #fff;
+        border-left: 3px solid #fff;
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0);
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0; }
+      .category-brand .taxon h5.subtaxon-title a:before, .category-brand .taxon h5.subtaxon-title a:after {
+        position: absolute;
+        content: '';
+        opacity: 0;
+        transition: opacity 0.35s, transform 0.35s; }
+      .category-brand .taxon h5.subtaxon-title a:hover {
+        background-color: rgba(254, 198, 34, 0.6);
+        text-decoration: none; }
+        .category-brand .taxon h5.subtaxon-title a:hover:before, .category-brand .taxon h5.subtaxon-title a:hover:after {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1); }
+  .category-brand .taxon:nth-child(even) {
+    padding-right: 25%;
+    padding-left: 0; }
+    .category-brand .taxon:nth-child(even) h5.subtaxon-title {
+      right: 0;
+      left: auto; }
+.category-brand.Brands .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/men/1.jpg); }
+.category-brand.Brands .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/women/1.jpg);
+  background-position: right top; }
+.category-brand.Brands .taxon:nth-child(3) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/kids/1.jpg); }
+.category-brand.Brands .taxon:nth-child(4) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/clothing/1.jpg);
+  background-position: right top; }
+.category-brand.Brands .taxon:nth-child(5) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
+  background-position: center left; }
+.category-brand.Brands .taxon:nth-child(6) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/watches/1.jpg);
+  background-position: top right; }
+.category-brand.Brands .taxon:nth-child(8) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/bags/1.jpg);
+  background-position: top right; }
+.category-brand.Brands .taxon:nth-child(9) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/mugs/1.jpg); }
+.category-brand.Brands .taxon:nth-child(7) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/home-decor/1.jpg); }
+.category-brand.Men .taxon:nth-child(even) {
+  padding-right: 25%;
+  padding-left: 0; }
+  .category-brand.Men .taxon:nth-child(even) h5.subtaxon-title {
+    right: 0;
+    left: auto; }
+.category-brand.Men .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/men/1.jpg); }
+.category-brand.Men .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
+  background-position: center;
+  background-size: 100% auto; }
+.category-brand.Women .taxon:nth-child(even) {
+  padding-right: 25%;
+  padding-left: 0; }
+  .category-brand.Women .taxon:nth-child(even) h5.subtaxon-title {
+    right: 0;
+    left: auto; }
+.category-brand.Women .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/women/1.jpg);
+  background-position: left -100px top; }
+.category-brand.Women .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/bags/1.jpg);
+  background-position: right 100px top; }
+.category-brand.Women .taxon:nth-child(3) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg); }
+.category-brand.Kids .taxon:nth-child(even) {
+  padding-right: 25%;
+  padding-left: 0; }
+  .category-brand.Kids .taxon:nth-child(even) h5.subtaxon-title {
+    right: 0;
+    left: auto; }
+.category-brand.Kids .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/kids/boys/1.jpg);
+  background-position: left -100px top; }
+.category-brand.Kids .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/kids/girls/1.jpg);
+  background-position: right  top; }
+.category-brand.Shoes .taxon:nth-child(even) {
+  padding-right: 25%;
+  padding-left: 0; }
+  .category-brand.Shoes .taxon:nth-child(even) h5.subtaxon-title {
+    right: 0;
+    left: auto; }
+.category-brand.Shoes .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg); }
+.category-brand.Shoes .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
+  background-position: center;
+  background-size: 100% auto; }
+.category-brand.Clothing .taxon:nth-child(even) {
+  padding-right: 25%;
+  padding-left: 0; }
+  .category-brand.Clothing .taxon:nth-child(even) h5.subtaxon-title {
+    right: 0;
+    left: auto; }
+.category-brand.Clothing .taxon:nth-child(1) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/men/1.jpg); }
+.category-brand.Clothing .taxon:nth-child(2) h5.subtaxon-title {
+  background-image: url(/vinsol_spree_themes/current/images/category/men/1.jpg);
+  background-position: right top; }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .category-brand .taxon {
+    padding-left: 15px !important; }
+    .category-brand .taxon h5.subtaxon-title, .category-brand .taxon h1.taxon-title {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      background-size: cover !important;
+      background-position: center !important; }
+      .category-brand .taxon h5.subtaxon-title a, .category-brand .taxon h1.taxon-title a {
+        font-size: 30px; }
+    .category-brand .taxon:nth-child(even) {
+      padding-right: 15px !important; }
+
+  .leaf-category.category-page h1.taxon-title {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    top: 0;
+    left: 0; }
+  .leaf-category.category-page .pd-search-result {
+    padding-left: 15px; }
+  .leaf-category.category-page .taxon {
+    padding-left: 15px !important; } }
+@media screen and (max-width: 767px) {
+  .category-brand .taxon {
+    padding-left: 15px !important; }
+    .category-brand .taxon h5.subtaxon-title, .category-brand .taxon h1.taxon-title {
+      width: 100%;
+      height: 200px;
+      position: relative;
+      background-size: cover !important;
+      background-position: center !important; }
+      .category-brand .taxon h5.subtaxon-title a, .category-brand .taxon h1.taxon-title a {
+        font-size: 30px; }
+    .category-brand .taxon:nth-child(even) {
+      padding-right: 15px !important; }
+
+  .leaf-category.category-page h1.taxon-title {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    top: 0;
+    left: 0; }
+  .leaf-category.category-page .pd-search-result {
+    padding-left: 15px; }
+  .leaf-category.category-page .taxon {
+    padding-left: 15px !important; } }
+/*Mixin*/
+/*Mixin*/
+a:hover, a:focus {
+  outline: none; }
+
+.hover-effect, .hover-effect-1 a {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.5em;
+  text-align: center; }
+
+.hover-effect a::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none; }
+  .hover-effect a::before:hover, .hover-effect a::before:focus {
+    color: #ba7700; }
+    .hover-effect a::before:hover:before, .hover-effect a::before:focus:before {
+      color: #fff;
+      text-shadow: 10px 0 #fff, -10px 0 #fff; }
+
+/* Effect 19: 3D side */
+.hover-effect-1 a, .hover-effect-1 button, .hover-effect-1 div {
+  line-height: 2em;
+  margin: 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  width: 200px; }
+  .hover-effect-1 a span, .hover-effect-1 button span, .hover-effect-1 div span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0 14px;
+    background: #fec622;
+    -webkit-transition: -webkit-transform 0.4s, background 0.4s;
+    -moz-transition: -moz-transform 0.4s, background 0.4s;
+    transition: transform 0.4s, background 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50% -100px;
+    -moz-transform-origin: 50% 50% -100px;
+    transform-origin: 50% 50% -100px; }
+    .hover-effect-1 a span.black, .hover-effect-1 button span.black, .hover-effect-1 div span.black {
+      background: #191607;
+      color: #fff; }
+  .hover-effect-1 a:hover span, .hover-effect-1 a:focus span, .hover-effect-1 button:hover span, .hover-effect-1 button:focus span, .hover-effect-1 div:hover span, .hover-effect-1 div:focus span {
+    background: #e1b203;
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    transform: rotateY(-90deg); }
+    .hover-effect-1 a:hover span.black, .hover-effect-1 a:focus span.black, .hover-effect-1 button:hover span.black, .hover-effect-1 button:focus span.black, .hover-effect-1 div:hover span.black, .hover-effect-1 div:focus span.black {
+      background: #333;
+      color: #fff; }
+.hover-effect-1 div {
+  margin: 0px auto;
+  z-index: 1; }
+
+.csstransforms3d .hover-effect-1 a span::before, .csstransforms3d .hover-effect-1 button span::before, .csstransforms3d .hover-effect-1 div span::before {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: #e1b203;
+  content: attr(data-hover);
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  transition: background 0.4s;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  pointer-events: none; }
+.csstransforms3d .hover-effect-1 a:hover span::before, .csstransforms3d .hover-effect-1 a:focus span::before, .csstransforms3d .hover-effect-1 button:hover span::before, .csstransforms3d .hover-effect-1 button:focus span::before, .csstransforms3d .hover-effect-1 div:hover span::before, .csstransforms3d .hover-effect-1 div:focus span::before {
+  background: #e1b203; }
+.csstransforms3d .hover-effect-1 a:hover span.black:before, .csstransforms3d .hover-effect-1 a:focus span.black:before, .csstransforms3d .hover-effect-1 button:hover span.black:before, .csstransforms3d .hover-effect-1 button:focus span.black:before, .csstransforms3d .hover-effect-1 div:hover span.black:before, .csstransforms3d .hover-effect-1 div:focus span.black:before {
+  background: #333;
+  color: #fff; }
+
+.hover-effect-1 button {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0 15px; }
+  .hover-effect-1 button span {
+    min-height: 50px;
+    line-height: 50px; }
+
+.hover-effect-2 {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0px;
+  outline: none;
+  color: #333;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1em; }
+  .hover-effect-2:before, .hover-effect-2:after {
+    display: inline-block;
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s; }
+  .hover-effect-2:before {
+    margin-right: 20px;
+    content: '[';
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px); }
+  .hover-effect-2:after {
+    margin-left: 20px;
+    content: ']';
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px); }
+  .hover-effect-2:hover, .hover-effect-2:focus {
+    text-decoration: none;
+    outline: none; }
+    .hover-effect-2:hover:before, .hover-effect-2:hover:after, .hover-effect-2:focus:before, .hover-effect-2:focus:after {
+      opacity: 0;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      transform: translateX(0px); }
+  .hover-effect-2 input[type="submit"] {
+    box-shadow: none;
+    background: transparent;
+    border: 0; }
+
+body#cart .hover-effect-1 a, body#cart .hover-effect-1 button {
+  width: 150px; }
+  body#cart .hover-effect-1 a span, body#cart .hover-effect-1 button span {
+    -webkit-transform-origin: 50% 50% -75px;
+    -moz-transform-origin: 50% 50% -75px;
+    transform-origin: 50% 50% -75px;
+    min-height: 40px;
+    line-height: 40px; }
+
+@media screen and (max-width: 767px) {
+  body#homepage .hover-effect-1 a, body#homepage .hover-effect-1 button, body#homepage .hover-effect-1 div {
+    width: 150px; } }
+.alert-notice {
+  margin-top: 20px; }
+
+.progress-steps.nav-pills {
+  margin-bottom: 20px;
+  margin-top: 0px; }
+  .progress-steps.nav-pills li a {
+    display: block;
+    padding: 10px 20px;
+    margin: 0 5px 1px 0;
+    background: transparent;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    z-index: 2;
+    position: relative;
+    color: #333;
+    transition: all 0.3s ease 0s;
+    opacity: 0.4; }
+    .progress-steps.nav-pills li a:hover {
+      color: #191607;
+      border: none;
+      background-color: transparent; }
+    .progress-steps.nav-pills li a:before {
+      content: "\f105";
+      font-family: fontawesome;
+      font-size: 25px;
+      font-weight: 700;
+      color: #333;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 3px;
+      right: 0;
+      opacity: 0.4; }
+  .progress-steps.nav-pills li.active a {
+    color: #191607;
+    border: none;
+    font-weight: bold;
+    opacity: 1; }
+    .progress-steps.nav-pills li.active a:focus {
+      color: #191607;
+      border: none;
+      background-color: #df9300; }
+    .progress-steps.nav-pills li.active a:before {
+      opacity: 1; }
+  .progress-steps.nav-pills li:last-child a:before {
+    content: none; }
+
+.progress-steps .tab-content {
+  padding: 30px 20px 20px;
+  margin-top: 0;
+  background: #fff;
+  font-size: 15px;
+  color: #7a9181;
+  line-height: 30px;
+  border-radius: 0 0 5px 5px; }
+
+.progress-steps .tab-content h3 {
+  font-size: 24px;
+  margin-top: 0; }
+
+.checkout-content-tab form {
+  border: 1px solid #ddd; }
+  .checkout-content-tab form .panel-default {
+    border-color: transparent !important;
+    border-radius: 0 !important; }
+    .checkout-content-tab form .panel-default > .panel-heading {
+      background-color: transparent !important; }
+  .checkout-content-tab form .save-custom-check {
+    display: inline-block;
+    padding-right: 15px; }
+  .checkout-content-tab form .hover-effect-1 {
+    margin-bottom: 15px;
+    display: inline-block; }
+    .checkout-content-tab form .hover-effect-1 button span {
+      min-height: 40px;
+      line-height: 40px; }
+
+@media screen and (max-width: 767px) {
+  .save-custom-check {
+    margin-bottom: 10px;
+    margin-top: -10px; } }

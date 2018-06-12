@@ -429,6 +429,39 @@
       width:45px;
     }
   }
+  .add-to-cart{
+    flex-direction:column;
+    
+    .input-group {
+      flex-basis:200px;
+      margin-bottom:20px;
+      input{
+        min-width:100px;
+        max-width:none;
+      }
+    }
+  }
+  td.cart-item-quantity{
+    .line_item_quantity{
+      min-width:100px;
+    }
+  }
+  table#cart-detail{
+    td{
+      &.cart-item-description{
+        min-width: 200px;
+        white-space: normal;
+      }
+    }
+  }
+  table#line-items{
+    td{
+      &.order_item_description{
+        min-width: 200px !important;
+        white-space: normal !important;
+      }
+    }
+  }
 }
 
 
