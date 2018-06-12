@@ -61,4 +61,5 @@ gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 gem 'spree_one_page_stock_management', github: 'vinsol-spree-contrib/spree_one_page_stock_management', branch: 'develop'
 gem 'delayed_job_active_record'
-gem 'letter_opener_web'
+# gem 'letter_opener_web'
+gem 'letter_opener',  git: "git://github.com/alexrothenberg/letter_opener.git", branch: "on_a_server"
