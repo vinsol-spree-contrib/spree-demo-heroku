@@ -48,6 +48,8 @@ body#login, body#signup{
         height: 60px;
         margin-bottom: 20px;
         color:$wh-color;
+        font-size:16px;
+        letter-spacing:1px;
         &:focus{
           box-shadow:none;
         }
@@ -264,6 +266,11 @@ body#login{
       left: 0;
       width:100%;
     }
+  }
+}
+body#login{
+  .login-link{
+    display:none;
   }
 }
 

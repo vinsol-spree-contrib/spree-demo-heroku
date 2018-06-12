@@ -78,7 +78,11 @@ footer {
     }
   }
 }
-
+body#login, body#signup{
+  footer{
+    padding-top:0;
+  }
+}
 
 
 

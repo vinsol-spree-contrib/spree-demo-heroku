@@ -1,0 +1,76 @@
+/*---bootstrap button override---*/
+#search .btn-success {
+  padding: 20px 35px;
+  position: relative; }
+  #search .btn-success:hover {
+    letter-spacing: 3px; }
+    #search .btn-success:hover:before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      left: -5%;
+      top: -5%;
+      border: 1px solid #ff8a00; }
+
+footer {
+  padding-top: 50px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px; }
+
+.user-view-choice {
+  background: #000;
+  font-size: 30px;
+  color: #fff;
+  text-align: center; }
+
+.footer-heading {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: background, 0.15s;
+  -moz-transition: background, 0.15s;
+  -ms-transition: background, 0.15s;
+  -o-transition: background, 0.15s;
+  transition: background, 0.15s;
+  border-bottom: solid 1px #2e2e2e; }
+  .footer-heading:hover {
+    background: #df9300;
+    color: #fff;
+    text-decoration: none; }
+
+.footer-btm-row {
+  background: #0e0e0e;
+  text-transform: uppercase; }
+  .footer-btm-row p {
+    border-bottom: solid 1px #2e2e2e;
+    padding: 15px 0;
+    margin: 0;
+    line-height: 3; }
+    .footer-btm-row p.footer-social-links {
+      font-size: 15px; }
+  .footer-btm-row a {
+    color: inherit;
+    font-weight: 300;
+    padding: 0 5px; }
+    .footer-btm-row a:hover {
+      color: white; }
+    .footer-btm-row a .fa {
+      margin-right: 10px; }
+
+@media (min-width: 767px) {
+  .footer-heading {
+    border-left: solid 1px #2e2e2e; }
+    .footer-heading + .footer-heading {
+      border-top: none; } }
+@media (max-width: 767px) {
+  .user-view-choice {
+    font-size: 20px; }
+    .user-view-choice a {
+      padding-top: 20px;
+      padding-bottom: 15px; } }
+body#login footer, body#signup footer {
+  padding-top: 0; }

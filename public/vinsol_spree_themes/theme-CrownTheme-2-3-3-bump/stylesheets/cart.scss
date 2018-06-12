@@ -151,5 +151,24 @@ input:disabled.btn{
       font-size: 12px;
     }
   }
+  table#cart-detail{
+    td{
+      &.cart-item-description{
+        min-width: 200px;
+        white-space: normal;
+      }
+    }
+  }
+  table#line-items{
+    td{
+      &.order_item_description{
+        min-width: 200px !important;
+        white-space: normal !important;
+      }
+    }
+  }
+}
 
+.order-number a{
+  color:$secondary-color !important;
 }
