@@ -26,8 +26,6 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :letter_opener
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -91,4 +89,3 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
-LetterOpener.cannot_write_to_file_system!

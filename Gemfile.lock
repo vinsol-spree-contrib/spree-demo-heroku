@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/alexrothenberg/letter_opener.git
-  revision: 50b077315f11872f1173d092ddf81b9176c9badf
-  branch: on_a_server
-  specs:
-    letter_opener (0.0.2)
-      fakefs
-      launchy
-
-GIT
   remote: https://github.com/vinsol-spree-contrib/spree_one_page_stock_management.git
   revision: faf8b36c23524a13114e0147ff7347342f4e3a16
   branch: develop
@@ -129,7 +120,6 @@ GEM
       devise (>= 2.1.0)
     erubi (1.7.1)
     execjs (2.7.0)
-    fakefs (0.14.2)
     ffaker (2.9.0)
     ffi (1.9.23)
     friendly_id (5.2.4)
@@ -161,8 +151,6 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -397,7 +385,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   delayed_job_active_record
   jbuilder (~> 2.5)
-  letter_opener!
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
