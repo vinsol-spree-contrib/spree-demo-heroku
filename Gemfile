@@ -62,3 +62,5 @@ gem 'spree',                                      github: 'spree/spree',        
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
 
+gem 'spree_events_tracker',                       github: 'vinsol-spree-contrib/spree_events_tracker',            branch: 'data_archival'
+gem 'spree_admin_insights',                       github: 'vinsol-spree-contrib/spree-admin-insights',            branch: 'data_archival'
