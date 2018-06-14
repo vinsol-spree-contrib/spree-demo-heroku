@@ -75,6 +75,15 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_events_tracker.git
+  revision: eee00f37231c7320a2dc62c425de354af2b9b375
+  branch: data_archival
+  specs:
+    spree_events_tracker (3.3.1)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension (~> 0.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -397,6 +406,7 @@ DEPENDENCIES
   selenium-webdriver
   spree!
   spree_auth_devise!
+  spree_events_tracker!
   spree_gateway!
   spring
   spring-watcher-listen (~> 2.0.0)

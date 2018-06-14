@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418133100) do
+ActiveRecord::Schema.define(version: 20180614054920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,56 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
   end
 
+  create_table "spree_archived_cart_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.integer "quantity"
+    t.decimal "total", precision: 16, scale: 4
+    t.string "session_id"
+    t.integer "variant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_archived_cart_events_on_actor_type_and_actor_id"
+    t.index ["target_type", "target_id"], name: "index_spree_archived_cart_events_on_target_type_and_target_id"
+    t.index ["variant_id"], name: "index_spree_archived_cart_events_on_variant_id"
+  end
+
+  create_table "spree_archived_checkout_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.string "previous_state"
+    t.string "next_state"
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id", "actor_type"], name: "index_spree_archived_checkout_event_on_actor_id_actor_type"
+    t.index ["target_id", "target_type"], name: "index_spree_archived_checkout_event_on_target_id_target_type"
+  end
+
+  create_table "spree_archived_page_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.string "search_keywords"
+    t.string "session_id"
+    t.text "query_string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_archived_page_events_on_actor_type_and_actor_id"
+    t.index ["target_type", "target_id"], name: "index_spree_archived_page_events_on_target_type_and_target_id"
+  end
+
   create_table "spree_assets", id: :serial, force: :cascade do |t|
     t.string "viewable_type"
     t.integer "viewable_id"
@@ -100,6 +150,40 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
     t.index ["deleted_at"], name: "index_spree_calculators_on_deleted_at"
     t.index ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+  end
+
+  create_table "spree_cart_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.integer "quantity"
+    t.decimal "total", precision: 16, scale: 4
+    t.string "session_id"
+    t.integer "variant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_cart_events_on_actor_type_and_actor_id"
+    t.index ["target_type", "target_id"], name: "index_spree_cart_events_on_target_type_and_target_id"
+    t.index ["variant_id"], name: "index_spree_cart_events_on_variant_id"
+  end
+
+  create_table "spree_checkout_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.string "previous_state"
+    t.string "next_state"
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_checkout_events_on_actor_type_and_actor_id"
+    t.index ["target_type", "target_id"], name: "index_spree_checkout_events_on_target_type_and_target_id"
   end
 
   create_table "spree_countries", id: :serial, force: :cascade do |t|
@@ -304,6 +388,31 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
   end
 
+  create_table "spree_orders_subscriptions", id: :serial, force: :cascade do |t|
+    t.integer "subscription_id"
+    t.integer "order_id"
+    t.datetime "failed_at"
+    t.text "failure_reasons"
+    t.index ["order_id"], name: "index_spree_orders_subscriptions_on_order_id"
+    t.index ["subscription_id"], name: "index_spree_orders_subscriptions_on_subscription_id"
+  end
+
+  create_table "spree_page_events", id: :serial, force: :cascade do |t|
+    t.string "actor_type"
+    t.integer "actor_id"
+    t.string "target_type"
+    t.integer "target_id"
+    t.string "activity"
+    t.text "referrer"
+    t.string "search_keywords"
+    t.string "session_id"
+    t.text "query_string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_page_events_on_actor_type_and_actor_id"
+    t.index ["target_type", "target_id"], name: "index_spree_page_events_on_target_type_and_target_id"
+  end
+
   create_table "spree_payment_capture_events", id: :serial, force: :cascade do |t|
     t.decimal "amount", precision: 10, scale: 2, default: "0.0"
     t.integer "payment_id"
@@ -395,6 +504,12 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id"
   end
 
+  create_table "spree_product_subscription_frequencies", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "subscription_frequency_id"
+    t.index ["product_id"], name: "index_spree_product_subscription_frequencies_on_product_id"
+  end
+
   create_table "spree_products", id: :serial, force: :cascade do |t|
     t.string "name", default: "", null: false
     t.text "description"
@@ -410,9 +525,11 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.boolean "is_subscribable", default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
+    t.index ["is_subscribable"], name: "index_spree_products_on_is_subscribable"
     t.index ["name"], name: "index_spree_products_on_name"
     t.index ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
     t.index ["slug"], name: "index_spree_products_on_slug", unique: true
@@ -876,6 +993,43 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index "lower((code)::text)", name: "index_spree_stores_on_lower_code", unique: true
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["url"], name: "index_spree_stores_on_url"
+  end
+
+  create_table "spree_subscription_frequencies", id: :serial, force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "months_count"
+  end
+
+  create_table "spree_subscriptions", id: :serial, force: :cascade do |t|
+    t.integer "variant_id"
+    t.integer "quantity", default: 0, null: false
+    t.integer "parent_order_id"
+    t.integer "ship_address_id"
+    t.integer "bill_address_id"
+    t.datetime "cancelled_at"
+    t.decimal "price", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "enabled", default: false
+    t.integer "subscription_frequency_id"
+    t.string "number"
+    t.text "cancellation_reasons"
+    t.string "source_type"
+    t.integer "source_id"
+    t.integer "delivery_number"
+    t.boolean "paused", default: false, null: false
+    t.datetime "next_occurrence_at"
+    t.integer "prior_notification_days_gap", default: 7, null: false
+    t.boolean "next_occurrence_possible", default: true
+    t.index ["bill_address_id"], name: "index_spree_subscriptions_on_bill_address_id"
+    t.index ["cancelled_at"], name: "index_spree_subscriptions_on_cancelled_at"
+    t.index ["parent_order_id"], name: "index_spree_subscriptions_on_parent_order_id"
+    t.index ["paused"], name: "index_spree_subscriptions_on_paused"
+    t.index ["ship_address_id"], name: "index_spree_subscriptions_on_ship_address_id"
+    t.index ["subscription_frequency_id"], name: "index_spree_subscriptions_on_subscription_frequency_id"
+    t.index ["variant_id"], name: "index_spree_subscriptions_on_variant_id"
   end
 
   create_table "spree_taggings", id: :serial, force: :cascade do |t|
