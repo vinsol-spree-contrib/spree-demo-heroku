@@ -12,11 +12,14 @@
     .progress-steps {
       width: $full;
       margin-top: 0;
-      display: table;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
     }
 
     li {
-      width: 25%;
+      width: $full;
       float: left;
       text-align: center;
 
@@ -67,6 +70,10 @@
   .checkout-left-section {
     width: $full;
     float: left;
+  }
+
+  .checkout-user-email-block {
+    margin-top: 30px;
   }
 
   .checkout-address-save-block {
@@ -129,6 +136,8 @@
 }
 
 .checkout-delivery-section {
+  margin-top: 30px;
+
   .checkout-delivery-block {
     margin-top: 20px;
   }
@@ -170,8 +179,14 @@
 }
 
 .checkout-payment-section {
-  checkout-payment-block {
+  margin-top: 30px;
+
+  .checkout-payment-block {
     margin-top: 20px;
+  }
+
+  .checkout-payment-card-options {
+    margin-right: 20px;
   }
 }
 
@@ -194,6 +209,44 @@
   margin-top: 30px;
 }
 
+#checkout_form_confirm {
+  .well {
+    margin: 0;
+    margin-top: 30px;
+    border: none;
+    border-top: solid 1px $border-grey;
+    padding: 0;
+    padding-top: 20px;
+    background-color: transparent;
+    @include border-radius(0);
+
+    .btn {
+      &.btn-lg {
+        &.btn-success {
+          width: 50%;
+          height: 44px;
+          margin: 0;
+          border: none;
+          padding: 0;
+          color: $color-white;
+          font-family: $secondary-font;
+          font-size: 12px;
+          font-weight: 300;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          line-height: 46px;
+          background: $color-black;
+          @include border-radius(0);
+
+          &:hover {
+            background: $link-maroon;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .checkout-section {
     .checkout-progress-block {
@@ -208,6 +261,7 @@
           a {
             margin-bottom: 0;
             padding: 6px 0;
+            font-size: 11px;
           }
         }
       }
@@ -229,8 +283,23 @@
   }
 
   .checkout-address-form {
+    margin-top: 20px;
+
     .checkout-address-form-row {
       margin-top: 20px;
+
+      .col-md-4 {
+        &.field {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .checkout-payment-section {
+    .checkout-payment-card-options {
+      margin: 0 0 0 10px;
+      display: block;
     }
   }
 

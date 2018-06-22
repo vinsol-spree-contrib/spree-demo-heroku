@@ -140,7 +140,7 @@ input:visited {
     position: absolute;
     top: 17px;
     right: 10px;
-    z-index: 0; }
+    z-index: 2; }
   .custom-select-holder .custom-select {
     width: 100%;
     height: 36px;
@@ -232,12 +232,15 @@ ul.pagination {
 #sidebar .sidebar-item {
   margin-bottom: 40px; }
 #sidebar h4 {
+  margin-top: 30px;
   border-bottom: solid 1px #c7c7c7;
   padding-bottom: 5px;
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase; }
+  #sidebar h4:first-child {
+    margin-top: 0; }
 #sidebar .sidebar-accordion-link {
   display: none; }
 #sidebar .list-group {
@@ -274,6 +277,8 @@ ul.pagination {
 
   #sidebar {
     margin-bottom: 40px; }
+    #sidebar h4 {
+      margin-top: 20px; }
     #sidebar .sidebar-item {
       margin-top: 20px;
       margin-bottom: 0; }

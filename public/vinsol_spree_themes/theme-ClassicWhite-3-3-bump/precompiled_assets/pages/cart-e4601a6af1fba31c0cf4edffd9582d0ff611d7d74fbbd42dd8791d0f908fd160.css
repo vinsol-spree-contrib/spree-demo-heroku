@@ -69,6 +69,8 @@
 @media (max-width: 767px) {
   .cart-section .cart-table {
     margin-top: 0; }
+  .cart-section .cart-item-quantity {
+    min-width: 80px; }
   .cart-section .cart-update-button-block {
     width: 100%;
     padding-left: 0;

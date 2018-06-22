@@ -48,3 +48,10 @@
   color: #C14463; }
   .user-section .user-orders-table .order-number a:hover {
     color: #000; }
+
+@media (max-width: 767px) {
+  .login-section {
+    border-right: none; }
+
+  .login-other-section {
+    padding-top: 10px; } }

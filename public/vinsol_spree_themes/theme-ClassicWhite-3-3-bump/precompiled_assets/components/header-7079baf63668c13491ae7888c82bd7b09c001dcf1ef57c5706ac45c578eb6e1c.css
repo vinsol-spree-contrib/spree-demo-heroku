@@ -72,22 +72,28 @@
 
 .header-search {
   text-align: right; }
+  .header-search .header-search-block {
+    float: right; }
   .header-search .custom-select-holder {
-    width: 120px; }
+    width: 120px;
+    float: left; }
+    .header-search .custom-select-holder .custom-select {
+      background: #C14463; }
   .header-search .header-search-input {
     width: 250px;
     height: 36px;
-    margin-left: -5px;
-    padding: 0 10px;
     border: solid 1px #000;
+    border-left: none;
+    padding: 0 10px;
     display: inline-block;
+    float: left;
     font-size: 12px;
     background: #fff; }
   .header-search .header-search-button {
     height: 36px;
-    margin-left: -3px;
     border: none;
     padding: 0 12px;
+    float: left;
     color: #fff;
     line-height: 36px;
     background: #000; }
@@ -109,15 +115,23 @@
 
   .header-search {
     text-align: left; }
+    .header-search .header-search-block {
+      width: 100%;
+      float: left; }
     .header-search .custom-select-holder {
       display: none; }
     .header-search .header-search-input {
-      width: 84%; }
+      width: 82%;
+      border-left: solid 1px #000;
+      border-radius: 0;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0; }
     .header-search .header-search-button {
       margin-left: -4px; }
 
   .header-mobile-cart-block {
     padding-top: 5px;
+    padding-left: 0;
     display: block;
     text-align: right; }
     .header-mobile-cart-block .glyphicon {

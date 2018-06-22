@@ -25,7 +25,7 @@
     <div class="<%= if @order.state != 'confirm' then 'col-sm-8 checkout-left-section' else 'col-md-12 checkout-left-section' end %>" data-hook="checkout_form_wrapper">
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
         <% if @order.state == 'address' || !@order.email? %>
-          <div class="checkout-address-block">
+          <div class="checkout-address-block checkout-user-email-block">
             <%= form.label :email %>
             <%= form.email_field :email, class: 'global-input', required: true %>
           </div>

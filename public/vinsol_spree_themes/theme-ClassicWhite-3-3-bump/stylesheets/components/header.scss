@@ -108,26 +108,36 @@
 .header-search {
   text-align: right;
 
+  .header-search-block {
+    float: right;
+  }
+
   .custom-select-holder {
     width: 120px;
+    float: left;
+
+    .custom-select {
+      background: $link-maroon;
+    }
   }
 
   .header-search-input {
     width: 250px;
     height: 36px;
-    margin-left: -5px;
-    padding: 0 10px;
     border: solid 1px $color-black;
+    border-left: none;
+    padding: 0 10px;
     display: inline-block;
+    float: left;
     font-size: 12px;
     background: $color-white;
   }
 
   .header-search-button {
     height: 36px;
-    margin-left: -3px;
     border: none;
     padding: 0 12px;
+    float: left;
     color: $color-white;
     line-height: 36px;
     background: $color-black;
@@ -162,12 +172,20 @@
 
   .header-search {
     text-align: left;
+
+    .header-search-block {
+      width: $full;
+      float: left;
+    }
+
     .custom-select-holder {
       display: none;
     }
 
     .header-search-input {
-      width: 84%;
+      width: 82%;
+      border-left: solid 1px $color-black;
+      @include border-radius(0);
     }
 
     .header-search-button {
@@ -177,6 +195,7 @@
 
   .header-mobile-cart-block {
     padding-top: 5px;
+    padding-left: 0;
     display: block;
     text-align: right;
 

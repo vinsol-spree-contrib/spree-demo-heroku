@@ -89,3 +89,13 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .login-section {
+    border-right: none;
+  }
+
+  .login-other-section {
+    padding-top: 10px;
+  }
+}

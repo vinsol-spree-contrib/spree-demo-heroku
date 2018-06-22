@@ -8,9 +8,11 @@
   .checkout-section .checkout-progress-block .progress-steps {
     width: 100%;
     margin-top: 0;
-    display: table; }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
   .checkout-section .checkout-progress-block li {
-    width: 25%;
+    width: 100%;
     float: left;
     text-align: center; }
     .checkout-section .checkout-progress-block li.active {
@@ -42,6 +44,8 @@
 .checkout-section .checkout-left-section {
   width: 100%;
   float: left; }
+.checkout-section .checkout-user-email-block {
+  margin-top: 30px; }
 .checkout-section .checkout-address-save-block {
   padding-top: 10px; }
 .checkout-section .checkout-address-button-row {
@@ -80,34 +84,40 @@
     color: #000;
     font-size: 18px; }
 
-.checkout-delivery-section .checkout-delivery-block {
-  margin-top: 20px; }
-.checkout-delivery-section .checkout-devivery-block-title {
-  font-family: "Oswald", sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  text-transform: uppercase; }
-.checkout-delivery-section .checkout-delivery-table {
-  margin-top: 20px; }
-  .checkout-delivery-section .checkout-delivery-table th {
-    border-bottom: solid 1px #c7c7c7 !important;
+.checkout-delivery-section {
+  margin-top: 30px; }
+  .checkout-delivery-section .checkout-delivery-block {
+    margin-top: 20px; }
+  .checkout-delivery-section .checkout-devivery-block-title {
     font-family: "Oswald", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    background: transparent !important; }
-.checkout-delivery-section .checkout-delivery-shipping-row {
-  border-top: solid 1px #f7f7f9;
-  padding: 10px 0; }
-  .checkout-delivery-section .checkout-delivery-shipping-row:first-child {
-    border-top: none; }
-  .checkout-delivery-section .checkout-delivery-shipping-row label {
-    margin-bottom: 0;
     font-size: 13px;
-    font-weight: 300; }
+    font-weight: 300;
+    text-transform: uppercase; }
+  .checkout-delivery-section .checkout-delivery-table {
+    margin-top: 20px; }
+    .checkout-delivery-section .checkout-delivery-table th {
+      border-bottom: solid 1px #c7c7c7 !important;
+      font-family: "Oswald", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: transparent !important; }
+  .checkout-delivery-section .checkout-delivery-shipping-row {
+    border-top: solid 1px #f7f7f9;
+    padding: 10px 0; }
+    .checkout-delivery-section .checkout-delivery-shipping-row:first-child {
+      border-top: none; }
+    .checkout-delivery-section .checkout-delivery-shipping-row label {
+      margin-bottom: 0;
+      font-size: 13px;
+      font-weight: 300; }
 
-.checkout-payment-section checkout-payment-block {
-  margin-top: 20px; }
+.checkout-payment-section {
+  margin-top: 30px; }
+  .checkout-payment-section .checkout-payment-block {
+    margin-top: 20px; }
+  .checkout-payment-section .checkout-payment-card-options {
+    margin-right: 20px; }
 
 .checkout-order-section .checkout-order-block {
   margin-top: 20px; }
@@ -120,6 +130,37 @@
 .checkout-user-section {
   margin-top: 30px; }
 
+#checkout_form_confirm .well {
+  margin: 0;
+  margin-top: 30px;
+  border: none;
+  border-top: solid 1px #c7c7c7;
+  padding: 0;
+  padding-top: 20px;
+  background-color: transparent;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0; }
+  #checkout_form_confirm .well .btn.btn-lg.btn-success {
+    width: 50%;
+    height: 44px;
+    margin: 0;
+    border: none;
+    padding: 0;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 46px;
+    background: #000;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; }
+    #checkout_form_confirm .well .btn.btn-lg.btn-success:hover {
+      background: #C14463; }
+
 @media (max-width: 767px) {
   .checkout-section .checkout-progress-block {
     padding: 10px; }
@@ -127,7 +168,8 @@
       width: 100%; }
     .checkout-section .checkout-progress-block .nav-pills > li a {
       margin-bottom: 0;
-      padding: 6px 0; }
+      padding: 6px 0;
+      font-size: 11px; }
 
   .checkout-left-section {
     margin-top: 30px; }
@@ -137,8 +179,16 @@
   .checkout-address-form .checkout-address-form-block {
     margin-top: 15px; }
 
-  .checkout-address-form .checkout-address-form-row {
+  .checkout-address-form {
     margin-top: 20px; }
+    .checkout-address-form .checkout-address-form-row {
+      margin-top: 20px; }
+      .checkout-address-form .checkout-address-form-row .col-md-4.field {
+        margin-top: 20px; }
+
+  .checkout-payment-section .checkout-payment-card-options {
+    margin: 0 0 0 10px;
+    display: block; }
 
   .checkout-order-section .checkout-order-details-block {
     margin-top: 20px; }

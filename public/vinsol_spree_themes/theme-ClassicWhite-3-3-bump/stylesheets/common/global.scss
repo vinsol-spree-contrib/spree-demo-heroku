@@ -183,7 +183,7 @@ input {
     position: absolute;
     top: 17px;
     right: 10px;
-    z-index: 0;
+    z-index: 2;
   }
 
   .custom-select {
@@ -313,12 +313,17 @@ ul.pagination {
   }
 
   h4 {
+    margin-top: 30px;
     border-bottom: solid 1px $border-grey;
     padding-bottom: 5px;
     font-family: $secondary-font;
     font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   .sidebar-accordion-link {
@@ -374,6 +379,10 @@ ul.pagination {
 
   #sidebar {
     margin-bottom: 40px;
+
+    h4 {
+      margin-top: 20px;
+    }
 
     .sidebar-item {
       margin-top: 20px;
