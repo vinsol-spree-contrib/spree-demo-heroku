@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_favorite_products.git
-  revision: 86a156a4cae310437cdaa46d2d11c944f02f1a20
+  revision: 1b5d3515c45c30228de26c1431f26eafc4d8edeb
+  branch: cache_issue
   specs:
     spree_favorite_products (3.3.0)
       spree_core (>= 3.2.0, < 4.0.0)
