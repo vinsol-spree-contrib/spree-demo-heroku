@@ -5,7 +5,6 @@ Deface::Override.new(
   text: %Q{
     <%= render_original %>
     <%= Rails.logger.info spree_user_signed_in? %>
-    <%= Rails.logger.info chinese %>
     <%= Rails.logger.info "$ * 99" %>
     <%= Rails.logger.info spree_current_user.has_favorite_product?(@product.id) %>
     <% if spree_user_signed_in? && spree_current_user.has_favorite_product?(@product.id) %>
