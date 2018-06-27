@@ -63,5 +63,5 @@ version = 'master'
 gem 'spree',                                      github: 'spree/spree',                                          branch: version
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
-gem 'spree_social_media_marketing', github: 'vinsol-spree-contrib/spree-social-media-marketing', branch: 'upgrade'
+gem 'spree_social_media_marketing', github: 'vinsol-spree-contrib/spree-social-media-marketing', branch: 'issues'
 gem 'koala'
