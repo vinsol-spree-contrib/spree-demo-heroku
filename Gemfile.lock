@@ -77,7 +77,7 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-delivery-slots.git
-  revision: 2c8b32d40ee5d76fd7bcc6642aa634a23165ba5b
+  revision: e2d66b4c4f67566087c6a8591f017b610d2bf16e
   branch: master
   specs:
     spree_delivery_slots (3.3.0)
