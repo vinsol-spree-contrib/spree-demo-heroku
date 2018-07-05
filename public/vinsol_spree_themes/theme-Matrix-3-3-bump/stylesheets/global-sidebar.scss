@@ -62,18 +62,25 @@
   .modal-header {
     border-bottom-color: #EEEEEE;
     background-color: #FAFAFA;
+    position: relative;
+
   }
 
 .sidebar-close {
   display: block;
   position: absolute;
-  top: 20px;
+  top: 50%;
   right: 15px;
   background: none;
   border: none;
   text-transform: uppercase;
   font-weight: $font-bold;
   font-size: 10px;
+  height: 10px;
+  line-height: 10px;
+  margin: 0;
+  padding: 0;
+  @include transform(translate(0, -50%));
 }
 
 #sidebar {
@@ -81,13 +88,13 @@
     .list-group-item {
       border: none;
       padding: 5px 10px;
-      border-top: solid 1px $primary-grey;
-      border-bottom: solid 1px $primary-grey;
+      /*border-top: solid 1px $primary-grey;*/
+      /*border-bottom: solid 1px $primary-grey;*/
       font-weight: $font-bold;
       border-radius: 0 !important;
     }
     a.list-group-item{
-      opacity: 0.5;
+      color: $secondary;
       &.active {
         color: $primary;
         text-transform: uppercase;

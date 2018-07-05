@@ -6,7 +6,9 @@
 <% end %>
 
 <div data-hook="homepage_products">
-  <div class="common-page-heading">shopping destination</div>
+  <div class="common-page-heading">
+    What’s in furniture
+  </div>
   <div class="common-page-subheading">
 
     <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
@@ -34,7 +36,7 @@
       Praesent quis diam in orci semper
     </div>
     <div class="promotion_link">
-      <a href="<%= products_path %>" class="btn btn-block btn-site-inverse text-uppercase">Shop Now</a>
+      <a href="<%= products_path %>" class="btn btn-block btn-site btn-lg text-uppercase">Shop Now</a>
     </div>
   </div>
 </div>

@@ -1,11 +1,11 @@
 <%= form_for :order, url: populate_orders_path do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <% if @product.variants_and_option_values(current_currency).any? %>
-      <div id="product-variants" >
+      <div id="product-variants">
         <h3 class="product-section-title"><%= Spree.t(:variants) %></h3>
         <div class="row">
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
-            <div class="col-sm-4 product-variant">
+            <div class="product-variant">
               <%= radio_button_tag "variant_id", variant.id, index == 0,
                   'data-price' => variant.price_in(current_currency).money,
                   'data-in-stock' => variant.can_supply?,
@@ -40,7 +40,7 @@
 
           <div class="product-price">
             <span class="color-muted"><%= Spree.t(:price) %></span>
-            <strong class="price selling text-primary-site" itemprop="price"  content="<%= @product.price_in(current_currency).amount.to_d %>">
+            <strong class="price selling text-primary-site" itemprop="price"  content="<%= @product.price_in(current_currency).amount.to_s %>">
               <%= display_price(@product) %>
             </strong>
             <strong itemprop="priceCurrency" content="<%= @product.currency %>"></strong>

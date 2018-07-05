@@ -1,6 +1,6 @@
 /*Font colors*/
-$primary : #993333;
-$secondary : #fdcdcb;
+$primary : #663300;
+$secondary : #a29080;
 
 $primary-black   : #333333;
 
@@ -8,6 +8,7 @@ $primary-grey   : #e5e5e5;
 $secondary-grey   : #f1f1f1;
 
 $primary-white   : #ffffff;
+$white-overlay   : rgba(255, 255, 255, 0.7);
 
 
 
@@ -28,7 +29,8 @@ $tablet: 1024px;
 $mobile: 767px;
 $mobileSmall: 575px;
 
-
+/*dimension*/
+$header-height: 80px;
 
 
 /*Mixin*/
