@@ -4,8 +4,8 @@ namespace :db do
   desc "Replace Products"
   task replace_products: :environment do
     Spree::Order.destroy_all
-    Spree::Product.destroy_all
-    Spree::Variant.destroy_all
+    Spree::Product.all.map(&:really_destroy!)
+    Spree::Variant.all.map(&:really_destroy!)
     CSV.foreach(Rails.root.join('public', 'products.csv'), headers: true) do |row|
       product = Spree::Product.create(name: row['name'], price:row['price'], shipping_category_id: Spree::ShippingCategory.first.id, description: row['description'], available_on: Date.today)
       row['Taxon'].split(',').each do |taxon|
