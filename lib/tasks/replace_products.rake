@@ -6,6 +6,7 @@ namespace :db do
     # Spree::Order.destroy_all
     # Spree::Product.all.map(&:really_destroy!)
     # Spree::Variant.all.map(&:really_destroy!)
+    flag = 47
     CSV.foreach(Rails.root.join('public', 'products.csv'), headers: true) do |row|
       product = Spree::Product.create(name: row['name'], price:row['price'], shipping_category_id: Spree::ShippingCategory.first.id, description: row['description'], available_on: Date.today)
       row['Taxon'].split(',').each do |taxon|
@@ -13,7 +14,8 @@ namespace :db do
       end
       Dir.foreach(Rails.root.join('public', 'product_images', row['name'])) do |item|
         next if item == '.' or item == '..' or File.directory?(Rails.root.join('public', 'product_images', row['name'], item))
-        product.images << Spree::Image.new(attachment: File.new(Rails.root.join('public', 'product_images', row['name'], item)))
+        product.images << Spree::Image.create(id: flag, attachment: File.new(Rails.root.join('public', 'product_images', row['name'], item)))
+        flag = flag + 1
       end
       if row['Option Types']
         row['Option Types'].split(',').each do |option_type|
@@ -27,7 +29,8 @@ namespace :db do
           variant.save
           Dir.foreach(Rails.root.join('public', 'product_images', row['name'], option_value)) do |item|
             next if item == '.' or item == '..'
-            variant.images << Spree::Image.new(attachment: File.new(Rails.root.join('public', 'product_images', row['name'], option_value, item)))
+            variant.images << Spree::Image.create(id: flag, attachment: File.new(Rails.root.join('public', 'product_images', row['name'], option_value, item)))
+            flag = flag + 1
           end
           product.variants << variant
         end

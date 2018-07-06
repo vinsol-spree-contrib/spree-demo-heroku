@@ -23,7 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: spree-demo-heroku_development
+  # database: spree-demo-heroku_development
+  database: spree-demo-heroku_development_1
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
