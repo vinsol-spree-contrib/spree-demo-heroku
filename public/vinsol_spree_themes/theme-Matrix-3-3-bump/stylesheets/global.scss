@@ -322,7 +322,8 @@ abbr[data-original-title] {
   grid-area: 1 / 1 / 4 / 2;
   background-color: #ffd1d1;
   overflow: hidden;
-  background: url(/vinsol_spree_themes/current/images/banner.jpg) no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   padding: 30px;
   .promotion_link {
