@@ -4,17 +4,15 @@ namespace :db do
   desc "Replace Products"
   task replace_products: :environment do
     Spree::Order.destroy_all
-    Spree::Product.all.map(&:really_destroy!)
-    Spree::Variant.all.map(&:really_destroy!)
     flag = 47
     CSV.foreach(Rails.root.join('public', 'products.csv'), headers: true) do |row|
-      product = Spree::Product.create(name: row['name'], price:row['price'], shipping_category_id: Spree::ShippingCategory.first.id, description: row['description'], available_on: Date.today)
+      product = Spree::Product.create(name: row['name'], price: row['price'], shipping_category_id: Spree::ShippingCategory.first.id, description: row['description'], available_on: Date.today)
       row['Taxon'].split(',').each do |taxon|
         product.taxons << Spree::Taxon.find_by(name: taxon)
       end
-      Dir.foreach(Rails.root.join('public', 'product_images', row['name'])) do |item|
+      Dir.entries(Rails.root.join('public', 'product_images', row['name'])).sort.each do |item|
         next if item == '.' or item == '..' or File.directory?(Rails.root.join('public', 'product_images', row['name'], item))
-        product.images << Spree::Image.create(id: flag, attachment: File.new(Rails.root.join('public', 'product_images', row['name'], item)))
+        product.images << Spree::Image.create(id: flag , attachment: File.new(Rails.root.join('public', 'product_images', row['name'], item)))
         flag = flag + 1
       end
       if row['Option Types']
@@ -27,7 +25,7 @@ namespace :db do
           variant = Spree::Variant.new(product_id: product.id)
           variant.option_values << Spree::OptionValue.find_by_name(option_value)
           variant.save
-          Dir.foreach(Rails.root.join('public', 'product_images', row['name'], option_value)) do |item|
+          Dir.entries(Rails.root.join('public', 'product_images', row['name'], option_value)).sort.each do |item|
             next if item == '.' or item == '..'
             variant.images << Spree::Image.create(id: flag, attachment: File.new(Rails.root.join('public', 'product_images', row['name'], option_value, item)))
             flag = flag + 1
@@ -36,5 +34,6 @@ namespace :db do
         end
       end
     end
+    Spree::Product.first(16).map(&:really_destroy!)
   end
 end
