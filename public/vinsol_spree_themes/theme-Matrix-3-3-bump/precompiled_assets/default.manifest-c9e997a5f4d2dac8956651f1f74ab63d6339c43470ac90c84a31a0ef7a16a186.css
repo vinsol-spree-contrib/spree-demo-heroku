@@ -79,13 +79,17 @@ abbr[data-original-title] {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .btn[disabled], .btn.disabled {
+    background-color: #f1f1f1 !important;
+    border-color: #e5e5e5 !important;
+    color: #663300 !important; }
 
-.btn.btn-site {
+.btn-site {
   background-color: #663300;
   border-color: #663300;
   color: #ffffff; }
   @media (min-width: 1025px) {
-    .btn.btn-site:hover {
+    .btn-site:hover {
       background-color: #a29080;
       border-color: #a29080;
       color: #ffffff !important; } }
@@ -300,9 +304,7 @@ abbr[data-original-title] {
   grid-area: 1 / 1 / 4 / 2;
   background-color: #ffd1d1;
   overflow: hidden;
-  background-image: url("/vinsol_spree_themes/current/images/banner.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url(/vinsol_spree_themes/current/images/banner.jpg) no-repeat center center;
   background-size: cover;
   padding: 30px; }
   .first-banner .promotion_link {
@@ -578,6 +580,10 @@ abbr[data-original-title] {
         opacity: 1;
         color: #663300; } }
 
+.taxon:first-child .subtaxon-title {
+  margin-top: 0;
+  border-top: none; }
+
 h1.product-title {
   font-size: 28px;
   font-weight: 600;
@@ -611,6 +617,9 @@ h1.product-title {
   padding: 0;
   max-height: 100%;
   overflow: auto; }
+  #product-thumbnails .selected .thumbnail {
+    border-color: #333333;
+    background-color: #333333; }
 
 .variant-option-values {
   margin: 0;
@@ -662,6 +671,31 @@ h1.product-title {
 
 .modal_large_margin {
   margin-top: 100px; }
+
+.zoom {
+  position: relative; }
+  .zoom .zoom-message {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 30px;
+    opacity: 0.7;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center; }
+  .zoom:hover .zoom-message {
+    display: none; }
 
 @media (max-width: 1199px) {
   .page-container {
@@ -766,7 +800,10 @@ h1.product-title {
   #clear_cart_link .btn {
     display: block;
     margin: 5px;
-    width: 100%; } }
+    width: 100%; }
+
+  .pagination li.page {
+    display: none; } }
 /*Font colors*/
 /*font weight*/
 /*Break Points*/

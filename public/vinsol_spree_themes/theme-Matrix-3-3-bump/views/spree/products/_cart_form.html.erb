@@ -30,9 +30,7 @@
       <%= hidden_field_tag "variant_id", @product.master.id %>
     <% end %>
 
-    <div data-hook="product_properties">
-      <%= render partial: 'properties' %>
-    </div>
+
 
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
       <div data-hook="product_price">
@@ -40,7 +38,7 @@
 
           <div class="product-price">
             <span class="color-muted"><%= Spree.t(:price) %></span>
-            <strong class="price selling text-primary-site" itemprop="price"  content="<%= @product.price_in(current_currency).amount.to_s %>">
+            <strong class="price selling text-primary-site" itemprop="price"  content="<%= @product.price_in(current_currency).amount.to_d %>">
               <%= display_price(@product) %>
             </strong>
             <strong itemprop="priceCurrency" content="<%= @product.currency %>"></strong>
@@ -77,6 +75,12 @@
         </div>
       </div>
     <% end %>
+
+
+    <div data-hook="product_properties">
+      <%= render partial: 'properties' %>
+    </div>
+
   </div>
 <% end %>
 

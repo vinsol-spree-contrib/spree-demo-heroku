@@ -68,8 +68,14 @@ abbr[data-original-title] {
   padding-left: 30px;
   padding-right: 30px;
   @include transition(all 0.3s ease);
+  &[disabled],
+  &.disabled {
+    background-color: $secondary-grey !important;
+    border-color: $primary-grey !important;
+    color: $primary !important;
+  }
 }
-.btn.btn-site {
+.btn-site {
   background-color: $primary;
   border-color: $primary;
   color: $primary-white;
@@ -322,9 +328,7 @@ abbr[data-original-title] {
   grid-area: 1 / 1 / 4 / 2;
   background-color: #ffd1d1;
   overflow: hidden;
-  background-image: url('/vinsol_spree_themes/current/images/banner.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url(/vinsol_spree_themes/current/images/banner.jpg) no-repeat center center;
   background-size: cover;
   padding: 30px;
   .promotion_link {
@@ -636,6 +640,7 @@ abbr[data-original-title] {
   margin-top: 10px;
 
 }
+
 .subtaxon-title {
   border-top: solid 1px $primary-grey;
   padding: 20px 0;
@@ -660,6 +665,15 @@ abbr[data-original-title] {
           color: $primary;
         }
       }
+    }
+  }
+}
+
+.taxon {
+  &:first-child {
+    .subtaxon-title {
+      margin-top: 0;
+      border-top: none;
     }
   }
 }
@@ -698,6 +712,12 @@ h1.product-title {
   padding: 0;
   max-height: 100%;
   overflow: auto;
+  .selected {
+    .thumbnail {
+      border-color: $primary-black;
+      background-color: $primary-black;
+    }
+  }
 }
 
 .variant-option-values {
@@ -768,6 +788,32 @@ h1.product-title {
 
 .modal_large_margin {
   margin-top: 100px;
+}
+
+
+.zoom {
+  position: relative;
+  .zoom-message {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: $primary-black;
+    color: $primary-white;
+    font-weight: $font-bold;
+    font-size: 30px;
+    opacity: 0.7;
+    @include transform(translate(-50%, -50%));
+    @include display-flex(flex);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+  &:hover {
+    .zoom-message {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: $desktop) {
@@ -885,6 +931,11 @@ h1.product-title {
       display: block;
       margin: 5px;
       width: 100%;
+    }
+  }
+  .pagination {
+    li.page {
+      display: none;
     }
   }
 }

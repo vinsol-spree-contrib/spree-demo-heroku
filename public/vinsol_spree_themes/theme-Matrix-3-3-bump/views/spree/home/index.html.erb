@@ -59,3 +59,13 @@
     $(".common-page-subheading .list-group-item").slice(0,5).addClass('d-inline');
   });
 </script>
+
+<script>
+$(window).load(function(){
+  var scrollTargertOffset = $("[data-hook=homepage_products]").offset().top + 50;
+  var url = window.location.href;
+  if(url.match(/(page=)[0-9A-Za-z-]+/ig)){
+    $("html, body").animate({scrollTop: scrollTargertOffset})
+  }
+})
+</script>

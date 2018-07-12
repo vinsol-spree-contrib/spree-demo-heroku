@@ -20,6 +20,38 @@
       </div>
     </div>
 
+
+    <% @body_id = 'search-no-found' %>
+    <article class="search_page_similar" >
+
+      <h2 class="product-section-title">
+        Try something like
+      </h2>
+      <% taxonomy = Spree::Taxonomy.first %>
+      <div class="row">
+        <% taxonomy.root.children.first.products.limit(6).each_with_index do |product, i| %>
+          <div class="col-md-2 col-sm-4 col-xs-6">
+              <% url = spree.product_path(product) %>
+              <%= link_to '', url, class: 'link-overlay' %>
+              <div>
+                <%= link_to url, itemprop: "url" do %>
+                  <%= product_image(product, itemprop: "image", class: 'img-responsive center-block') %><br/>
+                <% end %>
+              </div>
+              <p class="product-name">
+                <%= link_to url, itemprop: "url" do %>
+                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                <% end %>
+              </p>
+
+              <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="price-col">
+                <b class="price selling" itemprop="price"><%= display_price(product) %></b>
+              </p>
+          </div>
+        <% end %>
+      </div>
+    </article>
+
   <% else %>
     <div data-hook="outside_cart_form">
       <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
@@ -51,7 +83,7 @@
                 <% end %>
               </div>
               <div class="form-group">
-                <%= button_tag class: 'btn btn-site-light btn-block btn-lg', id: 'checkout-link', name: 'checkout' do %>
+                <%= button_tag class: 'btn btn-site btn-block btn-lg', id: 'checkout-link', name: 'checkout' do %>
                   <%= Spree.t(:checkout) %>
                 <% end %>
               </div>

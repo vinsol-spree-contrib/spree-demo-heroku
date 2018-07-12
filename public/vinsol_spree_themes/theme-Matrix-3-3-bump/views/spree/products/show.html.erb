@@ -6,7 +6,15 @@
       <div data-hook="product_left_part_wrap">
         <div id="product-images" data-hook="product_images" class="product-images-container">
           <div id="main-image" class="product-main-image-container"  data-hook>
-            <%= large_image(@product, itemprop: "image") %>
+
+            <div class="zoom" id='product_zoom'>
+              <div class="zoom-message">
+                <span class="fa fa-search-plus"></span>
+              </div>
+              <%#= large_image(@product, itemprop: "image", class: 'img-responsive center-block') %>
+              <%= create_product_image_tag(@product.variant_images.first,@product,{ itemprop: "image", class: 'img-responsive center-block' },"original") %>
+            </div>
+
           </div>
           <div id="thumbnails" class="product-thumbnail-container" data-hook>
             <%= render partial: 'thumbnails' %>
