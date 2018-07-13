@@ -77,7 +77,7 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_customer_segmentation.git
-  revision: 2143aa6edd52296a8bbae7c73027cc625b238234
+  revision: 216ecd18f80833bfa3c8d2e69513330e6ce18265
   branch: export_segment
   specs:
     spree_customer_segmentation (0.0.1.alpha)
