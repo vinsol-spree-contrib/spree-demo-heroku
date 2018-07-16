@@ -450,11 +450,13 @@ ul.progress-steps .active ~ li a:focus {
   margin-top: 10px;
   .breadcrumb{
     margin-bottom:0px;
-    text-align:center;
+    text-align:right;
     padding:12px 15px;
     background-color: transparent;
     a{
       color:$primary-color;
+      opacity: 0.5;
+      font-size: 12px;
     }
   }
 }
@@ -742,4 +744,37 @@ abbr[title]{
   [type="checkbox"]:checked + label:after {
     font-size: 10px !important;
   }
+  #breadcrumbs{
+    .breadcrumb{
+      text-align: center;
+    }
+  }
+  .pagination {
+    li.page{
+      display:none;
+    }
+  }
+}
+fieldset#order_summary{
+  legend{
+    padding-top:30px;
+  }
+}
+.cart-item-quantity, .add-to-cart{
+  .ui-spinner{
+    border-radius:0px;
+    a.ui-button{
+      background-color:transparent;
+      &:focus, &:hover, &:active{
+        outline:none;
+        border-left-color: #c5c5c5 !important;
+        background-color:transparent !important;
+      }
+    }
+  }
+}
+input#spinner{
+  width:calc(100% - 25px);
+  margin:0px;
+  padding-left:5px;
 }

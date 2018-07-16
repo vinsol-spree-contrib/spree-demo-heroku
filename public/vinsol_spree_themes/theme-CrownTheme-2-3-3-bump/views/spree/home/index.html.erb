@@ -4,4 +4,12 @@
     <%= render partial: 'spree/shared/products', locals: { products: @products } %>
   <% end %>
 </div>
-
+<script>
+$(window).load(function(){
+  var scrollTargertOffset = $("[data-hook=homepage_products]").offset().top - 100;
+  var url = window.location.href;
+  if(url.match(/(page=)[0-9A-Za-z-]+/ig)){
+    $("html, body").animate({scrollTop: scrollTargertOffset})
+  }
+})
+</script>

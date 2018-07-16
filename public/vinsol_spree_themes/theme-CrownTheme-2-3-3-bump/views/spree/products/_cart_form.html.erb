@@ -1,7 +1,17 @@
+<%= stylesheet_link_tag 'jquery-ui',  media: 'all' %>
+<%= javascript_include_tag 'jquery-ui' %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $( ".spinner" ).spinner();
+  })
+
+</script>
+
+
 <%= form_for :order, url: populate_orders_path do |f| %>
   <div class="row" id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <% if @product.price_in(current_currency) && !@product.price.nil? %>
-      <div data-hook="product_price" class="col-sm-6 col-sm-offset-3 text-center">
+      <div data-hook="product_price" class="col-sm-12 text-center">
         <div id="product-price">
           <!--<h3 class="product-section-title"><%# Spree.t(:price) %></h3>-->
           <div>
@@ -22,7 +32,7 @@
         <% if @product.can_supply? %>
           <div class="add-to-cart">
             <div class="input-group">
-              <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1 %>
+              <%= text_field_tag :quantity, 1, class: 'title form-control spinner ', id: 'spinner', min: 1 %>
               <span class="input-group-btn">
                 <%= button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit do %>
                   <%= Spree.t(:add_to_cart) %>

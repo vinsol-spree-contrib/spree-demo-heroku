@@ -2,9 +2,9 @@
   <header id="header" data-hook class="row">
     <div class="col-md-12">
       <div class="row header-helper">
-        <figure id="logo" class="col-md-12 col-sm-12" data-hook>
-          <%= logo %>
-        </figure>
+        <figure id="logo"  data-hook>
+            <%= link_to image_tag('logo/crown-logo.png'), root_path %>
+          </figure>
         <div class="navbar-header">
           <a class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span></span>
@@ -19,18 +19,12 @@
 </div>
 <script>
 $(window).scroll(function(){
-    if ($(window).scrollTop() >= 300) {
-       $('#spree-header').addClass('sticky');
-    }
-    else {
-       $('#spree-header').removeClass('sticky');
-    }
-    // if ($(window).scrollTop() >= 100) {
-    //    $('.product-heading').addClass('sticky-heading');
-    // }
-    // else {
-    //    $('.product-heading').removeClass('sticky-heading');
-    // }
+  if ($(window).scrollTop() >= 300) {
+     $('#spree-header').addClass('sticky');
+  }
+  else {
+     $('#spree-header').removeClass('sticky');
+  }
 });
 $(document).ready(function(){
   $( ".navbar-toggle" ).click(function() {
@@ -38,13 +32,14 @@ $(document).ready(function(){
     $( ".navbar" ).slideToggle();
   });
 
-  $( ".dropdown-icon" ).click(function() {
-    $( "#taxonomies .list-group" ).slideToggle();
+  $( ".filter-dropdown" ).click(function() {
+    $( "#sidebar" ).slideToggle();
   });
-  $( ".dropdown-price" ).click(function() {
-    $( ".navigation .list-group" ).slideToggle();
+
+  $( ".variant-dropdown" ).click(function() {
+    $( "#product-variants" ).slideToggle();
+    $( "#product-variants" ).addClass("slideleft");
   });
-  
 });
 </script>
 

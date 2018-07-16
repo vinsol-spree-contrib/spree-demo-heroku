@@ -10,8 +10,10 @@
   </div>
 
 <% elsif @order.could_use_store_credit? %>
-  <div class="alert alert-info text-center" data-hook="checkout_payment_store_credit_available">
-    <h2><%= Spree.t('store_credit.available_amount', amount: @order.display_total_available_store_credit) %></h2>
-    <%= button_tag Spree.t('store_credit.apply'), name: 'apply_store_credit', class: 'continue btn btn-lg btn-primary' %>
+  <div class="panel panel-info text-center" data-hook="checkout_payment_store_credit_available">
+    <div class="panel-body">
+      <p><%= Spree.t('store_credit.available_amount', amount: @order.display_total_available_store_credit) %></p>
+      <%= button_tag Spree.t('store_credit.apply'), name: 'apply_store_credit', class: 'continue btn btn-info btn-sm' %>
+    </div>
   </div>
 <% end %>

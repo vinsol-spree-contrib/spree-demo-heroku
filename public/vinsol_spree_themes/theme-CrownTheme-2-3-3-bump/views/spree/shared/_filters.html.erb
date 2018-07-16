@@ -1,13 +1,13 @@
 <% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
 
 <% unless filters.empty? %>
-  <%= form_tag '', method: :get, id: 'sidebar_products_search' do %>
+  <%= form_tag '', method: :get, id: 'sidebar_products_search', class: 'col-md-4' do %>
     <%= hidden_field_tag 'per_page', params[:per_page] %>
     <% filters.each do |filter| %>
       <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
       <% next if labels.empty? %>
       <div class="navigation" data-hook="navigation">
-        <h4 class="filter-title"> <%= filter[:name] %> <span class="dropdown-price"><i class="fa fa-chevron-circle-down"></i></span></h4>
+        <h5 class="filter-title"> <%= filter[:name] %></h5>
         <ul class="list-group">
           <% labels.each do |nm,val| %>
             <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
@@ -21,10 +21,8 @@
             </li>
           <% end %>
           <%= submit_tag Spree.t(:search), name: nil, class: 'btn btn-primary' %>
-        </ul>
-        
+        </ul>       
       </div>
-    <% end %>
-    
+    <% end %> 
   <% end %>
 <% end %>

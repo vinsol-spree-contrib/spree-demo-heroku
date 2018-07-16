@@ -1,3 +1,4 @@
+<% @body_class = "product-index" %>
 <% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
   <% content_for :sidebar do %>
     <div data-hook="homepage_sidebar_navigation">
@@ -14,7 +15,10 @@
   <div data-hook="search_results">
     <% if @products.empty? %>
       <div class="no_products_found"></div>
-      <h3 class="search-results-title text-center"><%= Spree.t(:no_products_found) %></h3>
+      <h3 class="search-results-title text-center"><%= Spree.t(:we_are_sorry!) %>
+        <br><small>We can't seem to find any products that match your search.
+      </h3>
+      <%= render partial: 'spree/shared/search_page_slider' %>
     <% else %>
       <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
     <% end %>

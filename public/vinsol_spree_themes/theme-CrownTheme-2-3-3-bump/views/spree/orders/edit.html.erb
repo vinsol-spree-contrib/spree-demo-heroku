@@ -1,12 +1,24 @@
 <% @body_id = 'cart' %>
+<%= stylesheet_link_tag 'jquery-ui',  media: 'all' %>
+<%= javascript_include_tag 'jquery-ui' %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $( ".spinner" ).spinner();
+  })
+
+</script>
+
 <div data-hook="cart_container">
   <h1 class="text-center"><%= Spree.t(:shopping_cart) %></h1>
 
   <% if @order.line_items.empty? %>
     <div data-hook="empty_cart" class="alert-empty">
       <div class="empty-cart-image"></div>
-      <div class="alert alert-text text-center "><%= Spree.t(:your_cart_is_empty) %></div>
+      <div class="alert alert-text text-center "><%= Spree.t(:your_cart_is_empty) %>
+      </div>
       <p class="text-center"><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+
+      <%= render partial: 'spree/shared/search_page_slider' %>
     </div>
   <% else %>
     <div data-hook="outside_cart_form">

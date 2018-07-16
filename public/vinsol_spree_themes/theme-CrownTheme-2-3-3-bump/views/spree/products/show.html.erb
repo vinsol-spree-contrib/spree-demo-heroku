@@ -7,13 +7,17 @@
     </div>
     <div class="col-sm-10 col-sm-offset-1" data-hook="product_left_part">
       <div data-hook="product_left_part_wrap">
+        <!-- <div class="variant-dropdown"><i class="fa fa-filter"></i> Variant</div> -->
+
         <div id="product-images" data-hook="product_images">
-          <div id="main-image" class="panel panel-default" data-hook>
+          
+          <div id="main-image" class="panel panel-default pull-right" data-hook>
+            <div class="variant-dropdown"><i class="fa fa-filter"></i></div>
             <div class="panel-body text-center">
               <%= large_image(@product, itemprop: "image") %>
             </div>
           </div>
-          <div id="thumbnails" data-hook>
+          <div id="thumbnails" class="" data-hook>
             <%= render partial: 'thumbnails' %>
           </div>
         </div>

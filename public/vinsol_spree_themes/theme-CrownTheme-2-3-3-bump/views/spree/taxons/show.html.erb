@@ -1,5 +1,7 @@
 <div class="row text-center">
+  <% if @taxon.leaf? %>
   <h1 class="taxon-title"><%= @taxon.name %></h1>
+  <% end %>
 </div>
 <% content_for :sidebar do %>
   <div data-hook="taxon_sidebar_navigation" class="sidebar-col">
@@ -9,7 +11,9 @@
 <% end %>
 
 <div data-hook="taxon_products">
-  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+  <% if @taxon.leaf? %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+  <% end %>
 </div>
 
 <% unless params[:keywords].present? %>

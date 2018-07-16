@@ -1,0 +1,32 @@
+<% @body_id = 'search-no-found' %>
+<article class="search_page_similar" >
+  <h3 class="text-center">Try something like</h3>
+  <% taxonomy = Spree::Taxonomy.first %>
+  <div class="search_page_wrap ">
+    <% taxonomy.root.children.first.products.limit(4).each_with_index do |product, i| %>
+    <div class="col-md-3 col-sm-6 col-xs-12 product-list-item">
+      <div class="panel panel-default">
+        <% url = spree.product_path(product) %>
+        <%= link_to '', url, class: 'link-overlay' %>
+        <div class="panel-body text-center product-body product-img-body ">
+          <%= link_to url, itemprop: "url" do %>
+            <%= product_image(product, itemprop: "image") %><br/>
+          <% end %>
+          <br/>
+        </div>
+        <div class="panel-footer product-list-item-footer">
+          <span class="product-name">
+            <h4 class="pd-title">Product Title</h4><br>
+            <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+          </span>
+          <span itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="price-col">
+            <h4 class="pd-title">Price</h4><br>
+            <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</article>
+
