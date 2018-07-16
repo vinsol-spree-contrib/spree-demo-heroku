@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*
+* all stylesheet files should be required in this manifest.
+*/
 /*---bootstrap button override---*/
 /*---bootstrap button override---*/
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
@@ -2623,3 +2626,11 @@ input#spinner {
   width: calc(100% - 25px);
   margin: 0px;
   padding-left: 5px; }
+
+a.ui-button:active, .ui-button:active {
+  border-color: transparent !important;
+  box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0px; }
+
+a.ui-button {
+  cursor: pointer; }
