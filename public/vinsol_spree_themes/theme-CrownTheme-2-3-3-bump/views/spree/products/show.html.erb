@@ -10,9 +10,9 @@
         <!-- <div class="variant-dropdown"><i class="fa fa-filter"></i> Variant</div> -->
 
         <div id="product-images" data-hook="product_images">
-          
+
           <div id="main-image" class="panel panel-default pull-right" data-hook>
-            <div class="variant-dropdown"><i class="fa fa-filter"></i></div>
+            <div class="variant-dropdown"><span style="background-image: url(<%= asset_path('variant-icon.png') %>)"> Variants</span></div>
             <div class="panel-body text-center">
               <%= large_image(@product, itemprop: "image") %>
             </div>

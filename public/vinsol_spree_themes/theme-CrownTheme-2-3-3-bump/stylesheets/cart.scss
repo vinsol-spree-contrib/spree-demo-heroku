@@ -26,7 +26,7 @@ margin-top: 10px;
 }
 .delete{color:$primary-color;}
 .cart-total{
-  background-color: $primary-color; 
+  background-color: $primary-color;
   color:$wh-color;
   h4{
     color:$wh-color;
@@ -46,7 +46,7 @@ a.continue{
       color: $secondary-color;
     }
   }
-  
+
 }
 
 input:disabled.btn{
@@ -101,7 +101,7 @@ input:disabled.btn{
   padding-bottom:10px;
  }
 }
-@media screen and (max-width:767px){  
+@media screen and (max-width:767px){
   .coupen-code-block{
     padding: 0;
     label{
@@ -173,4 +173,8 @@ input:disabled.btn{
 
 .order-number a{
   color:$secondary-color !important;
+}
+
+.ui-button .ui-icon {
+  background-image: url(/assets/jquery-ui/ui-icons_777777_256x240.png) !important;
 }

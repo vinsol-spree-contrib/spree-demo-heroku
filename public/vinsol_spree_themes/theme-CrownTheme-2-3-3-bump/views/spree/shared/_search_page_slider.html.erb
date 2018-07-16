@@ -1,6 +1,6 @@
 <% @body_id = 'search-no-found' %>
 <article class="search_page_similar" >
-  <h3 class="text-center">Try something like</h3>
+  <h3 class="text-center">You May Also Like</h3>
   <% taxonomy = Spree::Taxonomy.first %>
   <div class="search_page_wrap ">
     <% taxonomy.root.children.first.products.limit(4).each_with_index do |product, i| %>
