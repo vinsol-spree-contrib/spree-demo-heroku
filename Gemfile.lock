@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/himanshumishra31/spree_variant_options.git
-  revision: b8ae75047ceb86ca776476626d54cb9c3dcb5fed
-  branch: improvements
+  revision: 07ed4950a735cb9427be4e52e6a57d4a7ca51732
+  branch: master
   specs:
     spree_variant_options (3.2.0.alpha)
       spree_core (>= 3.2, < 3.6)
