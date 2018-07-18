@@ -1,4 +1,4 @@
-class Spree::Intercom::Events::Order::PlaceService < Spree::Intercom::BaseService
+Spree::Intercom::Events::Order::PlaceService.class_eval do
 
   private
 
