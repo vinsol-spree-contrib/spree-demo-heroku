@@ -25,9 +25,7 @@
       "value": "spree123"
     },
     "HEROKU_APP_NAME": {
-      "required": true
-    },
-    "HEROKU_PARENT_APP_NAME": {
+      "description": "Enter the App name you have provided above",
       "required": true
     }
   }

@@ -62,4 +62,4 @@ gem 'spree',                                      github: 'spree/spree',        
 gem 'spree_auth_devise',                          github: 'spree/spree_auth_devise',                              branch: version
 gem 'spree_gateway',                              github: 'spree/spree_gateway',                                  branch: version
 
-gem 'spree_intercom',                             github: 'vinsol-spree-contrib/spree-intercom',                  branch: version
+gem 'spree_intercom',                             github: 'vinsol-spree-contrib/spree-intercom',                  branch: 'add_disable_button'

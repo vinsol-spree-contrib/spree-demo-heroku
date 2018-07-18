@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-intercom.git
-  revision: 588c7b40090b4e77cf05184cfd6411629ad9a96f
-  branch: master
+  revision: ea9e4633e7a6a3d480848a7ee2717b8442fd21af
+  branch: add_disable_button
   specs:
     spree_intercom (0.0.1.alpha)
       active_model_serializers (~> 0.10.0)
