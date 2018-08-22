@@ -25,7 +25,7 @@
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
             <figure class="text-center figure">
               <% if product.images.present? %>
-                <%= large_image(product, itemprop: "image", class: 'product-img') %>
+                <%= product_image(product, itemprop: "image", class: 'product-img') %>
               <% else %>
                 <%= image_tag 'no-image.png' %>
                 <% end %>

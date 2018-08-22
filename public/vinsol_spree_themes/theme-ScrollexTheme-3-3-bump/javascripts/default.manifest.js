@@ -3,3 +3,4 @@
 //= require bootstrap-number-input
 //= require navbar
 //= require custom
+//= require jquery.jInvertScroll

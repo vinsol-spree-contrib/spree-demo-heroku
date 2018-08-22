@@ -11,14 +11,13 @@
     background-size:auto 100%;
     background-position: center;
     background-repeat:no-repeat;
-    color: #000;
+    color: #fff;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 70px;
-    font-family: 'Niconne', cursive;
-    text-shadow: 1px 1px 1px #fff;
+    font-size: 50px;
+    text-shadow: 1px 1px 1px #191607;
     position: fixed;
     top:65px;
     left: 15px;
@@ -53,58 +52,6 @@
       transition:opacity 0.35s, transform 0.35s;
     }
   }
-  &.Men, &.Shirts, &.T-Shirts{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/men/1.jpg);
-      background-size: cover;
-    }
-  }
-  &.New.Arrivals{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/new-arrival/1.jpg);
-    }
-  }
-  &.Women{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
-    }
-  }
-  &.Bags{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/bags/1.jpg);
-    }
-  }
-  &.Home-Decor{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/home-decor/1.jpg);
-    }
-  }
-  &.Watches{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/watches/1.jpg);
-      background-position: top right;
-    }
-  }
-  &.Shoes{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-    }
-  }
-  &.Boys{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/kids/boys/1.jpg);
-    }
-  }
-  &.Girls{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/kids/girls/1.jpg);
-    }
-  }
-  &.Mugs{
-    h1.taxon-title{
-      background-image:url(/vinsol_spree_themes/current/images/category/mugs/1.jpg);
-    }
-  }
 }
 
 
@@ -131,12 +78,11 @@
     h5.subtaxon-title{
       height: 100%;
       width:25%;
-      background-image:url(/vinsol_spree_themes/current/images/category/common/banner-3303831_1920.jpg);
       background-color: #000;
       background-repeat: no-repeat;
       background-size:auto 100%;
-      background-position: left top;
-      background-attachment: fixed;
+      background-position: center;
+      background-attachment:unset;
       text-shadow: 1px 1px 1px $bg-black;
       position: absolute;
       top:-10px;
@@ -199,185 +145,6 @@
       h5.subtaxon-title{
         right: 0;
         left: auto;
-      }
-    }
-  }
-  &.Brands{
-    .taxon{
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/men/1.jpg);
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
-          background-position: right top;
-        }
-      }
-      &:nth-child(3){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/kids/1.jpg);
-        }
-      }
-      &:nth-child(4){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/clothing/1.jpg);
-          background-position: right top;
-        }
-      }
-      &:nth-child(5){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-          background-position: center left;
-        }
-      }
-      &:nth-child(6){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/watches/1.jpg);
-          background-position: top right;
-        }
-      }
-      &:nth-child(8){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/bags/1.jpg);
-          background-position: top right;
-        }
-      }
-      &:nth-child(9){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/mugs/1.jpg);
-        }
-      }
-
-      &:nth-child(7){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/home-decor/1.jpg);
-        }
-      }
-    }
-  }
-  &.Men{
-    .taxon{
-      &:nth-child(even){
-        padding-right:25%;
-        padding-left: 0;
-        h5.subtaxon-title{
-          right: 0;
-          left: auto;
-        }
-      }
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/men/1.jpg);
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-          background-position: center;
-          background-size: 100% auto;
-        }
-      }
-    }
-  }
-  &.Women{
-    .taxon{
-      &:nth-child(even){
-        padding-right:25%;
-        padding-left: 0;
-        h5.subtaxon-title{
-          right: 0;
-          left: auto;
-        }
-      }
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/women/1.jpg);
-          background-position: left -100px top;
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/bags/1.jpg);
-          background-position: right 100px top;
-        }
-      }
-      &:nth-child(3){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-        }
-      }
-    }
-  }
-  &.Kids{
-    .taxon{
-      &:nth-child(even){
-        padding-right:25%;
-        padding-left: 0;
-        h5.subtaxon-title{
-          right: 0;
-          left: auto;
-        }
-      }
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/kids/boys/1.jpg);
-          background-position: left -100px top;
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/kids/girls/1.jpg);
-          background-position: right  top;
-        }
-      }
-    }
-  }
-  &.Shoes{
-    .taxon{
-      &:nth-child(even){
-        padding-right:25%;
-        padding-left: 0;
-        h5.subtaxon-title{
-          right: 0;
-          left: auto;
-        }
-      }
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/shoes/1.jpg);
-          background-position: center;
-          background-size: 100% auto;
-        }
-      }
-    }
-  }
-  &.Clothing{
-    .taxon{
-      &:nth-child(even){
-        padding-right:25%;
-        padding-left: 0;
-        h5.subtaxon-title{
-          right: 0;
-          left: auto;
-        }
-      }
-      &:nth-child(1){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/men/1.jpg);
-        }
-      }
-      &:nth-child(2){
-        h5.subtaxon-title{
-          background-image:url(/vinsol_spree_themes/current/images/category/men/1.jpg);
-          background-position: right top;
-        }
       }
     }
   }

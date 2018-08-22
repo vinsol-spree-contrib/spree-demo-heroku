@@ -56,6 +56,7 @@ a:focus, button:focus{
     }
   }
 }
+
 body#home-page {
   #logo{
     background: url(/vinsol_spree_themes/current/images/logo/logo.png) center no-repeat;
@@ -91,7 +92,7 @@ body#checkout-page, body#order-summary{
   padding: 0 0;
   position: fixed;
   right: 0;
-  top:100px;
+  top:150px;
   -webkit-transition: right 0.6s;
   -moz-transition: right 0.6s;
   transition: right 0.6s;
@@ -105,7 +106,7 @@ body#checkout-page, body#order-summary{
     height: 100px;
     li {
       margin-bottom: 1px;
-      a {
+      a, .btn-switch {
         color: $text-yellow;
         padding-top: 12px;
         background-color: $bg-black;
@@ -113,15 +114,30 @@ body#checkout-page, body#order-summary{
         height: 45px;
         display: block;
         text-align:center;
+        cursor:pointer;
         &:hover {
           background: $bg-yellow;
           color: $text-black;
         }
       }
+      .btn-switch{
+        display:none;
+      }
     }
   }
 }
-
+body#home-page {
+  #top-nav-bar {
+    ul{
+      li{
+        .btn-switch{
+          display:block;
+        }
+      }
+    }
+  }
+  
+}
 .header-search {
   position: relative;
   right: 0;

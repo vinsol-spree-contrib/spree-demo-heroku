@@ -1,9 +1,20 @@
 <nav id="top-nav-bar">
   <ul class="list-unstyled" data-hook>
-    <li id="search-bar" data-hook>
+    <%= render partial: 'spree/shared/link_to_account' %>
+    <li id="search-bars" data-hook>
       <%= render partial: 'spree/shared/search' %>
     </li>
     <%= render partial: 'spree/shared/main_nav_bar' %>
+    <li>
+      <div class="btn-switch horizontal" id="btn-switch" >
+        <span class="tooltip1" title="Horizontal Scroll Layout"">
+          <i class="fa fa-exchange"></i>
+        </span>
+        <span class="tooltip2" title="Vertical Scroll Layout"">
+          <i class="fa fa-exchange"></i>
+        </span>
+      </div>
+    </li>
   </ul>
 </nav>
 

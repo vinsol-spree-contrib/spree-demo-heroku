@@ -14,6 +14,19 @@ $(function(){
     $("body").removeClass( "search-header-active");
   });
 
+  $(".btn-switch").click(function(){
+    $("body").toggleClass("home-page-h");
+    $(".btn-switch").toggleClass("vertical")
+  });
+  // $("#btn-switch-vertical").click(function(){
+  //   $("body").removeClass("home-page-h");
+  //   $("body").addClass("home-page-v");
+  //   $(".btn-switch").addClass("horizontal")
+
+  // });
+  
+
+
   $('.spinner').bootstrapNumber();
   $(function(){ 
   //auto hide spree header
@@ -70,6 +83,7 @@ $(function(){
     return false;                     
   });
   $('#back-to-top').tooltip('show');
+  $('input#quantity').prop("disabled", false);
 })
 
 

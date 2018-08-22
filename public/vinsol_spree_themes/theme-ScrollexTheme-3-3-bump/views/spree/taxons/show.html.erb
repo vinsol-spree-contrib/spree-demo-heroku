@@ -15,8 +15,9 @@
   </div>
 <% end %>
 
+<% i = 1 %>
 <div class="taxon-product-col" data-hook="taxon_products">
-    <h1 class="taxon-title"><%= @taxon.name %></h1>
+    <h1 class="taxon-title <%= 'active' if i == 0 %>" style="background-image: url(<%= asset_path("category/#{self.request.path.split('/')[-1]}/#{self.request.path.split('/')[-1]}#{ i }.jpg") %>)"><%= @taxon.name %></h1>
     <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
 </div>
 

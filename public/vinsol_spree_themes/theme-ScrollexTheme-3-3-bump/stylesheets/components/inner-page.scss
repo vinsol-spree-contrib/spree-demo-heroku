@@ -245,7 +245,7 @@ body.product-index{
     transform: translateX(-50%);
     text-align: center;
     background-color: transparent;
-    z-index: 9;
+    z-index: 99;
     &.off-canvas{
       top:-50px;
     }
