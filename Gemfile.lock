@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_buy_m_get_n
+  revision: 3492564df6689383b9c0b785b876410bc7888acf
+  branch: master
+  specs:
+    spree_buy_m_get_n (0.0.1.alpha)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -379,6 +389,7 @@ DEPENDENCIES
   selenium-webdriver
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
+  spree_buy_m_get_n!
   spree_gateway (~> 3.3)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -388,4 +399,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
