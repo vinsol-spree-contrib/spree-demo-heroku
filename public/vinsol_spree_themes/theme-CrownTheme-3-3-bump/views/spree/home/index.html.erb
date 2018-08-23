@@ -3,10 +3,7 @@
 <div class="container-fluid slider-wrap">
   <div class="row">
     <div id="sg-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel" data-slide-to="1" class=""></li>
-      </ol>
+      
       <!-- Carousel items -->
       <div class="carousel-inner carousel-zoom">
         <% taxonomy = Spree::Taxonomy.first %>
@@ -15,7 +12,8 @@
               <%= image_tag "#{asset_path("home-slider/slide" + (i + 1).to_s + ".jpg" )}", class: 'img-responsive'%>
               <div class="carousel-caption">
               <h3><%= link_to taxon.name, "t/" + taxon.permalink %></h3>
-              <div class="banner-title">The Young <br>&amp Innovative</div>
+              <div class="banner-title">Stylish, distinctive, trendy,<br>
+not spendy.</div>
               <%= link_to "Explore", 't/' + taxon.permalink,  class:'btn btn-hover' %>
               </div>
             </div>
@@ -90,20 +88,5 @@
 
 
 </div>
-<div class="row  about-sec">
-  <div class="container">
-    <div class="col-sm-12 text-center ">
-      <h2>Company info</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis sodales lectus, vel congue dui sagittis non. Nulla non fermentum ex, ac aliquam augue. Cras id enim vel lacus cursus rutrum sit amet nec ante. Morbi consectetur massa est. Proin condimentum ultricies elit convallis varius.</p>
-      <div class="social-media">
-        <ul class="list-inline">
-          <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#" title=""><i class="fa fa-google-plus"></i></a></li>
-          <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+
 

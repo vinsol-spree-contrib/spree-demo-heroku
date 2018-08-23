@@ -36,9 +36,11 @@
                 <li class="col-sm-12">
                   <ul class="list-unstyled">
                     <li class=""><a href="<%= nested_taxons_path(taxon.permalink) %>"><%= taxon.name %></a></li>
-                    <% taxon.children.limit(5).each do |t| %>
-                      <li><a href="<%= nested_taxons_path(t.permalink) %>"><%= t.name %></a></li>
-                    <% end %>
+                    <ul class="submenu">
+                      <% taxon.children.limit(5).each do |t| %>
+                        <li><a href="<%= nested_taxons_path(t.permalink) %>"><%= t.name %></a></li>
+                      <% end %>
+                    </ul>
                     <% if taxon.children.count > 5 %>
                       <li><%= link_to 'View all', '#' %></li>
                     <% end %>

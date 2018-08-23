@@ -72,6 +72,9 @@ body#cart{
   #content{
     min-height:calc(100vh - 200px);
   }
+  h1{
+    display:inline-block;
+  }
 }
 
 abbr[title]{
@@ -89,6 +92,24 @@ p#clear_cart_link{
 }
 td.lead{
   line-height: 30px !important;
+}
+.empty_cart{
+  font-size:20px;
+  .empty-img{
+    display:block;
+    img{
+      display:inline-block;
+    }
+  }
+  p{
+    padding-top:20px;
+  }
+  .btn{
+    font-weight:normal;
+    text-transform:capitalize;
+    padding:10px 30px;
+    line-height:120%;
+  }
 }
 @media screen and (min-width:768px) and (max-width:991px){
   #order_coupon_code{

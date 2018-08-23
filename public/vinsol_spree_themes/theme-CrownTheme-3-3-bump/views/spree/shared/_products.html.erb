@@ -26,7 +26,7 @@
              <%= link_to '', url, class: 'link-overlay' %>
             <div class="panel-body text-center product-body">
               <%= link_to url, itemprop: "url" do %>
-              <span class="image-box"><%= large_image(product, itemprop: "image", :class => "img-responsive home-pd-img") %></span><br/>
+              <span class="image-box"><%= large_image(product, itemprop: "image", :class => "img-responsive home-pd-img") %></span>
                 <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
               <% end %>
             </div>

@@ -1,11 +1,16 @@
 <% @body_id = 'cart' %>
-  <div data-hook="cart_container">
-    <h1 class="page-title"><%= Spree.t(:shopping_cart) %></h1>
-
+  <div data-hook="cart_container" >
+    <div class="row text-center">
+      <h1 class="page-title"><%= Spree.t(:shopping_cart) %></h1>
+    </div>
     <% if @order.line_items.empty? %>
-      <div data-hook="empty_cart">
-        <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-        <p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+      <div data-hook="empty_cart" class="empty_cart text-center">
+        <div class="alert text-center" >
+          <div class="empty-img"><%= image_tag "#{asset_path("empty-cart.png" )}", class: 'img-responsive' %></div>
+          <%= Spree.t(:your_shooping_cart_is_currently_empty) %>
+          <p>Add products to it.Check out our wide range of products!</p>
+        </div>
+        <p><%= link_to Spree.t(:Return_to_shop), products_path, class: 'btn btn-default' %></p>
       </div>
     <% else %>
       <div data-hook="outside_cart_form">

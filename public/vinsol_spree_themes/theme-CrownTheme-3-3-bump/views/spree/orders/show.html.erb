@@ -18,7 +18,7 @@
 
     <p class="button-groups" data-hook="links">
       <span>
-        <i class="fa fa-long-arrow-left"></i> <%= link_to Spree.t(:back_to_store), spree.root_path, class: "button" %>
+        <i class="fa fa-long-arrow-left"></i> <%= link_to Spree.t(:back_to_store), products_path, class: "button" %>
       </span>
       <span>
         <% unless order_just_completed?(@order) %>
