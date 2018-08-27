@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spree', '~> 3.4.0'
 gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
+gem 'browser', '2.0.3'
+gem 'spree_digital_assets' , github: 'vinsol-spree-contrib/spree_digital_assets', branch: 'top-banner'
