@@ -9,6 +9,15 @@ GIT
       sprockets-helpers (~> 1.2.1)
       state_machine (~> 1.2.0)
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_variant_options.git
+  revision: d01447df321d782f7eb4b896c38c485f6301bedc
+  branch: master
+  specs:
+    spree_variant_options (3.2.0.alpha)
+      spree_core (>= 3.2, < 3.6)
+      spree_sample (>= 3.2, < 3.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -394,6 +403,7 @@ DEPENDENCIES
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_variant_options!
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-helpers (~> 1.2.1)

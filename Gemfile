@@ -61,4 +61,5 @@ gem 'spree_auth_devise', '~> 3.3'
 gem 'spree_gateway', '~> 3.3'
 gem 'sprockets-helpers', '~> 1.2.1'
 gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: 'master'
+gem 'spree_variant_options', github: 'vinsol-spree-contrib/spree_variant_options', branch: 'master'
 
