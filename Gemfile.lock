@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_digital_assets.git
-  revision: e89e6057d9ae6729c16c8079b1403fb578176963
+  revision: 846e436de54aa319ce647d4ce6609f698c68dd79
   branch: top-banner
   specs:
     spree_digital_assets (3.3.0)
