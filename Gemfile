@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -56,6 +56,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'spree', '~> 3.4.0'
-gem 'spree_auth_devise', '~> 3.3'
-gem 'spree_gateway', '~> 3.3'
+gem 'spree', '~> 3.6.3'
+gem 'spree_auth_devise'
+gem 'spree_gateway'
+gem 'spree_marketing', github: 'vinsol-spree-contrib/spree_marketing'
+gem 'spree_events_tracker', github: 'vinsol-spree-contrib/spree_events_tracker'

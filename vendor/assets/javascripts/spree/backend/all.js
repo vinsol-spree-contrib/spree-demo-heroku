@@ -9,3 +9,5 @@
 //= require spree/backend
 
 //= require_tree .
+//= require spree/backend/spree_marketing
+//= require spree/backend/spree_events_tracker

@@ -11,3 +11,5 @@
 
 //= require_tree .
 //= require spree/frontend/spree_auth
+//= require spree/frontend/spree_marketing
+//= require spree/frontend/spree_events_tracker
