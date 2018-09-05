@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_131703) do
+ActiveRecord::Schema.define(version: 2018_09_05_101706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -257,8 +257,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_131703) do
     t.string "uid", null: false
     t.string "email", null: false
     t.boolean "active", default: true, null: false
-    t.datetime "created_at", default: "2018-09-04 13:34:25", null: false
-    t.datetime "updated_at", default: "2018-09-04 13:34:25", null: false
+    t.datetime "created_at", default: "2018-09-05 06:06:36", null: false
+    t.datetime "updated_at", default: "2018-09-05 06:06:36", null: false
     t.integer "user_id"
     t.index ["active", "email"], name: "index_spree_marketing_contacts_on_active_and_email"
     t.index ["email"], name: "index_spree_marketing_contacts_on_email"
@@ -269,8 +269,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_131703) do
     t.integer "contact_id"
     t.integer "list_id"
     t.boolean "active", default: true, null: false
-    t.datetime "created_at", default: "2018-09-04 13:34:25", null: false
-    t.datetime "updated_at", default: "2018-09-04 13:34:25", null: false
+    t.datetime "created_at", default: "2018-09-05 06:06:36", null: false
+    t.datetime "updated_at", default: "2018-09-05 06:06:36", null: false
     t.index ["active"], name: "index_spree_marketing_contacts_lists_on_active"
     t.index ["contact_id"], name: "index_spree_marketing_contacts_lists_on_contact_id"
     t.index ["list_id", "contact_id"], name: "index_spree_marketing_contacts_lists_on_list_id_and_contact_id"
@@ -282,8 +282,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_131703) do
     t.string "name"
     t.boolean "active", default: true, null: false
     t.string "type"
-    t.datetime "created_at", default: "2018-09-04 13:34:25", null: false
-    t.datetime "updated_at", default: "2018-09-04 13:34:25", null: false
+    t.datetime "created_at", default: "2018-09-05 06:06:36", null: false
+    t.datetime "updated_at", default: "2018-09-05 06:06:36", null: false
     t.string "entity_type"
     t.integer "entity_id"
     t.string "searched_keyword"
@@ -1111,10 +1111,12 @@ ActiveRecord::Schema.define(version: 2018_09_04_131703) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "spree_api_key", limit: 48
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
     t.index ["ship_address_id"], name: "index_spree_users_on_ship_address_id"
+    t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
   end
 
   create_table "spree_variants", id: :serial, force: :cascade do |t|
