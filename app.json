@@ -23,6 +23,10 @@
     "ADMIN_PASSWORD": {
       "description": "We will create an admin user with this password.",
       "value": "spree123"
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Enter the App name you have provided above",
+      "required": true
     }
   }
 }
