@@ -77,8 +77,8 @@ GIT
 
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-intercom.git
-  revision: ea9e4633e7a6a3d480848a7ee2717b8442fd21af
-  branch: add_disable_button
+  revision: 5c0948b1f61f7c6f875eefcaf9ee8b35ac2bc5d4
+  branch: add_order_count
   specs:
     spree_intercom (0.0.1.alpha)
       active_model_serializers (~> 0.10.0)
@@ -211,8 +211,7 @@ GEM
     htmlentities (4.3.4)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    intercom (3.5.25)
-      json (>= 1.8)
+    intercom (3.5.26)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -222,7 +221,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.1.0)
     jsonapi-renderer (0.2.0)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
