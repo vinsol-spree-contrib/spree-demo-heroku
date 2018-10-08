@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418133100) do
+ActiveRecord::Schema.define(version: 20181008131334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -302,6 +302,20 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id"
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
+  end
+
+  create_table "spree_page_third_party_services", id: :serial, force: :cascade do |t|
+    t.integer "page_id"
+    t.integer "third_party_service_id"
+    t.index ["page_id", "third_party_service_id"], name: "spree_page_third_party_services_page_id_third_party_service_id"
+    t.index ["page_id"], name: "index_spree_page_third_party_services_on_page_id"
+    t.index ["third_party_service_id"], name: "indx_spree_page_third_party_services_on_third_party_service_id"
+  end
+
+  create_table "spree_pages", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_payment_capture_events", id: :serial, force: :cascade do |t|
@@ -961,6 +975,14 @@ ActiveRecord::Schema.define(version: 20180418133100) do
     t.index ["position"], name: "index_spree_taxons_on_position"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
+  end
+
+  create_table "spree_third_party_services", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "script"
+    t.boolean "enabled", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_trackers", id: :serial, force: :cascade do |t|
