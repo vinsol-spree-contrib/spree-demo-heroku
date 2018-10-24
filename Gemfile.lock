@@ -1,3 +1,21 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_coinbase_commerce.git
+  revision: 896ba189cdb5c8c9dea5a0a120585c4d9e6c76a2
+  specs:
+    spree_coinbase_commerce (0.0.1.alpha)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+      spree_extension
+
+GIT
+  remote: https://github.com/vinsol/coinbase_commerce.git
+  revision: 20b0279c5a2b61ffa8fb94eb8985683116f90661
+  specs:
+    coinbase_commerce (0.1.0)
+      httparty
+      multi_json
+      recursive-open-struct
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,8 +45,8 @@ GEM
     activejob (5.1.6)
       activesupport (= 5.1.6)
       globalid (>= 0.3.6)
-    activemerchant (1.78.0)
-      activesupport (>= 3.2.14, < 6.x)
+    activemerchant (1.85.0)
+      activesupport (>= 4.2, < 6.x)
       builder (>= 2.1.2, < 4.0.0)
       i18n (>= 0.6.9)
       nokogiri (~> 1.4)
@@ -45,12 +63,12 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (5.0.0)
       activerecord (>= 4.2.8)
-    acts_as_list (0.9.11)
+    acts_as_list (0.9.16)
       activerecord (>= 3.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (9.3.1)
       execjs
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
@@ -62,7 +80,7 @@ GEM
     builder (3.2.3)
     byebug (10.0.2)
     camertron-eprun (1.1.1)
-    cancancan (2.2.0)
+    cancancan (2.3.0)
     canonical-rails (0.2.3)
       rails (>= 4.1, < 5.3)
     capybara (2.18.0)
@@ -91,8 +109,8 @@ GEM
     crass (1.0.4)
     css_parser (1.6.0)
       addressable
-    deface (1.3.0)
-      nokogiri (~> 1.6)
+    deface (1.3.2)
+      nokogiri (>= 1.6)
       polyglot
       rails (>= 4.1)
       rainbow (>= 2.1.0)
@@ -106,15 +124,17 @@ GEM
       devise (>= 2.1.0)
     erubi (1.7.1)
     execjs (2.7.0)
-    ffaker (2.9.0)
-    ffi (1.9.23)
+    ffaker (2.10.0)
+    ffi (1.9.25)
     friendly_id (5.2.4)
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     highline (1.6.21)
     htmlentities (4.3.4)
-    i18n (1.0.1)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -144,23 +164,24 @@ GEM
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
-    mime-types (3.1)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
-    mini_mime (1.0.0)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    monetize (1.7.0)
-      money (~> 6.9)
-    money (6.11.0)
-      i18n (>= 0.6.4, < 1.1)
+    monetize (1.9.0)
+      money (~> 6.12)
+    money (6.13.0)
+      i18n (>= 0.6.4, <= 2)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     nio4r (2.3.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     paperclip (5.2.1)
@@ -182,12 +203,12 @@ GEM
     premailer-rails (1.10.2)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     puma (3.11.4)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
     rack (2.0.5)
-    rack-test (1.0.0)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
       actioncable (= 5.1.6)
@@ -228,12 +249,13 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    recursive-open-struct (1.1.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
-    sass (3.5.6)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -315,7 +337,7 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.1)
@@ -326,7 +348,7 @@ GEM
     state_machines-activemodel (0.5.1)
       activemodel (>= 4.1, < 6.0)
       state_machines (>= 0.5.0)
-    state_machines-activerecord (0.5.1)
+    state_machines-activerecord (0.5.2)
       activerecord (>= 4.1, < 6.0)
       state_machines-activemodel (>= 0.5.0)
     stringex (2.8.4)
@@ -369,6 +391,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  coinbase_commerce!
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
@@ -379,6 +402,7 @@ DEPENDENCIES
   selenium-webdriver
   spree (~> 3.4.0)
   spree_auth_devise (~> 3.3)
+  spree_coinbase_commerce!
   spree_gateway (~> 3.3)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -388,4 +412,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.2
