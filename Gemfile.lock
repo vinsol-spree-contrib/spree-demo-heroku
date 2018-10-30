@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-intercom.git
-  revision: db968b2dfed014f627be83488f557c5d475c8d96
+  revision: cf55d5c15a42766cc3704555be44b5a443670474
+  branch: fix_custom_attributes_api_format
   specs:
     spree_intercom (0.0.1.alpha)
       active_model_serializers (~> 0.10.0)

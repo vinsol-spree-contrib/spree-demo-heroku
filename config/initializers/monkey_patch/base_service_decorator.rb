@@ -1,4 +1,4 @@
-Spree::Intercom::Events::Order::PlaceService.class_eval do
+Spree::Intercom::BaseService.class_eval do
   private
     def host_name
       "#{ENV['HEROKU_APP_NAME']}.herokuapp.com"
