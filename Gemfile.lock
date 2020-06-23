@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree-html-invoice.git
+  revision: 90a650bdc6f1068fc03df45161709baf626d0b6f
+  branch: 4_1_stable
+  specs:
+    spree_html_invoice (4.1)
+      spree_core
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -406,6 +414,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_html_invoice!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
