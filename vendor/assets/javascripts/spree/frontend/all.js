@@ -10,3 +10,4 @@
 //= require spree/frontend
 
 //= require_tree .
+//= require spree/frontend/spree_one_page_stock_management
