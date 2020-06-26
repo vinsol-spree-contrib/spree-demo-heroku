@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_third_party_service_manager.git
+  revision: 45620d96d0c0f91e9ded9564c3a09dc1f2e01068
+  branch: 4_1_stable
+  specs:
+    spree_third_party_service_manager (0.0.1.alpha)
+      spree_backend (~> 4.1)
+      spree_core (~> 4.1)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,7 +75,7 @@ GEM
       activerecord (>= 3.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.8.2)
+    autoprefixer-rails (9.8.4)
       execjs
     awesome_nested_set (3.2.1)
       activerecord (>= 4.0.0, < 7.0)
@@ -406,6 +416,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_third_party_service_manager!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
@@ -416,6 +427,3 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.1p83
-
-BUNDLED WITH
-   2.1.4
