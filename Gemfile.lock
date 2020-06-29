@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_third_party_service_manager.git
-  revision: 45620d96d0c0f91e9ded9564c3a09dc1f2e01068
+  revision: e2f02310ae1ff692cd19d43741cb0022604ec212
   branch: 4_1_stable
   specs:
     spree_third_party_service_manager (0.0.1.alpha)
@@ -396,7 +396,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
