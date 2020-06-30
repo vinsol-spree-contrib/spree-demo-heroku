@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_item_returns.git
+  revision: b432f8d21c8119bb9e89ee73a8c6645890302140
+  branch: version-3.4-dev
+  specs:
+    spree_item_returns (3.4.0)
+      spree_core (>= 4.0.0)
+      spree_extension (~> 0.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -406,6 +415,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_item_returns!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

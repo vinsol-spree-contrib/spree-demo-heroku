@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_182129) do
+ActiveRecord::Schema.define(version: 2020_06_30_110149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -379,6 +379,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.integer "state_lock_version", default: 0, null: false
     t.decimal "taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
+    t.boolean "store_owner_notification_delivered"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -391,6 +392,29 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
     t.index ["token"], name: "index_spree_orders_on_token"
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
+  end
+
+  create_table "spree_orders_subscriptions", id: :serial, force: :cascade do |t|
+    t.integer "subscription_id"
+    t.integer "order_id"
+    t.datetime "failed_at"
+    t.text "failure_reasons"
+    t.index ["order_id"], name: "index_spree_orders_subscriptions_on_order_id"
+    t.index ["subscription_id"], name: "index_spree_orders_subscriptions_on_subscription_id"
+  end
+
+  create_table "spree_page_third_party_services", id: :serial, force: :cascade do |t|
+    t.integer "page_id"
+    t.integer "third_party_service_id"
+    t.index ["page_id", "third_party_service_id"], name: "spree_page_third_party_services_page_id_third_party_service_id"
+    t.index ["page_id"], name: "index_spree_page_third_party_services_on_page_id"
+    t.index ["third_party_service_id"], name: "indx_spree_page_third_party_services_on_third_party_service_id"
+  end
+
+  create_table "spree_pages", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_payment_capture_events", id: :serial, force: :cascade do |t|
@@ -453,6 +477,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "compare_at_amount", precision: 10, scale: 2
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at"
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency"
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id"
@@ -483,9 +508,16 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position", default: 0
+    t.boolean "show_property", default: true
     t.index ["position"], name: "index_spree_product_properties_on_position"
     t.index ["product_id"], name: "index_product_properties_on_product_id"
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id"
+  end
+
+  create_table "spree_product_subscription_frequencies", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "subscription_frequency_id"
+    t.index ["product_id"], name: "index_spree_product_subscription_frequencies_on_product_id"
   end
 
   create_table "spree_products", id: :serial, force: :cascade do |t|
@@ -503,9 +535,13 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.boolean "is_subscribable", default: false
+    t.boolean "returnable", default: false
+    t.integer "return_time", default: 0, null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
+    t.index ["is_subscribable"], name: "index_spree_products_on_is_subscribable"
     t.index ["name"], name: "index_spree_products_on_name"
     t.index ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
     t.index ["slug"], name: "index_spree_products_on_slug", unique: true
@@ -699,6 +735,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.datetime "updated_at"
     t.integer "stock_location_id"
     t.integer "return_authorization_reason_id"
+    t.boolean "user_initiated", default: false
     t.index ["number"], name: "index_spree_return_authorizations_on_number", unique: true
     t.index ["order_id"], name: "index_spree_return_authorizations_on_order_id"
     t.index ["return_authorization_reason_id"], name: "index_return_authorizations_on_return_authorization_reason_id"
@@ -969,9 +1006,55 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.string "facebook"
     t.string "twitter"
     t.string "instagram"
+    t.string "supported_currencies"
+    t.string "default_locale"
+    t.string "customer_support_email"
+    t.integer "default_country_id"
+    t.text "description"
+    t.text "address"
+    t.string "contact_phone"
+    t.string "contact_email"
+    t.string "new_order_notifications_email"
     t.index "lower((code)::text)", name: "index_spree_stores_on_lower_code", unique: true
     t.index ["default"], name: "index_spree_stores_on_default"
     t.index ["url"], name: "index_spree_stores_on_url"
+  end
+
+  create_table "spree_subscription_frequencies", id: :serial, force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "months_count"
+  end
+
+  create_table "spree_subscriptions", id: :serial, force: :cascade do |t|
+    t.integer "variant_id"
+    t.integer "quantity", default: 0, null: false
+    t.integer "parent_order_id"
+    t.integer "ship_address_id"
+    t.integer "bill_address_id"
+    t.datetime "cancelled_at"
+    t.decimal "price", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "enabled", default: false
+    t.integer "subscription_frequency_id"
+    t.string "number"
+    t.text "cancellation_reasons"
+    t.string "source_type"
+    t.integer "source_id"
+    t.integer "delivery_number"
+    t.boolean "paused", default: false, null: false
+    t.datetime "next_occurrence_at"
+    t.integer "prior_notification_days_gap", default: 7, null: false
+    t.boolean "next_occurrence_possible", default: true
+    t.index ["bill_address_id"], name: "index_spree_subscriptions_on_bill_address_id"
+    t.index ["cancelled_at"], name: "index_spree_subscriptions_on_cancelled_at"
+    t.index ["parent_order_id"], name: "index_spree_subscriptions_on_parent_order_id"
+    t.index ["paused"], name: "index_spree_subscriptions_on_paused"
+    t.index ["ship_address_id"], name: "index_spree_subscriptions_on_ship_address_id"
+    t.index ["subscription_frequency_id"], name: "index_spree_subscriptions_on_subscription_frequency_id"
+    t.index ["variant_id"], name: "index_spree_subscriptions_on_variant_id"
   end
 
   create_table "spree_tax_categories", id: :serial, force: :cascade do |t|
@@ -1034,6 +1117,14 @@ ActiveRecord::Schema.define(version: 2020_06_15_182129) do
     t.index ["position"], name: "index_spree_taxons_on_position"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
+  end
+
+  create_table "spree_third_party_services", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "script"
+    t.boolean "enabled", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_trackers", id: :serial, force: :cascade do |t|
