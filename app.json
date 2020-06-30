@@ -1,7 +1,7 @@
 {
   "name": "Spree Sandbox",
   "description":"demo store built with Spree",
-  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/spree-html-invoice-3-4",
+  "repository": "https://github.com/vinsol-spree-contrib/spree-demo-heroku/tree/spree-html-invoice-4-1",
   "logo": "http://guides.spreecommerce.org/images/logo.png",
   "keywords": [
     "spree"
