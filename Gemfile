@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spree', '~> 4.1'
 gem 'spree_auth_devise', '~> 4.2'
 gem 'spree_gateway', '~> 3.9'
+gem 'spree_third_party_service_manager', github: 'vinsol-spree-contrib/spree_third_party_service_manager', branch: 'stable_4_1'

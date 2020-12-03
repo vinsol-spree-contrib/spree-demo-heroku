@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_third_party_service_manager.git
+  revision: cdc44fb4db04dc83381d5dac87f60b8aee9daec5
+  branch: stable_4_1
+  specs:
+    spree_third_party_service_manager (0.0.1.alpha)
+      spree_backend (>= 3.2.0)
+      spree_core (>= 3.2.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -402,6 +412,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.2)
   spree_gateway (~> 3.9)
+  spree_third_party_service_manager!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

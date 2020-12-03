@@ -9,3 +9,4 @@
 //= require spree/backend
 
 //= require_tree .
+//= require spree/backend/spree_third_party_service_manager
