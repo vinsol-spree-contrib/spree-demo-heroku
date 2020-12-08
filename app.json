@@ -11,6 +11,7 @@
     {"url": "https://github.com/spark-solutions/heroku-buildpack-spree.git"}
   ],
   "scripts": {
+    "heroku-prebuild": "rake tmp:clear",
     "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake spree_sample:load && bundle exec rake spree_pages:populate"
   },
   "env": {
