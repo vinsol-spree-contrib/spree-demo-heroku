@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'spree', '~> 4.1'
 gem 'spree_auth_devise', '~> 4.2'
 gem 'spree_gateway', '~> 3.9'
-gem 'spree_third_party_service_manager', github: 'vinsol-spree-contrib/spree_third_party_service_manager', branch: 'stable_4_1_copy'
+gem 'spree_third_party_service_manager', github: 'vinsol-spree-contrib/spree_third_party_service_manager', branch: 'stable_4_1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
