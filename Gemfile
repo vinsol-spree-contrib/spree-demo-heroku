@@ -20,7 +20,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+#spree 4-1
 
+gem 'spree', '~> 4.1'
+gem 'spree_auth_devise', '~> 4.2'
+gem 'spree_gateway', '~> 3.9'
+gem 'spree_third_party_service_manager', github: 'vinsol-spree-contrib/spree_third_party_service_manager', branch: 'stable_4_1_copy'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -51,10 +56,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-#spree 4-1
-
-gem 'spree', '~> 4.1'
-gem 'spree_auth_devise', '~> 4.2'
-gem 'spree_gateway', '~> 3.9'
-gem 'spree_third_party_service_manager', github: 'vinsol-spree-contrib/spree_third_party_service_manager', branch: 'stable_4_1'
